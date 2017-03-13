@@ -1,10 +1,11 @@
 from Broadcast import Broadcast
-
+from Hash import Hash
 
 class Miner():
 
     def __init__(self):
-        self.broadcast = Broadcast(self)
+        # self.broadcast = Broadcast(self)
+        self.hash = Hash(self)
 
     def broadcastMessage(self, data, tag):
         self.broadcast.broadcast(data, tag)
@@ -27,6 +28,14 @@ class Miner():
 
     def processReinforcement(self, message):
         print("I received the reinforcement " + message)
+        from twisted.internet import reactor
+        reactor.stop()
+
+    def startHashing(self, block):
+        self.hash.mine(block)
+
+    def newHashFound(self, hash_value, nonce):
+        print("I GOT THE NEW HASH " + hash_value + "  " + str(nonce))
         from twisted.internet import reactor
         reactor.stop()
 
