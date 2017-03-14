@@ -33,7 +33,7 @@ class Broadcast():
     def __get_ports(self, identity):
         subscribe_ports = []
         publish_port = None
-        tree = ET.parse('conf/miner_discovery.xml')
+        tree = ET.parse('../conf/miner_discovery.xml')
         root = tree.getroot()
         for miner in root.findall('miner'):
             identifier = miner.get('id')
