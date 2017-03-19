@@ -15,6 +15,8 @@ class Broadcast():
         self.publisher = ZmqPubConnection(self.factory, publish_endpoint)
         # create connections to subscribe
         self.subscribers = []
+        print("the ports subscribed are:")
+        print(subscribe_ports)
         for subscribe_port in subscribe_ports:
             subscribe_endpoint = ZmqEndpoint(ZmqEndpointType.connect, "tcp://127.0.0.1:" + subscribe_port)
             subscriber = BroadcastSubscriber(self.factory, subscribe_endpoint, miner)
@@ -23,6 +25,7 @@ class Broadcast():
             subscriber.subscribe(b"propose")
             subscriber.subscribe(b"commit")
             subscriber.subscribe(b"reinforce")
+            subscriber.subscribe(b"transaction")
 
     def broadcast(self, data, tag):
         print("broadcasting: ")
@@ -35,8 +38,11 @@ class Broadcast():
         publish_port = None
         tree = ET.parse('../conf/miner_discovery.xml')
         root = tree.getroot()
-        for miner in root.findall('miner'):
+        # read the ports of the miners
+        miners = root.find('miners')
+        for miner in miners:
             identifier = miner.get('id')
+            print(identifier)
             port = miner.find('port').text
             if str(identity) == identifier:
                 publish_port = port
@@ -45,6 +51,11 @@ class Broadcast():
             # FIXME what is more correct here?
             print("The ID is not in the configuration file")
             sys.exit(-1)
+        # read the ports of the clients
+        clients = root.find('clients')
+        for client in clients:
+            port = client.find('port').text
+            subscribe_ports.append(port)
         return publish_port, subscribe_ports
 
 
@@ -66,3 +77,5 @@ class BroadcastSubscriber(ZmqSubConnection):
             self.miner.processCommit(message.decode())
         elif tag.decode() == "reinforce":
             self.miner.processReinforcement(message.decode())
+        elif tag.decode == "transaction":
+            self.miner.addTransaction(message.decode())

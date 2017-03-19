@@ -24,6 +24,9 @@ class Miner():
     def processReinforcement(self, message):
         print("I received the reinforcement " + message)
 
+    def addTransaction(self, message):
+        print("I received the transaction " + message)
+
     def startHashing(self, block):
         self.hash.mine(block)
 

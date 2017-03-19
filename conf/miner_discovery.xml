@@ -1,12 +1,19 @@
 <?xml version="1.0"?>
 <data>
-    <miner id="1">
-        <port>5601</port>
-    </miner>
-    <miner id="2">
-        <port>5602</port>
-    </miner>
-    <miner id="3">
-        <port>5603</port>
-    </miner>
+    <miners>
+        <miner id="1">
+            <port>5601</port>
+        </miner>
+        <miner id="2">
+            <port>5602</port>
+        </miner>
+        <miner id="3">
+            <port>5603</port>
+        </miner>
+    </miners>
+    <clients>
+        <client id="1">
+            <port>5700</port>
+        </client>
+    </clients>
 </data>
