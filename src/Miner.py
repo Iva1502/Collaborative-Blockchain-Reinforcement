@@ -1,35 +1,37 @@
-from Broadcast import Broadcast
-from Hash import Hash
+from twisted.internet import task, reactor
+from blockchain import Blockchain
+from hash import Hash
+from states import Mining
+from broadcast import Broadcast
 
-class Miner():
+class Stop:
+    def __init__(self):
+        self.stop = False
 
-    def __init__(self, id):
-        self.id = id
-        self.broadcast = Broadcast(self)
-        self.hash = Hash(self)
+    def setStop(self):
+        self.stop = True
 
-    def broadcastMessage(self, data, tag):
-        self.broadcast.broadcast(data, tag)
+class Miner:
+    def __init__(self):
+        self.broadcast = Broadcast()
+        self.blockchain = Blockchain()
+        self.current_block = None
+        self.hash = Hash()
+        self.state = Mining(self)
+        self.stop_mining = None
+        self.nonce_list = []
 
-    def processMessage(self, message, tag):
-        print("I already have the " + message)
-        print("And the tag " + tag)
+    def run(self):
+        print("Miner was run")
+        self.start_new_mining()
 
-    def processProposal(self, message):
-        print("I am " + str(self.id) + " and received the proposal " + message)
+    def start_new_mining(self):
+        self.current_block = self.blockchain.get_last()
+        self.stop_mining = Stop()
+        reactor.callInThread(self.hash.run, self.current_block[1], self.stop_mining)
 
-    def processCommit(self, message):
-        print("I received the commit " + message)
+    def hash_value(self, val, nonce):
+        self.state.hash_value_process(val, nonce)
 
-    def processReinforcement(self, message):
-        print("I received the reinforcement " + message)
-
-    def addTransaction(self, message):
-        print("I received the transaction " + message)
-
-    def startHashing(self, block):
-        self.hash.mine(block)
-
-    def newHashFound(self, hash_value, nonce):
-        print("I GOT THE NEW HASH " + hash_value + "  " + str(nonce))
-
+    def message(self, type, value):
+        self.state.message_process(type, value)
