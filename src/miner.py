@@ -36,6 +36,12 @@ class Miner:
     def new_hash_found(self, val, nonce):
         self.state.hash_value_process(val, nonce)
 
-    def new_message(self, type, value):
-        #self.state.message_process(type, value)
-        print(type, value)
+    def new_message(self, value, type):
+        if type == "proposal":
+            self.state.proposal_process(value)
+        elif type == "commit":
+            self.state.commit_process(value)
+        elif type == "reinforcement":
+            self.state.reinforcement_process(value)
+        elif type == "transaction":
+            self.state.transaction_process(value)
