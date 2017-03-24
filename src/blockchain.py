@@ -1,4 +1,5 @@
 import json
+import hashlib
 
 class Blockchain:
     def __init__(self):
@@ -60,8 +61,12 @@ class ProposeBlock:
         self.prev_link = None
         self.commit_link = None
 
-    def __hash__(self):
-        return hash(self.get_json())
+    def hash(self):
+        hash_function = hashlib.sha256()
+        hash_function.update(self.get_json().encode())
+        # compute the hash
+        hash_value = hash_function.digest()
+        return hash_value
 
     def get_json(self):
         data = {}
@@ -76,8 +81,12 @@ class CommitBlock:
         self.next_links = []
         self.weight = 0
 
-    def __hash__(self):
-        return hash(self.get_json())
+    def hash(self):
+        hash_function = hashlib.sha256()
+        hash_function.update(self.get_json().encode())
+        # compute the hash
+        hash_value = hash_function.digest()
+        return hash_value
 
     def get_json(self):
         data = {}

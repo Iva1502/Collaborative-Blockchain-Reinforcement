@@ -1,7 +1,7 @@
 from txzmq import ZmqEndpoint, ZmqFactory, ZmqPubConnection, ZmqEndpointType
 import sys
 import argparse
-import random
+from time import sleep
 import xml.etree.ElementTree as ET
 
 
@@ -48,9 +48,8 @@ def main(identity):
     nonce = -1
     while True:
         nonce += 1
-        rand = random.randint(1, 100000)
-        if rand == 894:
-            client.broadcast("Alice buys a watch to Bob for " + str(nonce) + " chf")
+        sleep(1)
+        client.broadcast("Alice buys a watch to Bob for " + str(nonce) + " chf")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

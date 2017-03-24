@@ -4,19 +4,22 @@ from hash import Hash
 from states import Mining
 from broadcast import Broadcast
 
+
 class Stop:
     def __init__(self):
         self.stop = False
 
-    def setStop(self):
+    def set_stop(self):
         self.stop = True
 
+
 class Miner:
-    def __init__(self):
-        self.broadcast = Broadcast()
+    def __init__(self, _id):
+        self.id = _id
+        self.broadcast = Broadcast(self)
         self.blockchain = Blockchain()
         self.current_block = None
-        self.hash = Hash()
+        self.hash = Hash(self)
         self.state = Mining(self)
         self.stop_mining = None
         self.nonce_list = []
@@ -28,10 +31,11 @@ class Miner:
     def start_new_mining(self):
         self.current_block = self.blockchain.get_last()
         self.stop_mining = Stop()
-        reactor.callInThread(self.hash.run, self.current_block[1], self.stop_mining)
+        reactor.callInThread(self.hash.mine, self.current_block[1], self.stop_mining)
 
-    def hash_value(self, val, nonce):
+    def new_hash_found(self, val, nonce):
         self.state.hash_value_process(val, nonce)
 
-    def message(self, type, value):
-        self.state.message_process(type, value)
+    def new_message(self, type, value):
+        #self.state.message_process(type, value)
+        print(type, value)

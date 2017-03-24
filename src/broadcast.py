@@ -22,14 +22,14 @@ class Broadcast():
             subscriber = BroadcastSubscriber(self.factory, subscribe_endpoint, miner)
             self.subscribers.append(subscriber)
             # subcribe to the types of events
-            subscriber.subscribe(b"propose")
+            subscriber.subscribe(b"proposal")
             subscriber.subscribe(b"commit")
-            subscriber.subscribe(b"reinforce")
+            subscriber.subscribe(b"reinforcement")
             subscriber.subscribe(b"transaction")
 
     def broadcast(self, data, tag):
         print("broadcasting: ")
-        self.publisher.publish(data.encode('UTF-8'), tag.encode('UTF-8'))
+        self.publisher.publish(data.encode(), tag.encode())
 
 
     # FIXME should I see if the configuration file has twice the same ID?
@@ -67,15 +67,14 @@ class BroadcastSubscriber(ZmqSubConnection):
 
     def gotMessage(self, message, tag):
         # OPTION 1
-        # from Miner import Miner
-        # self.miner.processMessage(message.decode(), tag.decode())
+        self.miner.new_message(message.decode(), tag.decode())
 
         # OPTION 2
-        if tag.decode() == "propose":
-            self.miner.processProposal(message.decode())
-        elif tag.decode() == "commit":
-            self.miner.processCommit(message.decode())
-        elif tag.decode() == "reinforce":
-            self.miner.processReinforcement(message.decode())
-        elif tag.decode == "transaction":
-            self.miner.addTransaction(message.decode())
+        # if tag.decode() == "propose":
+        #     self.miner.processProposal(message.decode())
+        # elif tag.decode() == "commit":
+        #     self.miner.processCommit(message.decode())
+        # elif tag.decode() == "reinforce":
+        #     self.miner.processReinforcement(message.decode())
+        # elif tag.decode == "transaction":
+        #     self.miner.addTransaction(message.decode())
