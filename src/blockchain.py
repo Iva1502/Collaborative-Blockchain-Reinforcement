@@ -1,6 +1,7 @@
 import json
 import hashlib
 
+
 class Blockchain:
     def __init__(self):
         self.position_index = []
@@ -23,20 +24,20 @@ class Blockchain:
                 max_w = block.weight
                 last_block = block
                 depth = d
-        return (depth, last_block)
+        return depth, last_block
 
-    def add_propose_block(self, block, depth, hash):
-        node = self.find_position(depth, hash)
-        if node != None:
+    def add_propose_block(self, block, depth, hash_value):
+        node = self.find_position(depth, hash_value)
+        if node is not None:
             node.next_links.append(block)
             block.prev_link = node
             if len(self.position_index) == depth + 1:
                 self.position_index.append([])
             self.position_index[depth + 1].append(block)
 
-    def add_commit_block(self, block, depth, hash):
-        node = self.find_position(depth, hash)
-        if node != None:
+    def add_commit_block(self, block, depth, hash_value):
+        node = self.find_position(depth, hash_value)
+        if node is not None:
             node.commit_link = block
             block.propose_link = node
             if len(self.position_index) == depth+1:
@@ -45,13 +46,11 @@ class Blockchain:
             previous_commit = node.prev_link
             for d, b in self.list_of_leaves:
                 if previous_commit == b:
-                    self.list_of_leaves.remove((d,b))
+                    self.list_of_leaves.remove((d, b))
             self.list_of_leaves.append((depth+1, block))
             block.weight = previous_commit.weight+1
 
     def find_position(self, depth, hash_value):
-        print(depth)
-        print(len(self.position_index)-1)
         for block in self.position_index[depth]:
             if block.hash() == hash_value:
                 return block
@@ -70,7 +69,7 @@ class ProposeBlock:
         data = json.loads(json_str)
         self.nonce = data['nonce']
         self.pub_key = data['pub_key']
-        self.transaction_list=data['transaction_list']
+        self.transaction_list = data['transaction_list']
 
     def hash(self, hex=True):
         hash_function = hashlib.sha256()
@@ -95,7 +94,7 @@ class CommitBlock:
         self.next_links = []
         self.weight = 0
 
-    def hash(self, hex =True):
+    def hash(self, hex=True):
         hash_function = hashlib.sha256()
         hash_function.update(self.get_json().encode())
         # compute the hash

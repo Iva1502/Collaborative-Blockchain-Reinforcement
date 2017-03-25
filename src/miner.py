@@ -1,4 +1,4 @@
-from twisted.internet import task, reactor
+from twisted.internet import reactor
 from blockchain import Blockchain
 from hash import Hash
 from states import Mining

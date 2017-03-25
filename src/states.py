@@ -120,6 +120,7 @@ class ReinforcementCollecting(State):
         super(ReinforcementCollecting, self).__init__(miner)
         #print("REINF_COLLECTING")
 
+
     def proposal_process(self, value):
         message_content = json.loads(value)
         block = ProposeBlock()
