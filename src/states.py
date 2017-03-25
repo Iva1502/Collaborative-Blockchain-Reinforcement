@@ -25,12 +25,14 @@ class State:
         pass
 
     def transaction_process(self, value):
-        pass
+        self.miner.transaction_list.append(value)
 
 
 class Mining(State):
     def __init__(self, miner):
         super(Mining, self).__init__(miner)
+        self.miner.transaction_list = []
+        self.miner.nonce_list = []
         #print("MINING")
 
     def is_hash_fresh(self, value, nonce):
@@ -46,7 +48,8 @@ class Mining(State):
             if int(value, 16) <= VALUE_TH:
                 print("Hash found")
                 self.miner.stop_mining.set_stop()
-                block = ProposeBlock(int(value, 16), self.miner.id)
+                block = ProposeBlock(int(value, 16), self.miner.id, list(self.miner.transaction_list))
+                print(self.miner.transaction_list)
                 message = {}
                 message['previous'] = {}
                 message['data'] = block.get_json()
@@ -56,7 +59,6 @@ class Mining(State):
                                                         self.miner.current_block[1].hash())
                 self.miner.current_block = (self.miner.current_block[0] + 1, block)
                 self.miner.state = ReinforcementCollecting(self.miner)
-                self.miner.nonce_list = []
                 self.miner.broadcast.broadcast(json.dumps(message), "proposal")
                 print("Switch to reinforcement collection")
             else:
@@ -74,10 +76,10 @@ class Mining(State):
             self.miner.stop_mining.set_stop()
             self.miner.state = ReinforcementSent(self.miner)
             message = {}
-            message['nonce_list'] = self.miner.nonce_list
+            message['nonce_list'] = list(self.miner.nonce_list)
+            # FIXME in the future, do not send reinforcement if the list is empty
             message['hash'] = self.miner.current_block[1].hash()
             self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
-            self.miner.nonce_list = []
             print("Switch to reinforcement sent")
 
     def commit_process(self, value):

@@ -19,9 +19,9 @@ class Client():
         self.publisher = ZmqPubConnection(self.factory, publish_endpoint)
 
     def broadcast(self, data):
-        tag = "reinforce"
+        tag = "transaction"
         print("broadcasting: ")
-        self.publisher.publish(data.encode('UTF-8'), tag.encode('UTF-8'))
+        self.publisher.publish(data.encode(), tag.encode())
 
     # We assume the config file is well formed
     # Read the port corresponding to its id from the configuration port
@@ -48,8 +48,8 @@ def main(identity):
     nonce = -1
     while True:
         nonce += 1
-        sleep(1)
-        client.broadcast("Alice buys a watch to Bob for " + str(nonce) + " chf")
+        sleep(3)
+        client.broadcast("Alice buys a watch from Bob for " + str(nonce) + " chf")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

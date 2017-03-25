@@ -57,17 +57,20 @@ class Blockchain:
                 return block
         return None
 
+
 class ProposeBlock:
-    def __init__(self, nonce=0, _id=None):
+    def __init__(self, nonce=0, _id=None, tr_list=[]):
         self.nonce = nonce
-        self.m_pub = _id
+        self.pub_key = _id
+        self.transaction_list = tr_list
         self.prev_link = None
         self.commit_link = None
 
     def from_json(self, json_str):
         data = json.loads(json_str)
         self.nonce = data['nonce']
-        self.m_pub = data['m_pub']
+        self.pub_key = data['pub_key']
+        self.transaction_list=data['transaction_list']
 
     def hash(self, hex=True):
         hash_function = hashlib.sha256()
@@ -80,7 +83,8 @@ class ProposeBlock:
     def get_json(self):
         data = {}
         data['nonce'] = self.nonce
-        data['m_pub'] = self.m_pub
+        data['pub_key'] = self.pub_key
+        data['transaction_list'] = self.transaction_list
         return json.dumps(data, sort_keys=True)
 
 

@@ -23,6 +23,7 @@ class Miner:
         self.state = Mining(self)
         self.stop_mining = None
         self.nonce_list = []
+        self.transaction_list = []
 
     def stop(self):
         if self.stop_mining is not None:
