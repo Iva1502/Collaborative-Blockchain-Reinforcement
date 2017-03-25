@@ -1,6 +1,7 @@
 import hashlib
 import json
 from blockchain import CommitBlock, ProposeBlock
+from twisted.internet import reactor
 #58
 VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
@@ -119,7 +120,10 @@ class ReinforcementCollecting(State):
     def __init__(self, miner):
         super(ReinforcementCollecting, self).__init__(miner)
         #print("REINF_COLLECTING")
-
+        message = {}
+        message['nonce_list'] = []
+        message['hash'] = self.miner.current_block[1].hash()
+        self.timeout = reactor.callLater(3, self.reinforcement_process, json.dumps(message))
 
     def proposal_process(self, value):
         message_content = json.loads(value)
@@ -129,7 +133,11 @@ class ReinforcementCollecting(State):
                                                 message_content['previous']['hash'])
 
     def reinforcement_process(self, value):
-        print("Reinforcement was received")
+        if self.timeout.active():
+            print("Reinforcement was received")
+            self.timeout.cancel()
+        else:
+            print("Reinforcement was not received")
         message_content = json.loads(value)
         if message_content['hash'] == self.miner.current_block[1].hash():
             block = CommitBlock(message_content['nonce_list'])
