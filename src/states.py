@@ -1,4 +1,6 @@
 import hashlib
+import json
+from blockchain import CommitBlock, ProposeBlock
 #57
 VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
@@ -44,30 +46,46 @@ class Mining(State):
                 self.miner.stop_mining.set_stop()
                 self.miner.state = ReinforcementCollecting(self.miner)
                 self.miner.blockchain.add_propose_block(value.data, value.depth, value.hash)
+                self.miner.broadcast.broadcast("prop")
             else:
                 self.miner.nonce_list.append(value)
 
     def proposal_process(self, value):
-        self.miner.blockchain.add_propose_block(value.data, value.depth, value.hash)
-        if value.hash == hash(self.miner.current_block[1]):
+        message_content = json.loads(value)
+        block = ProposeBlock()
+        block.from_json(message_content['data'])
+        self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
+                                                message_content['previous']['hash'])
+        if value.hash == self.miner.current_block[1].hash():
             self.miner.current_block = (value.data, value.data)
             self.miner.stop_mining.stop()
             self.miner.state = ReinforcementSent(self.miner)
             self.miner.broadcast.broadcast("reinforcement", self.miner.nonce_list)
 
     def commit_process(self, value):
-        self.miner.blockchain.add_commit_block(value.data, value.depth, value.hash)
-
+        message_content = json.loads(value)
+        block = CommitBlock()
+        block.from_json(message_content['data'])
+        self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
+                                               message_content['previous']['hash'])
 class ReinforcementSent(State):
     def __init__(self, miner):
         super(ReinforcementSent, self).__init__(miner)
 
     def proposal_process(self, value):
-        self.miner.blockchain.add_propose_block(value.data, value.depth, value.hash)
+        message_content = json.loads(value)
+        block = ProposeBlock()
+        block.from_json(message_content['data'])
+        self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
+                                                message_content['previous']['hash'])
 
     def commit_process(self, value):
-        self.miner.blockchain.add_commit_block(value.data, value.depth, value.hash)
-        if value.hash == hash(self.miner.current_block[1]):
+        message_content = json.loads(value)
+        block = CommitBlock()
+        block.from_json(message_content['data'])
+        self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
+                                               message_content['previous']['hash'])
+        if value.hash == self.miner.current_block[1]:
             self.miner.state = Mining(self.miner)
             self.miner.start_new_mining()
 
@@ -76,10 +94,15 @@ class ReinforcementCollecting(State):
         super(ReinforcementCollecting, self).__init__(miner)
 
     def proposal_process(self, value):
-        self.miner.blockchain.add_propose_block(value.data, value.depth, value.hash)
+        message_content = json.loads(value)
+        block = ProposeBlock()
+        block.from_json(message_content['data'])
+        self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
+                                                message_content['previous']['hash'])
 
     def reinforcement_process(self, value):
-        if value.hash == hash(self.miner.current_block[1]):
+        message_content = json.loads(value)
+        if message_content['previous']['hash'] == hash(self.miner.current_block[1].hash()):
             self.miner.current_block.append(value)
             self.miner.blockchain.add_commit_block(value.data, value.depth, value.hash)
             self.miner.state = Mining(self.miner)
@@ -87,4 +110,8 @@ class ReinforcementCollecting(State):
             self.miner.broadcast.broadcast("commit")
 
     def commit_process(self, value):
-        self.miner.blockchain.add_commit_block(value.data, value.depth, value.hash)
+        message_content = json.loads(value)
+        block = CommitBlock()
+        block.from_json(message_content['data'])
+        self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
+                                               message_content['previous']['hash'])
