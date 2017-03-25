@@ -7,7 +7,7 @@ class Hash():
         self.miner = miner
 
     def mine(self, block, stop):
-        hash_block = block.hash()
+        hash_block = block.hash(hex=False)
         # 59 Fs
         threshold = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         nonce = -1

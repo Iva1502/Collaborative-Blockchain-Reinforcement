@@ -50,8 +50,10 @@ class Blockchain:
             block.weight = previous_commit.weight+1
 
     def find_position(self, depth, hash_value):
+        print(depth)
+        print(len(self.position_index)-1)
         for block in self.position_index[depth]:
-            if hash(block) == hash_value:
+            if block.hash() == hash_value:
                 return block
         return None
 
@@ -67,12 +69,13 @@ class ProposeBlock:
         self.nonce = data['nonce']
         self.m_pub = data['m_pub']
 
-    def hash(self):
+    def hash(self, hex=True):
         hash_function = hashlib.sha256()
         hash_function.update(self.get_json().encode())
         # compute the hash
-        hash_value = hash_function.digest()
-        return hash_value
+        if hex:
+            return hash_function.hexdigest()
+        return hash_function.digest()
 
     def get_json(self):
         data = {}
@@ -88,12 +91,13 @@ class CommitBlock:
         self.next_links = []
         self.weight = 0
 
-    def hash(self):
+    def hash(self, hex =True):
         hash_function = hashlib.sha256()
         hash_function.update(self.get_json().encode())
         # compute the hash
-        hash_value = hash_function.digest()
-        return hash_value
+        if hex:
+            return hash_function.hexdigest()
+        return hash_function.digest()
 
     def from_json(self, json_str):
         data = json.loads(json_str)

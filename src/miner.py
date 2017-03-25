@@ -24,6 +24,10 @@ class Miner:
         self.stop_mining = None
         self.nonce_list = []
 
+    def stop(self):
+        if self.stop_mining is not None:
+            self.stop_mining.set_stop()
+
     def run(self):
         print("Miner was run")
         self.start_new_mining()

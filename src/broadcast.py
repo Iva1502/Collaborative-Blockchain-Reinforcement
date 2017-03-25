@@ -46,7 +46,8 @@ class Broadcast():
             port = miner.find('port').text
             if str(identity) == identifier:
                 publish_port = port
-            subscribe_ports.append(port)
+            else:
+                subscribe_ports.append(port)
         if publish_port is None:
             # FIXME what is more correct here?
             print("The ID is not in the configuration file")

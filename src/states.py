@@ -1,8 +1,8 @@
 import hashlib
 import json
 from blockchain import CommitBlock, ProposeBlock
-#57
-VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+#58
+VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
 
 class State:
@@ -31,10 +31,11 @@ class State:
 class Mining(State):
     def __init__(self, miner):
         super(Mining, self).__init__(miner)
+        #print("MINING")
 
     def is_hash_fresh(self, value, nonce):
         hash_function = hashlib.sha256()
-        hash_function.update(self.miner.current_block[1].hash())
+        hash_function.update(self.miner.current_block[1].hash(hex=False))
         hash_function.update(self.miner.id.to_bytes(16, byteorder='big'))
         hash_function.update(nonce.to_bytes(16, byteorder='big'))
         hash_value = hash_function.hexdigest()
@@ -43,24 +44,41 @@ class Mining(State):
     def hash_value_process(self, value, nonce):
         if self.is_hash_fresh(value, nonce):
             if int(value, 16) <= VALUE_TH:
+                print("Hash found")
                 self.miner.stop_mining.set_stop()
+                block = ProposeBlock(int(value, 16), self.miner.id)
+                message = {}
+                message['previous'] = {}
+                message['data'] = block.get_json()
+                message['previous']['hash'] = self.miner.current_block[1].hash()
+                message['previous']['depth'] = self.miner.current_block[0]
+                self.miner.blockchain.add_propose_block(block, self.miner.current_block[0],
+                                                        self.miner.current_block[1].hash())
+                self.miner.current_block = (self.miner.current_block[0] + 1, block)
                 self.miner.state = ReinforcementCollecting(self.miner)
-                self.miner.blockchain.add_propose_block(value.data, value.depth, value.hash)
-                self.miner.broadcast.broadcast("prop")
+                self.miner.nonce_list = []
+                self.miner.broadcast.broadcast(json.dumps(message), "proposal")
+                print("Switch to reinforcement collection")
             else:
                 self.miner.nonce_list.append(value)
 
     def proposal_process(self, value):
+        print("Proposal was received")
         message_content = json.loads(value)
         block = ProposeBlock()
         block.from_json(message_content['data'])
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
-        if value.hash == self.miner.current_block[1].hash():
-            self.miner.current_block = (value.data, value.data)
-            self.miner.stop_mining.stop()
+        if message_content['previous']['hash'] == self.miner.current_block[1].hash():
+            self.miner.current_block = (message_content['previous']['depth']+1, block)
+            self.miner.stop_mining.set_stop()
             self.miner.state = ReinforcementSent(self.miner)
-            self.miner.broadcast.broadcast("reinforcement", self.miner.nonce_list)
+            message = {}
+            message['nonce_list'] = self.miner.nonce_list
+            message['hash'] = self.miner.current_block[1].hash()
+            self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
+            self.miner.nonce_list = []
+            print("Switch to reinforcement sent")
 
     def commit_process(self, value):
         message_content = json.loads(value)
@@ -68,9 +86,12 @@ class Mining(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'])
+
+
 class ReinforcementSent(State):
     def __init__(self, miner):
         super(ReinforcementSent, self).__init__(miner)
+        #print("REINF_SENT")
 
     def proposal_process(self, value):
         message_content = json.loads(value)
@@ -80,18 +101,22 @@ class ReinforcementSent(State):
                                                 message_content['previous']['hash'])
 
     def commit_process(self, value):
+        print("Commit was received")
         message_content = json.loads(value)
         block = CommitBlock()
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'])
-        if value.hash == self.miner.current_block[1]:
+        if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             self.miner.state = Mining(self.miner)
             self.miner.start_new_mining()
+            print("Switch to mining")
+
 
 class ReinforcementCollecting(State):
     def __init__(self, miner):
         super(ReinforcementCollecting, self).__init__(miner)
+        #print("REINF_COLLECTING")
 
     def proposal_process(self, value):
         message_content = json.loads(value)
@@ -101,13 +126,20 @@ class ReinforcementCollecting(State):
                                                 message_content['previous']['hash'])
 
     def reinforcement_process(self, value):
+        print("Reinforcement was received")
         message_content = json.loads(value)
-        if message_content['previous']['hash'] == hash(self.miner.current_block[1].hash()):
-            self.miner.current_block.append(value)
-            self.miner.blockchain.add_commit_block(value.data, value.depth, value.hash)
+        if message_content['hash'] == self.miner.current_block[1].hash():
+            block = CommitBlock(message_content['nonce_list'])
+            message = {}
+            message['previous'] = {}
+            message['data'] = block.get_json()
+            message['previous']['hash'] = self.miner.current_block[1].hash()
+            message['previous']['depth'] = self.miner.current_block[0]
+            self.miner.blockchain.add_commit_block(block, self.miner.current_block[0], self.miner.current_block[1].hash())
             self.miner.state = Mining(self.miner)
             self.miner.start_new_mining()
-            self.miner.broadcast.broadcast("commit")
+            self.miner.broadcast.broadcast(json.dumps(message), "commit")
+            print("Switch to mining")
 
     def commit_process(self, value):
         message_content = json.loads(value)
