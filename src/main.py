@@ -1,6 +1,9 @@
 from twisted.internet import task, reactor
 import argparse
 import signal
+import sys
+from Crypto.PublicKey import RSA
+
 from miner import Miner
 
 
