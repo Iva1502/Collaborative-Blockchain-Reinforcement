@@ -1,8 +1,7 @@
 from txzmq import ZmqEndpoint, ZmqFactory, ZmqPubConnection, ZmqEndpointType
-import sys
 import argparse
 from time import sleep
-import xml.etree.ElementTree as ET
+import json
 
 
 class Client():
@@ -27,19 +26,15 @@ class Client():
     # Read the port corresponding to its id from the configuration port
     def __get_port(self):
         publish_port = None
-        tree = ET.parse('../conf/miner_discovery.xml')
-        root = tree.getroot()
-        clients = root.find('clients')
-        for client in clients:
-            identifier = client.get('id')
-            port = client.find('port').text
-            if str(self.identity) == identifier:
+        file = open('../conf/miner_discovery.json')
+        data = json.load(file)
+        for client in data['clients']:
+            port = client['port']
+            if client['id'] == self.identity:
                 publish_port = port
                 break
         if publish_port is None:
-            # FIXME what is more correct here?
-            print("The ID is not in the configuration file")
-            sys.exit(-1)
+            raise Exception("No publish port for miner with id: " + str(self.identity))
         return publish_port
 
 

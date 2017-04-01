@@ -1,8 +1,10 @@
 from twisted.internet import reactor
+import json
 from blockchain import Blockchain
 from hash import Hash
 from states import Mining
 from broadcast import Broadcast
+from Crypto.PublicKey import RSA
 
 
 class Stop:
@@ -16,7 +18,6 @@ class Stop:
 class Miner:
     def __init__(self, _id):
         self.id = _id
-        self.broadcast = Broadcast(self)
         self.blockchain = Blockchain()
         self.current_block = None
         self.hash = Hash(self)
@@ -24,6 +25,29 @@ class Miner:
         self.stop_mining = None
         self.nonce_list = []
         self.transaction_list = []
+        self.__read_conf(self)
+        self.broadcast = Broadcast(self)
+
+    def __read_conf(self, _miner):
+        subscribe_ports = []
+        _miner.publish_port = None
+        file = open('../conf/miner_discovery.json')
+        data = json.load(file)
+        # read the ports of the miners
+        for miner in data['miners']:
+            port = miner["port"]
+            if miner['id'] == _miner.id:
+                _miner.publish_port = port
+                _miner.public_key = RSA.import_key(miner['pub_key'].encode())
+            else:
+                subscribe_ports.append(port)
+        if _miner.publish_port is None:
+            raise Exception("No publish port for miner with id: " + str(_miner.id))
+        # read the ports of the clients
+        for client in data['clients']:
+            port = client['port']
+            subscribe_ports.append(port)
+        _miner.subscribe_ports = subscribe_ports
 
     def stop(self):
         if self.stop_mining is not None:

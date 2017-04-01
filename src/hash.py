@@ -1,4 +1,5 @@
 import hashlib
+from Crypto.PublicKey import RSA
 
 # FIXME see if an attribute would work or if we need an object Stop
 class Hash():
@@ -18,8 +19,7 @@ class Hash():
             hash_function = hashlib.sha256()
             # feed it with the block, the ID and the nonce
             hash_function.update(hash_block)
-            #Do we need it?
-            hash_function.update(self.miner.id.to_bytes(16, byteorder='big'))
+            hash_function.update(self.miner.public_key.exportKey('DER'))
             hash_function.update(nonce.to_bytes(16, byteorder='big'))
             # compute the hash
             hash_value = hash_function.hexdigest()
