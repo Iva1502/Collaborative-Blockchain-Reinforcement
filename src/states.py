@@ -50,7 +50,6 @@ class Mining(State):
                 print("Hash found")
                 self.miner.stop_mining.set_stop()
                 block = ProposeBlock(int(value, 16), self.miner.id, list(self.miner.transaction_list))
-                print(self.miner.transaction_list)
                 message = {}
                 message['previous'] = {}
                 message['data'] = block.get_json()
