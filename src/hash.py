@@ -18,6 +18,7 @@ class Hash():
             hash_function = hashlib.sha256()
             # feed it with the block, the ID and the nonce
             hash_function.update(hash_block)
+            #Do we need it?
             hash_function.update(self.miner.id.to_bytes(16, byteorder='big'))
             hash_function.update(nonce.to_bytes(16, byteorder='big'))
             # compute the hash

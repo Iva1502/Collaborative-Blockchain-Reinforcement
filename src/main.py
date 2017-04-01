@@ -30,5 +30,3 @@ if __name__ == '__main__':
     install_handlers()
     task.deferLater(reactor, 1, miner.run)
     reactor.run()
-
-
