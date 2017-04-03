@@ -1,5 +1,7 @@
 import json
 import hashlib
+#FIX!!!!
+VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
 
 class Blockchain:
@@ -59,7 +61,8 @@ class Blockchain:
                 if previous_commit == b:
                     self.list_of_leaves.remove((d, b))
             self.list_of_leaves.append((depth+1, block))
-            block.weight = previous_commit.weight+1
+            block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
+            print(block.weight)
             #find and append next blocks
             if (depth+1) in self.pool_of_blocks.keys():
                 for h, b in self.pool_of_blocks[depth + 1]:
@@ -71,6 +74,21 @@ class Blockchain:
                 self.pool_of_blocks[depth] = []
             self.pool_of_blocks[depth].append(hash_value, block)
 
+    def calculate_weight(self, propose, commit, previous_commit):
+        sum = VALUE_TH/self.hash_value(previous_commit, propose.nonce, propose.pub_key)
+        for nonce in commit.reinforcements:
+            sum += VALUE_TH/self.hash_value(previous_commit, nonce, propose.pub_key)
+        print(sum)
+        return sum
+
+    def hash_value(self, block, nonce, pub_key):
+        hash_block = block.hash(hex=False)
+        hash_function = hashlib.sha256()
+        hash_function.update(hash_block)
+        hash_function.update(pub_key.to_bytes(16, byteorder='big'))
+        hash_function.update(nonce.to_bytes(16, byteorder='big'))
+        return int(hash_function.hexdigest(), 16)
+
     def find_position(self, depth, hash_value):
         if depth < len(self.position_index):
             for block in self.position_index[depth]:
@@ -80,7 +98,7 @@ class Blockchain:
 
 
 class ProposeBlock:
-    def __init__(self, nonce=0, _id=None, tr_list=[]):
+    def __init__(self, nonce=0, _id=0, tr_list=[]):
         self.nonce = nonce
         self.pub_key = _id
         self.transaction_list = tr_list

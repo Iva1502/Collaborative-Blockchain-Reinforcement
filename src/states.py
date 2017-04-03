@@ -49,7 +49,7 @@ class Mining(State):
             if int(value, 16) <= VALUE_TH:
                 print("Hash found")
                 self.miner.stop_mining.set_stop()
-                block = ProposeBlock(int(value, 16), self.miner.id, list(self.miner.transaction_list))
+                block = ProposeBlock(nonce, self.miner.id, list(self.miner.transaction_list))
                 message = {}
                 message['previous'] = {}
                 message['data'] = block.get_json()
