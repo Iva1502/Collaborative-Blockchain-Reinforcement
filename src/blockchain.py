@@ -1,7 +1,8 @@
 import json
 import hashlib
+from Crypto.PublicKey import RSA
 #FIX!!!!
-VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
 
 class Blockchain:
@@ -85,7 +86,7 @@ class Blockchain:
         hash_block = block.hash(hex=False)
         hash_function = hashlib.sha256()
         hash_function.update(hash_block)
-        hash_function.update(pub_key.to_bytes(16, byteorder='big'))
+        hash_function.update(RSA.import_key(pub_key.encode()).exportKey('DER'))
         hash_function.update(nonce.to_bytes(16, byteorder='big'))
         return int(hash_function.hexdigest(), 16)
 

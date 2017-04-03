@@ -2,8 +2,8 @@ import hashlib
 import json
 from blockchain import CommitBlock, ProposeBlock
 from twisted.internet import reactor
-#58
-VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+#60
+VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
 
 class State:
@@ -39,7 +39,7 @@ class Mining(State):
     def is_hash_fresh(self, value, nonce):
         hash_function = hashlib.sha256()
         hash_function.update(self.miner.current_block[1].hash(hex=False))
-        hash_function.update(self.miner.id.to_bytes(16, byteorder='big'))
+        hash_function.update(self.miner.public_key.exportKey('DER'))
         hash_function.update(nonce.to_bytes(16, byteorder='big'))
         hash_value = hash_function.hexdigest()
         return hash_value == value
@@ -49,7 +49,7 @@ class Mining(State):
             if int(value, 16) <= VALUE_TH:
                 print("Hash found")
                 self.miner.stop_mining.set_stop()
-                block = ProposeBlock(nonce, self.miner.id, list(self.miner.transaction_list))
+                block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(), list(self.miner.transaction_list))
                 message = {}
                 message['previous'] = {}
                 message['data'] = block.get_json()
