@@ -19,7 +19,7 @@ class Miner:
     def __init__(self, _id):
         self.id = _id
         self.blockchain = Blockchain()
-        self.current_block = None
+        self.current_block = self.blockchain.get_last()
         self.hash = Hash(self)
         self.state = Mining(self)
         self.stop_mining = None
@@ -38,7 +38,7 @@ class Miner:
             port = miner["port"]
             if miner['id'] == _miner.id:
                 _miner.publish_port = port
-                _miner.public_key = RSA.import_key(miner['pub_key'].encode())
+                _miner.public_key = RSA.import_key(miner['pub_key'])
             else:
                 subscribe_ports.append(port)
         if _miner.publish_port is None:
@@ -65,12 +65,13 @@ class Miner:
     def new_hash_found(self, val, nonce):
         self.state.hash_value_process(val, nonce)
 
-    def new_message(self, value, type):
+    def new_message(self, data, type):
         if type == "proposal":
-            self.state.proposal_process(value)
+            print(data)
+            self.state.proposal_process(data)
         elif type == "commit":
-            self.state.commit_process(value)
+            self.state.commit_process(data)
         elif type == "reinforcement":
-            self.state.reinforcement_process(value)
+            self.state.reinforcement_process(data)
         elif type == "transaction":
-            self.state.transaction_process(value)
+            self.state.transaction_process(data)

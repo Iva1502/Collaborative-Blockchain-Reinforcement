@@ -2,8 +2,8 @@ import hashlib
 import json
 from blockchain import CommitBlock, ProposeBlock
 from twisted.internet import reactor
-#60
-VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+#60-6 FIXME change to 60
+VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6
 
 
 class State:

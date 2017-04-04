@@ -47,7 +47,7 @@ class Blockchain:
         else:
             if depth not in self.pool_of_blocks.keys():
                 self.pool_of_blocks[depth] = []
-            self.pool_of_blocks[depth].append(hash_value, block)
+            self.pool_of_blocks[depth].append((hash_value, block))
 
     def add_commit_block(self, block, depth, hash_value):
         node = self.find_position(depth, hash_value)
@@ -73,7 +73,7 @@ class Blockchain:
         else:
             if depth not in self.pool_of_blocks.keys():
                 self.pool_of_blocks[depth] = []
-            self.pool_of_blocks[depth].append(hash_value, block)
+            self.pool_of_blocks[depth].append((hash_value, block))
 
     def calculate_weight(self, propose, commit, previous_commit):
         sum = VALUE_TH/self.hash_value(previous_commit, propose.nonce, propose.pub_key)
