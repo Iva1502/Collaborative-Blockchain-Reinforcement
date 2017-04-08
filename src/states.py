@@ -2,8 +2,7 @@ import hashlib
 import json
 from blockchain import CommitBlock, ProposeBlock
 from twisted.internet import reactor
-#60
-VALUE_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+from constants import COMMIT_TH
 
 
 class State:
@@ -46,7 +45,7 @@ class Mining(State):
 
     def hash_value_process(self, value, nonce):
         if self.is_hash_fresh(value, nonce):
-            if int(value, 16) <= VALUE_TH:
+            if int(value, 16) <= COMMIT_TH:
                 print("Hash found")
                 self.miner.stop_mining.set_stop()
                 block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(), list(self.miner.transaction_list))
@@ -62,7 +61,7 @@ class Mining(State):
                 self.miner.broadcast.broadcast(json.dumps(message), "proposal")
                 print("Switch to reinforcement collection")
             else:
-                self.miner.nonce_list.append(value)
+                self.miner.nonce_list.append(nonce)
 
     def proposal_process(self, value):
         print("Proposal was received")
@@ -118,7 +117,7 @@ class ReinforcementSent(State):
 class ReinforcementCollecting(State):
     def __init__(self, miner):
         super(ReinforcementCollecting, self).__init__(miner)
-        self.received_reinforcements = []
+        self.received_reinforcements = self.miner.nonce_list
         reactor.callLater(3, self.commiting)
 
     def commiting(self):

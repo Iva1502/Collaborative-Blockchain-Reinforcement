@@ -1,5 +1,6 @@
 import hashlib
 from Crypto.PublicKey import RSA
+from constants import REINF_TH
 
 # FIXME see if an attribute would work or if we need an object Stop
 class Hash():
@@ -9,8 +10,6 @@ class Hash():
 
     def mine(self, block, stop):
         hash_block = block.hash(hex=False)
-        # 61 Fs
-        threshold = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         nonce = -1
         while not stop.stop:
             # increment the nonce
@@ -23,9 +22,7 @@ class Hash():
             hash_function.update(nonce.to_bytes(16, byteorder='big'))
             # compute the hash
             hash_value = hash_function.hexdigest()
-            #print(int(hash_value, 16))
-            #print(threshold)
-            if int(hash_value, 16) < threshold:
+            if int(hash_value, 16) < REINF_TH:
                 # inform the miner that an hash lower than the threshold was found
                 from twisted.internet import reactor
                 reactor.callFromThread(self.miner.new_hash_found, hash_value, nonce)
