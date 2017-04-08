@@ -2,6 +2,7 @@ import json
 import hashlib
 from Crypto.PublicKey import RSA
 from constants import COMMIT_TH
+from hash import compute_hash
 
 class Blockchain:
     def __init__(self):
@@ -74,19 +75,13 @@ class Blockchain:
             self.pool_of_blocks[depth].append((hash_value, block))
 
     def calculate_weight(self, propose, commit, previous_commit):
-        sum = COMMIT_TH/self.hash_value(previous_commit, propose.nonce, propose.pub_key)
+        sum = COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), propose.nonce,
+                                              RSA.import_key(propose.pub_key).exportKey('DER')), 16)
         for nonce in commit.reinforcements:
-            sum += COMMIT_TH/self.hash_value(previous_commit, nonce, propose.pub_key)
+            sum += COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), nonce,
+                                              RSA.import_key(propose.pub_key).exportKey('DER')), 16)
         print(sum)
         return sum
-
-    def hash_value(self, block, nonce, pub_key):
-        hash_block = block.hash(hex=False)
-        hash_function = hashlib.sha256()
-        hash_function.update(hash_block)
-        hash_function.update(RSA.import_key(pub_key).exportKey('DER'))
-        hash_function.update(nonce.to_bytes(16, byteorder='big'))
-        return int(hash_function.hexdigest(), 16)
 
     def find_position(self, depth, hash_value):
         if depth < len(self.position_index):
@@ -97,7 +92,7 @@ class Blockchain:
 
 
 class ProposeBlock:
-    def __init__(self, nonce=0, _id=None, tr_list=[]):
+    def __init__(self, nonce=0, _id="0", tr_list=[]):
         self.nonce = nonce
         self.pub_key = _id
         self.transaction_list = tr_list
@@ -144,10 +139,8 @@ class CommitBlock:
     def from_json(self, json_str):
         data = json.loads(json_str)
         self.reinforcements = data['reinforcements']
-        #self.weight = data['weight']
 
     def get_json(self):
         data = {}
         data['reinforcements'] = self.reinforcements
-        #data['weight'] = self.weight
         return json.dumps(data, sort_keys=True)

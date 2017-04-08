@@ -2,8 +2,8 @@ import hashlib
 import json
 from blockchain import CommitBlock, ProposeBlock
 from twisted.internet import reactor
-from constants import COMMIT_TH
-
+from constants import COMMIT_TH, REINF_TH
+from hash import compute_hash
 
 class State:
     def __init__(self, miner):
@@ -36,11 +36,8 @@ class Mining(State):
         #print("MINING")
 
     def is_hash_fresh(self, value, nonce):
-        hash_function = hashlib.sha256()
-        hash_function.update(self.miner.current_block[1].hash(hex=False))
-        hash_function.update(self.miner.public_key.exportKey('DER'))
-        hash_function.update(nonce.to_bytes(16, byteorder='big'))
-        hash_value = hash_function.hexdigest()
+        hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
+                                  nonce, self.miner.public_key.exportKey('DER'))
         return hash_value == value
 
     def hash_value_process(self, value, nonce):
@@ -48,7 +45,8 @@ class Mining(State):
             if int(value, 16) <= COMMIT_TH:
                 print("Hash found")
                 self.miner.stop_mining.set_stop()
-                block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(), list(self.miner.transaction_list))
+                block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
+                                     list(self.miner.transaction_list))
                 message = {}
                 message['previous'] = {}
                 message['data'] = block.get_json()
@@ -118,6 +116,7 @@ class ReinforcementCollecting(State):
     def __init__(self, miner):
         super(ReinforcementCollecting, self).__init__(miner)
         self.received_reinforcements = self.miner.nonce_list
+        print("My reinforcement", len(self.miner.nonce_list))
         reactor.callLater(3, self.commiting)
 
     def commiting(self):
@@ -143,11 +142,16 @@ class ReinforcementCollecting(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
+    #FIX
+    def is_hash_small(self):
+        return True
 
     def reinforcement_process(self, value):
         message_content = json.loads(value)
         if message_content['hash'] == self.miner.current_block[1].hash():
-            self.received_reinforcements.extend(message_content['nonce_list'])
+            for nonce in message_content['nonce_list']:
+                if self.is_hash_small():
+                    self.received_reinforcements.append(nonce)
 
     def commit_process(self, value):
         message_content = json.loads(value)
