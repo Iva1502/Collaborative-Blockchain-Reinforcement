@@ -1,13 +1,14 @@
-import hashlib
 import json
 from blockchain import CommitBlock, ProposeBlock
 from twisted.internet import reactor
 from constants import COMMIT_TH, REINF_TH
 from hash import compute_hash
+from Crypto.PublicKey import RSA
+
 
 class State:
     def __init__(self, miner):
-        self.miner=miner
+        self.miner = miner
 
     def hash_value_process(self, value, nonce):
         pass
@@ -76,6 +77,7 @@ class Mining(State):
             message['nonce_list'] = list(self.miner.nonce_list)
             # FIXME in the future, do not send reinforcement if the list is empty
             message['hash'] = self.miner.current_block[1].hash()
+            message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
             self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
             print("Switch to reinforcement sent")
 
@@ -142,16 +144,19 @@ class ReinforcementCollecting(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
-    #FIX
-    def is_hash_small(self):
-        return True
+
+    def is_hash_small(self, nonce, pub_key):
+        return int(compute_hash(self.miner.current_block[1].prev_link.hash(hex=False), nonce,
+                                RSA.import_key(pub_key).exportKey('DER')), 16) < REINF_TH
 
     def reinforcement_process(self, value):
         message_content = json.loads(value)
         if message_content['hash'] == self.miner.current_block[1].hash():
             for nonce in message_content['nonce_list']:
-                if self.is_hash_small():
+                if self.is_hash_small(nonce, message_content['pub_key']):
                     self.received_reinforcements.append(nonce)
+                else:
+                    print('BAD HASH')
 
     def commit_process(self, value):
         message_content = json.loads(value)
