@@ -11,7 +11,7 @@ class Blockchain:
         self.head = ProposeBlock(0)
         self.position_index.append([])
         self.position_index[0].append(self.head)
-        self.head.commit_link = CommitBlock([])
+        self.head.commit_link = CommitBlock({})
         self.head.commit_link.propose_link = self.head
         self.position_index.append([])
         self.position_index[1].append(self.head.commit_link)
@@ -77,9 +77,10 @@ class Blockchain:
     def calculate_weight(self, propose, commit, previous_commit):
         sum = COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), propose.nonce,
                                               RSA.import_key(propose.pub_key).exportKey('DER')), 16)
-        for nonce in commit.reinforcements:
-            sum += COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), nonce,
-                                              RSA.import_key(propose.pub_key).exportKey('DER')), 16)
+        for k in commit.reinforcements.keys():
+            for nonce in commit.reinforcements[k]:
+                sum += COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), nonce,
+                                                  RSA.import_key(propose.pub_key).exportKey('DER')), 16)
         print(sum)
         return sum
 
@@ -122,7 +123,7 @@ class ProposeBlock:
 
 
 class CommitBlock:
-    def __init__(self, reinf_list=[]):
+    def __init__(self, reinf_list={}):
         self.reinforcements = reinf_list
         self.propose_link = None
         self.next_links = []
