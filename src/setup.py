@@ -14,7 +14,20 @@ if __name__ == '__main__':
 
         miner['pub_key'] = public_key.exportKey('OpenSSH').decode()
 
-        file = open("../keys/miner" + str(miner['id']) + ".key", 'wb')
+        file = open("../keys/miners/miner" + str(miner['id']) + ".key", 'wb')
+        file.write(private_key.exportKey('PEM'))
+        file.close()
+
+    for client in data['clients']:
+        # generate private/public key pair
+        key = RSA.generate(1024)
+
+        private_key = key
+        public_key = key.publickey()
+
+        client['pub_key'] = public_key.exportKey('OpenSSH').decode()
+
+        file = open("../keys/clients/client" + str(client['id']) + ".key", 'wb')
         file.write(private_key.exportKey('PEM'))
         file.close()
 

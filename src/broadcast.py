@@ -32,7 +32,7 @@ class Broadcast():
         self.publisher.publish(signed_data, tag.encode())
 
     def sign(self, data):
-        filename = "../keys/miner"+str(self.miner.id)+".key"
+        filename = "../keys/miners/miner"+str(self.miner.id)+".key"
         key = RSA.importKey(open(filename).read())
         h = SHA256.new(data.encode())
         signature = pkcs1_15.new(key).sign(h)
