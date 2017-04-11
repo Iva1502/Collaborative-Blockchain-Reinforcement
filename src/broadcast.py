@@ -28,12 +28,8 @@ class Broadcast():
             subscriber.subscribe(b"transaction")
 
     def broadcast(self, data, tag):
-        if tag == "proposal":
-            signed_data = self.sign(data)
-            #TODO verify transaction and implemented integrity on the transactions
-            self.publisher.publish(signed_data, tag.encode())
-        else:
-            self.publisher.publish(data.encode(), tag.encode())
+        signed_data = self.sign(data)
+        self.publisher.publish(signed_data, tag.encode())
 
     def sign(self, data):
         filename = "../keys/miner"+str(self.miner.id)+".key"
@@ -54,8 +50,12 @@ class BroadcastSubscriber(ZmqSubConnection):
         signature_initial_index = message_final_index + len("signature:")
         return message[:message_final_index], message[signature_initial_index:]
 
-    def verify_signature(self, message, signature):
-        key = RSA.import_key(json.loads(json.loads(message.decode())['data'])['pub_key'])
+    def verify_signature(self, message, signature, tag):
+        print(tag.decode())
+        if tag == b"proposal":
+            key = RSA.import_key(json.loads(json.loads(message.decode())['data'])['pub_key'])
+        else:
+            key = RSA.import_key(json.loads(message.decode())['pub_key'])
         h = SHA256.new(message)
         try:
             pkcs1_15.new(key).verify(h, signature)
@@ -66,9 +66,8 @@ class BroadcastSubscriber(ZmqSubConnection):
             return False
 
     def gotMessage(self, message, tag):
-        if tag == b"proposal":
-            data, signature = self.parse_message(message)
-            if self.verify_signature(data, signature):
-                self.miner.new_message(data.decode(), tag.decode())
+        data, signature = self.parse_message(message)
+        if self.verify_signature(data, signature, tag):
+            self.miner.new_message(data.decode(), tag.decode())
         else:
             self.miner.new_message(message.decode(), tag.decode())
