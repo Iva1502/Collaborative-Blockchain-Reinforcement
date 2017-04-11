@@ -3,6 +3,7 @@ from Crypto.Signature import pkcs1_15
 from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA
 import json
+from datetime import datetime
 
 class Broadcast():
 
@@ -28,6 +29,11 @@ class Broadcast():
             subscriber.subscribe(b"transaction")
 
     def broadcast(self, data, tag):
+        if tag == "commit":
+            file = open('../log/miners'+ str(self.miner.id) + '.log', 'a+')
+            file.write("[COMMIT SNT]: " + str(datetime.now().hour) + ":" + str(datetime.now().minute) + ":" +
+                       str(datetime.now().second) + "\n")
+            file.close()
         signed_data = self.sign(data)
         self.publisher.publish(signed_data, tag.encode())
 
@@ -68,6 +74,5 @@ class BroadcastSubscriber(ZmqSubConnection):
     def gotMessage(self, message, tag):
         data, signature = self.parse_message(message)
         if self.verify_signature(data, signature, tag):
-            self.miner.new_message(data.decode(), tag.decode())
-        else:
-            self.miner.new_message(message.decode(), tag.decode())
+            from twisted.internet import reactor
+            reactor.callLater(15, self.miner.new_message, data.decode(), tag.decode())

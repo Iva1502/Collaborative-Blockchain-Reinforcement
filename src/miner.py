@@ -5,6 +5,7 @@ from hash import Hash
 from states import Mining
 from broadcast import Broadcast
 from Crypto.PublicKey import RSA
+from datetime import datetime
 
 
 class Stop:
@@ -70,6 +71,10 @@ class Miner:
             print(data)
             self.state.proposal_process(data)
         elif type == "commit":
+            file = open('../log/miners' + str(self.id) + '.log', 'a+')
+            file.write("[COMMIT RCV]: " + str(datetime.now().hour) + ":" + str(datetime.now().minute) + ":" +
+                       str(datetime.now().second) + "\n")
+            file.close()
             self.state.commit_process(data)
         elif type == "reinforcement":
             self.state.reinforcement_process(data)
