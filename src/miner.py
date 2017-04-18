@@ -66,7 +66,7 @@ class Miner:
     def new_hash_found(self, val, nonce):
         self.state.hash_value_process(val, nonce)
 
-    def new_message(self, data, type):
+    def new_message(self, data, signature, type):
         if type == "proposal":
             print(data)
             self.state.proposal_process(data)

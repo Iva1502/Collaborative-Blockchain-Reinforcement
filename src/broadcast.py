@@ -3,6 +3,7 @@ from Crypto.Signature import pkcs1_15
 from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA
 import json
+import array
 from datetime import datetime
 
 class Broadcast():
@@ -30,7 +31,7 @@ class Broadcast():
 
     def broadcast(self, data, tag):
         if tag == "commit":
-            file = open('../log/miners'+ str(self.miner.id) + '.log', 'a+')
+            file = open('../log/miners' + str(self.miner.id) + '.log', 'a+')
             file.write("[COMMIT SNT]: " + str(datetime.now().hour) + ":" + str(datetime.now().minute) + ":" +
                        str(datetime.now().second) + "\n")
             file.close()
@@ -38,11 +39,14 @@ class Broadcast():
         self.publisher.publish(signed_data, tag.encode())
 
     def sign(self, data):
-        filename = "../keys/miners/miner"+str(self.miner.id)+".key"
+        filename = "../keys/miners/miner" + str(self.miner.id) + ".key"
         key = RSA.importKey(open(filename).read())
         h = SHA256.new(data.encode())
         signature = pkcs1_15.new(key).sign(h)
-        return data.encode() + b"signature:" + signature
+        message = {}
+        message['content'] = data
+        message['signature'] = list(signature)
+        return json.dumps(message).encode()
 
 
 class BroadcastSubscriber(ZmqSubConnection):
@@ -52,17 +56,17 @@ class BroadcastSubscriber(ZmqSubConnection):
         self.miner = miner
 
     def parse_message(self, message):
-        message_final_index = message.rfind(b"signature:")
-        signature_initial_index = message_final_index + len("signature:")
-        return message[:message_final_index], message[signature_initial_index:]
+        content = json.loads(message.decode())['content']
+        signature = array.array('B', json.loads(message.decode())['signature']).tostring()
+        return content, signature
 
     def verify_signature(self, message, signature, tag):
         print(tag.decode())
         if tag == b"proposal":
-            key = RSA.import_key(json.loads(json.loads(message.decode())['data'])['pub_key'])
+            key = RSA.import_key(json.loads(json.loads(message)['data'])['pub_key'])
         else:
-            key = RSA.import_key(json.loads(message.decode())['pub_key'])
-        h = SHA256.new(message)
+            key = RSA.import_key(json.loads(message)['pub_key'])
+        h = SHA256.new(message.encode())
         try:
             pkcs1_15.new(key).verify(h, signature)
             print("The signature is valid.")
@@ -75,4 +79,4 @@ class BroadcastSubscriber(ZmqSubConnection):
         data, signature = self.parse_message(message)
         if self.verify_signature(data, signature, tag):
             from twisted.internet import reactor
-            reactor.callLater(15, self.miner.new_message, data.decode(), tag.decode())
+            reactor.callLater(15, self.miner.new_message, data, signature, tag.decode())
