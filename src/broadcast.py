@@ -5,6 +5,7 @@ from Crypto.PublicKey import RSA
 import json
 import array
 from datetime import datetime
+from constants import DELIVERY_DELAY
 
 class Broadcast():
 
@@ -79,4 +80,4 @@ class BroadcastSubscriber(ZmqSubConnection):
         data, signature = self.parse_message(message)
         if self.verify_signature(data, signature, tag):
             from twisted.internet import reactor
-            reactor.callLater(15, self.miner.new_message, data, signature, tag.decode())
+            reactor.callLater(DELIVERY_DELAY, self.miner.new_message, data, signature, tag.decode())
