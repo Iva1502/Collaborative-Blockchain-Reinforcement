@@ -4,7 +4,8 @@ from twisted.internet import reactor
 from constants import COMMIT_TH, REINF_TH, SWITCH_TH, REINF_TIMEOUT, COMMIT_TIMEOUT
 from hash import compute_hash
 from Crypto.PublicKey import RSA
-
+from Crypto.Hash import SHA256
+from Crypto.Signature import pkcs1_15
 
 class State:
     def __init__(self, miner):
@@ -19,7 +20,7 @@ class State:
     def proposal_process(self, value):
         pass
 
-    def reinforcement_process(self, value):
+    def reinforcement_process(self, value, sign):
         pass
 
     def commit_process(self, value):
@@ -46,7 +47,7 @@ class Mining(State):
 
     def hash_value_process(self, value, nonce):
         if self.is_hash_fresh(value, nonce):
-            if int(value, 16) <= COMMIT_TH:
+            if int(value, 16) < COMMIT_TH:
                 print("Hash found")
                 self.miner.stop_mining.set_stop()
                 block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
@@ -133,7 +134,20 @@ class ReinforcementCollecting(State):
     def __init__(self, miner):
         super(ReinforcementCollecting, self).__init__(miner)
         self.received_reinforcements = {}
-        self.received_reinforcements[self.miner.public_key.exportKey('PEM').decode()] = list(self.miner.nonce_list)
+        if len(self.miner.nonce_list) > 0:
+            message = {}
+            message['nonce_list'] = list(self.miner.nonce_list)
+            message['hash'] = self.miner.current_block[1].hash()
+            message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+            filename = "../keys/miners/miner" + str(self.miner.id) + ".key"
+            key = RSA.importKey(open(filename).read())
+            json_message = json.dumps(message)
+            h = SHA256.new(json_message.encode())
+            signature = pkcs1_15.new(key).sign(h)
+            dict_to_add = {}
+            dict_to_add['nonces'] = list(self.miner.nonce_list)
+            dict_to_add['signature'] = list(signature)
+            self.received_reinforcements[self.miner.public_key.exportKey('PEM').decode()] = dict_to_add
         print("My reinforcement", len(self.miner.nonce_list))
         reactor.callLater(REINF_TIMEOUT, self.commiting)
 
@@ -146,6 +160,7 @@ class ReinforcementCollecting(State):
         message = {}
         message['previous'] = {}
         message['data'] = block.get_json()
+        print(message['data'])
         message['previous']['hash'] = self.miner.current_block[1].hash()
         message['previous']['depth'] = self.miner.current_block[0]
         message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
@@ -162,21 +177,21 @@ class ReinforcementCollecting(State):
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
 
-    def is_hash_small(self, nonce, pub_key):
-        return int(compute_hash(self.miner.current_block[1].prev_link.hash(hex=False), nonce,
-                                RSA.import_key(pub_key).exportKey('DER')), 16) < REINF_TH
-
-    def reinforcement_process(self, value):
+    def reinforcement_process(self, value, sign):
         message_content = json.loads(value)
         if message_content['hash'] == self.miner.current_block[1].hash():
             checked = []
             for nonce in message_content['nonce_list']:
-                if self.is_hash_small(nonce, message_content['pub_key']):
+                if self.check_hash(self.miner.current_block[1].prev_link, nonce,
+                                   RSA.import_key(message_content['pub_key']), REINF_TH):
                     checked.append(nonce)
                 else:
                     print('BAD HASH')
             if len(checked) > 0:
-                self.received_reinforcements[message_content['pub_key']] = list(checked)
+                dict_to_add = {}
+                dict_to_add['nonces'] = checked
+                dict_to_add['signature'] = list(sign)
+                self.received_reinforcements[message_content['pub_key']] = dict_to_add
 
     def commit_process(self, value):
         message_content = json.loads(value)

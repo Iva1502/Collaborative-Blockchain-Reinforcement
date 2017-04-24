@@ -77,6 +77,6 @@ class Miner:
             file.close()
             self.state.commit_process(data)
         elif type == "reinforcement":
-            self.state.reinforcement_process(data)
+            self.state.reinforcement_process(data, signature)
         elif type == "transaction":
             self.state.transaction_process(data)
