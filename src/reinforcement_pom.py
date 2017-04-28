@@ -1,4 +1,5 @@
 import json
+import array
 from blockchain import CommitBlock
 
 
@@ -40,29 +41,33 @@ class ReinforcementPOM:
         if content not in self.reinforcement_pool[pub_key][depth][hash_commit_block]:
             self.reinforcement_pool[pub_key][depth][hash_commit_block].append(content)
         self.search_pom(pub_key, depth, hash_commit_block, nonce_list, hash_prop)
-        self.clean(depth)
+        self.clean(depth - 100)
 
     def search_pom(self, pub_key, depth, hash_commit_block, new_nonce_list, new_hash):
-        poms = list()
-        if pub_key in self.reinforcement_pool.keys() and depth in self.reinforcement_pool[pub_key].keys() and \
-                        hash_commit_block in self.reinforcement_pool[pub_key][depth]:
-            for (nonce_list, hash, signature) in self.reinforcement_pool[pub_key][depth][hash_commit_block]:
-                for new_nonce in new_nonce_list:
-                    for nonce in nonce_list:
-                        # the same nonce is reinforcing two different propose blocks
-                        if new_nonce == nonce and new_hash != hash:
-                            pom_identifier = (pub_key, depth, hash_commit_block, nonce)
-                            poms.append(pom_identifier)
-        if poms:
-            for pom_identifier in poms:
-                self.miner.state.found_pom(self.get_pom(pom_identifier))
+        if pub_key != self.miner.public_key.exportKey('PEM').decode():
+            poms_found = list()
+            if pub_key in self.reinforcement_pool.keys() and depth in self.reinforcement_pool[pub_key].keys() and \
+                            hash_commit_block in self.reinforcement_pool[pub_key][depth]:
+                for (nonce_list, hash, signature) in self.reinforcement_pool[pub_key][depth][hash_commit_block]:
+                    for new_nonce in new_nonce_list:
+                        for nonce in nonce_list:
+                            # the same nonce is reinforcing two different propose blocks
+                            if new_nonce == nonce and new_hash != hash:
+                                pom_identifier = (pub_key, depth, hash_commit_block, nonce)
+                                poms_found.append(pom_identifier)
+            if poms_found:
+                poms = set()
+                for pom_identifier in poms_found:
+                    new_poms = self.get_pom(pom_identifier)
+                    poms = poms.union(new_poms)
+                self.miner.state.found_pom(poms)
 
     def get_pom(self, pom_identifier):
         pub_key = pom_identifier[0]
         depth = pom_identifier[1]
         hash_commit_block = pom_identifier[2]
         nonce = pom_identifier[3]
-        original_reinforcements = []
+        original_reinforcements = set()
         for (nonce_list, hash, signature) in self.reinforcement_pool[pub_key][depth][hash_commit_block]:
             if nonce in nonce_list:
                 message = {}
@@ -70,8 +75,8 @@ class ReinforcementPOM:
                 message['hash'] = hash
                 message['depth'] = depth
                 message['pub_key'] = pub_key
-                original_reinforcement = (message, signature)
-                original_reinforcements.append(original_reinforcement)
+                original_reinforcement = (json.dumps(message), array.array('B', signature).tostring())
+                original_reinforcements.add(original_reinforcement)
         return original_reinforcements
 
     def clean(self, depth):
@@ -80,3 +85,5 @@ class ReinforcementPOM:
             for d in dictionary.keys():
                 if d < depth:
                     self.reinforcement_pool[depth] = {}
+                    print("deleted something")
+                    print('\a')

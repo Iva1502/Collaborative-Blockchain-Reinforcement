@@ -35,10 +35,13 @@ class State:
 
     def found_pom(self, faulty_reinforcements):
         print(datetime.now())
+        print('\a')
         print("--------------")
         print("POM FOUND")
         print("--------------")
-        pass
+        print(len(faulty_reinforcements))
+        for reinforcement in faulty_reinforcements:
+            print(reinforcement)
 
 
 class Mining(State):
