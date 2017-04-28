@@ -46,7 +46,7 @@ class Broadcast():
         signature = pkcs1_15.new(key).sign(h)
         message = {}
         message['content'] = data
-        message['signature'] = list(signature)
+        message['signature'] = list(signature)  # integer array
         return json.dumps(message).encode()
 
 
@@ -62,7 +62,6 @@ class BroadcastSubscriber(ZmqSubConnection):
         return content, signature
 
     def verify_signature(self, message, signature, tag):
-        print(tag.decode())
         if tag == b"proposal":
             key = RSA.import_key(json.loads(json.loads(message)['data'])['pub_key'])
         else:
@@ -70,7 +69,6 @@ class BroadcastSubscriber(ZmqSubConnection):
         h = SHA256.new(message.encode())
         try:
             pkcs1_15.new(key).verify(h, signature)
-            print("The signature is valid.")
             return True
         except (ValueError, TypeError):
             print("The signature is not valid.")
@@ -79,5 +77,9 @@ class BroadcastSubscriber(ZmqSubConnection):
     def gotMessage(self, message, tag):
         data, signature = self.parse_message(message)
         if self.verify_signature(data, signature, tag):
-            from twisted.internet import reactor
-            reactor.callLater(DELIVERY_DELAY, self.miner.new_message, data, signature, tag.decode())
+            if tag.decode() == "proposal":
+                from twisted.internet import reactor
+                reactor.callLater(DELIVERY_DELAY, self.miner.new_message, data, signature, tag.decode())
+            else:
+                self.miner.new_message(data, signature, tag.decode())
+

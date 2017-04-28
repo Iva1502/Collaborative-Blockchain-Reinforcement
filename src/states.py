@@ -6,6 +6,7 @@ from hash import compute_hash
 from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA256
 from Crypto.Signature import pkcs1_15
+from datetime import datetime
 
 class State:
     def __init__(self, miner):
@@ -32,6 +33,13 @@ class State:
     def check_hash(self, block, nonce, pub_key, th):
         return int(compute_hash(block.hash(hex=False), nonce, pub_key.exportKey('DER')), 16) < th
 
+    def found_pom(self, faulty_reinforcements):
+        print(datetime.now())
+        print("--------------")
+        print("POM FOUND")
+        print("--------------")
+        pass
+
 
 class Mining(State):
     def __init__(self, miner):
@@ -48,6 +56,7 @@ class Mining(State):
     def hash_value_process(self, value, nonce):
         if self.is_hash_fresh(value, nonce):
             if int(value, 16) < COMMIT_TH:
+                print(datetime.now())
                 print("Hash found")
                 self.miner.stop_mining.set_stop()
                 block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
@@ -62,11 +71,13 @@ class Mining(State):
                 self.miner.current_block = (self.miner.current_block[0] + 1, block)
                 self.miner.state = ReinforcementCollecting(self.miner)
                 self.miner.broadcast.broadcast(json.dumps(message), "proposal")
+                print(datetime.now())
                 print("Switch to reinforcement collection")
             else:
                 self.miner.nonce_list.append(nonce)
 
     def proposal_process(self, value):
+        print(datetime.now())
         print("Proposal was received")
         message_content = json.loads(value)
         block = ProposeBlock()
@@ -81,22 +92,35 @@ class Mining(State):
                 message = {}
                 message['nonce_list'] = list(self.miner.nonce_list)
                 message['hash'] = self.miner.current_block[1].hash()
+                message['depth'] = self.miner.current_block[0]
                 message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
                 self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
+
+            print(datetime.now())
             print("Switch to reinforcement sent")
 
     def commit_process(self, value):
+        print(datetime.now())
+        print("Commit was received")
+        self.miner.reinforcement_pom.check_reinforcements_commit(value)
         message_content = json.loads(value)
         block = CommitBlock()
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'])
         if block.weight - self.miner.current_block[1].weight >= SWITCH_TH:
+            print(datetime.now())
             print("Reset mining")
             self.miner.stop_mining.set_stop()
             self.miner.transaction_list = []
             self.miner.nonce_list = []
             self.miner.start_new_mining()
+
+    def reinforcement_process(self, value, sign):
+        print(datetime.now())
+        print("Reinforcement was received")
+        # FIXME I have to add this to all states, right?
+        self.miner.reinforcement_pom.new_reinforcement(value, sign)
 
 
 class ReinforcementSent(State):
@@ -108,16 +132,30 @@ class ReinforcementSent(State):
     def mining_switch(self):
         self.miner.state = Mining(self.miner)
         self.miner.start_new_mining()
+        print(datetime.now())
         print("Switch to mining")
 
     def proposal_process(self, value):
+        print(datetime.now())
+        print("Proposal was received")
         message_content = json.loads(value)
         block = ProposeBlock()
         block.from_json(message_content['data'])
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
+        if self.miner.faulty:
+            if len(self.miner.nonce_list) > 0:
+                print(datetime.now())
+                print("reinforcing again")
+                message = {}
+                message['nonce_list'] = list(self.miner.nonce_list)
+                message['hash'] = block.hash()
+                message['depth'] = message_content['previous']['depth'] + 1
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
 
     def commit_process(self, value):
+        print(datetime.now())
         print("Commit was received")
         if self.timeout.active():
             self.timeout.cancel()
@@ -129,6 +167,12 @@ class ReinforcementSent(State):
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             self.mining_switch()
 
+    def reinforcement_process(self, value, sign):
+        print(datetime.now())
+        print("Reinforcement was received")
+        # FIXME I have to add this to all states, right?
+        self.miner.reinforcement_pom.new_reinforcement(value, sign)
+
 
 class ReinforcementCollecting(State):
     def __init__(self, miner):
@@ -138,6 +182,7 @@ class ReinforcementCollecting(State):
             message = {}
             message['nonce_list'] = list(self.miner.nonce_list)
             message['hash'] = self.miner.current_block[1].hash()
+            message['depth'] = self.miner.current_block[0]
             message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
             filename = "../keys/miners/miner" + str(self.miner.id) + ".key"
             key = RSA.importKey(open(filename).read())
@@ -148,19 +193,22 @@ class ReinforcementCollecting(State):
             dict_to_add['nonces'] = list(self.miner.nonce_list)
             dict_to_add['signature'] = list(signature)
             self.received_reinforcements[self.miner.public_key.exportKey('PEM').decode()] = dict_to_add
+        print(datetime.now())
         print("My reinforcement", len(self.miner.nonce_list))
         reactor.callLater(REINF_TIMEOUT, self.commiting)
 
     def commiting(self):
         if len(self.received_reinforcements):
+            print(datetime.now())
             print("Reinforcement was received from ", len(self.received_reinforcements))
         else:
+            print(datetime.now())
             print("Reinforcement was not received")
         block = CommitBlock(self.received_reinforcements)
         message = {}
         message['previous'] = {}
         message['data'] = block.get_json()
-        print(message['data'])
+        # print(message['data'])
         message['previous']['hash'] = self.miner.current_block[1].hash()
         message['previous']['depth'] = self.miner.current_block[0]
         message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
@@ -168,16 +216,32 @@ class ReinforcementCollecting(State):
         self.miner.state = Mining(self.miner)
         self.miner.start_new_mining()
         self.miner.broadcast.broadcast(json.dumps(message), "commit")
+        print(datetime.now())
         print("Switch to mining")
 
     def proposal_process(self, value):
+        print(datetime.now())
+        print("Proposal was received")
         message_content = json.loads(value)
         block = ProposeBlock()
         block.from_json(message_content['data'])
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
+        if self.miner.faulty:
+            if len(self.miner.nonce_list) > 0:
+                print(datetime.now())
+                print("reinforcing again")
+                message = {}
+                message['nonce_list'] = list(self.miner.nonce_list)
+                message['hash'] = block.hash()
+                message['depth'] = message_content['previous']['depth'] + 1
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
 
     def reinforcement_process(self, value, sign):
+        print(datetime.now())
+        print("Reinforcement was received")
+        self.miner.reinforcement_pom.new_reinforcement(value, sign)
         message_content = json.loads(value)
         if message_content['hash'] == self.miner.current_block[1].hash():
             checked = []
@@ -194,6 +258,9 @@ class ReinforcementCollecting(State):
                 self.received_reinforcements[message_content['pub_key']] = dict_to_add
 
     def commit_process(self, value):
+        print(datetime.now())
+        print("Commit was received")
+        self.miner.reinforcement_pom.check_reinforcements_commit(value)
         message_content = json.loads(value)
         block = CommitBlock()
         block.from_json(message_content['data'])

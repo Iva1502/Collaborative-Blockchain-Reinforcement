@@ -1,6 +1,7 @@
 from twisted.internet import reactor
 import json
 from blockchain import Blockchain
+from reinforcement_pom import ReinforcementPOM
 from hash import Hash
 from states import Mining
 from broadcast import Broadcast
@@ -17,7 +18,7 @@ class Stop:
 
 
 class Miner:
-    def __init__(self, _id):
+    def __init__(self, _id, faulty):
         self.id = _id
         self.blockchain = Blockchain()
         self.current_block = self.blockchain.get_last()
@@ -28,6 +29,8 @@ class Miner:
         self.transaction_list = []
         self.__read_conf(self)
         self.broadcast = Broadcast(self)
+        self.reinforcement_pom = ReinforcementPOM(self)
+        self.faulty = faulty
 
     def __read_conf(self, _miner):
         subscribe_ports = []
@@ -68,7 +71,7 @@ class Miner:
 
     def new_message(self, data, signature, type):
         if type == "proposal":
-            print(data)
+            # print(data)
             self.state.proposal_process(data)
         elif type == "commit":
             file = open('../log/miners' + str(self.id) + '.log', 'a+')
