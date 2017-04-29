@@ -13,6 +13,10 @@ def compute_hash(hash_block, nonce, pub_key):
     # compute the hash
     return hash_function.hexdigest()
 
+
+def check_hash(block, nonce, pub_key, th):
+    return int(compute_hash(block.hash(hex=False), nonce, pub_key.exportKey('DER')), 16) < th
+
 # FIXME see if an attribute would work or if we need an object Stop
 class Hash():
     def __init__(self, miner):

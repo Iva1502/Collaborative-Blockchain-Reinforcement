@@ -2,7 +2,7 @@ import json
 from blockchain import CommitBlock, ProposeBlock
 from twisted.internet import reactor
 from constants import COMMIT_TH, REINF_TH, SWITCH_TH, REINF_TIMEOUT, COMMIT_TIMEOUT
-from hash import compute_hash
+from hash import compute_hash, check_hash
 from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA256
 from Crypto.Signature import pkcs1_15
@@ -29,9 +29,6 @@ class State:
 
     def transaction_process(self, value):
         self.miner.transaction_list.append(value)
-
-    def check_hash(self, block, nonce, pub_key, th):
-        return int(compute_hash(block.hash(hex=False), nonce, pub_key.exportKey('DER')), 16) < th
 
     def found_pom(self, faulty_reinforcements):
         print(datetime.now())
@@ -249,7 +246,7 @@ class ReinforcementCollecting(State):
         if message_content['hash'] == self.miner.current_block[1].hash():
             checked = []
             for nonce in message_content['nonce_list']:
-                if self.check_hash(self.miner.current_block[1].prev_link, nonce,
+                if check_hash(self.miner.current_block[1].prev_link, nonce,
                                    RSA.import_key(message_content['pub_key']), REINF_TH):
                     checked.append(nonce)
                 else:

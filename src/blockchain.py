@@ -1,8 +1,8 @@
 import json
 import hashlib
 from Crypto.PublicKey import RSA
-from constants import COMMIT_TH
-from hash import compute_hash
+from constants import COMMIT_TH, REINF_TH
+from hash import compute_hash, check_hash
 
 class Blockchain:
     def __init__(self):
@@ -32,6 +32,9 @@ class Blockchain:
     def add_propose_block(self, block, depth, hash_value):
         node = self.find_position(depth, hash_value)
         if node is not None:
+            if not check_hash(node, block.nonce, RSA.import_key(block.pub_key), COMMIT_TH):
+                print("Malicious propose")
+                return
             node.next_links.append(block)
             block.prev_link = node
             if len(self.position_index) == depth + 1:
@@ -51,6 +54,11 @@ class Blockchain:
     def add_commit_block(self, block, depth, hash_value):
         node = self.find_position(depth, hash_value)
         if node is not None:
+            for k in block.reinforcements.keys():
+                for nonce in block.reinforcements[k]['nonces']:
+                    if not check_hash(node.prev_link, nonce, RSA.import_key(k), REINF_TH):
+                        print("Malicious commit")
+                        return
             node.commit_link = block
             block.propose_link = node
             if len(self.position_index) == depth+1:
