@@ -132,8 +132,9 @@ class ProposeBlock:
 
 
 class CommitBlock:
-    def __init__(self, reinf_list={}):
+    def __init__(self, reinf_list={}, poms=list()):
         self.reinforcements = reinf_list
+        self.poms = poms
         self.propose_link = None
         self.next_links = []
         self.weight = 0
@@ -149,8 +150,10 @@ class CommitBlock:
     def from_json(self, json_str):
         data = json.loads(json_str)
         self.reinforcements = data['reinforcements']
+        self.poms = data['poms']
 
     def get_json(self):
         data = {}
         data['reinforcements'] = self.reinforcements
+        data['poms'] = self.poms
         return json.dumps(data, sort_keys=True)

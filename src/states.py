@@ -33,9 +33,6 @@ class State:
     def found_pom(self, faulty_reinforcements):
         print(datetime.now())
         print('\a')
-        print("--------------")
-        print("POM FOUND")
-        print("--------------")
         print(len(faulty_reinforcements))
         for reinforcement in faulty_reinforcements:
             print(reinforcement)
@@ -102,6 +99,7 @@ class Mining(State):
     def commit_process(self, value):
         print(datetime.now())
         print("Commit was received")
+        print(value)
         self.miner.reinforcement_pom.check_reinforcements_commit(value)
         message_content = json.loads(value)
         block = CommitBlock()
@@ -157,6 +155,8 @@ class ReinforcementSent(State):
     def commit_process(self, value):
         print(datetime.now())
         print("Commit was received")
+        print(value)
+        self.miner.reinforcement_pom.check_reinforcements_commit(value)
         if self.timeout.active():
             self.timeout.cancel()
         message_content = json.loads(value)
@@ -204,7 +204,7 @@ class ReinforcementCollecting(State):
         else:
             print(datetime.now())
             print("Reinforcement was not received")
-        block = CommitBlock(self.received_reinforcements)
+        block = CommitBlock(self.received_reinforcements, self.miner.reinforcement_pom.get_poms())
         message = {}
         message['previous'] = {}
         message['data'] = block.get_json()
@@ -260,6 +260,7 @@ class ReinforcementCollecting(State):
     def commit_process(self, value):
         print(datetime.now())
         print("Commit was received")
+        print(value)
         self.miner.reinforcement_pom.check_reinforcements_commit(value)
         message_content = json.loads(value)
         block = CommitBlock()

@@ -1,5 +1,5 @@
 import json
-import array
+from constants import CLEAN_PREVIOUS_BLOCKS
 from blockchain import CommitBlock
 
 
@@ -7,6 +7,7 @@ class ReinforcementPOM:
     def __init__(self, miner):
         self.reinforcement_pool = {}
         self.miner = miner
+        self.poms = set()
 
     def new_reinforcement(self, value, signature):
         reinforcement_content = json.loads(value)
@@ -14,21 +15,29 @@ class ReinforcementPOM:
         hash_prop = reinforcement_content['hash']
         depth = reinforcement_content['depth']  # depth of the propose block
         pub_key = reinforcement_content['pub_key']
-        hash_commit_block = self.miner.blockchain.find_position(depth, hash_prop).prev_link.hash()
-        depth = self.miner.current_block[0]
-        self.add_reinforcement(pub_key, depth, hash_commit_block, nonce_list, hash_prop, signature)
+        if self.miner.blockchain.find_position(depth, hash_prop) is not None:
+            hash_commit_block = self.miner.blockchain.find_position(depth, hash_prop).prev_link.hash()
+            self.add_reinforcement(pub_key, depth, hash_commit_block, nonce_list, hash_prop, signature)
+        else:
+            print("ERR: proposal block not received yet!!!!")
+            # FIXME solution: guarantee causal order or include hash of commit block in the reinforcement
 
     def check_reinforcements_commit(self, value):
         message_content = json.loads(value)
         block = CommitBlock()
         block.from_json(message_content['data'])
         reinforcements = block.reinforcements
+        self.remove_commited_poms(block.poms)
         for pub_key, dict_nonces_signature in reinforcements.items():
             depth_prop = message_content['previous']['depth']
             hash_prop = message_content['previous']['hash']
-            hash_last_commit_block = self.miner.blockchain.find_position(depth_prop, hash_prop).prev_link.hash()
-            self.add_reinforcement(pub_key, depth_prop, hash_last_commit_block, dict_nonces_signature['nonces'],
+            if self.miner.blockchain.find_position(depth_prop, hash_prop) is not None:
+                hash_last_commit_block = self.miner.blockchain.find_position(depth_prop, hash_prop).prev_link.hash()
+                self.add_reinforcement(pub_key, depth_prop, hash_last_commit_block, dict_nonces_signature['nonces'],
                                    depth_prop, dict_nonces_signature['signature'])
+            else:
+                print("ERR: proposal block not received yet!!!!")
+                # FIXME solution: guarantee causal order or include hash of commit block in the reinforcement
 
     def add_reinforcement(self, pub_key, depth, hash_commit_block, nonce_list, hash_prop, signature):
         content = (nonce_list, hash_prop, signature)
@@ -41,7 +50,7 @@ class ReinforcementPOM:
         if content not in self.reinforcement_pool[pub_key][depth][hash_commit_block]:
             self.reinforcement_pool[pub_key][depth][hash_commit_block].append(content)
         self.search_pom(pub_key, depth, hash_commit_block, nonce_list, hash_prop)
-        self.clean(depth - 100)
+        self.clean(depth - CLEAN_PREVIOUS_BLOCKS)
 
     def search_pom(self, pub_key, depth, hash_commit_block, new_nonce_list, new_hash):
         if pub_key != self.miner.public_key.exportKey('PEM').decode():
@@ -56,13 +65,11 @@ class ReinforcementPOM:
                                 pom_identifier = (pub_key, depth, hash_commit_block, nonce)
                                 poms_found.append(pom_identifier)
             if poms_found:
-                poms = set()
                 for pom_identifier in poms_found:
-                    new_poms = self.get_pom(pom_identifier)
-                    poms = poms.union(new_poms)
-                self.miner.state.found_pom(poms)
+                    new_poms = self.construct_pom(pom_identifier)
+                    self.poms = self.poms.union(new_poms)
 
-    def get_pom(self, pom_identifier):
+    def construct_pom(self, pom_identifier):
         pub_key = pom_identifier[0]
         depth = pom_identifier[1]
         hash_commit_block = pom_identifier[2]
@@ -75,15 +82,23 @@ class ReinforcementPOM:
                 message['hash'] = hash
                 message['depth'] = depth
                 message['pub_key'] = pub_key
-                original_reinforcement = (json.dumps(message), array.array('B', signature).tostring())
-                original_reinforcements.add(original_reinforcement)
+                message['signature'] = list(signature)
+                original_reinforcements.add(json.dumps(message))
         return original_reinforcements
+
+    def get_poms(self):
+        poms = list(self.poms)
+        self.poms = set()
+        return poms
+
+    def remove_commited_poms(self, poms):
+        for pom in poms:
+            if pom in self.poms:
+                self.poms.remove(pom)
 
     def clean(self, depth):
         copy = self.reinforcement_pool.copy()
         for pub_key, dictionary in copy.items():
             for d in dictionary.keys():
                 if d < depth:
-                    self.reinforcement_pool[depth] = {}
-                    print("deleted something")
-                    print('\a')
+                    self.reinforcement_pool[pub_key][depth] = {}
