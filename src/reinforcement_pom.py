@@ -13,31 +13,22 @@ class ReinforcementPOM:
         reinforcement_content = json.loads(value)
         nonce_list = reinforcement_content['nonce_list']
         hash_prop = reinforcement_content['hash']
+        hash_commit = reinforcement_content['hash_commit']
         depth = reinforcement_content['depth']  # depth of the propose block
         pub_key = reinforcement_content['pub_key']
-        if self.miner.blockchain.find_position(depth, hash_prop) is not None:
-            hash_commit_block = self.miner.blockchain.find_position(depth, hash_prop).prev_link.hash()
-            self.add_reinforcement(pub_key, depth, hash_commit_block, nonce_list, hash_prop, signature)
-        else:
-            print("ERR: proposal block not received yet!!!!")
-            # FIXME solution: guarantee causal order or include hash of commit block in the reinforcement
+        self.add_reinforcement(pub_key, depth, hash_commit, nonce_list, hash_prop, signature)
 
     def check_reinforcements_commit(self, value):
         message_content = json.loads(value)
         block = CommitBlock()
         block.from_json(message_content['data'])
         reinforcements = block.reinforcements
+        depth_prop = message_content['previous']['depth']
+        hash_last_commit = message_content['hash_last_commit']
         self.remove_commited_poms(block.poms)
         for pub_key, dict_nonces_signature in reinforcements.items():
-            depth_prop = message_content['previous']['depth']
-            hash_prop = message_content['previous']['hash']
-            if self.miner.blockchain.find_position(depth_prop, hash_prop) is not None:
-                hash_last_commit_block = self.miner.blockchain.find_position(depth_prop, hash_prop).prev_link.hash()
-                self.add_reinforcement(pub_key, depth_prop, hash_last_commit_block, dict_nonces_signature['nonces'],
+            self.add_reinforcement(pub_key, depth_prop, hash_last_commit, dict_nonces_signature['nonces'],
                                    depth_prop, dict_nonces_signature['signature'])
-            else:
-                print("ERR: proposal block not received yet!!!!")
-                # FIXME solution: guarantee causal order or include hash of commit block in the reinforcement
 
     def add_reinforcement(self, pub_key, depth, hash_commit_block, nonce_list, hash_prop, signature):
         content = (nonce_list, hash_prop, signature)
@@ -80,6 +71,7 @@ class ReinforcementPOM:
                 message = {}
                 message['nonce_list'] = nonce_list
                 message['hash'] = hash
+                message['hash_commit'] = hash_commit_block
                 message['depth'] = depth
                 message['pub_key'] = pub_key
                 message['signature'] = list(signature)

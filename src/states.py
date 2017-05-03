@@ -89,6 +89,7 @@ class Mining(State):
                 message = {}
                 message['nonce_list'] = list(self.miner.nonce_list)
                 message['hash'] = self.miner.current_block[1].hash()
+                message['hash_commit'] = message_content['previous']['hash']
                 message['depth'] = self.miner.current_block[0]
                 message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
                 self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
@@ -142,15 +143,17 @@ class ReinforcementSent(State):
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
         if self.miner.faulty:
-            if len(self.miner.nonce_list) > 0:
-                print(datetime.now())
-                print("reinforcing again")
-                message = {}
-                message['nonce_list'] = list(self.miner.nonce_list)
-                message['hash'] = block.hash()
-                message['depth'] = message_content['previous']['depth'] + 1
-                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
-                self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
+            if message_content['previous']['hash'] == self.miner.current_block[1].prev_link.hash():
+                if len(self.miner.nonce_list) > 0:
+                    print(datetime.now())
+                    print("reinforcing again")
+                    message = {}
+                    message['nonce_list'] = list(self.miner.nonce_list)
+                    message['hash'] = block.hash()
+                    message['hash_commit'] = message_content['previous']['hash']
+                    message['depth'] = message_content['previous']['depth'] + 1
+                    message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                    self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
 
     def commit_process(self, value):
         print(datetime.now())
@@ -211,6 +214,7 @@ class ReinforcementCollecting(State):
         # print(message['data'])
         message['previous']['hash'] = self.miner.current_block[1].hash()
         message['previous']['depth'] = self.miner.current_block[0]
+        message['hash_last_commit'] = self.miner.current_block[1].prev_link.hash()
         message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
         self.miner.blockchain.add_commit_block(block, self.miner.current_block[0], self.miner.current_block[1].hash())
         self.miner.state = Mining(self.miner)
@@ -228,15 +232,17 @@ class ReinforcementCollecting(State):
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
         if self.miner.faulty:
-            if len(self.miner.nonce_list) > 0:
-                print(datetime.now())
-                print("reinforcing again")
-                message = {}
-                message['nonce_list'] = list(self.miner.nonce_list)
-                message['hash'] = block.hash()
-                message['depth'] = message_content['previous']['depth'] + 1
-                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
-                self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
+            if message_content['previous']['hash'] == self.miner.current_block[1].prev_link.hash():
+                if len(self.miner.nonce_list) > 0:
+                    print(datetime.now())
+                    print("reinforcing again")
+                    message = {}
+                    message['nonce_list'] = list(self.miner.nonce_list)
+                    message['hash'] = block.hash()
+                    message['hash_commit'] = message_content['previous']['hash']
+                    message['depth'] = message_content['previous']['depth'] + 1
+                    message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                    self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
 
     def reinforcement_process(self, value, sign):
         print(datetime.now())
