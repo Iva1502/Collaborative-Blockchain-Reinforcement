@@ -106,7 +106,7 @@ class Mining(State):
         block = CommitBlock()
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
-                                               message_content['previous']['hash'])
+                                               message_content['previous']['hash'], message_content['pub_key'])
         if block.weight - self.miner.current_block[1].weight >= SWITCH_TH:
             print(datetime.now())
             print("Reset mining")
@@ -166,7 +166,7 @@ class ReinforcementSent(State):
         block = CommitBlock()
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
-                                               message_content['previous']['hash'])
+                                               message_content['previous']['hash'], message_content['pub_key'])
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             self.mining_switch()
 
@@ -216,7 +216,8 @@ class ReinforcementCollecting(State):
         message['previous']['depth'] = self.miner.current_block[0]
         message['hash_last_commit'] = self.miner.current_block[1].prev_link.hash()
         message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
-        self.miner.blockchain.add_commit_block(block, self.miner.current_block[0], self.miner.current_block[1].hash())
+        self.miner.blockchain.add_commit_block(block, self.miner.current_block[0], self.miner.current_block[1].hash(),
+                                               self.miner.public_key.exportKey('PEM').decode())
         self.miner.state = Mining(self.miner)
         self.miner.start_new_mining()
         self.miner.broadcast.broadcast(json.dumps(message), "commit")
@@ -258,10 +259,13 @@ class ReinforcementCollecting(State):
                 else:
                     print('BAD HASH')
             if len(checked) > 0:
-                dict_to_add = {}
-                dict_to_add['nonces'] = checked
-                dict_to_add['signature'] = list(sign)
-                self.received_reinforcements[message_content['pub_key']] = dict_to_add
+                if message_content['pub_key'] in self.received_reinforcements.keys():
+                    self.received_reinforcements[message_content['pub_key']]['nonces'].extend(checked)
+                else:
+                    dict_to_add = {}
+                    dict_to_add['nonces'] = checked
+                    dict_to_add['signature'] = list(sign)
+                    self.received_reinforcements[message_content['pub_key']] = dict_to_add
 
     def commit_process(self, value):
         print(datetime.now())
@@ -272,4 +276,4 @@ class ReinforcementCollecting(State):
         block = CommitBlock()
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
-                                               message_content['previous']['hash'])
+                                               message_content['previous']['hash'], message_content['pub_key'])

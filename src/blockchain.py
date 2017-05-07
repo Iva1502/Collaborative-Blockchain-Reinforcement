@@ -42,18 +42,21 @@ class Blockchain:
             self.position_index[depth + 1].append(block)
             # find and append next blocks
             if (depth+1) in self.pool_of_blocks.keys():
-                for h, b in self.pool_of_blocks[depth+1]:
+                for h, b, pub_key in self.pool_of_blocks[depth+1]:
                     if block.hash() == h:
-                        self.add_commit_block(b, depth+1, h)
+                        self.add_commit_block(b, depth+1, h, pub_key)
                         self.pool_of_blocks[depth + 1].remove((h, b))
         else:
             if depth not in self.pool_of_blocks.keys():
                 self.pool_of_blocks[depth] = []
             self.pool_of_blocks[depth].append((hash_value, block))
 
-    def add_commit_block(self, block, depth, hash_value):
+    def add_commit_block(self, block, depth, hash_value, pub_key):
         node = self.find_position(depth, hash_value)
         if node is not None:
+            if pub_key != node.pub_key:
+                print("Impersonated commit")
+                return
             for k in block.reinforcements.keys():
                 for nonce in block.reinforcements[k]['nonces']:
                     if not check_hash(node.prev_link, nonce, RSA.import_key(k), REINF_TH):
@@ -70,7 +73,7 @@ class Blockchain:
                     self.list_of_leaves.remove((d, b))
             self.list_of_leaves.append((depth+1, block))
             block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
-            # print(block.weight)
+            #print(block.weight)
             #find and append next blocks
             if (depth+1) in self.pool_of_blocks.keys():
                 for h, b in self.pool_of_blocks[depth + 1]:
@@ -80,17 +83,17 @@ class Blockchain:
         else:
             if depth not in self.pool_of_blocks.keys():
                 self.pool_of_blocks[depth] = []
-            self.pool_of_blocks[depth].append((hash_value, block))
+            self.pool_of_blocks[depth].append((hash_value, block, pub_key))
 
     def calculate_weight(self, propose, commit, previous_commit):
         sum = COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), propose.nonce,
                                               RSA.import_key(propose.pub_key).exportKey('DER')), 16)
-        # print('propose:', sum)
+        #print('propose:', sum)
         for k in commit.reinforcements.keys():
             for nonce in commit.reinforcements[k]['nonces']:
                 sum += COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), nonce,
                                                   RSA.import_key(k).exportKey('DER')), 16)
-        # print('propose+commit:', sum)
+        #print('propose+commit:', sum)
         return sum
 
     def find_position(self, depth, hash_value):
