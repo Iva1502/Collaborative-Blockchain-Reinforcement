@@ -3,6 +3,7 @@ import hashlib
 from Crypto.PublicKey import RSA
 from constants import COMMIT_TH, REINF_TH
 from hash import compute_hash, check_hash
+import time
 
 class Blockchain:
     def __init__(self):
@@ -18,15 +19,16 @@ class Blockchain:
         self.list_of_leaves.append((1, self.head.commit_link))
         self.pool_of_blocks = {}
 
-    def get_last(self):
+    def get_last(self, mal_flag=False):
         max_w = -1
         last_block = None
         depth = 0
         for d, block in self.list_of_leaves:
-            if block.weight > max_w:
-                max_w = block.weight
-                last_block = block
-                depth = d
+            if (not mal_flag) or block.malicious:
+                if block.weight > max_w:
+                    max_w = block.weight
+                    last_block = block
+                    depth = d
         return depth, last_block
 
     def add_propose_block(self, block, depth, hash_value):
@@ -111,12 +113,14 @@ class ProposeBlock:
         self.transaction_list = tr_list
         self.prev_link = None
         self.commit_link = None
+        self.ts = int(time.time())
 
     def from_json(self, json_str):
         data = json.loads(json_str)
         self.nonce = data['nonce']
         self.pub_key = data['pub_key']
         self.transaction_list = data['transaction_list']
+        self.ts = data['ts']
 
     def hash(self, hex=True):
         hash_function = hashlib.sha256()
@@ -131,16 +135,19 @@ class ProposeBlock:
         data['nonce'] = self.nonce
         data['pub_key'] = self.pub_key
         data['transaction_list'] = self.transaction_list
+        data['ts'] = self.ts
         return json.dumps(data, sort_keys=True)
 
 
 class CommitBlock:
     def __init__(self, reinf_list={}, poms=list()):
         self.reinforcements = reinf_list
+        self.malicious = False
         self.poms = poms
         self.propose_link = None
         self.next_links = []
         self.weight = 0
+        self.ts = int(time.time())
 
     def hash(self, hex=True):
         hash_function = hashlib.sha256()
@@ -154,9 +161,13 @@ class CommitBlock:
         data = json.loads(json_str)
         self.reinforcements = data['reinforcements']
         self.poms = data['poms']
+        self.malicious = data['malicious']
+        self.ts = data['ts']
 
     def get_json(self):
         data = {}
         data['reinforcements'] = self.reinforcements
         data['poms'] = self.poms
+        data['malicious'] = self.malicious
+        data['ts'] = self.ts
         return json.dumps(data, sort_keys=True)
