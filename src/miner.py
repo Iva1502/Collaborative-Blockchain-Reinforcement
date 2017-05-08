@@ -7,6 +7,7 @@ from states import Mining
 from broadcast import Broadcast
 from Crypto.PublicKey import RSA
 from datetime import datetime
+from constants import REINFORCEMENT_TAG, PROPOSAL_TAG, MALICIOUS_PROPOSAL_AGREEMENT_TAG, COMMIT_TAG, TRANSACTION_TAG
 
 
 class Stop:
@@ -71,16 +72,18 @@ class Miner:
         self.state.hash_value_process(val, nonce)
 
     def new_message(self, data, signature, type):
-        if type == "proposal":
+        if type == PROPOSAL_TAG:
             # print(data)
             self.state.proposal_process(data)
-        elif type == "commit":
+        elif type == COMMIT_TAG:
             file = open('../log/miners' + str(self.id) + '.log', 'a+')
             file.write("[COMMIT RCV]: " + str(datetime.now().hour) + ":" + str(datetime.now().minute) + ":" +
                        str(datetime.now().second) + "\n")
             file.close()
             self.state.commit_process(data)
-        elif type == "reinforcement":
+        elif type == REINFORCEMENT_TAG:
             self.state.reinforcement_process(data, signature)
-        elif type == "transaction":
+        elif type == TRANSACTION_TAG:
             self.state.transaction_process(data)
+        elif type == MALICIOUS_PROPOSAL_AGREEMENT_TAG and self.malicious:
+            self.state.malicious_proposal_agreement_process(data)

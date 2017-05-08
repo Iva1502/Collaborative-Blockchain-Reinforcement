@@ -5,7 +5,8 @@ from Crypto.PublicKey import RSA
 import json
 import array
 from datetime import datetime
-from constants import DELIVERY_DELAY
+from constants import DELIVERY_DELAY, TRANSACTION_TAG, COMMIT_TAG, MALICIOUS_PROPOSAL_AGREEMENT_TAG, PROPOSAL_TAG, \
+    REINFORCEMENT_TAG
 
 class Broadcast():
 
@@ -25,10 +26,11 @@ class Broadcast():
             subscriber = BroadcastSubscriber(self.factory, subscribe_endpoint, miner)
             self.subscribers.append(subscriber)
             # subcribe to the types of events
-            subscriber.subscribe(b"proposal")
-            subscriber.subscribe(b"commit")
-            subscriber.subscribe(b"reinforcement")
-            subscriber.subscribe(b"transaction")
+            subscriber.subscribe(PROPOSAL_TAG.encode())
+            subscriber.subscribe(COMMIT_TAG.encode())
+            subscriber.subscribe(REINFORCEMENT_TAG.encode())
+            subscriber.subscribe(TRANSACTION_TAG.encode())
+            subscriber.subscribe(MALICIOUS_PROPOSAL_AGREEMENT_TAG.encode())
 
     def broadcast(self, data, tag):
         if tag == "commit":
@@ -62,7 +64,7 @@ class BroadcastSubscriber(ZmqSubConnection):
         return content, signature
 
     def verify_signature(self, message, signature, tag):
-        if tag == b"proposal":
+        if tag == PROPOSAL_TAG.encode():
             key = RSA.import_key(json.loads(json.loads(message)['data'])['pub_key'])
         else:
             key = RSA.import_key(json.loads(message)['pub_key'])
@@ -77,7 +79,7 @@ class BroadcastSubscriber(ZmqSubConnection):
     def gotMessage(self, message, tag):
         data, signature = self.parse_message(message)
         if self.verify_signature(data, signature, tag):
-            if tag.decode() == "proposal":
+            if tag.decode() == PROPOSAL_TAG:
                 from twisted.internet import reactor
                 reactor.callLater(DELIVERY_DELAY, self.miner.new_message, data, signature, tag.decode())
             else:

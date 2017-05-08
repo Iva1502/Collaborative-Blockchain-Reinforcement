@@ -1,7 +1,8 @@
 import json
 from blockchain import CommitBlock, ProposeBlock
 from twisted.internet import reactor
-from constants import COMMIT_TH, REINF_TH, SWITCH_TH, REINF_TIMEOUT, COMMIT_TIMEOUT
+from constants import COMMIT_TH, REINF_TH, SWITCH_TH, REINF_TIMEOUT, COMMIT_TIMEOUT, COMMIT_TAG, PROPOSAL_TAG, \
+    MALICIOUS_PROPOSAL_AGREEMENT_TAG, REINFORCEMENT_TAG
 from hash import compute_hash, check_hash
 from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA256
@@ -30,6 +31,9 @@ class State:
 
     def transaction_process(self, value):
         self.miner.transaction_list.append(value)
+
+    def malicious_proposal_agreement_process(self, value):
+        pass
 
     def found_pom(self, faulty_reinforcements):
         print(datetime.now())
@@ -69,7 +73,7 @@ class Mining(State):
                                                         self.miner.current_block[1].hash())
                 self.miner.current_block = (self.miner.current_block[0] + 1, block)
                 self.miner.state = ReinforcementCollecting(self.miner)
-                self.miner.broadcast.broadcast(json.dumps(message), "proposal")
+                self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
                 print(datetime.now())
                 print("Switch to reinforcement collection")
             else:
@@ -94,7 +98,7 @@ class Mining(State):
                 message['hash_commit'] = message_content['previous']['hash']
                 message['depth'] = self.miner.current_block[0]
                 message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
-                self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
+                self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
 
             print(datetime.now())
             print("Switch to reinforcement sent")
@@ -155,7 +159,7 @@ class ReinforcementSent(State):
                     message['hash_commit'] = message_content['previous']['hash']
                     message['depth'] = message_content['previous']['depth'] + 1
                     message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
-                    self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
+                    self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
 
     def commit_process(self, value):
         print(datetime.now())
@@ -222,7 +226,7 @@ class ReinforcementCollecting(State):
                                                self.miner.public_key.exportKey('PEM').decode())
         self.miner.state = Mining(self.miner)
         self.miner.start_new_mining()
-        self.miner.broadcast.broadcast(json.dumps(message), "commit")
+        self.miner.broadcast.broadcast(json.dumps(message), COMMIT_TAG)
         print(datetime.now())
         print("Switch to mining")
 
@@ -245,7 +249,7 @@ class ReinforcementCollecting(State):
                     message['hash_commit'] = message_content['previous']['hash']
                     message['depth'] = message_content['previous']['depth'] + 1
                     message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
-                    self.miner.broadcast.broadcast(json.dumps(message), "reinforcement")
+                    self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
 
     def reinforcement_process(self, value, sign):
         print(datetime.now())

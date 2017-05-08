@@ -19,3 +19,13 @@ COMMIT_TIMEOUT = 40
 DELIVERY_DELAY = 20
 
 CLEAN_PREVIOUS_BLOCKS = 100
+
+PROPOSAL_TAG = "proposal"
+
+COMMIT_TAG = "commit"
+
+REINFORCEMENT_TAG = "reinforcement"
+
+TRANSACTION_TAG = "transaction"
+
+MALICIOUS_PROPOSAL_AGREEMENT_TAG = "malicious_proposal_agreement"
