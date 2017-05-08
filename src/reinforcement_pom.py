@@ -24,11 +24,12 @@ class ReinforcementPOM:
         block.from_json(message_content['data'])
         reinforcements = block.reinforcements
         depth_prop = message_content['previous']['depth']
+        hash_prop = message_content['previous']['hash']
         hash_last_commit = message_content['hash_last_commit']
         self.remove_commited_poms(block.poms)
         for pub_key, dict_nonces_signature in reinforcements.items():
             self.add_reinforcement(pub_key, depth_prop, hash_last_commit, dict_nonces_signature['nonces'],
-                                   depth_prop, dict_nonces_signature['signature'])
+                                   hash_prop, dict_nonces_signature['signature'])
 
     def add_reinforcement(self, pub_key, depth, hash_commit_block, nonce_list, hash_prop, signature):
         content = (nonce_list, hash_prop, signature)
