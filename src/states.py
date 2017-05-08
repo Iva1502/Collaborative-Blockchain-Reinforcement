@@ -8,6 +8,7 @@ from Crypto.Hash import SHA256
 from Crypto.Signature import pkcs1_15
 from datetime import datetime
 
+
 class State:
     def __init__(self, miner):
         self.miner = miner
@@ -52,6 +53,7 @@ class Mining(State):
 
     def hash_value_process(self, value, nonce):
         if self.is_hash_fresh(value, nonce):
+            print(self.miner.malicious)
             if int(value, 16) < COMMIT_TH:
                 print(datetime.now())
                 print("Hash found")

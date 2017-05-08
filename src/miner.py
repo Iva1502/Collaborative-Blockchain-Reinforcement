@@ -43,6 +43,7 @@ class Miner:
             if miner['id'] == _miner.id:
                 _miner.publish_port = port
                 _miner.public_key = RSA.import_key(miner['pub_key'])
+                _miner.malicious = miner['malicious']
             else:
                 subscribe_ports.append(port)
         if _miner.publish_port is None:

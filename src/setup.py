@@ -1,35 +1,61 @@
 from Crypto.PublicKey import RSA
+from constants import CANCEL_BLOCK_MIN_RANGE, CANCEL_BLOCK_MAX_RANGE, PORT
 import json
+import argparse
+import random
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(usage='''setup.py [-a, n_miners n_malicious n_clients]''')
+    parser.add_argument("-a", "--all", nargs=3, type=int)
+    args = parser.parse_args()
+
     file = open('../conf/miner_discovery.json', 'r')
     data = json.load(file)
 
-    for miner in data['miners']:
-        # generate private/public key pair
-        key = RSA.generate(1024)
+    port = PORT
 
-        private_key = key
-        public_key = key.publickey()
+    data['cancel_block'] = random.randint(CANCEL_BLOCK_MIN_RANGE, CANCEL_BLOCK_MAX_RANGE)
 
-        miner['pub_key'] = public_key.exportKey('OpenSSH').decode()
+    if args.all is not None:
+        data['miners'] = []
+        for miner_id in range(1, args.all[0] + 1):
+            miner_data = {}
 
-        file = open("../keys/miners/miner" + str(miner['id']) + ".key", 'wb')
-        file.write(private_key.exportKey('PEM'))
-        file.close()
+            # generate private/public key pair
+            key = RSA.generate(1024)
+            private_key = key
+            public_key = key.publickey()
+            file = open("../keys/miners/miner" + str(miner_id) + ".key", 'wb')
+            file.write(private_key.exportKey('PEM'))
+            file.close()
 
-    for client in data['clients']:
-        # generate private/public key pair
-        key = RSA.generate(1024)
+            # edit the configuration file
+            miner_data['id'] = miner_id
+            miner_data['port'] = str(port + miner_id)
+            miner_data['pub_key'] = public_key.exportKey('OpenSSH').decode()
+            miner_data['malicious'] = args.all[1] > 0
+            args.all[1] -= 1
+            data['miners'].append(miner_data)
 
-        private_key = key
-        public_key = key.publickey()
+        data['clients'] = []
+        for client_id in range(1, args.all[2] + 1):
+            client_data = {}
 
-        client['pub_key'] = public_key.exportKey('OpenSSH').decode()
+            # generate private/public key pair
+            key = RSA.generate(1024)
+            private_key = key
+            public_key = key.publickey()
+            file = open("../keys/clients/client" + str(client_id) + ".key", 'wb')
+            file.write(private_key.exportKey('PEM'))
+            file.close()
+            client_data['pub_key'] = public_key.exportKey('OpenSSH').decode()
 
-        file = open("../keys/clients/client" + str(client['id']) + ".key", 'wb')
-        file.write(private_key.exportKey('PEM'))
-        file.close()
+            # edit the configuration file
+            client_data['id'] = client_id
+            client_data['port'] = str(port + args.all[0] + client_id)
+            client_data['pub_key'] = public_key.exportKey('OpenSSH').decode()
+            data['clients'].append(client_data)
 
     file = open('../conf/miner_discovery.json', 'w')
     json.dump(data, file, indent=4)

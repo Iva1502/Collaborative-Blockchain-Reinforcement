@@ -1,8 +1,6 @@
 from twisted.internet import task, reactor
 import argparse
 import signal
-import sys
-from Crypto.PublicKey import RSA
 
 from miner import Miner
 
@@ -28,7 +26,6 @@ if __name__ == '__main__':
     parser.add_argument("-f", "--faulty",
                         help="the miner sends all the reinforcements collected so far to all the proposals",
                         action="store_true")
-    args = parser.parse_args()
     args = parser.parse_args()
     miner = Miner(args.id, args.faulty)
     install_handlers()
