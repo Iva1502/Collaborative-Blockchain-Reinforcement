@@ -7,15 +7,18 @@ from pathlib import Path
 
 
 if __name__ == '__main__':
+    default_value = [5, 2, 2]
     parser = argparse.ArgumentParser()
     parser = argparse.ArgumentParser(usage='''setup.py [-a, n_miners n_malicious n_clients]''')
-    parser.add_argument("-a", "--all", nargs=3, type=int)
+    parser.add_argument("-a", "--all", nargs=3, type=int, default=default_value)
     args = parser.parse_args()
 
     my_file = Path("../conf/miner_discovery.json")
     if my_file.is_file():
         with open('../conf/miner_discovery.json', 'r') as file:
             data = json.load(file)
+            if args.all == default_value:
+                args.all = None
     else:
         data = {}
 
