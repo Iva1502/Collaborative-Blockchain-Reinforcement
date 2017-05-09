@@ -139,6 +139,9 @@ class MaliciousMining(State):
                                   nonce, self.miner.public_key.exportKey('DER'))
         return hash_value == value
 
+    def malicious_proposal_agreement_process(self, value):
+        pass
+
     def hash_value_process(self, value, nonce):
         if self.is_hash_fresh(value, nonce):
             print(self.miner.malicious)
