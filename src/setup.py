@@ -3,6 +3,8 @@ from constants import CANCEL_BLOCK_MIN_RANGE, CANCEL_BLOCK_MAX_RANGE, PORT
 import json
 import argparse
 import random
+from pathlib import Path
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -10,11 +12,14 @@ if __name__ == '__main__':
     parser.add_argument("-a", "--all", nargs=3, type=int)
     args = parser.parse_args()
 
-    file = open('../conf/miner_discovery.json', 'r')
-    data = json.load(file)
+    my_file = Path("../conf/miner_discovery.json")
+    if my_file.is_file():
+        with open('../conf/miner_discovery.json', 'r') as file:
+            data = json.load(file)
+    else:
+        data = {}
 
     port = PORT
-
     data['cancel_block'] = random.randint(CANCEL_BLOCK_MIN_RANGE, CANCEL_BLOCK_MAX_RANGE)
 
     if args.all is not None:
