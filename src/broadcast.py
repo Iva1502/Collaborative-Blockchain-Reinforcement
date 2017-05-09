@@ -8,8 +8,8 @@ from datetime import datetime
 from constants import DELIVERY_DELAY, TRANSACTION_TAG, COMMIT_TAG, MALICIOUS_PROPOSAL_AGREEMENT_TAG, PROPOSAL_TAG, \
     REINFORCEMENT_TAG
 
-class Broadcast():
 
+class Broadcast:
     def __init__(self, miner):
         # create a factory
         self.miner = miner

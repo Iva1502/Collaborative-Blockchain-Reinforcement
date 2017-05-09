@@ -3,7 +3,7 @@ import json
 from blockchain import Blockchain
 from reinforcement_pom import ReinforcementPOM
 from hash import Hash
-from states import Mining
+from states import Mining, MaliciousMining
 from broadcast import Broadcast
 from Crypto.PublicKey import RSA
 from datetime import datetime
@@ -24,11 +24,15 @@ class Miner:
         self.blockchain = Blockchain()
         self.current_block = self.blockchain.get_last()
         self.hash = Hash(self)
-        self.state = Mining(self)
+
         self.stop_mining = None
         self.nonce_list = []
         self.transaction_list = []
         self.__read_conf(self)
+        if self.malicious:
+            self.state = MaliciousMining(self)
+        else:
+            self.state = Mining(self)
         self.broadcast = Broadcast(self)
         self.reinforcement_pom = ReinforcementPOM(self)
         self.faulty = faulty
@@ -36,8 +40,9 @@ class Miner:
     def __read_conf(self, _miner):
         subscribe_ports = []
         _miner.publish_port = None
-        file = open('../conf/miner_discovery.json')
-        data = json.load(file)
+        with open('../conf/miner_discovery.json') as file:
+            data = json.load(file)
+        _miner.depth_cancel_block = data['cancel_block']
         # read the ports of the miners
         for miner in data['miners']:
             port = miner["port"]
