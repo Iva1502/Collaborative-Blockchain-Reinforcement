@@ -127,6 +127,91 @@ class Mining(State):
         self.miner.reinforcement_pom.new_reinforcement(value, sign)
 
 
+class MaliciousMining(State):
+    def __init__(self, miner):
+        super(MaliciousMining, self).__init__(miner)
+        self.miner.transaction_list = []
+        self.miner.nonce_list = []
+        #print("MINING")
+
+    def is_hash_fresh(self, value, nonce):
+        hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
+                                  nonce, self.miner.public_key.exportKey('DER'))
+        return hash_value == value
+
+    def hash_value_process(self, value, nonce):
+        if self.is_hash_fresh(value, nonce):
+            print(self.miner.malicious)
+            if int(value, 16) < COMMIT_TH:
+                print(datetime.now())
+                print("Hash found")
+                self.miner.stop_mining.set_stop()
+                block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
+                                     list(self.miner.transaction_list))
+                message = {}
+                message['previous'] = {}
+                message['data'] = block.get_json()
+                message['previous']['hash'] = self.miner.current_block[1].hash()
+                message['previous']['depth'] = self.miner.current_block[0]
+                self.miner.blockchain.add_propose_block(block, self.miner.current_block[0],
+                                                        self.miner.current_block[1].hash())
+                self.miner.current_block = (self.miner.current_block[0] + 1, block)
+                self.miner.state = ReinforcementCollecting(self.miner)
+                self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
+                print(datetime.now())
+                print("Switch to reinforcement collection")
+            else:
+                self.miner.nonce_list.append(nonce)
+
+    def proposal_process(self, value):
+        print(datetime.now())
+        print("Proposal was received")
+        message_content = json.loads(value)
+        block = ProposeBlock()
+        block.from_json(message_content['data'])
+        self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
+                                                message_content['previous']['hash'])
+        if message_content['previous']['hash'] == self.miner.current_block[1].hash():
+            self.miner.current_block = (message_content['previous']['depth']+1, block)
+            self.miner.stop_mining.set_stop()
+            self.miner.state = ReinforcementSent(self.miner)
+            if len(self.miner.nonce_list) > 0:
+                message = {}
+                message['nonce_list'] = list(self.miner.nonce_list)
+                message['hash'] = self.miner.current_block[1].hash()
+                message['hash_commit'] = message_content['previous']['hash']
+                message['depth'] = self.miner.current_block[0]
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
+
+            print(datetime.now())
+            print("Switch to reinforcement sent")
+
+    def commit_process(self, value):
+        print(datetime.now())
+        print("Commit was received")
+        print(value)
+        self.miner.reinforcement_pom.check_reinforcements_commit(value)
+        message_content = json.loads(value)
+        block = CommitBlock()
+        block.from_json(message_content['data'])
+        self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
+                                               message_content['previous']['hash'], message_content['pub_key'])
+        if block.weight - self.miner.current_block[1].weight >= SWITCH_TH:
+            print(datetime.now())
+            print("Reset mining")
+            self.miner.stop_mining.set_stop()
+            self.miner.transaction_list = []
+            self.miner.nonce_list = []
+            self.miner.start_new_mining()
+
+    def reinforcement_process(self, value, sign):
+        print(datetime.now())
+        print("Reinforcement was received")
+        # FIXME I have to add this to all states, right?
+        self.miner.reinforcement_pom.new_reinforcement(value, sign)
+
+
 class ReinforcementSent(State):
     def __init__(self, miner):
         super(ReinforcementSent, self).__init__(miner)

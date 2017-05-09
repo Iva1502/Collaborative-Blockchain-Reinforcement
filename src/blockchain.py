@@ -22,14 +22,27 @@ class Blockchain:
     def get_last(self, mal_flag=False):
         max_w = -1
         last_block = None
+        max_w_mal = -1
+        last_block_mal = None
         depth = 0
+        depth_mal = 0
         for d, block in self.list_of_leaves:
-            if (not mal_flag) or block.malicious:
-                if block.weight > max_w:
-                    max_w = block.weight
-                    last_block = block
-                    depth = d
-        return depth, last_block
+            if block.weight > max_w:
+                max_w = block.weight
+                last_block = block
+                depth = d
+            if mal_flag:
+                if block.malicious:
+                    if block.weight > max_w_mal:
+                        max_w_mal = block.weight
+                        last_block_mal = block
+                        depth_mal = d
+
+        if last_block_mal is None:
+            return depth, last_block
+        else:
+            return depth_mal, last_block_mal
+
 
     def add_propose_block(self, block, depth, hash_value):
         node = self.find_position(depth, hash_value)
