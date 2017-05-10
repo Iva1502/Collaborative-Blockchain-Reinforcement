@@ -8,6 +8,7 @@ from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA256
 from Crypto.Signature import pkcs1_15
 from datetime import datetime
+from time import time
 
 
 class State:
@@ -144,23 +145,21 @@ class MaliciousMining(State):
 
     def malicious_proposal_agreement_process(self, value):
         message_content = json.loads(value)
-        tsp = datetime.strptime(message_content['timestamp'], '%Y-%m-%d %H:%M:%S.%f')
+        tsp = time()
         if self.timestamp is None or tsp < self.timestamp:
             self.timestamp = tsp
             self.i_should_propose = False
             self.proposal_to_follow = message_content
 
     def hash_value_process(self, value, nonce):
-        if self.is_hash_fresh(value, nonce):
+        if self.is_hash_fresh(value, nonce) and self.miner.current_block[0] == self.miner.depth_cancel_block - 1:
             if int(value, 16) < COMMIT_TH and self.proposal_to_follow is None:
                 print(datetime.now())
                 print("Hash found")
                 my_prop = {
                     'nonce': nonce,
                     'key': self.miner.public_key.exportKey('PEM').decode(),
-                    'commit_hash': self.miner.current_block[1].hash(),
-                    'commit_depth': self.miner.current_block[0],
-                    'timestamp': str(datetime.now())
+                    'timestamp': time()
                 }
                 self.miner.broadcast.broadcast(json.dumps(my_prop), MALICIOUS_PROPOSAL_AGREEMENT_TAG)
                 self.i_should_propose = True
@@ -168,6 +167,9 @@ class MaliciousMining(State):
             # if other malicious miner already proposed or the hash isn't lower than the COMMIT_TH the nonce is saved
             else:
                 self.miner.nonce_list.append(nonce)
+
+            # TODO if a miner made a proposal but there is other with lower timestamp it should be included in
+                #  reinforcements
 
     # self.miner.stop_mining.set_stop()
 
