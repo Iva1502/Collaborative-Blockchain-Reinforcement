@@ -55,6 +55,8 @@ class Blockchain:
             if len(self.position_index) == depth + 1:
                 self.position_index.append([])
             self.position_index[depth + 1].append(block)
+            if node.malicious:
+                block.malicious = True
             # find and append next blocks
             if (depth+1) in self.pool_of_blocks.keys():
                 for h, b, pub_key in self.pool_of_blocks[depth+1]:
@@ -83,6 +85,8 @@ class Blockchain:
                 self.position_index.append([])
             self.position_index[depth+1].append(block)
             previous_commit = node.prev_link
+            if node.malicious:
+                block.malicious = True
             for d, b in self.list_of_leaves:
                 if previous_commit == b:
                     self.list_of_leaves.remove((d, b))
@@ -126,6 +130,7 @@ class ProposeBlock:
         self.transaction_list = tr_list
         self.prev_link = None
         self.commit_link = None
+        self.malicious = False
         self.ts = int(time.time())
 
     def from_json(self, json_str):
@@ -134,6 +139,7 @@ class ProposeBlock:
         self.pub_key = data['pub_key']
         self.transaction_list = data['transaction_list']
         self.ts = data['ts']
+        self.malicious = data['malicious']
 
     def hash(self, hex=True):
         hash_function = hashlib.sha256()
@@ -149,6 +155,7 @@ class ProposeBlock:
         data['pub_key'] = self.pub_key
         data['transaction_list'] = self.transaction_list
         data['ts'] = self.ts
+        data['malicious'] = self.malicious
         return json.dumps(data, sort_keys=True)
 
 

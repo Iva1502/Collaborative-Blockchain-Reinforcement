@@ -135,8 +135,9 @@ class MaliciousMining(State):
         self.miner.nonce_list = []
         self.i_should_propose = False
         self.timestamp = None
-        self.proposal_to_follow = None
-        #print("MINING")
+        self.nonce = None
+        self.block_appeared = False
+        print("MINING MALICIOUS")
 
     def is_hash_fresh(self, value, nonce):
         hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
@@ -145,33 +146,48 @@ class MaliciousMining(State):
 
     def malicious_proposal_agreement_process(self, value):
         message_content = json.loads(value)
-        tsp = time()
-        if self.timestamp is None or tsp < self.timestamp:
-            self.timestamp = tsp
+        if self.timestamp is None or message_content['timestamp'] < self.timestamp:
+            self.timestamp = message_content['timestamp']
             self.i_should_propose = False
+            if self.nonce is not None:
+                self.miner.nonce_list.append(self.nonce)
             self.proposal_to_follow = message_content
 
+    #STOP MINING
     def hash_value_process(self, value, nonce):
         if self.is_hash_fresh(value, nonce) and self.miner.current_block[0] == self.miner.depth_cancel_block - 1:
-            if int(value, 16) < COMMIT_TH and self.proposal_to_follow is None:
-                print(datetime.now())
-                print("Hash found")
-                my_prop = {
-                    'nonce': nonce,
-                    'key': self.miner.public_key.exportKey('PEM').decode(),
-                    'timestamp': time()
-                }
-                self.miner.broadcast.broadcast(json.dumps(my_prop), MALICIOUS_PROPOSAL_AGREEMENT_TAG)
-                self.i_should_propose = True
-                self.proposal_to_follow = my_prop
+            if int(value, 16) < COMMIT_TH and self.timestamp is None:
+                if not self.block_appeared:
+                    print(datetime.now())
+                    print("Hash found")
+                    ts = time()
+                    my_prop = {
+                        'timestamp': ts
+                    }
+                    self.timestamp = ts
+                    self.nonce = nonce
+                    self.miner.broadcast.broadcast(json.dumps(my_prop), MALICIOUS_PROPOSAL_AGREEMENT_TAG)
+                    self.i_should_propose = True
+                else:
+                    self.miner.stop_mining.set_stop()
+                    block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
+                                         list(self.miner.transaction_list))
+                    block.malicious = True
+                    message = {}
+                    message['previous'] = {}
+                    message['data'] = block.get_json()
+                    message['previous']['hash'] = self.miner.current_block[1].hash()
+                    message['previous']['depth'] = self.miner.current_block[0]
+                    self.miner.blockchain.add_propose_block(block, self.miner.current_block[0],
+                                                            self.miner.current_block[1].hash())
+                    self.miner.current_block = (self.miner.current_block[0] + 1, block)
+                    self.miner.state = ReinforcementCollecting(self.miner)
+                    self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
+                    print(datetime.now())
+                    print("Switch to reinforcement collection")
             # if other malicious miner already proposed or the hash isn't lower than the COMMIT_TH the nonce is saved
             else:
                 self.miner.nonce_list.append(nonce)
-
-            # TODO if a miner made a proposal but there is other with lower timestamp it should be included in
-                #  reinforcements
-
-    # self.miner.stop_mining.set_stop()
 
     def proposal_process(self, value):
         print(datetime.now())
@@ -181,7 +197,7 @@ class MaliciousMining(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
-        if message_content['previous']['hash'] == self.miner.current_block[1].hash():
+        if message_content['previous']['hash'] == self.miner.current_block[1].hash() and block.malicious:
             self.miner.current_block = (message_content['previous']['depth']+1, block)
             self.miner.stop_mining.set_stop()
             self.miner.state = ReinforcementSent(self.miner)
@@ -207,13 +223,33 @@ class MaliciousMining(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'], message_content['pub_key'])
-        if block.weight - self.miner.current_block[1].weight >= SWITCH_TH:
+
+        if (block.weight - self.miner.current_block[1].weight >= SWITCH_TH and block.malicious) or \
+                        message_content['previous']['depth'] < self.miner.depth_cancel_block:
             print(datetime.now())
             print("Reset mining")
             self.miner.stop_mining.set_stop()
             self.miner.transaction_list = []
             self.miner.nonce_list = []
             self.miner.start_new_mining()
+
+        if message_content['previous']['depth'] == self.miner.depth_cancel_block and not block.malicious:
+            self.block_appeared = True
+            if self.i_should_propose:
+                self.miner.stop_mining.set_stop()
+                block = ProposeBlock(self.proposal_to_follow['nonce'], self.miner.public_key.exportKey('PEM').decode(),
+                                     list(self.miner.transaction_list))
+                block.malicious = True
+                message = {}
+                message['previous'] = {}
+                message['data'] = block.get_json()
+                message['previous']['hash'] = self.miner.current_block[1].hash()
+                message['previous']['depth'] = self.miner.current_block[0]
+                self.miner.blockchain.add_propose_block(block, self.miner.current_block[0],
+                                                        self.miner.current_block[1].hash())
+                self.miner.current_block = (self.miner.current_block[0] + 1, block)
+                self.miner.state = ReinforcementCollecting(self.miner)
+                self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
 
     def reinforcement_process(self, value, sign):
         print(datetime.now())
@@ -229,7 +265,11 @@ class ReinforcementSent(State):
         #print("REINF_SENT")
 
     def mining_switch(self):
-        self.miner.state = Mining(self.miner)
+        if self.miner.malicious:
+            self.miner.state = MaliciousMining(self.miner)
+            self.miner.state.block_appeared = True
+        else:
+            self.miner.state = Mining(self.miner)
         self.miner.start_new_mining()
         print(datetime.now())
         print("Switch to mining")
@@ -308,6 +348,8 @@ class ReinforcementCollecting(State):
             print(datetime.now())
             print("Reinforcement was not received")
         block = CommitBlock(self.received_reinforcements, self.miner.reinforcement_pom.get_poms())
+        if self.miner.malicious:
+            block.malicious = True
         message = {}
         message['previous'] = {}
         message['data'] = block.get_json()
@@ -318,7 +360,11 @@ class ReinforcementCollecting(State):
         message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
         self.miner.blockchain.add_commit_block(block, self.miner.current_block[0], self.miner.current_block[1].hash(),
                                                self.miner.public_key.exportKey('PEM').decode())
-        self.miner.state = Mining(self.miner)
+        if self.miner.malicious:
+            self.miner.state = MaliciousMining(self.miner)
+            self.miner.state.block_appeared = True
+        else:
+            self.miner.state = Mining(self.miner)
         self.miner.start_new_mining()
         self.miner.broadcast.broadcast(json.dumps(message), COMMIT_TAG)
         print(datetime.now())
