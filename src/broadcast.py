@@ -6,7 +6,7 @@ import json
 import array
 import logging
 from constants import DELIVERY_DELAY, TRANSACTION_TAG, COMMIT_TAG, MALICIOUS_PROPOSAL_AGREEMENT_TAG, PROPOSAL_TAG, \
-    REINFORCEMENT_TAG
+    REINFORCEMENT_TAG, PROPOSAL_COMMIT_TAG
 
 
 class Broadcast:
@@ -31,6 +31,7 @@ class Broadcast:
             subscriber.subscribe(REINFORCEMENT_TAG.encode())
             subscriber.subscribe(TRANSACTION_TAG.encode())
             subscriber.subscribe(MALICIOUS_PROPOSAL_AGREEMENT_TAG.encode())
+            subscriber.subscribe(PROPOSAL_COMMIT_TAG.encode())
 
     def broadcast(self, data, tag):
         logging.info("SNT %s", tag)

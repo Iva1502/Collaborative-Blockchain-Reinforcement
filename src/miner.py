@@ -7,7 +7,8 @@ from states import Mining, MaliciousMining
 from broadcast import Broadcast
 from Crypto.PublicKey import RSA
 import logging
-from constants import REINFORCEMENT_TAG, PROPOSAL_TAG, MALICIOUS_PROPOSAL_AGREEMENT_TAG, COMMIT_TAG, TRANSACTION_TAG
+from constants import REINFORCEMENT_TAG, PROPOSAL_TAG, MALICIOUS_PROPOSAL_AGREEMENT_TAG, COMMIT_TAG, TRANSACTION_TAG, \
+    PROPOSAL_COMMIT_TAG
 
 
 class Stop:
@@ -81,23 +82,17 @@ class Miner:
 
     def new_message(self, data, signature, tag):
         if tag == PROPOSAL_TAG:
-            message_content = json.loads(data)
-            pk = json.loads(message_content['data'])['pub_key']
-            # logging.info("RCV proposal from %s", pk)
             logging.info("RCV proposal")
             self.state.proposal_process(data)
-        elif tag == COMMIT_TAG:
-            message_content = json.loads(data)
-            pk = message_content['pub_key']
-            # logging.info("RCV commit from %s", pk)
-            logging.info("RCV commit")
-            self.state.commit_process(data)
         elif tag == REINFORCEMENT_TAG:
-            message_content = json.loads(data)
-            pk = message_content['pub_key']
-            # logging.info("RCV reinforcement from %s", pk)
             logging.info("RCV reinforcement")
             self.state.reinforcement_process(data, signature)
+        elif tag == COMMIT_TAG:
+            logging.info("RCV commit")
+            self.state.commit_process(data)
+        elif tag == PROPOSAL_COMMIT_TAG:
+            logging.info("RCV proposal + commit")
+            self.state.proposal_commit_process(data)
         elif tag == TRANSACTION_TAG:
             self.state.transaction_process(data)
         elif tag == MALICIOUS_PROPOSAL_AGREEMENT_TAG and self.malicious:

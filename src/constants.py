@@ -24,6 +24,8 @@ PROPOSAL_TAG = "proposal"
 
 COMMIT_TAG = "commit"
 
+PROPOSAL_COMMIT_TAG = "proposal_commit"
+
 REINFORCEMENT_TAG = "reinforcement"
 
 TRANSACTION_TAG = "transaction"

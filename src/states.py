@@ -30,6 +30,9 @@ class State:
     def commit_process(self, value):
         pass
 
+    def proposal_commit_process(self, value):
+        pass
+
     def transaction_process(self, value):
         self.miner.transaction_list.append(value)
 
