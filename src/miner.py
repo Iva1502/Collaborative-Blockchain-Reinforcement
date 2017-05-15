@@ -6,7 +6,7 @@ from hash import Hash
 from states import Mining, MaliciousMining
 from broadcast import Broadcast
 from Crypto.PublicKey import RSA
-from datetime import datetime
+import logging
 from constants import REINFORCEMENT_TAG, PROPOSAL_TAG, MALICIOUS_PROPOSAL_AGREEMENT_TAG, COMMIT_TAG, TRANSACTION_TAG
 
 
@@ -21,14 +21,14 @@ class Stop:
 class Miner:
     def __init__(self, _id, faulty):
         self.id = _id
-        self.blockchain = Blockchain()
+        self.__read_conf(self)
+        self.blockchain = Blockchain(self.genesis_time)
         self.current_block = self.blockchain.get_last()
         self.hash = Hash(self)
 
         self.stop_mining = None
         self.nonce_list = []
         self.transaction_list = []
-        self.__read_conf(self)
         if self.malicious:
             self.state = MaliciousMining(self)
         else:
@@ -43,6 +43,7 @@ class Miner:
         with open('../conf/miner_discovery.json') as file:
             data = json.load(file)
         _miner.depth_cancel_block = data['cancel_block']
+        _miner.genesis_time = data['genesis_time']
         # read the ports of the miners
         for miner in data['miners']:
             port = miner["port"]
@@ -69,26 +70,36 @@ class Miner:
         self.start_new_mining()
 
     def start_new_mining(self):
-        self.current_block = self.blockchain.get_last()
+        self.current_block = self.blockchain.get_last(self.malicious)
+        logging.info("start mining - depth %s", self.current_block[0])
+        logging.info("start mining - hash %s", self.current_block[1].hash())
         self.stop_mining = Stop()
         reactor.callInThread(self.hash.mine, self.current_block[1], self.stop_mining)
 
     def new_hash_found(self, val, nonce):
         self.state.hash_value_process(val, nonce)
 
-    def new_message(self, data, signature, type):
-        if type == PROPOSAL_TAG:
-            # print(data)
+    def new_message(self, data, signature, tag):
+        if tag == PROPOSAL_TAG:
+            message_content = json.loads(data)
+            pk = json.loads(message_content['data'])['pub_key']
+            # logging.info("RCV proposal from %s", pk)
+            logging.info("RCV proposal")
             self.state.proposal_process(data)
-        elif type == COMMIT_TAG:
-            file = open('../log/miners' + str(self.id) + '.log', 'a+')
-            file.write("[COMMIT RCV]: " + str(datetime.now().hour) + ":" + str(datetime.now().minute) + ":" +
-                       str(datetime.now().second) + "\n")
-            file.close()
+        elif tag == COMMIT_TAG:
+            message_content = json.loads(data)
+            pk = message_content['pub_key']
+            # logging.info("RCV commit from %s", pk)
+            logging.info("RCV commit")
             self.state.commit_process(data)
-        elif type == REINFORCEMENT_TAG:
+        elif tag == REINFORCEMENT_TAG:
+            message_content = json.loads(data)
+            pk = message_content['pub_key']
+            # logging.info("RCV reinforcement from %s", pk)
+            logging.info("RCV reinforcement")
             self.state.reinforcement_process(data, signature)
-        elif type == TRANSACTION_TAG:
+        elif tag == TRANSACTION_TAG:
             self.state.transaction_process(data)
-        elif type == MALICIOUS_PROPOSAL_AGREEMENT_TAG and self.malicious:
+        elif tag == MALICIOUS_PROPOSAL_AGREEMENT_TAG and self.malicious:
+            logging.info("RCV malicious prop")
             self.state.malicious_proposal_agreement_process(data)

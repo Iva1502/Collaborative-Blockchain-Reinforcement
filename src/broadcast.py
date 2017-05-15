@@ -4,7 +4,7 @@ from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA
 import json
 import array
-from datetime import datetime
+import logging
 from constants import DELIVERY_DELAY, TRANSACTION_TAG, COMMIT_TAG, MALICIOUS_PROPOSAL_AGREEMENT_TAG, PROPOSAL_TAG, \
     REINFORCEMENT_TAG
 
@@ -33,11 +33,7 @@ class Broadcast:
             subscriber.subscribe(MALICIOUS_PROPOSAL_AGREEMENT_TAG.encode())
 
     def broadcast(self, data, tag):
-        if tag == "commit":
-            file = open('../log/miners' + str(self.miner.id) + '.log', 'a+')
-            file.write("[COMMIT SNT]: " + str(datetime.now().hour) + ":" + str(datetime.now().minute) + ":" +
-                       str(datetime.now().second) + "\n")
-            file.close()
+        logging.info("SNT %s", tag)
         signed_data = self.sign(data)
         self.publisher.publish(signed_data, tag.encode())
 
@@ -79,7 +75,7 @@ class BroadcastSubscriber(ZmqSubConnection):
     def gotMessage(self, message, tag):
         data, signature = self.parse_message(message)
         if self.verify_signature(data, signature, tag):
-            if tag.decode() == PROPOSAL_TAG:
+            if tag.decode() == PROPOSAL_TAG and DELIVERY_DELAY > 0:
                 from twisted.internet import reactor
                 reactor.callLater(DELIVERY_DELAY, self.miner.new_message, data, signature, tag.decode())
             else:

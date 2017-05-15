@@ -3,6 +3,7 @@ from constants import CANCEL_BLOCK_MIN_RANGE, CANCEL_BLOCK_MAX_RANGE, PORT
 import json
 import argparse
 import random
+from time import time
 from pathlib import Path
 
 
@@ -24,6 +25,7 @@ if __name__ == '__main__':
 
     port = PORT
     data['cancel_block'] = random.randint(CANCEL_BLOCK_MIN_RANGE, CANCEL_BLOCK_MAX_RANGE)
+    data['genesis_time'] = time()
 
     if args.all is not None:
         data['miners'] = []

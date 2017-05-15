@@ -1,6 +1,7 @@
 from twisted.internet import task, reactor
 import argparse
 import signal
+import logging
 
 from miner import Miner
 
@@ -27,6 +28,9 @@ if __name__ == '__main__':
                         help="the miner sends all the reinforcements collected so far to all the proposals",
                         action="store_true")
     args = parser.parse_args()
+    filename = "../log/miner" + str(args.id) + ".log"
+    logging.basicConfig(filename=filename, format='%(asctime)s %(message)s', level=logging.INFO)
+    logging.info("---------------------------------------------------------")
     miner = Miner(args.id, args.faulty)
     install_handlers()
     task.deferLater(reactor, 1, miner.run)

@@ -4,15 +4,16 @@ from Crypto.PublicKey import RSA
 from constants import COMMIT_TH, REINF_TH
 from hash import compute_hash, check_hash
 import time
+import logging
 
 class Blockchain:
-    def __init__(self):
+    def __init__(self, genesis_time):
         self.position_index = []
         self.list_of_leaves = []
-        self.head = ProposeBlock(0)
+        self.head = ProposeBlock(genesis_time=genesis_time)
         self.position_index.append([])
         self.position_index[0].append(self.head)
-        self.head.commit_link = CommitBlock({})
+        self.head.commit_link = CommitBlock(genesis_time=genesis_time)
         self.head.commit_link.propose_link = self.head
         self.position_index.append([])
         self.position_index[1].append(self.head.commit_link)
@@ -32,17 +33,22 @@ class Blockchain:
                 last_block = block
                 depth = d
             if mal_flag:
+                print(block.hash()[:10])
                 if block.malicious:
                     if block.weight > max_w_mal:
+                        print("added this one")
                         max_w_mal = block.weight
                         last_block_mal = block
                         depth_mal = d
 
         if last_block_mal is None:
+            print("return NOT malicious with depth: ")
+            print(depth)
             return depth, last_block
         else:
+            print("return malicious with depth: ")
+            print(depth_mal)
             return depth_mal, last_block_mal
-
 
     def add_propose_block(self, block, depth, hash_value):
         node = self.find_position(depth, hash_value)
@@ -57,6 +63,7 @@ class Blockchain:
             self.position_index[depth + 1].append(block)
             if node.malicious:
                 block.malicious = True
+            logging.info("appended propose %s on top of %s", block.hash()[:10], hash_value[:10])
             # find and append next blocks
             if (depth+1) in self.pool_of_blocks.keys():
                 for h, b, pub_key in self.pool_of_blocks[depth+1]:
@@ -81,16 +88,15 @@ class Blockchain:
                         return
             node.commit_link = block
             block.propose_link = node
-            if len(self.position_index) == depth+1:
-                self.position_index.append([])
-            self.position_index[depth+1].append(block)
+            self.position_index[depth].append(block)
             previous_commit = node.prev_link
             if node.malicious:
                 block.malicious = True
+            logging.info("appended commit %s on top of %s", block.hash()[:10], hash_value[:10])
             for d, b in self.list_of_leaves:
                 if previous_commit == b:
                     self.list_of_leaves.remove((d, b))
-            self.list_of_leaves.append((depth+1, block))
+            self.list_of_leaves.append((depth, block))
             block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
             #print(block.weight)
             #find and append next blocks
@@ -124,14 +130,17 @@ class Blockchain:
 
 
 class ProposeBlock:
-    def __init__(self, nonce=0, _id="0", tr_list=[]):
+    def __init__(self, nonce=0, _id="0", tr_list=[], genesis_time=None):
         self.nonce = nonce
         self.pub_key = _id
         self.transaction_list = tr_list
         self.prev_link = None
         self.commit_link = None
         self.malicious = False
-        self.ts = int(time.time())
+        if genesis_time is not None:
+            self.ts = genesis_time
+        else:
+            self.ts = int(time.time())
 
     def from_json(self, json_str):
         data = json.loads(json_str)
@@ -160,19 +169,21 @@ class ProposeBlock:
 
 
 class CommitBlock:
-    def __init__(self, reinf_list={}, poms=list()):
+    def __init__(self, reinf_list={}, poms=list(), genesis_time=None):
         self.reinforcements = reinf_list
         self.malicious = False
         self.poms = poms
         self.propose_link = None
         self.next_links = []
         self.weight = 0
-        self.ts = int(time.time())
+        if genesis_time is not None:
+            self.ts = genesis_time
+        else:
+            self.ts = int(time.time())
 
     def hash(self, hex=True):
         hash_function = hashlib.sha256()
         hash_function.update(self.get_json().encode())
-        # compute the hash
         if hex:
             return hash_function.hexdigest()
         return hash_function.digest()
