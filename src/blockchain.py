@@ -16,7 +16,7 @@ class Blockchain:
         self.head.commit_link = CommitBlock(genesis_time=genesis_time)
         self.head.commit_link.propose_link = self.head
         self.position_index[0].append(self.head.commit_link)
-        self.list_of_leaves.append((1, self.head.commit_link))
+        self.list_of_leaves.append((0, self.head.commit_link))
         self.pool_of_blocks = {}
 
     def get_last(self, mal_flag=False):
