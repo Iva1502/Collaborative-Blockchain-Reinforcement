@@ -10,7 +10,8 @@ from pathlib import Path
 if __name__ == '__main__':
     default_value = [5, 2, 2]
     parser = argparse.ArgumentParser()
-    parser = argparse.ArgumentParser(usage='''setup.py [-a, n_miners n_malicious n_clients]''')
+    parser = argparse.ArgumentParser(usage='''setup.py [-p, pure_version][-a, n_miners n_malicious n_clients]''')
+    parser.add_argument("-p", "--pure", action='store_true', default=False)
     parser.add_argument("-a", "--all", nargs=3, type=int, default=default_value)
     args = parser.parse_args()
 
@@ -26,6 +27,7 @@ if __name__ == '__main__':
     port = PORT
     data['cancel_block'] = random.randint(CANCEL_BLOCK_MIN_RANGE, CANCEL_BLOCK_MAX_RANGE)
     data['genesis_time'] = time()
+    data['pure_version'] = args.pure
 
     if args.all is not None:
         data['miners'] = []

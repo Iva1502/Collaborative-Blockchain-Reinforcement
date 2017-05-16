@@ -45,6 +45,7 @@ class Miner:
             data = json.load(file)
         _miner.depth_cancel_block = data['cancel_block']
         _miner.genesis_time = data['genesis_time']
+        _miner.pure = data['pure_version']
         # read the ports of the miners
         for miner in data['miners']:
             port = miner["port"]
