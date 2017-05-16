@@ -129,7 +129,6 @@ class MaliciousMining(State):
         super(MaliciousMining, self).__init__(miner)
         self.miner.transaction_list = []
         self.miner.nonce_list = []
-        self.current_block_is_commit = True
         self.i_should_propose = False
         self.timestamp = None
         self.nonce = None   # the nonce the miner will use when proposing the malicious block
@@ -177,7 +176,6 @@ class MaliciousMining(State):
                     self.miner.blockchain.add_propose_block(block, self.miner.current_block[0],
                                                             self.miner.current_block[1].hash())
                     self.miner.current_block = (self.miner.current_block[0] + 1, block)
-                    self.current_block_is_commit = False
                     self.miner.state = ReinforcementCollecting(self.miner)
                     self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
                     print("Proposed")
@@ -205,11 +203,8 @@ class MaliciousMining(State):
                     message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
                     self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
                 self.miner.state = ReinforcementSent(self.miner)
-                print("Switch to reinforcement sent")
-
-            if message_content['previous']['depth'] < self.miner.depth_cancel_block - 1 or block.malicious:
                 self.miner.current_block = (message_content['previous']['depth'] + 1, block)
-                self.current_block_is_commit = False
+                print("Switch to reinforcement sent")
 
     def commit_process(self, value):
         print("Commit was received")
@@ -220,13 +215,12 @@ class MaliciousMining(State):
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'], message_content['pub_key'])
 
-        if (block.malicious and self.current_block_is_commit and block.weight - self.miner.current_block[1].weight >= SWITCH_TH) or \
+        if (block.malicious and block.weight - self.miner.current_block[1].weight >= SWITCH_TH) or \
                         message_content['previous']['depth'] < self.miner.depth_cancel_block:
             self.miner.stop_mining.set_stop()
             self.miner.transaction_list = []
             self.miner.nonce_list = []
             self.miner.start_new_mining()
-            self.current_block_is_commit = True
 
         elif message_content['previous']['depth'] == self.miner.depth_cancel_block and not block.malicious:
             self.block_appeared = True
