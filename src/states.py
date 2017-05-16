@@ -46,6 +46,171 @@ class State:
             print(reinforcement)
 
 
+class PureBlockchain(State):
+    #Change weights
+    def __init__(self, miner):
+        super(PureBlockchain, self).__init__(miner)
+        self.miner.transaction_list = []
+        #print("MINING")
+
+    def restart(self):
+        self.miner.stop_mining.set_stop()
+        self.miner.transaction_list = []
+        self.miner.start_new_mining()
+
+    def is_hash_fresh(self, value, nonce):
+        hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
+                                  nonce, self.miner.public_key.exportKey('DER'))
+        return hash_value == value
+
+    def hash_value_process(self, value, nonce):
+        if self.is_hash_fresh(value, nonce):
+            if int(value, 16) < COMMIT_TH:
+                print("Hash found")
+                self.miner.stop_mining.set_stop()
+                p_block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
+                                       list(self.miner.transaction_list))
+                c_block = CommitBlock()
+                message = {}
+                message['previous'] = {}
+                message['propose_data'] = p_block.get_json()
+                message['commit_data'] = c_block.get_json()
+                message['previous']['hash'] = self.miner.current_block[1].hash()
+                message['previous']['depth'] = self.miner.current_block[0]
+                self.miner.blockchain.add_propose_block(p_block, self.miner.current_block[0],
+                                                        self.miner.current_block[1].hash())
+                self.miner.blockchain.add_commit_block(c_block, self.miner.current_block[0]+1,
+                                                       p_block.hash(), p_block.pub_key)
+                self.miner.current_block = (self.miner.current_block[0]+2, c_block)
+                #CHANGE TAG
+                self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
+                self.restart()
+                print("Switch to another mining")
+
+    def block_process(self, value):
+        message_content = json.loads(value)
+        p_block = ProposeBlock()
+        p_block.from_json(message_content['propose_data'])
+        self.miner.blockchain.add_propose_block(p_block, message_content['previous']['depth'],
+                                                message_content['previous']['hash'])
+        c_block = CommitBlock()
+        c_block.from_json(message_content['commit_data'])
+        self.miner.blockchain.add_commit_block(c_block, message_content['previous']['depth']+1,
+                                                p_block.hash(), p_block.pub_key)
+        #Do we need it?
+        if message_content['previous']['hash'] == self.miner.current_block[1].hash():
+            self.restart()
+            return
+        if c_block.weight - self.miner.current_block[1].weight >= SWITCH_TH:
+            self.restart()
+
+
+class MaliciousPureBlockchain(State):
+    #Change weights
+    def __init__(self, miner):
+        super(MaliciousPureBlockchain, self).__init__(miner)
+        self.miner.transaction_list = []
+        self.i_should_propose = False
+        self.timestamp = None
+        self.block_appeared = False
+        self.nonce = None
+        #print("MINING")
+
+    def restart(self):
+        self.miner.stop_mining.set_stop()
+        self.miner.transaction_list = []
+        self.miner.start_new_mining()
+
+    def is_hash_fresh(self, value, nonce):
+        hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
+                                  nonce, self.miner.public_key.exportKey('DER'))
+        return hash_value == value
+
+    def malicious_proposal_agreement_process(self, value):
+        message_content = json.loads(value)
+        if self.timestamp is None or message_content['timestamp'] < self.timestamp:
+            self.timestamp = message_content['timestamp']
+            self.i_should_propose = False
+
+    def hash_value_process(self, value, nonce):
+        if self.is_hash_fresh(value, nonce) and self.miner.current_block[0] >= self.miner.depth_cancel_block - 1:
+            if int(value, 16) < COMMIT_TH and self.timestamp is None:
+                if not self.block_appeared:
+                    ts = time()
+                    my_prop = {
+                        'timestamp': ts
+                    }
+                    self.timestamp = ts
+                    self.nonce = nonce
+                    self.miner.broadcast.broadcast(json.dumps(my_prop), MALICIOUS_PROPOSAL_AGREEMENT_TAG)
+                    self.i_should_propose = True
+                else:
+                    print("Hash found")
+                    self.miner.stop_mining.set_stop()
+                    p_block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
+                                           list(self.miner.transaction_list))
+                    c_block = CommitBlock()
+                    p_block.malicious = True
+                    c_block.malicious = True
+                    message = {}
+                    message['previous'] = {}
+                    message['propose_data'] = p_block.get_json()
+                    message['commit_data'] = c_block.get_json()
+                    message['previous']['hash'] = self.miner.current_block[1].hash()
+                    message['previous']['depth'] = self.miner.current_block[0]
+                    self.miner.blockchain.add_propose_block(p_block, self.miner.current_block[0],
+                                                            self.miner.current_block[1].hash())
+                    self.miner.blockchain.add_commit_block(c_block, self.miner.current_block[0]+1,
+                                                           p_block.hash(), p_block.pub_key)
+                    self.miner.current_block = (self.miner.current_block[0]+2, c_block)
+                    #CHANGE TAG
+                    self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
+                    self.restart()
+                    print("Switch to another mining")
+
+    def block_process(self, value):
+        message_content = json.loads(value)
+        p_block = ProposeBlock()
+        p_block.from_json(message_content['propose_data'])
+        self.miner.blockchain.add_propose_block(p_block, message_content['previous']['depth'],
+                                                message_content['previous']['hash'])
+        c_block = CommitBlock()
+        c_block.from_json(message_content['commit_data'])
+        self.miner.blockchain.add_commit_block(c_block, message_content['previous']['depth']+1,
+                                                p_block.hash(), p_block.pub_key)
+        if message_content['previous']['depth']+1 == self.miner.depth_cancel_block and not c_block.malicious:
+            self.block_appeared = True
+            if self.i_should_propose:
+                p_block = ProposeBlock(self.nonce, self.miner.public_key.exportKey('PEM').decode(),
+                                       list(self.miner.transaction_list))
+                c_block = CommitBlock()
+                p_block.malicious = True
+                c_block.malicious = True
+                message = {}
+                message['previous'] = {}
+                message['propose_data'] = p_block.get_json()
+                message['commit_data'] = c_block.get_json()
+                message['previous']['hash'] = self.miner.current_block[1].hash()
+                message['previous']['depth'] = self.miner.current_block[0]
+                self.miner.blockchain.add_propose_block(p_block, self.miner.current_block[0],
+                                                        self.miner.current_block[1].hash())
+                self.miner.blockchain.add_commit_block(c_block, self.miner.current_block[0] + 1,
+                                                       p_block.hash(), p_block.pub_key)
+                self.miner.current_block = (self.miner.current_block[0] + 2, c_block)
+                # CHANGE TAG
+                self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
+                self.restart()
+
+        if message_content['previous']['depth'] < self.miner.depth_cancel_block:
+            self.restart()
+            return
+        if message_content['previous']['hash'] == self.miner.current_block[1].hash() and c_block.malicious:
+            self.restart()
+            return
+        if c_block.weight - self.miner.current_block[1].weight >= SWITCH_TH and c_block.malicious:
+            self.restart()
+
+
 class Mining(State):
     def __init__(self, miner):
         logging.info("MINING state")

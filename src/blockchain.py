@@ -15,8 +15,7 @@ class Blockchain:
         self.position_index[0].append(self.head)
         self.head.commit_link = CommitBlock(genesis_time=genesis_time)
         self.head.commit_link.propose_link = self.head
-        self.position_index.append([])
-        self.position_index[1].append(self.head.commit_link)
+        self.position_index[0].append(self.head.commit_link)
         self.list_of_leaves.append((1, self.head.commit_link))
         self.pool_of_blocks = {}
 
@@ -69,7 +68,7 @@ class Blockchain:
                 for h, b, pub_key in self.pool_of_blocks[depth+1]:
                     if block.hash() == h:
                         self.add_commit_block(b, depth+1, h, pub_key)
-                        self.pool_of_blocks[depth + 1].remove((h, b))
+                        self.pool_of_blocks[depth + 1].remove((h, b, pub_key))
         else:
             if depth not in self.pool_of_blocks.keys():
                 self.pool_of_blocks[depth] = []
@@ -100,11 +99,11 @@ class Blockchain:
             block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
             #print(block.weight)
             #find and append next blocks
-            if (depth+1) in self.pool_of_blocks.keys():
-                for h, b in self.pool_of_blocks[depth + 1]:
+            if (depth) in self.pool_of_blocks.keys():
+                for h, b in self.pool_of_blocks[depth]:
                     if block.hash() == h:
-                        self.add_propose_block(b, depth + 1, h)
-                        self.pool_of_blocks[depth + 1].remove((h, b))
+                        self.add_propose_block(b, depth, h)
+                        self.pool_of_blocks[depth].remove((h, b))
         else:
             if depth not in self.pool_of_blocks.keys():
                 self.pool_of_blocks[depth] = []
