@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
     port = PORT
     data['cancel_block'] = random.randint(CANCEL_BLOCK_MIN_RANGE, CANCEL_BLOCK_MAX_RANGE)
-    data['genesis_time'] = time()
+    data['genesis_time'] = int(time())
     data['pure_version'] = args.pure
 
     if args.all is not None:

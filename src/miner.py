@@ -3,7 +3,7 @@ import json
 from blockchain import Blockchain
 from reinforcement_pom import ReinforcementPOM
 from hash import Hash
-from states import Mining, MaliciousMining
+from states import Mining, MaliciousMining, PureBlockchain
 from broadcast import Broadcast
 from Crypto.PublicKey import RSA
 import logging
@@ -23,17 +23,20 @@ class Miner:
     def __init__(self, _id, faulty):
         self.id = _id
         self.__read_conf(self)
-        self.blockchain = Blockchain(self.genesis_time)
+        self.blockchain = Blockchain(self.genesis_time, self.pure)
         self.current_block = self.blockchain.get_last()
         self.hash = Hash(self)
 
         self.stop_mining = None
         self.nonce_list = []
         self.transaction_list = []
-        if self.malicious:
-            self.state = MaliciousMining(self)
+        if self.pure:
+            self.state = PureBlockchain(self)
         else:
-            self.state = Mining(self)
+            if self.malicious:
+                self.state = MaliciousMining(self)
+            else:
+                self.state = Mining(self)
         self.broadcast = Broadcast(self)
         self.reinforcement_pom = ReinforcementPOM(self)
         self.faulty = faulty

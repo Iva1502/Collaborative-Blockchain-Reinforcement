@@ -7,7 +7,7 @@ import time
 import logging
 
 class Blockchain:
-    def __init__(self, genesis_time):
+    def __init__(self, genesis_time, pure=False):
         self.position_index = []
         self.list_of_leaves = []
         self.head = ProposeBlock(genesis_time=genesis_time)
@@ -18,6 +18,7 @@ class Blockchain:
         self.position_index[0].append(self.head.commit_link)
         self.list_of_leaves.append((0, self.head.commit_link))
         self.pool_of_blocks = {}
+        self.pure = pure
 
     def get_last(self, mal_flag=False):
         max_w = -1
@@ -96,8 +97,11 @@ class Blockchain:
                 if previous_commit == b:
                     self.list_of_leaves.remove((d, b))
             self.list_of_leaves.append((depth, block))
-            block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
-            #print(block.weight)
+            if self.pure:
+                block.weight = previous_commit.weight+1
+            else:
+                block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
+            print(block.weight)
             #find and append next blocks
             if (depth) in self.pool_of_blocks.keys():
                 for h, b in self.pool_of_blocks[depth]:

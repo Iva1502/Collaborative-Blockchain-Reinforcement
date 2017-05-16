@@ -2,7 +2,7 @@ import json
 from blockchain import CommitBlock, ProposeBlock
 from twisted.internet import reactor
 from constants import COMMIT_TH, REINF_TH, SWITCH_TH, REINF_TIMEOUT, COMMIT_TIMEOUT, COMMIT_TAG, PROPOSAL_TAG, \
-    MALICIOUS_PROPOSAL_AGREEMENT_TAG, REINFORCEMENT_TAG
+    MALICIOUS_PROPOSAL_AGREEMENT_TAG, REINFORCEMENT_TAG, PROPOSAL_COMMIT_TAG
 from hash import compute_hash, check_hash
 from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA256
@@ -54,6 +54,7 @@ class PureBlockchain(State):
         #print("MINING")
 
     def restart(self):
+        print("New mining started")
         self.miner.stop_mining.set_stop()
         self.miner.transaction_list = []
         self.miner.start_new_mining()
@@ -81,13 +82,10 @@ class PureBlockchain(State):
                                                         self.miner.current_block[1].hash())
                 self.miner.blockchain.add_commit_block(c_block, self.miner.current_block[0]+1,
                                                        p_block.hash(), p_block.pub_key)
-                self.miner.current_block = (self.miner.current_block[0]+2, c_block)
-                #CHANGE TAG
-                self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
+                self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
                 self.restart()
-                print("Switch to another mining")
 
-    def block_process(self, value):
+    def proposal_commit_process(self, value):
         message_content = json.loads(value)
         p_block = ProposeBlock()
         p_block.from_json(message_content['propose_data'])
@@ -136,7 +134,7 @@ class MaliciousPureBlockchain(State):
         if self.is_hash_fresh(value, nonce) and self.miner.current_block[0] >= self.miner.depth_cancel_block - 1:
             if int(value, 16) < COMMIT_TH and self.timestamp is None:
                 if not self.block_appeared:
-                    ts = time()
+                    ts = int(time())
                     my_prop = {
                         'timestamp': ts
                     }
@@ -162,13 +160,12 @@ class MaliciousPureBlockchain(State):
                                                             self.miner.current_block[1].hash())
                     self.miner.blockchain.add_commit_block(c_block, self.miner.current_block[0]+1,
                                                            p_block.hash(), p_block.pub_key)
-                    self.miner.current_block = (self.miner.current_block[0]+2, c_block)
                     #CHANGE TAG
-                    self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
+                    self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
                     self.restart()
                     print("Switch to another mining")
 
-    def block_process(self, value):
+    def proposal_commit_process(self, value):
         message_content = json.loads(value)
         p_block = ProposeBlock()
         p_block.from_json(message_content['propose_data'])
@@ -196,9 +193,8 @@ class MaliciousPureBlockchain(State):
                                                         self.miner.current_block[1].hash())
                 self.miner.blockchain.add_commit_block(c_block, self.miner.current_block[0] + 1,
                                                        p_block.hash(), p_block.pub_key)
-                self.miner.current_block = (self.miner.current_block[0] + 2, c_block)
                 # CHANGE TAG
-                self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
+                self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
                 self.restart()
 
         if message_content['previous']['depth'] < self.miner.depth_cancel_block:
@@ -319,7 +315,7 @@ class MaliciousMining(State):
                 logging.info("hash found")
                 print("hash found")
                 if not self.block_appeared:
-                    ts = time()
+                    ts = int(time())
                     my_prop = {
                         'timestamp': ts,
                         'pub_key': self.miner.public_key.exportKey('PEM').decode()
