@@ -355,6 +355,9 @@ class MaliciousMining(State):
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             if block.malicious:
                 self.miner.stop_mining.set_stop()
+                self.miner.state = ReinforcementSent(self.miner)
+                self.miner.current_block = (message_content['previous']['depth'] + 1, block)
+                print("Switch to reinforcement sent")
                 if len(self.miner.nonce_list) > 0:
                     message = {}
                     message['nonce_list'] = list(self.miner.nonce_list)
@@ -363,9 +366,6 @@ class MaliciousMining(State):
                     message['depth'] = self.miner.current_block[0]
                     message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
                     self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
-                self.miner.state = ReinforcementSent(self.miner)
-                self.miner.current_block = (message_content['previous']['depth'] + 1, block)
-                print("Switch to reinforcement sent")
 
     def commit_process(self, value):
         print("Commit was received")
