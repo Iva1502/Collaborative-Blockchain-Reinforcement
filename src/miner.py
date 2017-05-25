@@ -3,7 +3,7 @@ import json
 from blockchain import Blockchain
 from reinforcement_pom import ReinforcementPOM
 from hash import Hash
-from states import Mining, MaliciousMining, PureBlockchain
+from states import Mining, MaliciousMining, MaliciousPureBlockchain, PureBlockchain
 from broadcast import Broadcast
 from Crypto.PublicKey import RSA
 import logging
@@ -31,7 +31,10 @@ class Miner:
         self.nonce_list = []
         self.transaction_list = []
         if self.pure:
-            self.state = PureBlockchain(self)
+            if self.malicious:
+                self.state = MaliciousPureBlockchain(self)
+            else:
+                self.state = PureBlockchain(self)
         else:
             if self.malicious:
                 self.state = MaliciousMining(self)
@@ -95,10 +98,10 @@ class Miner:
             logging.info("RCV commit")
             self.state.commit_process(data)
         elif tag == PROPOSAL_COMMIT_TAG:
-            logging.info("RCV proposal + commit")
+            logging.info("RCV proposal_commit")
             self.state.proposal_commit_process(data)
         elif tag == TRANSACTION_TAG:
             self.state.transaction_process(data)
         elif tag == MALICIOUS_PROPOSAL_AGREEMENT_TAG and self.malicious:
-            logging.info("RCV malicious prop")
+            logging.info("RCV malicious_prop_agreement")
             self.state.malicious_proposal_agreement_process(data)

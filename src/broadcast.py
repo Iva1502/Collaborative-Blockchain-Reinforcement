@@ -63,6 +63,8 @@ class BroadcastSubscriber(ZmqSubConnection):
     def verify_signature(self, message, signature, tag):
         if tag == PROPOSAL_TAG.encode():
             key = RSA.import_key(json.loads(json.loads(message)['data'])['pub_key'])
+        elif tag == PROPOSAL_COMMIT_TAG.encode():
+            key = RSA.import_key(json.loads(json.loads(message)['propose_data'])['pub_key'])
         else:
             key = RSA.import_key(json.loads(message)['pub_key'])
         h = SHA256.new(message.encode())
