@@ -49,6 +49,7 @@ class State:
 class PureBlockchain(State):
     #Change weights
     def __init__(self, miner):
+        logging.info("PURE BLOCKCHAIN state")
         super(PureBlockchain, self).__init__(miner)
         self.miner.transaction_list = []
         #print("MINING")
@@ -68,6 +69,7 @@ class PureBlockchain(State):
         if self.is_hash_fresh(value, nonce):
             if int(value, 16) < COMMIT_TH:
                 print("Hash found")
+                logging.info("hash found")
                 self.miner.stop_mining.set_stop()
                 p_block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
                                        list(self.miner.transaction_list))
@@ -95,11 +97,10 @@ class PureBlockchain(State):
         c_block.from_json(message_content['commit_data'])
         self.miner.blockchain.add_commit_block(c_block, message_content['previous']['depth']+1,
                                                 p_block.hash(), p_block.pub_key)
-        #Do we need it?
+        # We only need this condition if SWITCH_TH != 0
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             self.restart()
-            return
-        if c_block.weight - self.miner.current_block[1].weight >= SWITCH_TH:
+        elif c_block.weight - self.miner.current_block[1].weight > SWITCH_TH:
             self.restart()
 
 
@@ -107,13 +108,13 @@ class MaliciousPureBlockchain(State):
     #tic-tac. once in two rounds reset flag and get heaviest block among all
     #Change weights
     def __init__(self, miner):
+        logging.info("MALICIOUS PURE BLOCKCHAIN state")
         super(MaliciousPureBlockchain, self).__init__(miner)
         self.miner.transaction_list = []
         self.i_should_propose = False
         self.timestamp = None
         self.block_appeared = False
         self.nonce = None
-        #print("MINING")
 
     def restart(self):
         self.miner.stop_mining.set_stop()
@@ -132,19 +133,23 @@ class MaliciousPureBlockchain(State):
             self.i_should_propose = False
 
     def hash_value_process(self, value, nonce):
+        if int(value, 16) < COMMIT_TH:
+            logging.info("good hash")
         if self.is_hash_fresh(value, nonce) and self.miner.current_block[0] >= self.miner.depth_cancel_block - 1:
             if int(value, 16) < COMMIT_TH and self.timestamp is None:
+                print("Hash found")
+                logging.info("hash found")
                 if not self.block_appeared:
                     ts = int(time())
                     my_prop = {
-                        'timestamp': ts
+                        'timestamp': ts,
+                        'pub_key': self.miner.public_key.exportKey('PEM').decode()
                     }
                     self.timestamp = ts
                     self.nonce = nonce
                     self.miner.broadcast.broadcast(json.dumps(my_prop), MALICIOUS_PROPOSAL_AGREEMENT_TAG)
                     self.i_should_propose = True
                 else:
-                    print("Hash found")
                     self.miner.stop_mining.set_stop()
                     p_block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
                                            list(self.miner.transaction_list))
@@ -161,7 +166,6 @@ class MaliciousPureBlockchain(State):
                                                             self.miner.current_block[1].hash())
                     self.miner.blockchain.add_commit_block(c_block, self.miner.current_block[0]+1,
                                                            p_block.hash(), p_block.pub_key)
-                    #CHANGE TAG
                     self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
                     self.restart()
                     print("Switch to another mining")
@@ -198,14 +202,9 @@ class MaliciousPureBlockchain(State):
                 self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
                 self.restart()
 
-        if message_content['previous']['depth'] < self.miner.depth_cancel_block:
-            self.restart()
-            return
-        if message_content['previous']['hash'] == self.miner.current_block[1].hash() and c_block.malicious:
-            self.restart()
-            return
-        if c_block.weight - self.miner.current_block[1].weight >= SWITCH_TH and c_block.malicious:
-            self.restart()
+        if c_block.weight - self.miner.current_block[1].weight > SWITCH_TH:
+            if c_block.malicious or message_content['previous']['depth'] + 1 < self.miner.depth_cancel_block:
+                self.restart()
 
 
 class Mining(State):
@@ -508,11 +507,11 @@ class ReinforcementCollecting(State):
         message = {}
         message['previous'] = {}
         message['data'] = block.get_json()
-        # print(message['data'])
         message['previous']['hash'] = self.miner.current_block[1].hash()
         message['previous']['depth'] = self.miner.current_block[0]
         message['hash_last_commit'] = self.miner.current_block[1].prev_link.hash()
         message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+        logging.info("commit with %d reinforcements", len(self.received_reinforcements))
         self.miner.blockchain.add_commit_block(block, self.miner.current_block[0], self.miner.current_block[1].hash(),
                                                self.miner.public_key.exportKey('PEM').decode())
         if self.miner.malicious:
@@ -564,6 +563,9 @@ class ReinforcementCollecting(State):
                     dict_to_add['nonces'] = checked
                     dict_to_add['signature'] = list(sign)
                     self.received_reinforcements[message_content['pub_key']] = dict_to_add
+        else:
+            logging.warning("W: received reinforcement for %s instead of %s", message_content['hash'][:10],
+                            self.miner.current_block[1].hash()[:10])
 
     def commit_process(self, value):
         print("Commit was received")

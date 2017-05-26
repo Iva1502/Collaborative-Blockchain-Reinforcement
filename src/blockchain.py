@@ -104,7 +104,7 @@ class Blockchain:
                 block.weight = previous_commit.weight+1
             else:
                 block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
-            print(block.weight)
+            print("weight: " + str(block.weight))
             #find and append next blocks
             if (depth) in self.pool_of_blocks.keys():
                 for h, b in self.pool_of_blocks[depth]:
