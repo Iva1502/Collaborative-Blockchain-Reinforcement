@@ -104,6 +104,7 @@ class PureBlockchain(State):
 
 
 class MaliciousPureBlockchain(State):
+    #tic-tac. once in two rounds reset flag and get heaviest block among all
     #Change weights
     def __init__(self, miner):
         super(MaliciousPureBlockchain, self).__init__(miner)
@@ -294,6 +295,10 @@ class MaliciousMining(State):
         self.timestamp = None
         self.nonce = None   # the nonce the miner will use when proposing the malicious block
         self.block_appeared = False
+        if self.miner.depth_cancel_block == -1:
+            self.cancel_all = True
+        else:
+            self.cancel_all = False
         print("MINING MALICIOUS")
 
     def is_hash_fresh(self, value, nonce):
@@ -383,8 +388,11 @@ class MaliciousMining(State):
             self.miner.nonce_list = []
             self.miner.start_new_mining()
 
-        elif message_content['previous']['depth'] == self.miner.depth_cancel_block and not block.malicious:
-            self.block_appeared = True
+        elif (message_content['previous']['depth'] == self.miner.depth_cancel_block and not block.malicious) or \
+                (self.cancel_all and not block.malicious and
+                 message_content['previous']['depth']==self.miner.current_block[0]+1):
+            if not self.cancel_all:
+                self.block_appeared = True
             if self.i_should_propose:
                 self.miner.stop_mining.set_stop()
                 block = ProposeBlock(self.nonce, self.miner.public_key.exportKey('PEM').decode(),
@@ -400,6 +408,11 @@ class MaliciousMining(State):
                 self.miner.current_block = (self.miner.current_block[0] + 1, block)
                 self.miner.state = ReinforcementCollecting(self.miner)
                 self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
+            elif self.cancel_all:
+                self.miner.stop_mining.set_stop()
+                self.miner.transaction_list = []
+                self.miner.nonce_list = []
+                self.miner.start_new_mining()
 
     def reinforcement_process(self, value, sign):
         print("Reinforcement was received")
@@ -416,7 +429,8 @@ class ReinforcementSent(State):
     def mining_switch(self):
         if self.miner.malicious:
             self.miner.state = MaliciousMining(self.miner)
-            self.miner.state.block_appeared = True
+            if self.miner.depth_cancel_block != -1:
+                self.miner.state.block_appeared = True
         else:
             self.miner.state = Mining(self.miner)
         self.miner.start_new_mining()
@@ -503,7 +517,8 @@ class ReinforcementCollecting(State):
                                                self.miner.public_key.exportKey('PEM').decode())
         if self.miner.malicious:
             self.miner.state = MaliciousMining(self.miner)
-            self.miner.state.block_appeared = True
+            if self.miner.depth_cancel_block != -1:
+                self.miner.state.block_appeared = True
         else:
             self.miner.state = Mining(self.miner)
         self.miner.start_new_mining()

@@ -23,7 +23,7 @@ class Miner:
     def __init__(self, _id, faulty):
         self.id = _id
         self.__read_conf(self)
-        self.blockchain = Blockchain(self.genesis_time, self.pure)
+        self.blockchain = Blockchain(self.genesis_time, self.pure, self.depth_cancel_block!=-1)
         self.current_block = self.blockchain.get_last()
         self.hash = Hash(self)
 
@@ -75,7 +75,7 @@ class Miner:
         self.start_new_mining()
 
     def start_new_mining(self):
-        self.current_block = self.blockchain.get_last(self.malicious)
+        self.current_block = self.blockchain.get_last(self.malicious and (self.depth_cancel_block!=-1))
         logging.info("start mining - depth %s", self.current_block[0])
         logging.info("start mining - hash %s", self.current_block[1].hash())
         self.stop_mining = Stop()

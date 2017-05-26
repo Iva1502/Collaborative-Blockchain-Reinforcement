@@ -7,7 +7,7 @@ import time
 import logging
 
 class Blockchain:
-    def __init__(self, genesis_time, pure=False):
+    def __init__(self, genesis_time, pure=False, copy_mal_flag = True):
         self.position_index = []
         self.list_of_leaves = []
         self.head = ProposeBlock(genesis_time=genesis_time)
@@ -19,6 +19,7 @@ class Blockchain:
         self.list_of_leaves.append((0, self.head.commit_link))
         self.pool_of_blocks = {}
         self.pure = pure
+        self.copy_mal_flag = copy_mal_flag
 
     def get_last(self, mal_flag=False):
         max_w = -1
@@ -61,8 +62,9 @@ class Blockchain:
             if len(self.position_index) == depth + 1:
                 self.position_index.append([])
             self.position_index[depth + 1].append(block)
-            if node.malicious:
-                block.malicious = True
+            if self.copy_mal_flag:
+                if node.malicious:
+                    block.malicious = True
             logging.info("appended propose %s on top of %s", block.hash()[:10], hash_value[:10])
             # find and append next blocks
             if (depth+1) in self.pool_of_blocks.keys():
@@ -90,8 +92,9 @@ class Blockchain:
             block.propose_link = node
             self.position_index[depth].append(block)
             previous_commit = node.prev_link
-            if node.malicious:
-                block.malicious = True
+            if self.copy_mal_flag:
+                if node.malicious:
+                    block.malicious = True
             logging.info("appended commit %s on top of %s", block.hash()[:10], hash_value[:10])
             for d, b in self.list_of_leaves:
                 if previous_commit == b:
