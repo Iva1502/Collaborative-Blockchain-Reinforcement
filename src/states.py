@@ -115,6 +115,10 @@ class MaliciousPureBlockchain(State):
         self.timestamp = None
         self.block_appeared = False
         self.nonce = None
+        if self.miner.depth_cancel_block == -1:
+            self.cancel_all = True
+        else:
+            self.cancel_all = False
 
     def restart(self):
         self.miner.stop_mining.set_stop()
@@ -180,7 +184,16 @@ class MaliciousPureBlockchain(State):
         c_block.from_json(message_content['commit_data'])
         self.miner.blockchain.add_commit_block(c_block, message_content['previous']['depth']+1,
                                                 p_block.hash(), p_block.pub_key)
-        if message_content['previous']['depth']+1 == self.miner.depth_cancel_block and not c_block.malicious:
+
+        if self.cancel_all and (message_content['previous']['depth'] - self.miner.current_block[0] == 2):
+            self.miner.current_block[0]+=1
+            self.block_appeared = False
+            self.restart()
+            return
+
+        if message_content['previous']['depth']+1 == self.miner.depth_cancel_block and not c_block.malicious or \
+                     (self.cancel_all and not c_block.malicious and
+                     message_content['previous']['depth']==self.miner.current_block[0]+1):
             self.block_appeared = True
             if self.i_should_propose:
                 p_block = ProposeBlock(self.nonce, self.miner.public_key.exportKey('PEM').decode(),
@@ -200,10 +213,17 @@ class MaliciousPureBlockchain(State):
                                                        p_block.hash(), p_block.pub_key)
                 # CHANGE TAG
                 self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
+                if self.cancel_all and self.miner.current_block[0]%2 == 1:
+                    self.block_appeared = False
+                self.restart()
+            elif self.cancel_all and self.miner.current_block[0]%2 == 1:
+                self.block_appeared = False
                 self.restart()
 
         if c_block.weight - self.miner.current_block[1].weight > SWITCH_TH:
             if c_block.malicious or message_content['previous']['depth'] + 1 < self.miner.depth_cancel_block:
+                if self.cancel_all and self.miner.current_block[0] % 2 == 1:
+                    self.block_appeared = False
                 self.restart()
 
 

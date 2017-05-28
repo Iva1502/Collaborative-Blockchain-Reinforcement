@@ -78,7 +78,9 @@ class Miner:
         self.start_new_mining()
 
     def start_new_mining(self):
-        self.current_block = self.blockchain.get_last(self.malicious and (self.depth_cancel_block!=-1))
+        mal = (self.malicious and (self.depth_cancel_block!=-1)) or \
+              (self.malicious and self.current_block[0]%2 == 0 and self.pure and (self.depth_cancel_block==-1))
+        self.current_block = self.blockchain.get_last(mal)
         logging.info("start mining - depth %s", self.current_block[0])
         logging.info("start mining - hash %s", self.current_block[1].hash())
         self.stop_mining = Stop()
