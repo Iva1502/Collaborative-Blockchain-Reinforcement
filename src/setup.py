@@ -10,8 +10,8 @@ from pathlib import Path
 if __name__ == '__main__':
     default_value = [5, 2, 2]
     parser = argparse.ArgumentParser()
-    parser = argparse.ArgumentParser(usage='''setup.py [-p, pure_version][-a, cancel all blocks] \
-            [-r, n_miners n_malicious n_clients]''')
+    parser = argparse.ArgumentParser(usage='''setup.py [-p, pure_version][-a, cancel all blocks]\
+[-r, n_miners n_malicious n_clients]''')
     parser.add_argument("-p", "--pure", action='store_true', default=False)
     parser.add_argument("-a", "--all", action='store_true', default=False)
     parser.add_argument("-r", "--reset", nargs=3, type=int, default=default_value)

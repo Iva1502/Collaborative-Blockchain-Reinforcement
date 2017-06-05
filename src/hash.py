@@ -1,5 +1,4 @@
 import hashlib
-from Crypto.PublicKey import RSA
 from constants import REINF_TH
 
 
@@ -17,7 +16,7 @@ def compute_hash(hash_block, nonce, pub_key):
 def check_hash(block, nonce, pub_key, th):
     return int(compute_hash(block.hash(hex=False), nonce, pub_key.exportKey('DER')), 16) < th
 
-# FIXME see if an attribute would work or if we need an object Stop
+
 class Hash():
     def __init__(self, miner):
         self.miner = miner

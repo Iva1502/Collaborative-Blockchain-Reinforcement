@@ -55,6 +55,7 @@ class Blockchain:
         node = self.find_position(depth, hash_value)
         if node is not None:
             if not check_hash(node, block.nonce, RSA.import_key(block.pub_key), COMMIT_TH):
+                logging.info("malicious propose")
                 print("Malicious propose")
                 return
             node.next_links.append(block)
@@ -81,11 +82,13 @@ class Blockchain:
         node = self.find_position(depth, hash_value)
         if node is not None:
             if pub_key != node.pub_key:
+                logging.info("impersonated commit")
                 print("Impersonated commit")
                 return
             for k in block.reinforcements.keys():
                 for nonce in block.reinforcements[k]['nonces']:
                     if not check_hash(node.prev_link, nonce, RSA.import_key(k), REINF_TH):
+                        logging.info("malicious commit")
                         print("Malicious commit")
                         return
             node.commit_link = block
@@ -101,7 +104,7 @@ class Blockchain:
                     self.list_of_leaves.remove((d, b))
             self.list_of_leaves.append((depth, block))
             if self.pure:
-                block.weight = previous_commit.weight+1
+                block.weight = previous_commit.weight + 1
             else:
                 block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
             print("weight: " + str(block.weight))
@@ -146,7 +149,7 @@ class ProposeBlock:
         if genesis_time is not None:
             self.ts = genesis_time
         else:
-            self.ts = int(time.time())
+            self.ts = time.time()
 
     def from_json(self, json_str):
         data = json.loads(json_str)
@@ -185,7 +188,7 @@ class CommitBlock:
         if genesis_time is not None:
             self.ts = genesis_time
         else:
-            self.ts = int(time.time())
+            self.ts = time.time()
 
     def hash(self, hex=True):
         hash_function = hashlib.sha256()

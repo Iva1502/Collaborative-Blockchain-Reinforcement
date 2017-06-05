@@ -25,7 +25,7 @@ class Broadcast:
             subscribe_endpoint = ZmqEndpoint(ZmqEndpointType.connect, "tcp://127.0.0.1:" + subscribe_port)
             subscriber = BroadcastSubscriber(self.factory, subscribe_endpoint, miner)
             self.subscribers.append(subscriber)
-            # subcribe to the types of events
+            # subscribe to the types of events
             subscriber.subscribe(PROPOSAL_TAG.encode())
             subscriber.subscribe(COMMIT_TAG.encode())
             subscriber.subscribe(REINFORCEMENT_TAG.encode())

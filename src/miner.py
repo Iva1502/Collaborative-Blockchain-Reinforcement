@@ -23,7 +23,7 @@ class Miner:
     def __init__(self, _id, faulty):
         self.id = _id
         self.__read_conf(self)
-        self.blockchain = Blockchain(self.genesis_time, self.pure, self.depth_cancel_block!=-1)
+        self.blockchain = Blockchain(self.genesis_time, self.pure, self.depth_cancel_block != -1)
         self.current_block = self.blockchain.get_last()
         self.hash = Hash(self)
 
@@ -78,11 +78,13 @@ class Miner:
         self.start_new_mining()
 
     def start_new_mining(self):
-        mal = (self.malicious and (self.depth_cancel_block!=-1)) or \
-              (self.malicious and self.current_block[0]%2 == 0 and self.pure and (self.depth_cancel_block==-1))
+        mal = (self.malicious and (self.depth_cancel_block != -1)) or \
+              (self.malicious and self.current_block[0] % 2 == 0 and self.pure and (self.depth_cancel_block == -1))
         self.current_block = self.blockchain.get_last(mal)
         logging.info("start mining - depth %s", self.current_block[0])
         logging.info("start mining - hash %s", self.current_block[1].hash())
+        print("start mining - depth ", self.current_block[0])
+        print("start mining - hash ", self.current_block[1].hash())
         self.stop_mining = Stop()
         reactor.callInThread(self.hash.mine, self.current_block[1], self.stop_mining)
 
