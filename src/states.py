@@ -2,7 +2,7 @@ import json
 from blockchain import CommitBlock, ProposeBlock
 from twisted.internet import reactor
 from constants import COMMIT_TH, REINF_TH, SWITCH_TH, REINF_TIMEOUT, COMMIT_TIMEOUT, COMMIT_TAG, PROPOSAL_TAG, \
-    MALICIOUS_PROPOSAL_AGREEMENT_TAG, REINFORCEMENT_TAG, PROPOSAL_COMMIT_TAG
+    MALICIOUS_PROPOSAL_AGREEMENT_TAG, REINFORCEMENT_TAG, PROPOSAL_COMMIT_TAG, REINFORCEMENT_INF_TAG
 from hash import compute_hash, check_hash
 from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA256
@@ -251,6 +251,18 @@ class Mining(State):
         super(Mining, self).__init__(miner)
         self.miner.transaction_list = []
         self.miner.nonce_list = []
+        self.already_found = 0
+
+    def reinforcement_info_process(self, value, sign):
+        message_content = json.loads(value)
+        if message_content['hash'] == self.miner.current_block[1].hash():
+            if check_hash(self.miner.current_block[1], message_content['nonce'],
+                          RSA.import_key(message_content['pub_key']), REINF_TH):
+                self.already_found += COMMIT_TH/\
+                                      int(compute_hash(self.miner.current_block[1].hash(hex=False),
+                                                       message_content['nonce'],
+                                                       RSA.import_key(message_content['pub_key']).exportKey('DER')), 16)
+                print("Pre-mined ", self.already_found)
 
     def is_hash_fresh(self, value, nonce):
         hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
@@ -278,6 +290,16 @@ class Mining(State):
                 print("Switch to reinforcement collection")
             else:
                 self.miner.nonce_list.append(nonce)
+                message = {}
+                message['hash'] = self.miner.current_block[1].hash()
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                message['nonce'] = nonce
+                self.already_found += COMMIT_TH / \
+                                      int(compute_hash(self.miner.current_block[1].hash(hex=False),
+                                                       nonce,
+                                                       self.miner.public_key.exportKey('DER')), 16)
+                print("Pre-mined ", self.already_found)
+                self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_INF_TAG)
 
     def proposal_process(self, value):
         print("Proposal was received")
@@ -309,11 +331,12 @@ class Mining(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'], message_content['pub_key'])
-        if block.weight - self.miner.current_block[1].weight >= SWITCH_TH:
+        if block.weight - (self.miner.current_block[1].weight + self.already_found) >= SWITCH_TH:
             logging.info("Switching branch")
             self.miner.stop_mining.set_stop()
             self.miner.transaction_list = []
             self.miner.nonce_list = []
+            self.already_found = 0
             self.miner.start_new_mining()
 
     def reinforcement_process(self, value, sign):

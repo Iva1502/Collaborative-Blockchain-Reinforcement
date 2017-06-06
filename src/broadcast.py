@@ -32,7 +32,7 @@ class Broadcast:
             subscriber.subscribe(TRANSACTION_TAG.encode())
             subscriber.subscribe(MALICIOUS_PROPOSAL_AGREEMENT_TAG.encode())
             subscriber.subscribe(PROPOSAL_COMMIT_TAG.encode())
-            subscriber.subscribe(REINFORCEMENT_INF_TAG)
+            subscriber.subscribe(REINFORCEMENT_INF_TAG.encode())
 
     def broadcast(self, data, tag):
         logging.info("SNT %s", tag)
