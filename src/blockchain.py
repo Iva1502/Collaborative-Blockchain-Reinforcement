@@ -1,10 +1,11 @@
 import json
 import hashlib
 from Crypto.PublicKey import RSA
-from constants import COMMIT_TH, REINF_TH
+from constants import COMMIT_TH, REINF_TH, CANCEL_PARTICULAR_BLOCK_TH
 from hash import compute_hash, check_hash
 import time
 import logging
+
 
 class Blockchain:
     def __init__(self, genesis_time, pure=False, copy_mal_flag = True):
@@ -21,7 +22,7 @@ class Blockchain:
         self.pure = pure
         self.copy_mal_flag = copy_mal_flag
 
-    def get_last(self, mal_flag=False):
+    def get_last(self, mal_flag=False, cancel_all=False, threshold_divisor=1):
         max_w = -1
         last_block = None
         max_w_mal = -1
@@ -37,11 +38,16 @@ class Blockchain:
                 print(block.hash()[:10])
                 if block.malicious:
                     if block.weight > max_w_mal:
-                        print("added this one")
                         max_w_mal = block.weight
                         last_block_mal = block
                         depth_mal = d
 
+        if not cancel_all and mal_flag and last_block_mal is not None \
+                and last_block.weight > last_block_mal.weight + int(CANCEL_PARTICULAR_BLOCK_TH / threshold_divisor):
+            logging.info("END: HONEST WIN. %s against %s", last_block.weight,
+                         last_block_mal.weight + CANCEL_PARTICULAR_BLOCK_TH / threshold_divisor)
+            print("END: HONEST WIN")
+            print('\a')
         if last_block_mal is None:
             print("return NOT malicious with depth: ")
             print(depth)
@@ -107,6 +113,7 @@ class Blockchain:
                 block.weight = previous_commit.weight + 1
             else:
                 block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
+            logging.info("weight: %s", str(block.weight))
             print("weight: " + str(block.weight))
             #find and append next blocks
             if (depth) in self.pool_of_blocks.keys():

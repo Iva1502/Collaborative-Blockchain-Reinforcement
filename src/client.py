@@ -1,6 +1,7 @@
 from txzmq import ZmqEndpoint, ZmqFactory, ZmqPubConnection, ZmqEndpointType
 import argparse
 from time import sleep
+from constants import TRANSACTION_INTERVAL
 import json
 from Crypto.Signature import pkcs1_15
 from Crypto.Hash import SHA256
@@ -49,6 +50,7 @@ class Client():
             raise Exception("No publish port for miner with id: " + str(self.identity))
         return publish_port, pub_key
 
+
 class Transaction:
     def __init__(self, content, pub_key):
         self.content = content
@@ -61,13 +63,12 @@ class Transaction:
         return json.dumps(data, sort_keys=True)
 
 
-
 def main(identity):
     client = Client(identity)
     nonce = -1
     while True:
         nonce += 1
-        sleep(3)
+        sleep(TRANSACTION_INTERVAL)
         client.broadcast("Alice buys a watch from Bob for " + str(nonce) + " chf")
 
 if __name__ == "__main__":

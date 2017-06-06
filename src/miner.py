@@ -80,11 +80,18 @@ class Miner:
     def start_new_mining(self):
         mal = (self.malicious and (self.depth_cancel_block != -1)) or \
               (self.malicious and self.current_block[0] % 2 == 0 and self.pure and (self.depth_cancel_block == -1))
-        self.current_block = self.blockchain.get_last(mal)
+        self.current_block = self.blockchain.get_last(mal, self.depth_cancel_block == -1, 10 if self.pure else 1)
         logging.info("start mining - depth %s", self.current_block[0])
         logging.info("start mining - hash %s", self.current_block[1].hash())
         print("start mining - depth ", self.current_block[0])
         print("start mining - hash ", self.current_block[1].hash())
+        # if the honest guys start mining on top of a malicious block in any of the models the malicious succeeded
+        if self.depth_cancel_block != -1 and not self.malicious and self.current_block[1].malicious:
+            logging.info("END: MALICIOUS WIN")
+            print("END: MALICIOUS WIN")
+            print('\a')
+        if self.depth_cancel_block == -1 and not self.pure and not self.malicious and self.current_block[1].malicious:
+            logging.info("WIN: MALICIOUS WIN on block %d", self.current_block[0])
         self.stop_mining = Stop()
         reactor.callInThread(self.hash.mine, self.current_block[1], self.stop_mining)
 

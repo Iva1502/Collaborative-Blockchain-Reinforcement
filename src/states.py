@@ -54,7 +54,7 @@ class PureBlockchain(State):
         self.miner.transaction_list = []
 
     def restart(self):
-        self.miner.stop_mining.set_stop()
+        self.miner.stop()
         self.miner.transaction_list = []
         self.miner.start_new_mining()
 
@@ -119,7 +119,7 @@ class MaliciousPureBlockchain(State):
             self.cancel_all = False
 
     def restart(self):
-        self.miner.stop_mining.set_stop()
+        self.miner.stop()
         self.miner.transaction_list = []
         self.miner.start_new_mining()
 
@@ -171,6 +171,8 @@ class MaliciousPureBlockchain(State):
                     self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
                     if self.cancel_all and self.miner.current_block[0] % 2 == 1:
                         self.block_appeared = False
+                        # this means that the malicious found the second block first
+                        logging.info("WIN: MALICIOUS WIN")
                     self.restart()
                     print("Switch to another mining")
 
@@ -186,10 +188,11 @@ class MaliciousPureBlockchain(State):
         self.miner.blockchain.add_commit_block(c_block, message_content['previous']['depth'] + 1,
                                                 p_block.hash(), p_block.pub_key)
 
-        # if the non-malicious can find 2 blocks we give up
+        # if the non-malicious can find 2 blocks the malicious gives up
         print(message_content['previous']['depth'])
         print(self.miner.current_block[0] == 1)
         if self.cancel_all and (message_content['previous']['depth'] - self.miner.current_block[0] == 1):
+            logging.info("LOSE: MALICIOUS LOST 2 - 0")
             print("give up")
             self.miner.current_block = (self.miner.current_block[0] + 1, self.miner.current_block[1])
             self.block_appeared = False
@@ -200,7 +203,6 @@ class MaliciousPureBlockchain(State):
                      (self.cancel_all and not c_block.malicious and
                      message_content['previous']['depth'] == self.miner.current_block[0]):  # here the previous is the last commit
             self.block_appeared = True
-            print("deciding stuff")
             if self.i_should_propose:
                 self.i_should_propose = False
                 self.timestamp = None
@@ -221,16 +223,18 @@ class MaliciousPureBlockchain(State):
                                                        p_block.hash(), p_block.pub_key)
                 self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
                 if self.cancel_all and self.miner.current_block[0] % 2 == 1:
+                    logging.info("LOSE: MALICIOUS LOST 2 - 1")
                     self.block_appeared = False
                 self.restart()
             elif self.cancel_all and self.miner.current_block[0] % 2 == 1:
+                logging.info("LOSE: MALICIOUS LOST 2 - 1")
                 self.block_appeared = False
                 self.restart()
 
         # We only need this condition if SWITCH_TH != 0
         # if message_content['previous']['hash'] == self.miner.current_block[1].hash() and c_block.malicious:
         #     self.restart()
-        # FIXME should it only restart or do something else?
+        # FIXME should the upper part only restart or do something else?
         if c_block.weight - self.miner.current_block[1].weight > SWITCH_TH:
             if c_block.malicious or message_content['previous']['depth'] + 1 < self.miner.depth_cancel_block:
                 if self.cancel_all and self.miner.current_block[0] % 2 == 1:
@@ -281,7 +285,7 @@ class Mining(State):
                                                 message_content['previous']['hash'])
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             self.miner.current_block = (message_content['previous']['depth']+1, block)
-            self.miner.stop_mining.set_stop()
+            self.miner.stop()
             self.miner.state = ReinforcementSent(self.miner)
             if len(self.miner.nonce_list) > 0:
                 message = {}
@@ -415,7 +419,7 @@ class MaliciousMining(State):
 
         if (block.malicious and block.weight - self.miner.current_block[1].weight >= SWITCH_TH) or \
                         message_content['previous']['depth'] < self.miner.depth_cancel_block:
-            self.miner.stop_mining.set_stop()
+            self.miner.stop()
             self.miner.transaction_list = []
             self.miner.nonce_list = []
             self.miner.start_new_mining()
