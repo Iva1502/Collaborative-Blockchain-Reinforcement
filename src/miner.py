@@ -8,7 +8,7 @@ from broadcast import Broadcast
 from Crypto.PublicKey import RSA
 import logging
 from constants import REINFORCEMENT_TAG, PROPOSAL_TAG, MALICIOUS_PROPOSAL_AGREEMENT_TAG, COMMIT_TAG, TRANSACTION_TAG, \
-    PROPOSAL_COMMIT_TAG
+    PROPOSAL_COMMIT_TAG, REINFORCEMENT_INF_TAG
 
 
 class Stop:
@@ -105,6 +105,9 @@ class Miner:
         elif tag == REINFORCEMENT_TAG:
             logging.info("RCV reinforcement")
             self.state.reinforcement_process(data, signature)
+        elif tag == REINFORCEMENT_INF_TAG:
+            logging.info("RCV reinforcement info")
+            self.state.reinforcement_info_process(data, signature)
         elif tag == COMMIT_TAG:
             logging.info("RCV commit")
             self.state.commit_process(data)

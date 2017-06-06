@@ -32,6 +32,8 @@ PROPOSAL_COMMIT_TAG = "proposal_commit"
 
 REINFORCEMENT_TAG = "reinforcement"
 
+REINFORCEMENT_INF_TAG = "reinforcement_information"
+
 TRANSACTION_TAG = "transaction"
 
 MALICIOUS_PROPOSAL_AGREEMENT_TAG = "malicious_proposal_agreement"

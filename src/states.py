@@ -27,6 +27,9 @@ class State:
     def reinforcement_process(self, value, sign):
         pass
 
+    def reinforcement_info_process(self, value, sign):
+        pass
+
     def commit_process(self, value):
         pass
 
