@@ -262,7 +262,6 @@ class Mining(State):
                                       int(compute_hash(self.miner.current_block[1].hash(hex=False),
                                                        message_content['nonce'],
                                                        RSA.import_key(message_content['pub_key']).exportKey('DER')), 16)
-                print("Pre-mined ", self.already_found)
 
     def is_hash_fresh(self, value, nonce):
         hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
@@ -298,7 +297,6 @@ class Mining(State):
                                       int(compute_hash(self.miner.current_block[1].hash(hex=False),
                                                        nonce,
                                                        self.miner.public_key.exportKey('DER')), 16)
-                print("Pre-mined ", self.already_found)
                 self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_INF_TAG)
 
     def proposal_process(self, value):
@@ -332,7 +330,8 @@ class Mining(State):
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'], message_content['pub_key'])
         if block.weight - (self.miner.current_block[1].weight + self.already_found) >= SWITCH_TH:
-            logging.info("Switching branch")
+            logging.info("Switching branch - my current block was: %s", \
+                         self.miner.current_block[1].weight + self.already_found)
             self.miner.stop_mining.set_stop()
             self.miner.transaction_list = []
             self.miner.nonce_list = []
@@ -444,7 +443,7 @@ class MaliciousMining(State):
                                                message_content['previous']['hash'], message_content['pub_key'])
 
         if (block.malicious and block.weight - self.miner.current_block[1].weight >= SWITCH_TH) or \
-                        message_content['previous']['depth'] < self.miner.depth_cancel_block:
+                (message_content['previous']['depth'] < self.miner.depth_cancel_block):
             self.miner.stop()
             self.miner.transaction_list = []
             self.miner.nonce_list = []
@@ -479,6 +478,31 @@ class MaliciousMining(State):
                 self.miner.transaction_list = []
                 self.miner.nonce_list = []
                 self.miner.start_new_mining()
+        # this condition is necessary if the honest and malicious are not mining on top of the same block and avoids the
+        # malicious miners of being stuck
+        # this happens in the following situation:
+        # ## both are mining on top of A:
+        # ## malicious find a good hash and keep it behing their back
+        # ## honest broadcast P1 and C1 on top of A
+        # ## malicious broadcast P1'
+        # ## honest broadcast P2 on top of C1 and change to Reinforcement Sent/Collecting state
+        # ## malicious broadcast C1' which is heavier than C1 and start mining on top of it
+        # ## the honest are in Reinforcement Sent/Collecting so they do not switch branches immediately
+        # ## honest broadcast C2 on top of P3, which is heavier than C1' so they mine on top of it
+        # at this point the malicious miners are waiting for some block with the previous hash equal to C1' to broadcast
+        # what they have found but this never happens, because the honest are on a different branch
+        elif self.cancel_all and not block.malicious and \
+            message_content['previous']['depth'] > self.miner.current_block[0]:
+            logging.info("Synchronizing branches")
+            self.nonce = None
+            self.timestamp = None
+            self.block_appeared = False
+            self.i_should_propose = False
+            self.miner.stop()
+            self.miner.transaction_list = []
+            self.miner.nonce_list = []
+            self.miner.start_new_mining()
+
 
     def reinforcement_process(self, value, sign):
         print("Reinforcement was received")

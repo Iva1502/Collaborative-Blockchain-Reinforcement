@@ -112,7 +112,7 @@ class Blockchain:
             if self.pure:
                 block.weight = previous_commit.weight + 1
             else:
-                block.weight = previous_commit.weight+self.calculate_weight(node, block, previous_commit)
+                block.weight = previous_commit.weight + self.calculate_weight(node, block, previous_commit)
             logging.info("weight: %s", str(block.weight))
             print("weight: " + str(block.weight))
             #find and append next blocks
@@ -129,12 +129,10 @@ class Blockchain:
     def calculate_weight(self, propose, commit, previous_commit):
         sum = COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), propose.nonce,
                                               RSA.import_key(propose.pub_key).exportKey('DER')), 16)
-        #print('propose:', sum)
         for k in commit.reinforcements.keys():
             for nonce in commit.reinforcements[k]['nonces']:
                 sum += COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), nonce,
                                                   RSA.import_key(k).exportKey('DER')), 16)
-        #print('propose+commit:', sum)
         return sum
 
     def find_position(self, depth, hash_value):
