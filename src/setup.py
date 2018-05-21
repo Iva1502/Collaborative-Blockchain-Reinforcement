@@ -76,4 +76,5 @@ if __name__ == '__main__':
             data['clients'].append(client_data)
 
     file = open('../conf/miner_discovery.json', 'w')
+    #produces string from the object "data" and writes it in the file
     json.dump(data, file, indent=4)

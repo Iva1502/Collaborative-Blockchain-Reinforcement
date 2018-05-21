@@ -25,14 +25,27 @@ class Client():
         tag = "transaction"
         transaction = Transaction(data, self.pub_key)
         signed_data = self.sign(transaction.get_json())
+        #print("Client.py Signed_data")
+        #print(signed_data)
         self.publisher.publish(signed_data, tag.encode())
+
 
     def sign(self, data):
         filename = "../keys/clients/client"+str(self.identity)+".key"
         key = RSA.importKey(open(filename).read())
         h = SHA256.new(data.encode())
         signature = pkcs1_15.new(key).sign(h)
-        return data.encode() + b"signature:" + signature
+        message = {}
+        message['content'] = data
+        message['signature'] = list(signature)  # integer array
+        return json.dumps(message).encode()
+
+    #def sign(self, data):
+        #filename = "../keys/clients/client"+str(self.identity)+".key"
+        #key = RSA.importKey(open(filename).read())
+        #h = SHA256.new(data.encode())
+        #signature = pkcs1_15.new(key).sign(h)
+        #return data.encode() + b"signature:" + signature
 
     # We assume the config file is well formed
     # Read the port corresponding to its id from the configuration port

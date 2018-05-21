@@ -9,6 +9,8 @@ from Crypto.Hash import SHA256
 from Crypto.Signature import pkcs1_15
 from time import time
 import logging
+#import main
+
 
 
 class State:
@@ -85,6 +87,12 @@ class PureBlockchain(State):
                                                         self.miner.current_block[1].hash())
                 self.miner.blockchain.add_commit_block(c_block, self.miner.current_block[0]+1,
                                                        p_block.hash(), p_block.pub_key)
+                if c_block.malicious:
+                    msg = ', ' + str(c_block.weight)
+                    self.miner.res_loggerM.info(msg)
+                else:
+                    msg = ', ' + str(c_block.weight)
+                    self.miner.res_loggerH.info(msg)
                 self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
                 self.restart()
 
@@ -98,6 +106,12 @@ class PureBlockchain(State):
         c_block.from_json(message_content['commit_data'])
         self.miner.blockchain.add_commit_block(c_block, message_content['previous']['depth'] + 1,
                                                 p_block.hash(), p_block.pub_key)
+        if c_block.malicious:
+            msg = ', ' + str(c_block.weight)
+            self.miner.res_loggerM.info(msg)
+        else:
+            msg =  ', ' + str(c_block.weight)
+            self.miner.res_loggerH.info(msg)
         # We only need this condition if SWITCH_TH != 0
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             self.restart()
@@ -115,52 +129,81 @@ class MaliciousPureBlockchain(State):
         self.i_should_propose = False
         self.timestamp = None
         self.block_appeared = False
+        # if block_appeared set to true it means some honest miner found a block and the malicious one will try to cancel it
         self.nonce = None
+        self.prop2_flag = False
         if self.miner.depth_cancel_block == -1:
             self.cancel_all = True
         else:
             self.cancel_all = False
 
+    # in order to start new mining on top of the heaviest chain
     def restart(self):
         self.miner.stop()
         self.miner.transaction_list = []
+        self.timestamp = None
         self.miner.start_new_mining()
+        self.prop2_flag = False
+        if not self.cancel_all:
+            self.block_appeared = True
 
+    def restart_block(self,block):
+        self.miner.stop()
+        self.miner.transaction_list = []
+        self.prop2_flag= True
+        self.timestamp = None
+        self.miner.start_new_mal_mining(block)
+        if not self.cancel_all:
+            self.block_appeared = True
+
+    # to check if the hash is valid
     def is_hash_fresh(self, value, nonce):
         hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
                                   nonce, self.miner.public_key.exportKey('DER'))
         return hash_value == value
 
+    # when the miner receives a message with tag == MALICIOUS_PROPOSAL_AGREEMENT_TAG
     def malicious_proposal_agreement_process(self, value):
         message_content = json.loads(value)
         if message_content['depth'] == self.miner.current_block[0]:
             if self.timestamp is None or message_content['timestamp'] < self.timestamp:
                 self.timestamp = message_content['timestamp']
                 self.i_should_propose = False
+                c_block = CommitBlock()
+                c_block.from_json(message_content['commit_data'])
+                self.restart_block(c_block)
 
+    # when the miner finds a new hash, this method is being called
     def hash_value_process(self, value, nonce):
+        # value is the hash of the new block
+        # block[0] is the depth block[1] is the block itself
+        # if the hash is valid and the current depth is "greater than" the cancel_block value
         if self.is_hash_fresh(value, nonce) and self.miner.current_block[0] >= self.miner.depth_cancel_block - 1:
-            if int(value, 16) < COMMIT_TH and self.timestamp is None:
+            if int(value, 16) < COMMIT_TH and (self.timestamp is None or self.prop2_flag):
                 print("Hash found")
                 logging.info("hash found")
+                # if the honest didn't append a new block yet, send a mal prop
+                p_block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
+                                       list(self.miner.transaction_list))
+                c_block = CommitBlock()
+                p_block.malicious = True
+                c_block.malicious = True
+                self.miner.stop_mining.set_stop()
                 if not self.block_appeared:
                     ts = int(time())
-                    my_prop = {
-                        'timestamp': ts,
-                        'depth': self.miner.current_block[0],
-                        'pub_key': self.miner.public_key.exportKey('PEM').decode()
-                    }
+                    my_prop = {}
+                    my_prop['timestamp'] = ts
+                    my_prop['depth'] = self.miner.current_block[0]
+                    my_prop['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                    my_prop['propose_data'] = p_block.get_json()
+                    my_prop['commit_data'] = c_block.get_json()
                     self.timestamp = ts
                     self.nonce = nonce
                     self.miner.broadcast.broadcast(json.dumps(my_prop), MALICIOUS_PROPOSAL_AGREEMENT_TAG)
                     self.i_should_propose = True
+                # the honest has broadcasted a new block so the malicious needs to do so too
                 else:
                     self.miner.stop_mining.set_stop()
-                    p_block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
-                                           list(self.miner.transaction_list))
-                    c_block = CommitBlock()
-                    p_block.malicious = True
-                    c_block.malicious = True
                     message = {}
                     message['previous'] = {}
                     message['propose_data'] = p_block.get_json()
@@ -172,6 +215,12 @@ class MaliciousPureBlockchain(State):
                     self.miner.blockchain.add_commit_block(c_block, self.miner.current_block[0]+1,
                                                            p_block.hash(), p_block.pub_key)
                     self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_COMMIT_TAG)
+                    if c_block.malicious:
+                        msg = ', ' + str(c_block.weight)
+                        self.miner.res_loggerM.info(msg)
+                    else:
+                        msg = ', ' + str(c_block.weight)
+                        self.miner.res_loggerH.info(msg)
                     if self.cancel_all and self.miner.current_block[0] % 2 == 1:
                         self.block_appeared = False
                         # this means that the malicious found the second block first
@@ -179,8 +228,9 @@ class MaliciousPureBlockchain(State):
                     self.restart()
                     print("Switch to another mining")
 
+
     def proposal_commit_process(self, value):
-        print("PROP COMMIT")
+        print("PROP COMMIT received")
         message_content = json.loads(value)
         p_block = ProposeBlock()
         p_block.from_json(message_content['propose_data'])
@@ -190,8 +240,14 @@ class MaliciousPureBlockchain(State):
         c_block.from_json(message_content['commit_data'])
         self.miner.blockchain.add_commit_block(c_block, message_content['previous']['depth'] + 1,
                                                 p_block.hash(), p_block.pub_key)
+        if c_block.malicious:
+            msg = ', ' + str(c_block.weight)
+            self.miner.res_loggerM.info(msg)
+        else:
+            msg =  ', ' + str(c_block.weight)
+            self.miner.res_loggerH.info(msg)
 
-        # if the non-malicious can find 2 blocks the malicious gives up
+        # if cancel all and the non-malicious can find 2 blocks the malicious gives up
         print(message_content['previous']['depth'])
         print(self.miner.current_block[0] == 1)
         if self.cancel_all and (message_content['previous']['depth'] - self.miner.current_block[0] == 1):
@@ -251,29 +307,49 @@ class Mining(State):
         super(Mining, self).__init__(miner)
         self.miner.transaction_list = []
         self.miner.nonce_list = []
-        self.already_found = 0
+        #we use "already found" to keep track of the ongoing reinforcements
+        self.miner.already_found = 0
 
+    #Every miner is sending his RF value so that all others know the sum of the current found RFs
+    #Info about found RFs is received
     def reinforcement_info_process(self, value, sign):
         message_content = json.loads(value)
         if message_content['hash'] == self.miner.current_block[1].hash():
             if check_hash(self.miner.current_block[1], message_content['nonce'],
                           RSA.import_key(message_content['pub_key']), REINF_TH):
-                self.already_found += COMMIT_TH/\
+                self.miner.already_found += min(1, COMMIT_TH/\
                                       int(compute_hash(self.miner.current_block[1].hash(hex=False),
                                                        message_content['nonce'],
-                                                       RSA.import_key(message_content['pub_key']).exportKey('DER')), 16)
+                                                       RSA.import_key(message_content['pub_key']).exportKey('DER')), 16))
+                if self.miner.current_block[1].malicious:
+                    msg = ', ' + str(self.miner.current_block[1].weight + self.miner.already_found )
+                    self.miner.res_loggerM.info(msg)
+                else:
+                    msg = ', ' + str(self.miner.current_block[1].weight + self.miner.already_found)
+                    self.miner.res_loggerH.info(msg)
 
     def is_hash_fresh(self, value, nonce):
         hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
                                   nonce, self.miner.public_key.exportKey('DER'))
+        #print("IN HASH FRESH MINING")
+        #print("current_block[1].hash()")
+        #print(self.miner.current_block[1].hash(hex=True))
+        #print("get_last.hash()")
+        #print(self.miner.blockchain.get_last()[1].hash(hex=True))
+        #print("current_block[1].prev_link.hash()")
+        #print(self.miner.current_block[1].prev_link.hash(hex=True))
         return hash_value == value
 
     def hash_value_process(self, value, nonce):
+        #value is the found hash value
         if self.is_hash_fresh(value, nonce):
             if int(value, 16) < COMMIT_TH:
+                #if it is small enough to append a new block
                 logging.info("hash found")
                 print("Hash found")
-                self.miner.stop_mining.set_stop()
+                #we don't stop the mining because we want to use the time before a commit
+                #  to find as much reinforcements as possible
+                #self.miner.stop_mining.set_stop()
                 block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
                                      list(self.miner.transaction_list))
                 message = {}
@@ -288,15 +364,16 @@ class Mining(State):
                 self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
                 print("Switch to reinforcement collection")
             else:
+                #otherwise use it as reinforcement(just send the info about it, RFs are sent when propose block appears)
                 self.miner.nonce_list.append(nonce)
                 message = {}
                 message['hash'] = self.miner.current_block[1].hash()
                 message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
                 message['nonce'] = nonce
-                self.already_found += COMMIT_TH / \
+                self.miner.already_found += min(1, COMMIT_TH / \
                                       int(compute_hash(self.miner.current_block[1].hash(hex=False),
                                                        nonce,
-                                                       self.miner.public_key.exportKey('DER')), 16)
+                                                       self.miner.public_key.exportKey('DER')), 16))
                 self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_INF_TAG)
 
     def proposal_process(self, value):
@@ -308,17 +385,18 @@ class Mining(State):
                                                 message_content['previous']['hash'])
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             self.miner.current_block = (message_content['previous']['depth']+1, block)
-            self.miner.stop()
+            # we don't stop the mining because we want to use the time before a commit
+            #  to find as much reinfocements as possible
+            #self.miner.stop()
             self.miner.state = ReinforcementSent(self.miner)
             if len(self.miner.nonce_list) > 0:
                 message = {}
                 message['nonce_list'] = list(self.miner.nonce_list)
-                message['hash'] = self.miner.current_block[1].hash()
-                message['hash_commit'] = message_content['previous']['hash']
+                message['hash'] = self.miner.current_block[1].hash() #hash of the new proposed block
+                message['hash_commit'] = message_content['previous']['hash'] #hash of the block on top of which it was mined
                 message['depth'] = self.miner.current_block[0]
                 message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
                 self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
-
             print("Switch to reinforcement sent")
 
     def commit_process(self, value):
@@ -329,14 +407,23 @@ class Mining(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'], message_content['pub_key'])
-        if block.weight - (self.miner.current_block[1].weight + self.already_found) >= SWITCH_TH:
+        if block.malicious:
+            msg = ', ' + str(block.weight)
+            self.miner.res_loggerM.info(msg)
+        else:
+            msg = ', ' + str(block.weight)
+            self.miner.res_loggerH.info(msg)
+        if block.weight - (self.miner.current_block[1].weight + self.miner.already_found) > SWITCH_TH:
             logging.info("Switching branch - my current block was: %s", \
-                         self.miner.current_block[1].weight + self.already_found)
+                         self.miner.current_block[1].weight + self.miner.already_found)
             self.miner.stop_mining.set_stop()
             self.miner.transaction_list = []
             self.miner.nonce_list = []
-            self.already_found = 0
+            self.miner.already_found = 0
+            self.miner.stop()
             self.miner.start_new_mining()
+        if message_content['previous']['hash'] == self.miner.current_block[1].hash():
+            self.miner.current_block = (message_content['previous']['depth'], block)
 
     def reinforcement_process(self, value, sign):
         print("Reinforcement was received")
@@ -351,20 +438,37 @@ class MaliciousMining(State):
         self.miner.transaction_list = []
         self.miner.nonce_list = []
         self.i_should_propose = False
+        #we use the timestamp to know which malicious miner found a block first
         self.timestamp = None
         self.nonce = None   # the nonce the miner will use when proposing the malicious block
-        self.block_appeared = False
+        self.block_appeared = False #???
         if self.miner.depth_cancel_block == -1:
             self.cancel_all = True
         else:
             self.cancel_all = False
         print("MINING MALICIOUS")
 
+    def restart(self):
+        self.miner.stop()
+        self.miner.transaction_list = []
+        self.miner.nonce_list = []
+        self.i_should_propose = False
+        self.timestamp = None
+        self.nonce = None
+        self.block_appeared = False
+        if self.miner.depth_cancel_block == -1:
+            self.cancel_all = True
+
+        else:
+            self.cancel_all = False
+        self.miner.start_new_mining()
+
     def is_hash_fresh(self, value, nonce):
         hash_value = compute_hash(self.miner.current_block[1].hash(hex=False),
                                   nonce, self.miner.public_key.exportKey('DER'))
         return hash_value == value
 
+    #Some other malicious miner found a small enough hash and sends a mal propose agreement
     def malicious_proposal_agreement_process(self, value):
         message_content = json.loads(value)
         if message_content['depth'] == self.miner.current_block[0]:
@@ -375,10 +479,14 @@ class MaliciousMining(State):
                     self.miner.nonce_list.append(self.nonce)
 
     def hash_value_process(self, value, nonce):
+        #if the mining depth is greater than the cancel_block depth -1 --> always true for the cancel all strategy
         if self.is_hash_fresh(value, nonce) and self.miner.current_block[0] >= self.miner.depth_cancel_block - 1:
+            #if timestamp is None --> no other malicious miner has proposed
+            #and hash value small enough to propose
             if int(value, 16) < COMMIT_TH and self.timestamp is None:
                 logging.info("hash found")
                 print("hash found")
+                #if the honest block we are waiting for hasn't appeared yet
                 if not self.block_appeared:
                     ts = int(time())
                     my_prop = {
@@ -391,6 +499,7 @@ class MaliciousMining(State):
                     self.i_should_propose = True
                     self.miner.broadcast.broadcast(json.dumps(my_prop), MALICIOUS_PROPOSAL_AGREEMENT_TAG)
                 else:
+                    #the honest block we're waiting for has already appeared
                     self.miner.stop_mining.set_stop()
                     block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
                                          list(self.miner.transaction_list))
@@ -407,7 +516,6 @@ class MaliciousMining(State):
                     self.miner.broadcast.broadcast(json.dumps(message), PROPOSAL_TAG)
                     print("Proposed")
                     print("Switch to reinforcement collection")
-            # if other malicious miner already proposed or the hash isn't lower than the COMMIT_TH the nonce is saved
             else:
                 self.miner.nonce_list.append(nonce)
 
@@ -416,8 +524,11 @@ class MaliciousMining(State):
         message_content = json.loads(value)
         block = ProposeBlock()
         block.from_json(message_content['data'])
+        #add(block, depth, hash value)
         self.miner.blockchain.add_propose_block(block, message_content['previous']['depth'],
                                                 message_content['previous']['hash'])
+        #current_block[0] = depth ; current_block[1]=block
+        #if the received block was mined on top of the one we are mining
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             if block.malicious:
                 self.miner.stop_mining.set_stop()
@@ -441,19 +552,30 @@ class MaliciousMining(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'], message_content['pub_key'])
-
-        if (block.malicious and block.weight - self.miner.current_block[1].weight >= SWITCH_TH) or \
+        if block.malicious:
+            msg = ', ' + str(block.weight)
+            self.miner.res_loggerM.info(msg)
+        else:
+            msg =  ', ' + str(block.weight)
+            self.miner.res_loggerH.info(msg)
+        if (block.malicious and block.weight - self.miner.current_block[1].weight > SWITCH_TH) or \
                 (message_content['previous']['depth'] < self.miner.depth_cancel_block):
-            self.miner.stop()
-            self.miner.transaction_list = []
-            self.miner.nonce_list = []
-            self.miner.start_new_mining()
+            self.restart()
+            #self.miner.stop()
+            #self.miner.transaction_list = []
+            #self.miner.nonce_list = []
+            #self.miner.start_new_mining()
+        if message_content['previous']['hash'] == self.miner.current_block[1].hash():
+            self.miner.current_block = (message_content['previous']['depth'], block)
 
+        #if the depth of the received block is same as the cancel block depth and
         elif (message_content['previous']['depth'] == self.miner.depth_cancel_block and not block.malicious) or \
                 (self.cancel_all and not block.malicious and
                 message_content["hash_last_commit"] == self.miner.current_block[1].hash()): # here the previous is the propose block
+            #????if it is cancel_all then we should mark it as block appeared
             if not self.cancel_all:
                 self.block_appeared = True
+                #perhaps should be done sooner than when receiving a commit block
             if self.i_should_propose:
                 self.i_should_propose = False
                 self.timestamp = None
@@ -503,7 +625,6 @@ class MaliciousMining(State):
             self.miner.nonce_list = []
             self.miner.start_new_mining()
 
-
     def reinforcement_process(self, value, sign):
         print("Reinforcement was received")
         self.miner.reinforcement_pom.new_reinforcement(value, sign)
@@ -522,6 +643,9 @@ class ReinforcementSent(State):
                 self.miner.state.block_appeared = True
         else:
             self.miner.state = Mining(self.miner)
+        self.miner.stop()
+        prev_block = self.miner.current_block[1].prev_link
+        self.miner.current_block = (self.miner.current_block[0]-1, prev_block)
         self.miner.start_new_mining()
         print("Switch to mining")
 
@@ -554,12 +678,83 @@ class ReinforcementSent(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'], message_content['pub_key'])
+        if block.malicious:
+            msg = ', ' + str(block.weight)
+            self.miner.res_loggerM.info(msg)
+        else:
+            msg = ', ' + str(block.weight)
+            self.miner.res_loggerH.info(msg)
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
-            self.mining_switch()
+            self.miner.current_block = (message_content['previous']['depth'], block)
+            if self.miner.malicious:
+                self.miner.state = MaliciousMining(self.miner)
+                if self.miner.depth_cancel_block != -1:
+                    self.miner.state.block_appeared = True
+            else:
+                self.miner.state = Mining(self.miner)
+            self.miner.stop()
+            self.miner.start_new_mining()
+            print("Switch to mining")
 
     def reinforcement_process(self, value, sign):
         print("Reinforcement was received")
         self.miner.reinforcement_pom.new_reinforcement(value, sign)
+
+    def reinforcement_info_process(self, value, sign):
+        message_content = json.loads(value)
+        if(not self.miner.malicious):
+            if message_content['hash'] == self.miner.blockchain.get_last()[1].hash():
+                if check_hash(self.miner.blockchain.get_last()[1], message_content['nonce'],
+                          RSA.import_key(message_content['pub_key']), REINF_TH):
+                    self.miner.already_found += min(1, COMMIT_TH/\
+                                      int(compute_hash(self.miner.blockchain.get_last()[1].hash(hex=False),
+                                                       message_content['nonce'],
+                                                       RSA.import_key(message_content['pub_key']).exportKey('DER')), 16))
+                    if self.miner.blockchain.get_last()[1].malicious:
+                        msg = ', ' + str(self.miner.blockchain.get_last()[1].weight + self.miner.already_found)
+                        self.miner.res_loggerM.info(msg)
+                    else:
+                        msg = ', ' + str(self.miner.blockchain.get_last()[1].weight + self.miner.already_found)
+                        self.miner.res_loggerH.info(msg)
+                
+    def is_hash_fresh(self, value, nonce):
+        hash_value = compute_hash(self.miner.blockchain.get_last()[1].hash(hex=False),
+                                  nonce, self.miner.public_key.exportKey('DER'))
+        return hash_value == value
+
+    def hash_value_process(self, value, nonce):
+        #value is the found hash value
+        if (not self.miner.malicious):
+            print("I am in the hash val in RF sent state")
+            if self.is_hash_fresh(value, nonce):
+                print("in hash_fresh")
+                self.miner.nonce_list.append(nonce)
+                message = {}
+                message['hash'] = self.miner.blockchain.get_last()[1].hash()
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                message['nonce'] = nonce
+                self.miner.already_found += min(1, COMMIT_TH / \
+                                  int(compute_hash(self.miner.blockchain.get_last()[1].hash(hex=False),
+                                                   nonce,
+                                                   self.miner.public_key.exportKey('DER')), 16))
+
+                print("Sent Additional reinforcement info")
+                self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_INF_TAG)
+
+                message = {}
+                nonce_list = []
+                nonce_list.append(nonce)
+                message['nonce_list'] = list(nonce_list)
+                message['hash'] = self.miner.current_block[1].hash()
+                message['hash_commit'] = self.miner.blockchain.get_last()[1].hash(hex=True)
+                print("get Last:")
+                print(self.miner.blockchain.get_last()[1].hash(hex=True))
+                message['depth'] = self.miner.current_block[0]
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                print("Sent Additional reinforcement")
+                self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
+
+
 
 
 class ReinforcementCollecting(State):
@@ -603,12 +798,19 @@ class ReinforcementCollecting(State):
         logging.info("commit with %d reinforcements", len(self.received_reinforcements))
         self.miner.blockchain.add_commit_block(block, self.miner.current_block[0], self.miner.current_block[1].hash(),
                                                self.miner.public_key.exportKey('PEM').decode())
+        if block.malicious:
+            msg = ', ' + str(block.weight)
+            self.miner.res_loggerM.info(msg)
+        else:
+            msg = ', ' + str(block.weight)
+            self.miner.res_loggerH.info(msg)
         if self.miner.malicious:
             self.miner.state = MaliciousMining(self.miner)
             if self.miner.depth_cancel_block != -1:
                 self.miner.state.block_appeared = True
         else:
             self.miner.state = Mining(self.miner)
+        self.miner.current_block = (message['previous']['depth'], block)
         self.miner.start_new_mining()
         self.miner.broadcast.broadcast(json.dumps(message), COMMIT_TAG)
         print("Switch to mining")
@@ -664,3 +866,59 @@ class ReinforcementCollecting(State):
         block.from_json(message_content['data'])
         self.miner.blockchain.add_commit_block(block, message_content['previous']['depth'],
                                                message_content['previous']['hash'], message_content['pub_key'])
+        if block.malicious:
+            msg = ', ' + str(block.weight)
+            self.miner.res_loggerM.info(msg)
+        else:
+            msg = ', ' + str(block.weight)
+            self.miner.res_loggerH.info(msg)
+
+    def reinforcement_info_process(self, value, sign):
+        if (not self.miner.malicious):
+            message_content = json.loads(value)
+            if message_content['hash'] == self.miner.blockchain.get_last()[1].hash():
+                if check_hash(self.miner.blockchain.get_last()[1], message_content['nonce'],
+                              RSA.import_key(message_content['pub_key']), REINF_TH):
+                    self.miner.already_found += min(1, COMMIT_TH/\
+                                          int(compute_hash(self.miner.blockchain.get_last()[1].hash(hex=False),
+                                                       message_content['nonce'],
+                                                       RSA.import_key(message_content['pub_key']).exportKey('DER')), 16))
+                    if self.miner.blockchain.get_last()[1].malicious:
+                        msg = ', ' + str(self.miner.blockchain.get_last()[1].weight + self.miner.already_found)
+                        self.miner.res_loggerM.info(msg)
+                    else:
+                        msg = ', ' + str(self.miner.blockchain.get_last()[1].weight + self.miner.already_found)
+                        self.miner.res_loggerH.info(msg)
+
+    def is_hash_fresh(self, value, nonce):
+        hash_value = compute_hash(self.miner.blockchain.get_last()[1].hash(hex=False),
+                                  nonce, self.miner.public_key.exportKey('DER'))
+        return hash_value == value
+
+    def hash_value_process(self, value, nonce):
+        #value is the found hash value
+        if (not self.miner.malicious):
+            if self.is_hash_fresh(value, nonce):
+                self.miner.nonce_list.append(nonce)
+                message = {}
+                message['hash'] = self.miner.blockchain.get_last()[1].hash()
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                message['nonce'] = nonce
+                self.miner.already_found += min(1, COMMIT_TH / \
+                                      int(compute_hash(self.miner.blockchain.get_last()[1].hash(hex=False),
+                                                       nonce,
+                                                       self.miner.public_key.exportKey('DER')), 16))
+                print("Sent Additional reinforcement info")
+                self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_INF_TAG)
+
+                message = {}
+                nonce_list = []
+                nonce_list.append(nonce)
+                message['nonce_list'] = list(nonce_list)
+                message['hash'] = self.miner.current_block[1].hash()
+                message['hash_commit'] = self.miner.blockchain.get_last()[1].hash(hex=True)
+                message['depth'] = self.miner.current_block[0]
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                print("Sent Additional reinforcement")
+                self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
+

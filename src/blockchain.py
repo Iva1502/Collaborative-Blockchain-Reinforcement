@@ -8,8 +8,10 @@ import logging
 
 
 class Blockchain:
-    def __init__(self, genesis_time, pure=False, copy_mal_flag = True):
+    def __init__(self, genesis_time, pure=False, copy_mal_flag=True):
+        # position_index array contains a tuple (Propose Block, Commit Block) for each depth
         self.position_index = []
+        # list_of_leaves array contains tuples (depth, Commit block)
         self.list_of_leaves = []
         self.head = ProposeBlock(genesis_time=genesis_time)
         self.position_index.append([])
@@ -21,6 +23,9 @@ class Blockchain:
         self.pool_of_blocks = {}
         self.pure = pure
         self.copy_mal_flag = copy_mal_flag
+        #??? copy_mal_flag ???
+        # in Miner called like: copy_mal_flag = (depth_cancel_block != -1)
+        # it means copy_mal_flag = false if the strategy is cancel_all_blocks
 
     def get_last(self, mal_flag=False, cancel_all=False, threshold_divisor=1):
         max_w = -1
@@ -46,7 +51,8 @@ class Blockchain:
                 and last_block.weight > last_block_mal.weight + int(CANCEL_PARTICULAR_BLOCK_TH / threshold_divisor):
             logging.info("END: HONEST WIN. %s against %s", last_block.weight,
                          last_block_mal.weight + CANCEL_PARTICULAR_BLOCK_TH / threshold_divisor)
-            print("END: HONEST WIN")
+            print("END: HONEST WIN %s against %s", last_block.weight,
+                         last_block_mal.weight + CANCEL_PARTICULAR_BLOCK_TH / threshold_divisor)
             print('\a')
         if last_block_mal is None:
             print("return NOT malicious with depth: ")
@@ -72,7 +78,10 @@ class Blockchain:
             if self.copy_mal_flag:
                 if node.malicious:
                     block.malicious = True
-            logging.info("appended propose %s on top of %s", block.hash()[:10], hash_value[:10])
+            if block.malicious:
+                logging.info("appended malicious propose %s on top of %s", block.hash()[:10], hash_value[:10])
+            else:
+                logging.info("appended honest propose %s on top of %s", block.hash()[:10], hash_value[:10])
             # find and append next blocks
             if (depth+1) in self.pool_of_blocks.keys():
                 for h, b, pub_key in self.pool_of_blocks[depth+1]:
@@ -104,7 +113,10 @@ class Blockchain:
             if self.copy_mal_flag:
                 if node.malicious:
                     block.malicious = True
-            logging.info("appended commit %s on top of %s", block.hash()[:10], hash_value[:10])
+            if block.malicious:
+                logging.info("appended malicious commit %s on top of %s", block.hash()[:10], hash_value[:10])
+            else:
+                logging.info("appended honest commit %s on top of %s", block.hash()[:10], hash_value[:10])
             for d, b in self.list_of_leaves:
                 if previous_commit == b:
                     self.list_of_leaves.remove((d, b))
@@ -125,7 +137,7 @@ class Blockchain:
             if depth not in self.pool_of_blocks.keys():
                 self.pool_of_blocks[depth] = []
             self.pool_of_blocks[depth].append((hash_value, block, pub_key))
-
+    '''
     def calculate_weight(self, propose, commit, previous_commit):
         sum = COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), propose.nonce,
                                               RSA.import_key(propose.pub_key).exportKey('DER')), 16)
@@ -134,6 +146,21 @@ class Blockchain:
                 sum += COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), nonce,
                                                   RSA.import_key(k).exportKey('DER')), 16)
         return sum
+    '''
+
+
+    def calculate_weight(self, propose, commit, previous_commit):
+        sum = 1 #min(1, COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), propose.nonce,
+                                              #RSA.import_key(propose.pub_key).exportKey('DER')), 16))
+        num_rfs = 0
+        for k in commit.reinforcements.keys():
+            for nonce in commit.reinforcements[k]['nonces']:
+                sum += min(1, COMMIT_TH/int(compute_hash(previous_commit.hash(hex=False), nonce,
+                                                  RSA.import_key(k).exportKey('DER')), 16))
+                num_rfs +=1
+        w = sum + previous_commit.weight
+        logging.info("Weight: %s #RFs %s", w, num_rfs)
+        return sum
 
     def find_position(self, depth, hash_value):
         if depth < len(self.position_index):
@@ -141,7 +168,6 @@ class Blockchain:
                 if block.hash() == hash_value:
                     return block
         return None
-
 
 class ProposeBlock:
     def __init__(self, nonce=0, _id="0", tr_list=[], genesis_time=None):
@@ -181,6 +207,9 @@ class ProposeBlock:
         data['malicious'] = self.malicious
         return json.dumps(data, sort_keys=True)
 
+    def print(self):
+        print("Propose Block: malicious=" + str(self.malicious))
+
 
 class CommitBlock:
     def __init__(self, reinf_list={}, poms=list(), genesis_time=None):
@@ -216,3 +245,6 @@ class CommitBlock:
         data['malicious'] = self.malicious
         data['ts'] = self.ts
         return json.dumps(data, sort_keys=True)
+
+    def print(self):
+        print("Commit Block: malicious=" + str(self.malicious))

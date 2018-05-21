@@ -37,6 +37,8 @@ class Broadcast:
     def broadcast(self, data, tag):
         logging.info("SNT %s", tag)
         signed_data = self.sign(data)
+        #print("Broadcast.py Signed Data:")
+        #print(signed_data)
         self.publisher.publish(signed_data, tag.encode())
 
     def sign(self, data):
@@ -76,6 +78,7 @@ class BroadcastSubscriber(ZmqSubConnection):
             print("The signature is not valid.")
             return False
 
+#overrides method of class ZmqSubConnection
     def gotMessage(self, message, tag):
         data, signature = self.parse_message(message)
         if self.verify_signature(data, signature, tag):
