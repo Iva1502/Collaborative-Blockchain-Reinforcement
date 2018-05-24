@@ -502,6 +502,8 @@ class MaliciousMining(State):
                     self.miner.broadcast.broadcast(json.dumps(my_prop), MALICIOUS_PROPOSAL_AGREEMENT_TAG)
                 else:
                     #the honest block we're waiting for has already appeared
+                    # we don't stop the mining because we want to use the time before a commit
+                    #  to find as much reinforcements as possible
                     self.miner.stop_mining.set_stop()
                     block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
                                          list(self.miner.transaction_list))
