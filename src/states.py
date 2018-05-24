@@ -365,6 +365,7 @@ class Mining(State):
                 print("Switch to reinforcement collection")
             else:
                 #otherwise use it as reinforcement(just send the info about it, RFs are sent when propose block appears)
+                logging.info("RF found")
                 self.miner.nonce_list.append(nonce)
                 message = {}
                 message['hash'] = self.miner.current_block[1].hash()
@@ -390,6 +391,7 @@ class Mining(State):
             #self.miner.stop()
             self.miner.state = ReinforcementSent(self.miner)
             if len(self.miner.nonce_list) > 0:
+                logging.info("RFs > 0 ")
                 message = {}
                 message['nonce_list'] = list(self.miner.nonce_list)
                 message['hash'] = self.miner.current_block[1].hash() #hash of the new proposed block
@@ -634,6 +636,7 @@ class ReinforcementSent(State):
     def __init__(self, miner):
         logging.info("REINFORCEMENT SENT state")
         super(ReinforcementSent, self).__init__(miner)
+        reactor.suggestThreadPoolSize(30)
         self.timeout = reactor.callLater(COMMIT_TIMEOUT, self.mining_switch)
 
     def mining_switch(self):
@@ -725,9 +728,7 @@ class ReinforcementSent(State):
     def hash_value_process(self, value, nonce):
         #value is the found hash value
         if (not self.miner.malicious):
-            print("I am in the hash val in RF sent state")
             if self.is_hash_fresh(value, nonce):
-                print("in hash_fresh")
                 self.miner.nonce_list.append(nonce)
                 message = {}
                 message['hash'] = self.miner.blockchain.get_last()[1].hash()
@@ -778,6 +779,7 @@ class ReinforcementCollecting(State):
             dict_to_add['signature'] = list(signature)
             self.received_reinforcements[self.miner.public_key.exportKey('PEM').decode()] = dict_to_add
         print("My reinforcement", len(self.miner.nonce_list))
+        reactor.suggestThreadPoolSize(30)
         reactor.callLater(REINF_TIMEOUT, self.committing)
 
     def committing(self):

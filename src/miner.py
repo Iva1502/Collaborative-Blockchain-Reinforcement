@@ -112,6 +112,7 @@ class Miner:
             logging.info("WIN: MALICIOUS WIN on block %d", self.current_block[0])
         self.stop_mining = Stop()
         #if self.mal_block is None:
+        reactor.suggestThreadPoolSize(40)
         reactor.callInThread(self.hash.mine, self.current_block[1], self.stop_mining)
         delta = dt.datetime.now() - self.t
         if delta.seconds >= 60:
@@ -122,13 +123,15 @@ class Miner:
         #else:
          #   reactor.callInThread(self.hash.mine, self.mal_block, self.stop_mining)
 
-
+    # In Cancel-All strategy the malicious miners don't stop mining if they find the first block and
+    # wait for an honest block to cancel, but they continue mining secretly
     def start_new_mal_mining(self, c_block):
         logging.info("start mal HIDEN mining on top of - hash %s", c_block.hash())
         print("start mal HIDEN mining on top of - hash ", c_block.hash())
         #if depth_cancel_block is -1, it means it's the cancel all blocks strategy
         self.stop_mining = Stop()
         #if self.mal_block is None:
+        reactor.suggestThreadPoolSize(40)
         reactor.callInThread(self.hash.mine, c_block, self.stop_mining)
 
     def new_hash_found(self, val, nonce):

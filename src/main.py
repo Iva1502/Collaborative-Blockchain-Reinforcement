@@ -14,6 +14,7 @@ def shutdown():
 
 
 def signal_handler(signum, frame):
+    reactor.suggestThreadPoolSize(40)
     reactor.callFromThread(shutdown)
 
 
@@ -36,6 +37,7 @@ if __name__ == '__main__':
     # IN: task is part of the twisted package and deferLater method schedules tasks for the future,
     # it conveniently takes care of creating a Deferred and setting up a delayed call
     task.deferLater(reactor, 1, miner.run)
+    reactor.suggestThreadPoolSize(40)
     reactor.run()
     #All callbacks registered with the reactor (ex. dataReceived, connectionLost..) are called from reactor.run
     # and these callbacks are run in the “main thread”, or “reactor thread”

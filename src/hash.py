@@ -28,22 +28,6 @@ class Hash():
     def __init__(self, miner):
         self.miner = miner
 
-    # ---------------------
-    def nonBlockingSleep(self, delay):
-        '''Hack to allow sleep for a period of time w/o blocking the reactor
-        Do *block* the caller for `delay` seconds.
-        '''
-        if delay > 90:
-            print('WARNING nonBlockingSleep delay={0} sec. dangerous, reset to 90s'.format(delay))
-            delay = 90.0
-        toTime = time.time() + delay
-        while toTime >= time.time():
-            try:
-                reactor.iterate(0.055)
-            except Exception as err:
-                pass
-            time.sleep(0.001)
-
     def mine(self, block, stop):
         hash_block = block.hash(hex=False)
         nonce = -1
@@ -55,8 +39,10 @@ class Hash():
             hash_value = compute_hash(hash_block, nonce, self.miner.public_key.exportKey('DER'))
             #print(int(hash_value,16))
             if int(hash_value, 16) < REINF_TH:
+                logging.info("RF found but not transmitted")
                 # inform the miner that an hash lower than the threshold was found
                 from twisted.internet import reactor
+                reactor.suggestThreadPoolSize(40)
                 reactor.callFromThread(self.miner.new_hash_found, hash_value, nonce)
 
 

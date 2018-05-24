@@ -84,6 +84,7 @@ class BroadcastSubscriber(ZmqSubConnection):
         if self.verify_signature(data, signature, tag):
             if tag.decode() == PROPOSAL_TAG and DELIVERY_DELAY > 0:
                 from twisted.internet import reactor
+                reactor.suggestThreadPoolSize(40)
                 reactor.callLater(DELIVERY_DELAY, self.miner.new_message, data, signature, tag.decode())
             else:
                 self.miner.new_message(data, signature, tag.decode())
