@@ -1,10 +1,11 @@
-# 59 Fs and a 8  iva added 1 F
+# 59 Fs and a 8 -- iva added 1 F
 COMMIT_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8
 
-# 60 and 8 Fs (16 times larger than commit TH) iva added 1 F
+# 60 and 8 Fs (16 times larger than commit TH) -- iva added 1 F
 REINF_TH = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8
 
-SWITCH_TH = 1
+#should be set to 0 if the Bitcoin version is run
+SWITCH_TH = 0
 
 CANCEL_PARTICULAR_BLOCK_TH = 40
 

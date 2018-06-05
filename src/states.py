@@ -504,7 +504,7 @@ class MaliciousMining(State):
                     #the honest block we're waiting for has already appeared
                     # we don't stop the mining because we want to use the time before a commit
                     #  to find as much reinforcements as possible
-                    self.miner.stop_mining.set_stop()
+                    #self.miner.stop_mining.set_stop()
                     block = ProposeBlock(nonce, self.miner.public_key.exportKey('PEM').decode(),
                                          list(self.miner.transaction_list))
                     block.malicious = True
@@ -535,9 +535,11 @@ class MaliciousMining(State):
         #if the received block was mined on top of the one we are mining
         if message_content['previous']['hash'] == self.miner.current_block[1].hash():
             if block.malicious:
-                self.miner.stop_mining.set_stop()
-                self.miner.state = ReinforcementSent(self.miner)
+                # we don't stop the mining because we want to use the time before a commit
+                #  to find as much reinforcements as possible
+                #self.miner.stop_mining.set_stop()
                 self.miner.current_block = (message_content['previous']['depth'] + 1, block)
+                self.miner.state = ReinforcementSent(self.miner)
                 print("Switch to reinforcement sent")
                 if len(self.miner.nonce_list) > 0:
                     message = {}
@@ -727,6 +729,11 @@ class ReinforcementSent(State):
                                   nonce, self.miner.public_key.exportKey('DER'))
         return hash_value == value
 
+    def is_hash_fresh_mal(self, value, nonce):
+        hash_value = compute_hash(self.miner.current_block[1].prev_link.hash(hex=False),
+                                  nonce, self.miner.public_key.exportKey('DER'))
+        return hash_value == value
+
     def hash_value_process(self, value, nonce):
         #value is the found hash value
         if (not self.miner.malicious):
@@ -748,13 +755,29 @@ class ReinforcementSent(State):
                 nonce_list = []
                 nonce_list.append(nonce)
                 message['nonce_list'] = list(nonce_list)
+                #current block is the propose that was last received
                 message['hash'] = self.miner.current_block[1].hash()
                 message['hash_commit'] = self.miner.blockchain.get_last()[1].hash(hex=True)
-                print("get Last:")
-                print(self.miner.blockchain.get_last()[1].hash(hex=True))
                 message['depth'] = self.miner.current_block[0]
                 message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
                 print("Sent Additional reinforcement")
+                self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
+        else:
+            if self.is_hash_fresh_mal(value, nonce):
+                print("In hash fresh mal")
+                self.miner.nonce_list.append(nonce)
+                message = {}
+                nonce_list = []
+                nonce_list.append(nonce)
+                message['nonce_list'] = list(nonce_list)
+                #hash of the already appended propose block
+                message['hash'] = self.miner.current_block[1].hash()
+                #it is the hash of the last commit block
+                message['hash_commit'] = self.miner.current_block[1].prev_link.hash(hex=True)
+                #blockchain.get_last()[1].hash(hex=True)
+                message['depth'] = self.miner.current_block[0]
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                print("Sent Additional Mal reinforcement")
                 self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
 
 
@@ -899,6 +922,11 @@ class ReinforcementCollecting(State):
                                   nonce, self.miner.public_key.exportKey('DER'))
         return hash_value == value
 
+    def is_hash_fresh_mal(self, value, nonce):
+        hash_value = compute_hash(self.miner.current_block[1].prev_link.hash(hex=False),
+                                  nonce, self.miner.public_key.exportKey('DER'))
+        return hash_value == value
+
     def hash_value_process(self, value, nonce):
         #value is the found hash value
         if (not self.miner.malicious):
@@ -924,5 +952,22 @@ class ReinforcementCollecting(State):
                 message['depth'] = self.miner.current_block[0]
                 message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
                 print("Sent Additional reinforcement")
+                self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
+        else:
+            if self.is_hash_fresh_mal(value, nonce):
+                print("In hash fresh mal")
+                self.miner.nonce_list.append(nonce)
+                message = {}
+                nonce_list = []
+                nonce_list.append(nonce)
+                message['nonce_list'] = list(nonce_list)
+                #hash of the already appended propose block
+                message['hash'] = self.miner.current_block[1].hash()
+                #it is the hash of the last commit block
+                message['hash_commit'] = self.miner.current_block[1].prev_link.hash(hex=True)
+                #blockchain.get_last()[1].hash(hex=True)
+                message['depth'] = self.miner.current_block[0]
+                message['pub_key'] = self.miner.public_key.exportKey('PEM').decode()
+                print("Sent Additional Mal reinforcement")
                 self.miner.broadcast.broadcast(json.dumps(message), REINFORCEMENT_TAG)
 
