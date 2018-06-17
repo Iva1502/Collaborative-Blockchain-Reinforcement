@@ -1,0 +1,1227 @@
+2018-06-13 00:36:25,858 ---------------------------------------------------------
+2018-06-13 00:36:25,859 MALICIOUS MINING state
+2018-06-13 00:36:26,881 start mining - depth 0
+2018-06-13 00:36:26,882 start mining - hash 557fd243b5fc0f1212c3eccab8735366c3562e9d0a1decbafe5e6eb92ec94928
+2018-06-13 00:36:28,131 RF found but not transmitted
+2018-06-13 00:36:30,246 RCV malicious_prop_agreement
+2018-06-13 00:36:30,645 RCV reinforcement info
+2018-06-13 00:36:31,345 RCV reinforcement info
+2018-06-13 00:36:33,055 RCV reinforcement info
+2018-06-13 00:36:33,487 RCV reinforcement info
+2018-06-13 00:36:34,737 RF found but not transmitted
+2018-06-13 00:36:37,353 RCV reinforcement info
+2018-06-13 00:36:37,843 RF found but not transmitted
+2018-06-13 00:36:38,501 RCV reinforcement info
+2018-06-13 00:36:39,238 RCV reinforcement info
+2018-06-13 00:36:39,942 RCV reinforcement info
+2018-06-13 00:36:40,007 RF found but not transmitted
+2018-06-13 00:36:40,342 RCV reinforcement info
+2018-06-13 00:36:42,811 RCV reinforcement info
+2018-06-13 00:36:45,682 RCV reinforcement info
+2018-06-13 00:36:45,984 RF found but not transmitted
+2018-06-13 00:36:49,029 RCV reinforcement info
+2018-06-13 00:36:53,631 RCV reinforcement info
+2018-06-13 00:36:56,188 RF found but not transmitted
+2018-06-13 00:36:57,316 RF found but not transmitted
+2018-06-13 00:36:57,884 RCV reinforcement info
+2018-06-13 00:36:58,038 RCV reinforcement info
+2018-06-13 00:36:58,620 RCV reinforcement info
+2018-06-13 00:36:58,660 RF found but not transmitted
+2018-06-13 00:37:03,449 RF found but not transmitted
+2018-06-13 00:37:03,855 RCV reinforcement info
+2018-06-13 00:37:04,262 RCV reinforcement info
+2018-06-13 00:37:05,730 RCV reinforcement info
+2018-06-13 00:37:08,332 RCV reinforcement info
+2018-06-13 00:37:08,843 RCV reinforcement info
+2018-06-13 00:37:09,470 RF found but not transmitted
+2018-06-13 00:37:10,673 RCV reinforcement info
+2018-06-13 00:37:11,003 RCV reinforcement info
+2018-06-13 00:37:11,556 RCV reinforcement info
+2018-06-13 00:37:12,668 RCV reinforcement info
+2018-06-13 00:37:13,262 RCV reinforcement info
+2018-06-13 00:37:14,384 RCV proposal
+2018-06-13 00:37:14,387 appended honest propose e749991ea4 on top of 557fd243b5
+2018-06-13 00:37:14,463 RCV reinforcement
+2018-06-13 00:37:14,475 RCV reinforcement
+2018-06-13 00:37:15,969 RCV commit
+2018-06-13 00:37:16,095 appended honest commit 2e677aee00 on top of e749991ea4
+2018-06-13 00:37:16,235 Weight: 5.134515935059208 #RFs 26
+2018-06-13 00:37:16,235 weight: 5.134515935059208
+2018-06-13 00:37:16,236 , 5.134515935059208
+2018-06-13 00:37:16,373 RCV proposal
+2018-06-13 00:37:16,376 appended malicious propose 6ff12c1349 on top of 557fd243b5
+2018-06-13 00:37:16,376 REINFORCEMENT SENT state
+2018-06-13 00:37:16,378 SNT reinforcement
+2018-06-13 00:37:16,570 RCV reinforcement
+2018-06-13 00:37:16,575 RCV reinforcement
+2018-06-13 00:37:16,590 RCV reinforcement
+2018-06-13 00:37:16,598 RCV reinforcement
+2018-06-13 00:37:16,618 RCV reinforcement
+2018-06-13 00:37:17,372 RCV reinforcement
+2018-06-13 00:37:17,967 RCV reinforcement info
+2018-06-13 00:37:18,027 RCV reinforcement
+2018-06-13 00:37:18,117 RCV commit
+2018-06-13 00:37:18,487 appended malicious commit 8ab33be0d7 on top of 6ff12c1349
+2018-06-13 00:37:18,799 Weight: 17.585903557468246 #RFs 66
+2018-06-13 00:37:18,800 weight: 17.585903557468246
+2018-06-13 00:37:18,800 , 17.585903557468246
+2018-06-13 00:37:18,801 MALICIOUS MINING state
+2018-06-13 00:37:18,801 start mining - depth 1
+2018-06-13 00:37:18,804 start mining - hash 8ab33be0d7c7f065cd919bc86c2ad18e29bbaa538e29ce0a1736da8a625e9c57
+2018-06-13 00:37:19,231 RCV reinforcement info
+2018-06-13 00:37:19,307 RF found but not transmitted
+2018-06-13 00:37:22,536 RCV reinforcement info
+2018-06-13 00:37:22,827 RCV reinforcement info
+2018-06-13 00:37:27,309 RCV malicious_prop_agreement
+2018-06-13 00:37:28,224 RCV reinforcement info
+2018-06-13 00:37:29,497 RF found but not transmitted
+2018-06-13 00:37:30,919 RF found but not transmitted
+2018-06-13 00:37:31,540 RCV reinforcement info
+2018-06-13 00:37:32,762 RF found but not transmitted
+2018-06-13 00:37:33,374 RF found but not transmitted
+2018-06-13 00:37:35,672 RCV reinforcement info
+2018-06-13 00:37:40,425 RCV proposal
+2018-06-13 00:37:40,436 appended honest propose 021682dbb5 on top of 8ab33be0d7
+2018-06-13 00:37:40,501 RCV reinforcement
+2018-06-13 00:37:40,522 RCV reinforcement
+2018-06-13 00:37:41,968 RCV commit
+2018-06-13 00:37:42,024 appended honest commit 705c54a28f on top of 021682dbb5
+2018-06-13 00:37:42,084 Weight: 19.21262315279742 #RFs 6
+2018-06-13 00:37:42,084 weight: 19.21262315279742
+2018-06-13 00:37:42,084 , 19.21262315279742
+2018-06-13 00:37:42,157 RCV reinforcement info
+2018-06-13 00:37:42,255 RCV proposal
+2018-06-13 00:37:42,261 appended malicious propose cd0f5486bd on top of 8ab33be0d7
+2018-06-13 00:37:42,262 REINFORCEMENT SENT state
+2018-06-13 00:37:42,263 SNT reinforcement
+2018-06-13 00:37:42,505 RCV reinforcement
+2018-06-13 00:37:42,539 RCV reinforcement
+2018-06-13 00:37:42,554 RCV reinforcement
+2018-06-13 00:37:42,556 RF found but not transmitted
+2018-06-13 00:37:42,564 RCV reinforcement
+2018-06-13 00:37:42,571 SNT reinforcement
+2018-06-13 00:37:42,710 RCV reinforcement
+2018-06-13 00:37:42,714 RCV reinforcement
+2018-06-13 00:37:42,726 RCV reinforcement
+2018-06-13 00:37:42,922 RCV reinforcement
+2018-06-13 00:37:44,047 RCV commit
+2018-06-13 00:37:44,354 appended malicious commit 347a0062c4 on top of cd0f5486bd
+2018-06-13 00:37:44,611 Weight: 28.42311833317802 #RFs 41
+2018-06-13 00:37:44,611 weight: 28.42311833317802
+2018-06-13 00:37:44,612 , 28.42311833317802
+2018-06-13 00:37:44,630 MALICIOUS MINING state
+2018-06-13 00:37:44,630 start mining - depth 2
+2018-06-13 00:37:44,631 start mining - hash 347a0062c48ca48e95b89d08942fbf86d25feb77156c142acbca835a1bc9069e
+2018-06-13 00:37:44,725 Hashing frequency: 4132
+2018-06-13 00:37:44,729 RCV reinforcement
+2018-06-13 00:37:47,321 RCV reinforcement info
+2018-06-13 00:37:50,038 RF found but not transmitted
+2018-06-13 00:37:51,845 RCV reinforcement info
+2018-06-13 00:37:52,329 RF found but not transmitted
+2018-06-13 00:37:52,776 RF found but not transmitted
+2018-06-13 00:37:52,917 RCV reinforcement info
+2018-06-13 00:37:55,394 RCV reinforcement info
+2018-06-13 00:37:57,187 RCV reinforcement info
+2018-06-13 00:38:00,184 RF found but not transmitted
+2018-06-13 00:38:00,847 RF found but not transmitted
+2018-06-13 00:38:01,109 RCV reinforcement info
+2018-06-13 00:38:03,463 RF found but not transmitted
+2018-06-13 00:38:04,149 RF found but not transmitted
+2018-06-13 00:38:05,518 RCV reinforcement info
+2018-06-13 00:38:05,704 RCV reinforcement info
+2018-06-13 00:38:07,153 RCV reinforcement info
+2018-06-13 00:38:10,293 RF found but not transmitted
+2018-06-13 00:38:10,753 RCV reinforcement info
+2018-06-13 00:38:12,193 RCV reinforcement info
+2018-06-13 00:38:12,402 RCV reinforcement info
+2018-06-13 00:38:14,079 RCV reinforcement info
+2018-06-13 00:38:14,221 RF found but not transmitted
+2018-06-13 00:38:15,532 RCV reinforcement info
+2018-06-13 00:38:17,831 RCV reinforcement info
+2018-06-13 00:38:18,472 RCV reinforcement info
+2018-06-13 00:38:20,159 RF found but not transmitted
+2018-06-13 00:38:20,578 RF found but not transmitted
+2018-06-13 00:38:24,989 RF found but not transmitted
+2018-06-13 00:38:24,990 hash found
+2018-06-13 00:38:24,991 SNT malicious_proposal_agreement
+2018-06-13 00:38:27,337 RCV reinforcement info
+2018-06-13 00:38:28,242 RF found but not transmitted
+2018-06-13 00:38:29,072 RCV proposal
+2018-06-13 00:38:29,077 appended honest propose 28e45b97f7 on top of 347a0062c4
+2018-06-13 00:38:29,168 RCV reinforcement
+2018-06-13 00:38:29,171 RCV reinforcement
+2018-06-13 00:38:30,151 RF found but not transmitted
+2018-06-13 00:38:30,667 RCV commit
+2018-06-13 00:38:30,769 appended honest commit bbd007158d on top of 28e45b97f7
+2018-06-13 00:38:30,918 Weight: 31.642211527687046 #RFs 17
+2018-06-13 00:38:30,922 weight: 31.642211527687046
+2018-06-13 00:38:30,922 , 31.642211527687046
+2018-06-13 00:38:30,933 appended malicious propose 0a3a21db02 on top of 347a0062c4
+2018-06-13 00:38:30,933 REINFORCEMENT COLLECTING state
+2018-06-13 00:38:31,028 SNT proposal
+2018-06-13 00:38:31,422 RCV reinforcement
+2018-06-13 00:38:31,505 RCV reinforcement
+2018-06-13 00:38:31,618 RCV reinforcement
+2018-06-13 00:38:31,647 RCV reinforcement
+2018-06-13 00:38:31,718 RCV reinforcement
+2018-06-13 00:38:31,780 RCV reinforcement
+2018-06-13 00:38:31,818 RCV reinforcement
+2018-06-13 00:38:32,012 RCV reinforcement
+2018-06-13 00:38:32,534 commit with 7 reinforcements
+2018-06-13 00:38:32,686 appended malicious commit df43f0b26f on top of 0a3a21db02
+2018-06-13 00:38:32,897 Weight: 41.81800571566016 #RFs 67
+2018-06-13 00:38:32,897 weight: 41.81800571566016
+2018-06-13 00:38:32,897 , 41.81800571566016
+2018-06-13 00:38:32,902 MALICIOUS MINING state
+2018-06-13 00:38:32,902 start mining - depth 3
+2018-06-13 00:38:32,903 start mining - hash df43f0b26fd39e5fe1d6bc9ec8dac4feeb7a3694bcac5ffe97db3b261c8a3ac4
+2018-06-13 00:38:32,904 SNT commit
+2018-06-13 00:38:33,221 RCV reinforcement
+2018-06-13 00:38:33,315 RCV reinforcement info
+2018-06-13 00:38:37,409 RCV reinforcement info
+2018-06-13 00:38:38,870 RF found but not transmitted
+2018-06-13 00:38:39,706 RCV reinforcement info
+2018-06-13 00:38:40,410 RCV malicious_prop_agreement
+2018-06-13 00:38:41,241 RCV reinforcement info
+2018-06-13 00:38:41,648 RCV reinforcement info
+2018-06-13 00:38:42,202 RF found but not transmitted
+2018-06-13 00:38:42,329 RCV reinforcement info
+2018-06-13 00:38:44,895 RCV reinforcement info
+2018-06-13 00:38:45,579 RF found but not transmitted
+2018-06-13 00:38:47,020 RCV reinforcement info
+2018-06-13 00:38:47,098 RCV reinforcement info
+2018-06-13 00:38:49,163 RCV reinforcement info
+2018-06-13 00:38:49,894 RCV reinforcement info
+2018-06-13 00:38:49,992 RCV reinforcement info
+2018-06-13 00:38:50,765 RCV reinforcement info
+2018-06-13 00:38:52,420 RF found but not transmitted
+2018-06-13 00:38:53,302 RCV reinforcement info
+2018-06-13 00:38:53,862 RCV reinforcement info
+2018-06-13 00:38:53,974 RF found but not transmitted
+2018-06-13 00:38:54,178 RCV reinforcement info
+2018-06-13 00:38:54,860 RCV reinforcement info
+2018-06-13 00:38:55,008 RCV reinforcement info
+2018-06-13 00:38:55,571 RCV reinforcement info
+2018-06-13 00:38:56,683 RF found but not transmitted
+2018-06-13 00:38:57,395 RCV reinforcement info
+2018-06-13 00:38:58,158 RF found but not transmitted
+2018-06-13 00:38:58,560 RCV reinforcement info
+2018-06-13 00:38:58,593 RCV reinforcement info
+2018-06-13 00:39:00,562 RCV reinforcement info
+2018-06-13 00:39:04,445 RCV reinforcement info
+2018-06-13 00:39:05,357 RCV reinforcement info
+2018-06-13 00:39:08,856 RCV reinforcement info
+2018-06-13 00:39:09,017 RCV reinforcement info
+2018-06-13 00:39:09,295 RF found but not transmitted
+2018-06-13 00:39:10,268 RCV reinforcement info
+2018-06-13 00:39:11,907 RCV reinforcement info
+2018-06-13 00:39:13,263 RCV reinforcement info
+2018-06-13 00:39:14,364 RCV reinforcement info
+2018-06-13 00:39:15,416 RF found but not transmitted
+2018-06-13 00:39:15,506 RF found but not transmitted
+2018-06-13 00:39:16,250 RF found but not transmitted
+2018-06-13 00:39:18,232 RF found but not transmitted
+2018-06-13 00:39:20,797 RCV reinforcement info
+2018-06-13 00:39:20,946 RCV reinforcement info
+2018-06-13 00:39:21,118 RCV reinforcement info
+2018-06-13 00:39:21,129 RCV reinforcement info
+2018-06-13 00:39:23,540 RF found but not transmitted
+2018-06-13 00:39:23,910 RCV reinforcement info
+2018-06-13 00:39:24,324 RF found but not transmitted
+2018-06-13 00:39:24,377 RCV reinforcement info
+2018-06-13 00:39:25,546 RCV reinforcement info
+2018-06-13 00:39:25,887 RCV reinforcement info
+2018-06-13 00:39:28,655 RCV reinforcement info
+2018-06-13 00:39:30,498 RCV reinforcement info
+2018-06-13 00:39:32,180 RCV reinforcement info
+2018-06-13 00:39:33,174 RCV reinforcement info
+2018-06-13 00:39:36,085 RCV reinforcement info
+2018-06-13 00:39:36,232 RCV reinforcement info
+2018-06-13 00:39:39,131 RCV reinforcement info
+2018-06-13 00:39:41,003 RCV reinforcement info
+2018-06-13 00:39:43,492 RCV reinforcement info
+2018-06-13 00:39:43,505 RF found but not transmitted
+2018-06-13 00:39:44,616 RCV reinforcement info
+2018-06-13 00:39:47,282 RCV reinforcement info
+2018-06-13 00:39:47,780 RCV reinforcement info
+2018-06-13 00:39:49,154 RCV reinforcement info
+2018-06-13 00:39:51,670 RF found but not transmitted
+2018-06-13 00:39:55,136 RCV reinforcement info
+2018-06-13 00:39:56,066 RCV reinforcement info
+2018-06-13 00:39:57,761 RCV reinforcement info
+2018-06-13 00:39:59,026 RCV reinforcement info
+2018-06-13 00:39:59,036 RCV reinforcement info
+2018-06-13 00:40:00,371 RF found but not transmitted
+2018-06-13 00:40:00,776 RCV reinforcement info
+2018-06-13 00:40:02,919 RCV reinforcement info
+2018-06-13 00:40:03,792 RF found but not transmitted
+2018-06-13 00:40:08,750 RCV reinforcement info
+2018-06-13 00:40:10,724 RCV reinforcement info
+2018-06-13 00:40:15,382 RF found but not transmitted
+2018-06-13 00:40:15,638 RCV reinforcement info
+2018-06-13 00:40:15,741 RCV reinforcement info
+2018-06-13 00:40:15,894 RCV reinforcement info
+2018-06-13 00:40:16,479 RF found but not transmitted
+2018-06-13 00:40:17,126 RF found but not transmitted
+2018-06-13 00:40:18,183 RF found but not transmitted
+2018-06-13 00:40:18,448 RCV reinforcement info
+2018-06-13 00:40:19,696 RCV reinforcement info
+2018-06-13 00:40:21,324 RCV reinforcement info
+2018-06-13 00:40:24,475 RCV proposal
+2018-06-13 00:40:24,497 appended honest propose 4cc3713456 on top of df43f0b26f
+2018-06-13 00:40:24,572 RCV reinforcement
+2018-06-13 00:40:24,578 RCV reinforcement
+2018-06-13 00:40:25,060 RCV reinforcement info
+2018-06-13 00:40:25,132 RCV reinforcement
+2018-06-13 00:40:26,212 RCV commit
+2018-06-13 00:40:26,711 appended honest commit db9735c385 on top of 4cc3713456
+2018-06-13 00:40:27,159 Weight: 55.97993014007554 #RFs 67
+2018-06-13 00:40:27,160 weight: 55.97993014007554
+2018-06-13 00:40:27,160 , 55.97993014007554
+2018-06-13 00:40:27,168 RCV reinforcement info
+2018-06-13 00:40:27,338 RCV proposal
+2018-06-13 00:40:27,354 appended malicious propose 178e6fe090 on top of df43f0b26f
+2018-06-13 00:40:27,355 REINFORCEMENT SENT state
+2018-06-13 00:40:27,357 SNT reinforcement
+2018-06-13 00:40:27,542 RCV reinforcement
+2018-06-13 00:40:27,552 RCV reinforcement
+2018-06-13 00:40:27,565 RCV reinforcement
+2018-06-13 00:40:27,569 RCV reinforcement
+2018-06-13 00:40:27,573 RCV reinforcement
+2018-06-13 00:40:27,634 RCV reinforcement
+2018-06-13 00:40:27,873 RCV reinforcement info
+2018-06-13 00:40:28,140 RCV reinforcement
+2018-06-13 00:40:28,307 RCV reinforcement
+2018-06-13 00:40:28,697 RCV reinforcement
+2018-06-13 00:40:29,235 RCV reinforcement
+2018-06-13 00:40:29,550 RCV reinforcement
+2018-06-13 00:40:29,573 RCV commit
+2018-06-13 00:40:30,734 appended malicious commit 2b23a9739a on top of 178e6fe090
+2018-06-13 00:40:32,009 Weight: 85.53686835549735 #RFs 183
+2018-06-13 00:40:32,010 weight: 85.53686835549735
+2018-06-13 00:40:32,010 , 85.53686835549735
+2018-06-13 00:40:32,013 MALICIOUS MINING state
+2018-06-13 00:40:32,013 start mining - depth 4
+2018-06-13 00:40:32,014 start mining - hash 2b23a9739a585954d925d2e477020154a353e3041e4bd204a5d82ae6a01ef2d0
+2018-06-13 00:40:32,015 Hashing frequency: 8709
+2018-06-13 00:40:32,481 RCV reinforcement info
+2018-06-13 00:40:33,188 RCV reinforcement info
+2018-06-13 00:40:33,784 RF found but not transmitted
+2018-06-13 00:40:36,016 RCV proposal
+2018-06-13 00:40:36,020 appended honest propose 23574f657e on top of 2b23a9739a
+2018-06-13 00:40:36,084 RCV reinforcement
+2018-06-13 00:40:36,130 RF found but not transmitted
+2018-06-13 00:40:36,519 RCV reinforcement info
+2018-06-13 00:40:36,589 RCV reinforcement
+2018-06-13 00:40:37,525 RCV commit
+2018-06-13 00:40:37,550 appended honest commit 9f8114917b on top of 23574f657e
+2018-06-13 00:40:37,554 Weight: 86.99108828665034 #RFs 2
+2018-06-13 00:40:37,554 weight: 86.99108828665034
+2018-06-13 00:40:37,555 , 86.99108828665034
+2018-06-13 00:40:37,557 start mining - depth 5
+2018-06-13 00:40:37,557 start mining - hash 9f8114917b4562934cf50f8084202da28e79b74121cd38f902ce620cf8e4ab71
+2018-06-13 00:40:37,697 RCV reinforcement info
+2018-06-13 00:40:37,859 RCV proposal
+2018-06-13 00:40:37,862 appended honest propose 3ac4258795 on top of 9f8114917b
+2018-06-13 00:40:37,935 RCV reinforcement
+2018-06-13 00:40:39,391 RCV commit
+2018-06-13 00:40:39,396 appended honest commit 3eabf46a00 on top of 3ac4258795
+2018-06-13 00:40:39,398 Weight: 88.16874295411999 #RFs 1
+2018-06-13 00:40:39,398 weight: 88.16874295411999
+2018-06-13 00:40:39,399 , 88.16874295411999
+2018-06-13 00:40:39,399 start mining - depth 6
+2018-06-13 00:40:39,405 start mining - hash 3eabf46a002d20458a8ac2ed8019c27ec60c5841b74193b57ad9509ee207e93d
+2018-06-13 00:40:40,737 RCV proposal
+2018-06-13 00:40:40,740 appended honest propose 657ba7b671 on top of 3eabf46a00
+2018-06-13 00:40:41,365 RCV reinforcement info
+2018-06-13 00:40:41,436 RCV reinforcement
+2018-06-13 00:40:42,033 RCV malicious_prop_agreement
+2018-06-13 00:40:42,255 RCV commit
+2018-06-13 00:40:42,258 appended honest commit b9a304f796 on top of 657ba7b671
+2018-06-13 00:40:42,260 Weight: 89.25220063938193 #RFs 1
+2018-06-13 00:40:42,260 weight: 89.25220063938193
+2018-06-13 00:40:42,260 , 89.25220063938193
+2018-06-13 00:40:42,341 RCV proposal
+2018-06-13 00:40:42,344 appended malicious propose bf5ee08664 on top of 3eabf46a00
+2018-06-13 00:40:42,344 REINFORCEMENT SENT state
+2018-06-13 00:40:42,423 RCV reinforcement
+2018-06-13 00:40:42,437 RCV reinforcement
+2018-06-13 00:40:42,853 RF found but not transmitted
+2018-06-13 00:40:42,855 SNT reinforcement
+2018-06-13 00:40:42,937 RCV reinforcement info
+2018-06-13 00:40:42,994 RCV reinforcement
+2018-06-13 00:40:43,432 RCV reinforcement info
+2018-06-13 00:40:43,871 RCV commit
+2018-06-13 00:40:43,908 appended malicious commit e26bdb1779 on top of bf5ee08664
+2018-06-13 00:40:43,937 Weight: 90.57430314757974 #RFs 6
+2018-06-13 00:40:43,937 weight: 90.57430314757974
+2018-06-13 00:40:43,937 , 90.57430314757974
+2018-06-13 00:40:43,937 MALICIOUS MINING state
+2018-06-13 00:40:43,938 start mining - depth 7
+2018-06-13 00:40:43,944 start mining - hash e26bdb1779d067ef7938297090467ec8871f5c77ab6c8a31826929afd09b659b
+2018-06-13 00:40:45,814 RCV reinforcement info
+2018-06-13 00:40:46,132 RCV reinforcement info
+2018-06-13 00:40:46,267 RCV malicious_prop_agreement
+2018-06-13 00:40:46,349 RF found but not transmitted
+2018-06-13 00:40:48,297 RCV reinforcement info
+2018-06-13 00:40:48,737 RCV reinforcement info
+2018-06-13 00:40:48,882 RCV reinforcement info
+2018-06-13 00:40:52,677 RCV reinforcement info
+2018-06-13 00:40:53,694 RCV proposal
+2018-06-13 00:40:53,696 appended honest propose 97651e1c46 on top of b9a304f796
+2018-06-13 00:40:53,785 RCV reinforcement
+2018-06-13 00:40:53,797 RCV reinforcement
+2018-06-13 00:40:55,194 RCV commit
+2018-06-13 00:40:55,228 appended honest commit ea0c231f80 on top of 97651e1c46
+2018-06-13 00:40:55,378 Weight: 91.58104455813456 #RFs 8
+2018-06-13 00:40:55,378 weight: 91.58104455813456
+2018-06-13 00:40:55,378 , 91.58104455813456
+2018-06-13 00:40:55,381 Synchronizing branches
+2018-06-13 00:40:55,381 start mining - depth 8
+2018-06-13 00:40:55,382 start mining - hash ea0c231f806520451b9be534ad1870468b61c6284d7ff2fee7624831640e0e26
+2018-06-13 00:40:55,444 RCV reinforcement info
+2018-06-13 00:40:55,630 RCV reinforcement info
+2018-06-13 00:40:58,351 RF found but not transmitted
+2018-06-13 00:40:58,356 hash found
+2018-06-13 00:40:58,358 SNT malicious_proposal_agreement
+2018-06-13 00:40:59,757 RF found but not transmitted
+2018-06-13 00:40:59,773 RCV reinforcement info
+2018-06-13 00:41:00,410 RCV reinforcement info
+2018-06-13 00:41:01,037 RF found but not transmitted
+2018-06-13 00:41:04,557 RF found but not transmitted
+2018-06-13 00:41:04,719 RCV reinforcement info
+2018-06-13 00:41:07,101 RF found but not transmitted
+2018-06-13 00:41:09,021 RCV reinforcement info
+2018-06-13 00:41:11,617 RCV proposal
+2018-06-13 00:41:11,631 appended honest propose a85cb19f7d on top of ea0c231f80
+2018-06-13 00:41:11,714 RCV reinforcement
+2018-06-13 00:41:11,724 RCV reinforcement
+2018-06-13 00:41:13,161 RCV commit
+2018-06-13 00:41:13,192 appended honest commit f71923e017 on top of a85cb19f7d
+2018-06-13 00:41:13,217 Weight: 93.76735164513501 #RFs 6
+2018-06-13 00:41:13,217 weight: 93.76735164513501
+2018-06-13 00:41:13,217 , 93.76735164513501
+2018-06-13 00:41:13,225 appended malicious propose cd0f6fc129 on top of ea0c231f80
+2018-06-13 00:41:13,225 REINFORCEMENT COLLECTING state
+2018-06-13 00:41:13,314 SNT proposal
+2018-06-13 00:41:13,573 RCV reinforcement
+2018-06-13 00:41:13,613 RCV reinforcement
+2018-06-13 00:41:13,627 RCV reinforcement
+2018-06-13 00:41:13,643 RCV reinforcement
+2018-06-13 00:41:13,655 RCV reinforcement
+2018-06-13 00:41:13,844 RCV reinforcement info
+2018-06-13 00:41:14,667 RCV reinforcement info
+2018-06-13 00:41:14,746 RCV reinforcement info
+2018-06-13 00:41:14,818 commit with 6 reinforcements
+2018-06-13 00:41:14,862 appended malicious commit 84bd7298cd on top of cd0f6fc129
+2018-06-13 00:41:14,903 Weight: 98.30250307359498 #RFs 30
+2018-06-13 00:41:14,903 weight: 98.30250307359498
+2018-06-13 00:41:14,903 , 98.30250307359498
+2018-06-13 00:41:14,907 MALICIOUS MINING state
+2018-06-13 00:41:14,907 start mining - depth 9
+2018-06-13 00:41:14,908 start mining - hash 84bd7298cd1e6276aebcae841ec6797703aba537afe02b0a911b035e3fe94ba9
+2018-06-13 00:41:14,908 SNT commit
+2018-06-13 00:41:15,992 RCV reinforcement info
+2018-06-13 00:41:17,580 RCV reinforcement info
+2018-06-13 00:41:21,326 RCV reinforcement info
+2018-06-13 00:41:22,209 RCV reinforcement info
+2018-06-13 00:41:22,856 RCV reinforcement info
+2018-06-13 00:41:24,750 RCV malicious_prop_agreement
+2018-06-13 00:41:25,093 RCV reinforcement info
+2018-06-13 00:41:25,838 RCV reinforcement info
+2018-06-13 00:41:26,498 RCV reinforcement info
+2018-06-13 00:41:29,848 RCV reinforcement info
+2018-06-13 00:41:32,569 RCV reinforcement info
+2018-06-13 00:41:35,453 RCV reinforcement info
+2018-06-13 00:41:36,052 RCV reinforcement info
+2018-06-13 00:41:36,984 RCV reinforcement info
+2018-06-13 00:41:37,233 RF found but not transmitted
+2018-06-13 00:41:37,489 RCV reinforcement info
+2018-06-13 00:41:38,097 RCV reinforcement info
+2018-06-13 00:41:40,423 RF found but not transmitted
+2018-06-13 00:41:40,784 RF found but not transmitted
+2018-06-13 00:41:43,505 RCV proposal
+2018-06-13 00:41:43,509 appended honest propose f4ff1d5272 on top of 84bd7298cd
+2018-06-13 00:41:43,573 RCV reinforcement
+2018-06-13 00:41:43,588 RCV reinforcement
+2018-06-13 00:41:44,288 RF found but not transmitted
+2018-06-13 00:41:45,067 RCV commit
+2018-06-13 00:41:45,141 appended honest commit 8e82a50f85 on top of f4ff1d5272
+2018-06-13 00:41:45,251 Weight: 101.573524555598 #RFs 15
+2018-06-13 00:41:45,251 weight: 101.573524555598
+2018-06-13 00:41:45,252 , 101.573524555598
+2018-06-13 00:41:45,488 RCV proposal
+2018-06-13 00:41:45,493 appended malicious propose d16a7df582 on top of 84bd7298cd
+2018-06-13 00:41:45,493 REINFORCEMENT SENT state
+2018-06-13 00:41:45,495 SNT reinforcement
+2018-06-13 00:41:45,644 RCV reinforcement
+2018-06-13 00:41:45,648 RCV reinforcement
+2018-06-13 00:41:45,652 RCV reinforcement
+2018-06-13 00:41:45,655 RCV reinforcement
+2018-06-13 00:41:45,657 RCV reinforcement
+2018-06-13 00:41:45,927 RCV reinforcement info
+2018-06-13 00:41:46,145 RF found but not transmitted
+2018-06-13 00:41:46,147 SNT reinforcement
+2018-06-13 00:41:46,229 RCV reinforcement info
+2018-06-13 00:41:47,018 RCV commit
+2018-06-13 00:41:47,210 appended malicious commit 0cce1f7f54 on top of d16a7df582
+2018-06-13 00:41:47,503 Weight: 106.56259158614246 #RFs 41
+2018-06-13 00:41:47,503 weight: 106.56259158614246
+2018-06-13 00:41:47,503 , 106.56259158614246
+2018-06-13 00:41:47,507 MALICIOUS MINING state
+2018-06-13 00:41:47,508 start mining - depth 10
+2018-06-13 00:41:47,508 start mining - hash 0cce1f7f54cb6df5e8578190f4c612a888afe9ec6cdfd4edba268f4b4f0fa61b
+2018-06-13 00:41:47,509 Hashing frequency: 3902
+2018-06-13 00:41:48,907 RF found but not transmitted
+2018-06-13 00:41:48,949 RCV reinforcement info
+2018-06-13 00:41:49,489 RCV reinforcement info
+2018-06-13 00:41:49,823 RF found but not transmitted
+2018-06-13 00:41:50,620 RF found but not transmitted
+2018-06-13 00:41:50,789 RF found but not transmitted
+2018-06-13 00:41:50,790 hash found
+2018-06-13 00:41:50,791 SNT malicious_proposal_agreement
+2018-06-13 00:41:51,931 RF found but not transmitted
+2018-06-13 00:41:53,105 RCV reinforcement info
+2018-06-13 00:41:53,799 RF found but not transmitted
+2018-06-13 00:41:56,235 RCV reinforcement info
+2018-06-13 00:41:58,892 RF found but not transmitted
+2018-06-13 00:42:01,823 RCV reinforcement info
+2018-06-13 00:42:01,952 RCV reinforcement info
+2018-06-13 00:42:02,251 RCV reinforcement info
+2018-06-13 00:42:04,486 RCV reinforcement info
+2018-06-13 00:42:06,361 RCV reinforcement info
+2018-06-13 00:42:07,002 RF found but not transmitted
+2018-06-13 00:42:07,063 RCV reinforcement info
+2018-06-13 00:42:09,728 RCV proposal
+2018-06-13 00:42:09,732 appended honest propose e0ccece3b9 on top of 0cce1f7f54
+2018-06-13 00:42:09,823 RCV reinforcement
+2018-06-13 00:42:09,840 RCV reinforcement
+2018-06-13 00:42:10,589 RCV reinforcement info
+2018-06-13 00:42:10,654 RCV reinforcement
+2018-06-13 00:42:11,290 RCV commit
+2018-06-13 00:42:11,371 appended honest commit 023d351e33 on top of e0ccece3b9
+2018-06-13 00:42:11,405 Weight: 108.94525462345204 #RFs 11
+2018-06-13 00:42:11,405 weight: 108.94525462345204
+2018-06-13 00:42:11,406 , 108.94525462345204
+2018-06-13 00:42:11,417 appended malicious propose a6c1199bd1 on top of 0cce1f7f54
+2018-06-13 00:42:11,417 REINFORCEMENT COLLECTING state
+2018-06-13 00:42:11,508 SNT proposal
+2018-06-13 00:42:11,856 RCV reinforcement
+2018-06-13 00:42:11,921 RCV reinforcement
+2018-06-13 00:42:11,937 RCV reinforcement
+2018-06-13 00:42:11,962 RCV reinforcement
+2018-06-13 00:42:11,984 RCV reinforcement
+2018-06-13 00:42:11,990 RCV reinforcement
+2018-06-13 00:42:12,245 RCV reinforcement
+2018-06-13 00:42:13,015 commit with 7 reinforcements
+2018-06-13 00:42:13,078 appended malicious commit de2e5818c9 on top of a6c1199bd1
+2018-06-13 00:42:13,143 Weight: 116.6392187052002 #RFs 35
+2018-06-13 00:42:13,144 weight: 116.6392187052002
+2018-06-13 00:42:13,144 , 116.6392187052002
+2018-06-13 00:42:13,146 MALICIOUS MINING state
+2018-06-13 00:42:13,146 start mining - depth 11
+2018-06-13 00:42:13,146 start mining - hash de2e5818c998b750bad6f357829c831f0673abd71fd29045bb728ca6f4d653cd
+2018-06-13 00:42:13,147 SNT commit
+2018-06-13 00:42:13,209 RCV reinforcement info
+2018-06-13 00:42:14,530 RCV reinforcement info
+2018-06-13 00:42:16,889 RCV reinforcement info
+2018-06-13 00:42:17,980 RCV reinforcement info
+2018-06-13 00:42:18,651 RCV reinforcement info
+2018-06-13 00:42:19,327 RF found but not transmitted
+2018-06-13 00:42:19,472 RCV reinforcement info
+2018-06-13 00:42:20,813 RF found but not transmitted
+2018-06-13 00:42:23,232 RF found but not transmitted
+2018-06-13 00:42:23,582 RF found but not transmitted
+2018-06-13 00:42:25,358 RF found but not transmitted
+2018-06-13 00:42:27,395 RCV reinforcement info
+2018-06-13 00:42:28,339 RCV proposal
+2018-06-13 00:42:28,343 appended honest propose b297126c92 on top of de2e5818c9
+2018-06-13 00:42:28,404 RCV reinforcement info
+2018-06-13 00:42:28,473 RCV reinforcement
+2018-06-13 00:42:28,893 RF found but not transmitted
+2018-06-13 00:42:29,876 RCV commit
+2018-06-13 00:42:29,922 appended honest commit 9540f98b29 on top of b297126c92
+2018-06-13 00:42:29,979 Weight: 119.34583662253786 #RFs 7
+2018-06-13 00:42:29,979 weight: 119.34583662253786
+2018-06-13 00:42:29,979 , 119.34583662253786
+2018-06-13 00:42:29,983 start mining - depth 12
+2018-06-13 00:42:29,983 start mining - hash 9540f98b2913038c6ed58405d592b6e1c8025f9ec25185c8b9cd7b689f8aded7
+2018-06-13 00:42:33,985 RF found but not transmitted
+2018-06-13 00:42:35,308 RCV reinforcement info
+2018-06-13 00:42:39,799 RCV reinforcement info
+2018-06-13 00:42:40,542 RCV reinforcement info
+2018-06-13 00:42:40,873 RF found but not transmitted
+2018-06-13 00:42:41,249 RCV reinforcement info
+2018-06-13 00:42:41,264 RCV reinforcement info
+2018-06-13 00:42:42,966 RCV reinforcement info
+2018-06-13 00:42:44,067 RCV reinforcement info
+2018-06-13 00:42:46,345 RCV reinforcement info
+2018-06-13 00:42:46,656 RF found but not transmitted
+2018-06-13 00:42:48,127 RCV reinforcement info
+2018-06-13 00:42:48,436 RCV proposal
+2018-06-13 00:42:48,439 appended honest propose 105000a367 on top of 9540f98b29
+2018-06-13 00:42:48,510 RCV reinforcement
+2018-06-13 00:42:48,527 RCV reinforcement
+2018-06-13 00:42:49,640 RF found but not transmitted
+2018-06-13 00:42:49,641 hash found
+2018-06-13 00:42:49,642 SNT malicious_proposal_agreement
+2018-06-13 00:42:49,980 RCV commit
+2018-06-13 00:42:50,031 appended honest commit 7568eb6620 on top of 105000a367
+2018-06-13 00:42:50,063 Weight: 121.91284768213168 #RFs 9
+2018-06-13 00:42:50,063 weight: 121.91284768213168
+2018-06-13 00:42:50,063 , 121.91284768213168
+2018-06-13 00:42:50,079 appended malicious propose d1abef16e3 on top of 9540f98b29
+2018-06-13 00:42:50,080 REINFORCEMENT COLLECTING state
+2018-06-13 00:42:50,137 SNT proposal
+2018-06-13 00:42:50,391 RCV reinforcement
+2018-06-13 00:42:50,403 RCV reinforcement
+2018-06-13 00:42:50,410 RCV reinforcement
+2018-06-13 00:42:50,419 RCV reinforcement
+2018-06-13 00:42:50,426 RCV reinforcement
+2018-06-13 00:42:50,551 RCV reinforcement info
+2018-06-13 00:42:50,594 RCV reinforcement
+2018-06-13 00:42:51,355 RCV reinforcement
+2018-06-13 00:42:51,532 RCV reinforcement
+2018-06-13 00:42:51,645 commit with 6 reinforcements
+2018-06-13 00:42:51,683 appended malicious commit b6ce49070f on top of d1abef16e3
+2018-06-13 00:42:51,714 Weight: 125.74937898880093 #RFs 24
+2018-06-13 00:42:51,714 weight: 125.74937898880093
+2018-06-13 00:42:51,714 , 125.74937898880093
+2018-06-13 00:42:51,714 MALICIOUS MINING state
+2018-06-13 00:42:51,714 start mining - depth 13
+2018-06-13 00:42:51,715 start mining - hash b6ce49070fdf4ee28c80992417742e8684e1cdda0d76349fdcb54b3bd3ef3676
+2018-06-13 00:42:51,716 Hashing frequency: 3219
+2018-06-13 00:42:51,716 SNT commit
+2018-06-13 00:42:52,637 RCV proposal
+2018-06-13 00:42:52,641 appended honest propose 3c867650d4 on top of b6ce49070f
+2018-06-13 00:42:53,513 RCV reinforcement info
+2018-06-13 00:42:53,581 RCV reinforcement
+2018-06-13 00:42:54,150 RCV commit
+2018-06-13 00:42:54,151 appended honest commit 548790a7bb on top of 3c867650d4
+2018-06-13 00:42:54,151 Weight: 126.74937898880093 #RFs 0
+2018-06-13 00:42:54,151 weight: 126.74937898880093
+2018-06-13 00:42:54,151 , 126.74937898880093
+2018-06-13 00:42:54,152 start mining - depth 14
+2018-06-13 00:42:54,152 start mining - hash 548790a7bbca11b3f8ecb6a2231f38fed1e0194b8052c4d42ca9d5169a9c54cc
+2018-06-13 00:42:55,891 RF found but not transmitted
+2018-06-13 00:42:57,669 RCV reinforcement info
+2018-06-13 00:42:57,770 RCV reinforcement info
+2018-06-13 00:42:57,900 RF found but not transmitted
+2018-06-13 00:42:58,188 RCV reinforcement info
+2018-06-13 00:42:58,926 RCV malicious_prop_agreement
+2018-06-13 00:42:58,957 RCV reinforcement info
+2018-06-13 00:43:00,523 RCV reinforcement info
+2018-06-13 00:43:00,714 RCV reinforcement info
+2018-06-13 00:43:02,771 RCV reinforcement info
+2018-06-13 00:43:03,529 RCV reinforcement info
+2018-06-13 00:43:05,468 RF found but not transmitted
+2018-06-13 00:43:06,402 RF found but not transmitted
+2018-06-13 00:43:06,495 RF found but not transmitted
+2018-06-13 00:43:07,681 RCV reinforcement info
+2018-06-13 00:43:08,684 RCV reinforcement info
+2018-06-13 00:43:11,911 RF found but not transmitted
+2018-06-13 00:43:13,401 RCV reinforcement info
+2018-06-13 00:43:13,578 RF found but not transmitted
+2018-06-13 00:43:13,839 RCV reinforcement info
+2018-06-13 00:43:13,856 RF found but not transmitted
+2018-06-13 00:43:15,333 RCV reinforcement info
+2018-06-13 00:43:17,685 RCV proposal
+2018-06-13 00:43:17,688 appended honest propose a3cdd4f7ee on top of 548790a7bb
+2018-06-13 00:43:17,812 RCV reinforcement
+2018-06-13 00:43:17,831 RCV reinforcement
+2018-06-13 00:43:18,067 RCV reinforcement info
+2018-06-13 00:43:18,134 RCV reinforcement
+2018-06-13 00:43:19,229 RCV commit
+2018-06-13 00:43:19,284 appended honest commit 701f05733c on top of a3cdd4f7ee
+2018-06-13 00:43:19,359 Weight: 129.8420926479542 #RFs 13
+2018-06-13 00:43:19,360 weight: 129.8420926479542
+2018-06-13 00:43:19,360 , 129.8420926479542
+2018-06-13 00:43:19,519 RCV proposal
+2018-06-13 00:43:19,521 appended malicious propose ba82402d82 on top of 548790a7bb
+2018-06-13 00:43:19,521 REINFORCEMENT SENT state
+2018-06-13 00:43:19,557 RF found but not transmitted
+2018-06-13 00:43:19,557 SNT reinforcement
+2018-06-13 00:43:19,823 SNT reinforcement
+2018-06-13 00:43:19,901 RCV reinforcement
+2018-06-13 00:43:19,904 RCV reinforcement
+2018-06-13 00:43:19,907 RCV reinforcement
+2018-06-13 00:43:19,912 RCV reinforcement
+2018-06-13 00:43:19,915 RCV reinforcement
+2018-06-13 00:43:20,493 RCV reinforcement
+2018-06-13 00:43:20,901 RCV reinforcement info
+2018-06-13 00:43:21,080 RCV commit
+2018-06-13 00:43:21,286 appended malicious commit 6c30809843 on top of ba82402d82
+2018-06-13 00:43:21,446 Weight: 133.17211694399307 #RFs 32
+2018-06-13 00:43:21,446 weight: 133.17211694399307
+2018-06-13 00:43:21,448 , 133.17211694399307
+2018-06-13 00:43:21,448 MALICIOUS MINING state
+2018-06-13 00:43:21,448 start mining - depth 15
+2018-06-13 00:43:21,449 start mining - hash 6c308098436d8b016ee17c2a4acb33381c862fc7ffbcfcf24f9d3c003a6b1d46
+2018-06-13 00:43:21,730 RCV proposal
+2018-06-13 00:43:21,738 appended honest propose 5305330235 on top of 6c30809843
+2018-06-13 00:43:22,991 RF found but not transmitted
+2018-06-13 00:43:23,228 RCV commit
+2018-06-13 00:43:23,228 appended honest commit 5abc9dfc9b on top of 5305330235
+2018-06-13 00:43:23,228 Weight: 134.17211694399307 #RFs 0
+2018-06-13 00:43:23,229 weight: 134.17211694399307
+2018-06-13 00:43:23,229 , 134.17211694399307
+2018-06-13 00:43:23,234 start mining - depth 16
+2018-06-13 00:43:23,234 start mining - hash 5abc9dfc9bdb00a55d1e46cca1ffbd65025c43608c1d1508424dbf39028881f3
+2018-06-13 00:43:23,945 RCV reinforcement info
+2018-06-13 00:43:24,243 RCV reinforcement info
+2018-06-13 00:43:24,654 RCV malicious_prop_agreement
+2018-06-13 00:43:26,253 RCV reinforcement info
+2018-06-13 00:43:27,185 RCV reinforcement info
+2018-06-13 00:43:27,628 RCV reinforcement info
+2018-06-13 00:43:33,634 RF found but not transmitted
+2018-06-13 00:43:36,108 RCV reinforcement info
+2018-06-13 00:43:36,143 RF found but not transmitted
+2018-06-13 00:43:36,428 RCV proposal
+2018-06-13 00:43:36,431 appended honest propose 6b5037fa40 on top of 5abc9dfc9b
+2018-06-13 00:43:36,500 RCV reinforcement
+2018-06-13 00:43:36,521 RCV reinforcement
+2018-06-13 00:43:37,961 RCV commit
+2018-06-13 00:43:37,991 appended honest commit 3ac99268c3 on top of 6b5037fa40
+2018-06-13 00:43:38,030 Weight: 136.07387493892088 #RFs 6
+2018-06-13 00:43:38,030 weight: 136.07387493892088
+2018-06-13 00:43:38,030 , 136.07387493892088
+2018-06-13 00:43:38,289 RCV proposal
+2018-06-13 00:43:38,292 appended malicious propose d1ba6f0822 on top of 5abc9dfc9b
+2018-06-13 00:43:38,292 REINFORCEMENT SENT state
+2018-06-13 00:43:38,293 SNT reinforcement
+2018-06-13 00:43:38,464 RCV reinforcement
+2018-06-13 00:43:38,468 RCV reinforcement
+2018-06-13 00:43:38,481 RCV reinforcement
+2018-06-13 00:43:38,543 RCV reinforcement
+2018-06-13 00:43:38,549 RCV reinforcement
+2018-06-13 00:43:38,581 RCV reinforcement info
+2018-06-13 00:43:38,685 RF found but not transmitted
+2018-06-13 00:43:38,686 SNT reinforcement
+2018-06-13 00:43:38,826 RCV reinforcement info
+2018-06-13 00:43:39,613 RCV reinforcement
+2018-06-13 00:43:39,759 RCV commit
+2018-06-13 00:43:39,869 appended malicious commit 56a05fee6e on top of d1ba6f0822
+2018-06-13 00:43:39,962 Weight: 140.35737089944146 #RFs 23
+2018-06-13 00:43:39,962 weight: 140.35737089944146
+2018-06-13 00:43:39,962 , 140.35737089944146
+2018-06-13 00:43:39,963 MALICIOUS MINING state
+2018-06-13 00:43:39,963 start mining - depth 17
+2018-06-13 00:43:39,964 start mining - hash 56a05fee6e66feb3f94f0ebc801172d98b5ee347217999a1917d74e8d6b79eb2
+2018-06-13 00:43:44,692 RCV reinforcement info
+2018-06-13 00:43:46,314 RCV reinforcement info
+2018-06-13 00:43:46,388 RCV reinforcement info
+2018-06-13 00:43:46,453 RCV reinforcement info
+2018-06-13 00:43:46,484 RCV reinforcement info
+2018-06-13 00:43:47,292 RCV proposal
+2018-06-13 00:43:47,298 appended honest propose 2cb3a0d445 on top of 56a05fee6e
+2018-06-13 00:43:47,378 RCV reinforcement
+2018-06-13 00:43:47,396 RCV reinforcement
+2018-06-13 00:43:48,007 RF found but not transmitted
+2018-06-13 00:43:48,146 RCV reinforcement info
+2018-06-13 00:43:48,200 RCV reinforcement
+2018-06-13 00:43:48,822 RCV commit
+2018-06-13 00:43:48,852 appended honest commit 54c8a2f166 on top of 2cb3a0d445
+2018-06-13 00:43:48,885 Weight: 142.46362413047288 #RFs 5
+2018-06-13 00:43:48,885 weight: 142.46362413047288
+2018-06-13 00:43:48,885 , 142.46362413047288
+2018-06-13 00:43:48,886 start mining - depth 18
+2018-06-13 00:43:48,887 start mining - hash 54c8a2f166088b990685a71e5108d5bd572182a46c5613632a70c703f34532ce
+2018-06-13 00:43:50,842 RCV reinforcement info
+2018-06-13 00:43:51,645 RCV reinforcement info
+2018-06-13 00:43:53,306 RF found but not transmitted
+2018-06-13 00:43:53,515 RCV reinforcement info
+2018-06-13 00:43:53,721 RCV reinforcement info
+2018-06-13 00:43:54,297 RCV reinforcement info
+2018-06-13 00:43:54,593 RCV reinforcement info
+2018-06-13 00:43:54,644 RF found but not transmitted
+2018-06-13 00:43:59,909 RCV reinforcement info
+2018-06-13 00:44:01,016 RCV reinforcement info
+2018-06-13 00:44:01,956 RCV reinforcement info
+2018-06-13 00:44:02,697 RCV reinforcement info
+2018-06-13 00:44:03,109 RCV reinforcement info
+2018-06-13 00:44:04,343 RCV reinforcement info
+2018-06-13 00:44:04,363 RCV reinforcement info
+2018-06-13 00:44:04,564 RF found but not transmitted
+2018-06-13 00:44:05,489 RCV reinforcement info
+2018-06-13 00:44:06,005 RF found but not transmitted
+2018-06-13 00:44:06,363 RCV reinforcement info
+2018-06-13 00:44:08,006 RCV reinforcement info
+2018-06-13 00:44:09,500 RF found but not transmitted
+2018-06-13 00:44:10,332 RCV reinforcement info
+2018-06-13 00:44:10,831 RCV malicious_prop_agreement
+2018-06-13 00:44:11,923 RCV reinforcement info
+2018-06-13 00:44:12,093 RCV reinforcement info
+2018-06-13 00:44:14,899 RCV reinforcement info
+2018-06-13 00:44:19,638 RF found but not transmitted
+2018-06-13 00:44:21,365 RCV reinforcement info
+2018-06-13 00:44:21,875 RCV reinforcement info
+2018-06-13 00:44:22,922 RF found but not transmitted
+2018-06-13 00:44:23,735 RCV reinforcement info
+2018-06-13 00:44:24,561 RCV reinforcement info
+2018-06-13 00:44:24,858 RCV reinforcement info
+2018-06-13 00:44:25,612 RCV reinforcement info
+2018-06-13 00:44:26,999 RCV reinforcement info
+2018-06-13 00:44:28,760 RF found but not transmitted
+2018-06-13 00:44:31,000 RF found but not transmitted
+2018-06-13 00:44:31,066 RCV reinforcement info
+2018-06-13 00:44:31,809 RF found but not transmitted
+2018-06-13 00:44:32,147 RCV reinforcement info
+2018-06-13 00:44:32,485 RCV reinforcement info
+2018-06-13 00:44:32,621 RF found but not transmitted
+2018-06-13 00:44:34,770 RCV reinforcement info
+2018-06-13 00:44:35,857 RCV reinforcement info
+2018-06-13 00:44:36,884 RCV reinforcement info
+2018-06-13 00:44:37,194 RCV reinforcement info
+2018-06-13 00:44:37,228 RF found but not transmitted
+2018-06-13 00:44:38,690 RCV reinforcement info
+2018-06-13 00:44:38,720 RCV proposal
+2018-06-13 00:44:38,723 appended honest propose 0a5a193c65 on top of 54c8a2f166
+2018-06-13 00:44:38,814 RCV reinforcement
+2018-06-13 00:44:38,825 RCV reinforcement
+2018-06-13 00:44:39,534 RCV reinforcement info
+2018-06-13 00:44:39,659 RCV reinforcement
+2018-06-13 00:44:40,407 RCV reinforcement info
+2018-06-13 00:44:40,633 RCV reinforcement
+2018-06-13 00:44:40,863 RCV commit
+2018-06-13 00:44:41,135 appended honest commit bfd3774a62 on top of 0a5a193c65
+2018-06-13 00:44:41,970 Weight: 150.98022677553465 #RFs 35
+2018-06-13 00:44:41,970 weight: 150.98022677553465
+2018-06-13 00:44:41,970 , 150.98022677553465
+2018-06-13 00:44:41,980 RCV reinforcement info
+2018-06-13 00:44:41,988 RCV reinforcement
+2018-06-13 00:44:42,437 RF found but not transmitted
+2018-06-13 00:44:42,496 RCV proposal
+2018-06-13 00:44:42,500 appended malicious propose 7125121953 on top of 54c8a2f166
+2018-06-13 00:44:42,500 REINFORCEMENT SENT state
+2018-06-13 00:44:42,502 SNT reinforcement
+2018-06-13 00:44:42,892 RCV reinforcement
+2018-06-13 00:44:42,926 RCV reinforcement
+2018-06-13 00:44:43,211 RCV reinforcement
+2018-06-13 00:44:43,220 RCV reinforcement
+2018-06-13 00:44:43,225 RCV reinforcement
+2018-06-13 00:44:43,527 RCV reinforcement
+2018-06-13 00:44:43,728 RCV reinforcement
+2018-06-13 00:44:43,822 RCV reinforcement
+2018-06-13 00:44:44,001 RCV reinforcement
+2018-06-13 00:44:44,227 RCV reinforcement
+2018-06-13 00:44:44,425 RCV reinforcement
+2018-06-13 00:44:44,531 RCV reinforcement
+2018-06-13 00:44:44,711 RCV commit
+2018-06-13 00:44:45,358 appended malicious commit af8f1f88a1 on top of 7125121953
+2018-06-13 00:44:45,884 Weight: 158.01510643995664 #RFs 76
+2018-06-13 00:44:45,884 weight: 158.01510643995664
+2018-06-13 00:44:45,884 , 158.01510643995664
+2018-06-13 00:44:45,889 MALICIOUS MINING state
+2018-06-13 00:44:45,890 start mining - depth 19
+2018-06-13 00:44:45,891 start mining - hash af8f1f88a10a723677e588147e8a7203926a4ab5cfe46e0e8655b93150ab4aaf
+2018-06-13 00:44:45,892 Hashing frequency: 5943
+2018-06-13 00:44:46,769 RCV reinforcement info
+2018-06-13 00:44:47,635 RCV malicious_prop_agreement
+2018-06-13 00:44:48,578 RCV reinforcement info
+2018-06-13 00:44:51,952 RCV reinforcement info
+2018-06-13 00:44:54,111 RCV reinforcement info
+2018-06-13 00:44:57,025 RCV reinforcement info
+2018-06-13 00:44:57,781 RF found but not transmitted
+2018-06-13 00:45:02,176 RF found but not transmitted
+2018-06-13 00:45:02,244 RCV proposal
+2018-06-13 00:45:02,248 appended honest propose 90a387e69a on top of af8f1f88a1
+2018-06-13 00:45:02,336 RCV reinforcement
+2018-06-13 00:45:02,355 RCV reinforcement
+2018-06-13 00:45:03,783 RCV commit
+2018-06-13 00:45:03,818 appended honest commit 09775b5503 on top of 90a387e69a
+2018-06-13 00:45:03,887 Weight: 160.17589127912169 #RFs 5
+2018-06-13 00:45:03,887 weight: 160.17589127912169
+2018-06-13 00:45:03,888 , 160.17589127912169
+2018-06-13 00:45:04,088 RCV proposal
+2018-06-13 00:45:04,097 appended malicious propose 506b360771 on top of af8f1f88a1
+2018-06-13 00:45:04,098 REINFORCEMENT SENT state
+2018-06-13 00:45:04,099 SNT reinforcement
+2018-06-13 00:45:04,311 RCV reinforcement
+2018-06-13 00:45:04,315 RCV reinforcement
+2018-06-13 00:45:04,319 RCV reinforcement
+2018-06-13 00:45:04,326 RCV reinforcement
+2018-06-13 00:45:04,332 RCV reinforcement
+2018-06-13 00:45:04,366 RCV reinforcement
+2018-06-13 00:45:04,453 RCV reinforcement
+2018-06-13 00:45:04,686 RCV reinforcement info
+2018-06-13 00:45:04,910 RCV reinforcement info
+2018-06-13 00:45:05,516 RCV reinforcement
+2018-06-13 00:45:05,638 RCV commit
+2018-06-13 00:45:05,899 appended malicious commit a74d9e06b6 on top of 506b360771
+2018-06-13 00:45:06,162 Weight: 165.28069451592216 #RFs 33
+2018-06-13 00:45:06,162 weight: 165.28069451592216
+2018-06-13 00:45:06,162 , 165.28069451592216
+2018-06-13 00:45:06,162 MALICIOUS MINING state
+2018-06-13 00:45:06,162 start mining - depth 20
+2018-06-13 00:45:06,163 start mining - hash a74d9e06b6ec55e030e2cc0082427224d3334333fd3b651bd337c1ad974e94c9
+2018-06-13 00:45:07,140 RCV reinforcement info
+2018-06-13 00:45:09,458 RF found but not transmitted
+2018-06-13 00:45:09,461 hash found
+2018-06-13 00:45:09,462 SNT malicious_proposal_agreement
+2018-06-13 00:45:11,450 RCV proposal
+2018-06-13 00:45:11,454 appended honest propose e8ccfec805 on top of a74d9e06b6
+2018-06-13 00:45:11,532 RCV reinforcement
+2018-06-13 00:45:12,967 RCV commit
+2018-06-13 00:45:12,970 appended honest commit e0f57772a2 on top of e8ccfec805
+2018-06-13 00:45:12,972 Weight: 166.74047876317735 #RFs 1
+2018-06-13 00:45:12,973 weight: 166.74047876317735
+2018-06-13 00:45:12,973 , 166.74047876317735
+2018-06-13 00:45:12,992 appended malicious propose e23ebfb29e on top of a74d9e06b6
+2018-06-13 00:45:12,992 REINFORCEMENT COLLECTING state
+2018-06-13 00:45:12,993 SNT proposal
+2018-06-13 00:45:13,257 RCV reinforcement
+2018-06-13 00:45:13,269 RCV reinforcement
+2018-06-13 00:45:13,284 RCV reinforcement
+2018-06-13 00:45:13,298 RCV reinforcement
+2018-06-13 00:45:13,315 RCV reinforcement
+2018-06-13 00:45:13,328 RCV reinforcement
+2018-06-13 00:45:13,744 RCV reinforcement info
+2018-06-13 00:45:13,780 RCV reinforcement
+2018-06-13 00:45:14,499 commit with 6 reinforcements
+2018-06-13 00:45:14,520 appended malicious commit f17e6c9c5d on top of e23ebfb29e
+2018-06-13 00:45:14,540 Weight: 168.92288139333658 #RFs 12
+2018-06-13 00:45:14,540 weight: 168.92288139333658
+2018-06-13 00:45:14,540 , 168.92288139333658
+2018-06-13 00:45:14,541 MALICIOUS MINING state
+2018-06-13 00:45:14,541 start mining - depth 21
+2018-06-13 00:45:14,541 start mining - hash f17e6c9c5dfeff293bfc0be7e16e9de6e02ceb6633a97589b7bac5c69fd17140
+2018-06-13 00:45:14,542 SNT commit
+2018-06-13 00:45:15,777 RCV reinforcement info
+2018-06-13 00:45:15,879 RF found but not transmitted
+2018-06-13 00:45:19,304 RCV reinforcement info
+2018-06-13 00:45:20,812 RCV malicious_prop_agreement
+2018-06-13 00:45:21,272 RF found but not transmitted
+2018-06-13 00:45:21,459 RCV reinforcement info
+2018-06-13 00:45:22,790 RCV reinforcement info
+2018-06-13 00:45:23,097 RCV reinforcement info
+2018-06-13 00:45:23,170 RCV reinforcement info
+2018-06-13 00:45:23,330 RCV reinforcement info
+2018-06-13 00:45:27,593 RCV reinforcement info
+2018-06-13 00:45:27,943 RCV reinforcement info
+2018-06-13 00:45:27,959 RCV reinforcement info
+2018-06-13 00:45:29,076 RF found but not transmitted
+2018-06-13 00:45:30,009 RF found but not transmitted
+2018-06-13 00:45:32,082 RF found but not transmitted
+2018-06-13 00:45:33,862 RCV reinforcement info
+2018-06-13 00:45:34,033 RCV reinforcement info
+2018-06-13 00:45:34,310 RF found but not transmitted
+2018-06-13 00:45:35,809 RCV reinforcement info
+2018-06-13 00:45:37,910 RCV reinforcement info
+2018-06-13 00:45:39,160 RF found but not transmitted
+2018-06-13 00:45:39,636 RCV reinforcement info
+2018-06-13 00:45:39,797 RCV reinforcement info
+2018-06-13 00:45:43,308 RCV proposal
+2018-06-13 00:45:43,311 appended honest propose d53b040eb7 on top of f17e6c9c5d
+2018-06-13 00:45:43,394 RCV reinforcement
+2018-06-13 00:45:43,428 RCV reinforcement
+2018-06-13 00:45:44,902 RCV commit
+2018-06-13 00:45:44,997 appended honest commit 2f5e15709b on top of d53b040eb7
+2018-06-13 00:45:45,130 Weight: 173.07138776827543 #RFs 16
+2018-06-13 00:45:45,131 weight: 173.07138776827543
+2018-06-13 00:45:45,131 , 173.07138776827543
+2018-06-13 00:45:45,313 RCV proposal
+2018-06-13 00:45:45,318 appended malicious propose 8dd5af6d53 on top of f17e6c9c5d
+2018-06-13 00:45:45,319 REINFORCEMENT SENT state
+2018-06-13 00:45:45,320 SNT reinforcement
+2018-06-13 00:45:45,607 RCV reinforcement
+2018-06-13 00:45:45,643 RCV reinforcement
+2018-06-13 00:45:45,648 RCV reinforcement
+2018-06-13 00:45:45,653 RCV reinforcement
+2018-06-13 00:45:45,658 RCV reinforcement
+2018-06-13 00:45:47,005 RCV commit
+2018-06-13 00:45:47,354 appended malicious commit cdc8319900 on top of 8dd5af6d53
+2018-06-13 00:45:47,685 Weight: 177.73059065450957 #RFs 42
+2018-06-13 00:45:47,685 weight: 177.73059065450957
+2018-06-13 00:45:47,693 , 177.73059065450957
+2018-06-13 00:45:47,695 MALICIOUS MINING state
+2018-06-13 00:45:47,695 start mining - depth 22
+2018-06-13 00:45:47,696 start mining - hash cdc831990084f4dcd248921c947a1a1a60382c518df4793351db590dfb3f6c84
+2018-06-13 00:45:47,697 Hashing frequency: 3148
+2018-06-13 00:45:48,127 RCV reinforcement info
+2018-06-13 00:45:48,584 RF found but not transmitted
+2018-06-13 00:45:53,665 RCV reinforcement info
+2018-06-13 00:45:54,646 RCV reinforcement info
+2018-06-13 00:45:58,376 RCV reinforcement info
+2018-06-13 00:45:59,560 RCV reinforcement info
+2018-06-13 00:45:59,745 RCV proposal
+2018-06-13 00:45:59,749 appended honest propose 042e9060e9 on top of cdc8319900
+2018-06-13 00:45:59,916 RCV reinforcement
+2018-06-13 00:45:59,930 RCV reinforcement
+2018-06-13 00:46:01,067 RCV commit
+2018-06-13 00:46:01,149 appended honest commit 8f456b20f2 on top of 042e9060e9
+2018-06-13 00:46:01,171 Weight: 179.30151692616872 #RFs 5
+2018-06-13 00:46:01,171 weight: 179.30151692616872
+2018-06-13 00:46:01,171 , 179.30151692616872
+2018-06-13 00:46:01,173 start mining - depth 23
+2018-06-13 00:46:01,174 start mining - hash 8f456b20f2604033d71b3621664417b478ecd852c66681e13c91c012018f4df5
+2018-06-13 00:46:03,702 RCV reinforcement info
+2018-06-13 00:46:07,571 RCV reinforcement info
+2018-06-13 00:46:09,842 RCV reinforcement info
+2018-06-13 00:46:10,128 RF found but not transmitted
+2018-06-13 00:46:10,206 RCV reinforcement info
+2018-06-13 00:46:10,584 RCV reinforcement info
+2018-06-13 00:46:12,070 RF found but not transmitted
+2018-06-13 00:46:12,721 RCV reinforcement info
+2018-06-13 00:46:13,590 RF found but not transmitted
+2018-06-13 00:46:16,843 RF found but not transmitted
+2018-06-13 00:46:17,472 RCV reinforcement info
+2018-06-13 00:46:22,512 RCV reinforcement info
+2018-06-13 00:46:24,038 RCV reinforcement info
+2018-06-13 00:46:25,153 RCV reinforcement info
+2018-06-13 00:46:25,322 RF found but not transmitted
+2018-06-13 00:46:26,285 RCV reinforcement info
+2018-06-13 00:46:26,916 RF found but not transmitted
+2018-06-13 00:46:27,365 RCV reinforcement info
+2018-06-13 00:46:32,592 RF found but not transmitted
+2018-06-13 00:46:33,016 RF found but not transmitted
+2018-06-13 00:46:33,727 RCV reinforcement info
+2018-06-13 00:46:33,967 RCV reinforcement info
+2018-06-13 00:46:34,385 RCV reinforcement info
+2018-06-13 00:46:34,835 RF found but not transmitted
+2018-06-13 00:46:34,836 RCV malicious_prop_agreement
+2018-06-13 00:46:35,415 RF found but not transmitted
+2018-06-13 00:46:36,575 RCV reinforcement info
+2018-06-13 00:46:37,054 RCV reinforcement info
+2018-06-13 00:46:38,080 RF found but not transmitted
+2018-06-13 00:46:39,621 RCV reinforcement info
+2018-06-13 00:46:39,736 RCV proposal
+2018-06-13 00:46:39,739 appended honest propose ade43644ce on top of 8f456b20f2
+2018-06-13 00:46:39,752 RF found but not transmitted
+2018-06-13 00:46:39,827 RCV reinforcement
+2018-06-13 00:46:39,853 RCV reinforcement
+2018-06-13 00:46:40,111 RCV reinforcement info
+2018-06-13 00:46:40,191 RCV reinforcement
+2018-06-13 00:46:40,954 RCV reinforcement info
+2018-06-13 00:46:41,044 RCV reinforcement
+2018-06-13 00:46:41,206 RCV reinforcement info
+2018-06-13 00:46:41,295 RCV reinforcement
+2018-06-13 00:46:41,540 RCV commit
+2018-06-13 00:46:41,707 appended honest commit 5f96a162e4 on top of ade43644ce
+2018-06-13 00:46:41,882 Weight: 185.28578569700505 #RFs 20
+2018-06-13 00:46:41,884 weight: 185.28578569700505
+2018-06-13 00:46:41,884 , 185.28578569700505
+2018-06-13 00:46:42,082 RCV proposal
+2018-06-13 00:46:42,089 appended malicious propose 2c51d750f4 on top of 8f456b20f2
+2018-06-13 00:46:42,089 REINFORCEMENT SENT state
+2018-06-13 00:46:42,091 SNT reinforcement
+2018-06-13 00:46:42,381 RCV reinforcement
+2018-06-13 00:46:42,387 RCV reinforcement
+2018-06-13 00:46:42,394 RCV reinforcement
+2018-06-13 00:46:42,402 RCV reinforcement
+2018-06-13 00:46:42,405 RCV reinforcement
+2018-06-13 00:46:42,748 RCV reinforcement
+2018-06-13 00:46:42,927 RCV reinforcement
+2018-06-13 00:46:43,842 RCV commit
+2018-06-13 00:46:44,306 appended malicious commit 65df6d3519 on top of 2c51d750f4
+2018-06-13 00:46:44,749 Weight: 193.36400777193498 #RFs 66
+2018-06-13 00:46:44,750 weight: 193.36400777193498
+2018-06-13 00:46:44,751 , 193.36400777193498
+2018-06-13 00:46:44,753 MALICIOUS MINING state
+2018-06-13 00:46:44,753 start mining - depth 24
+2018-06-13 00:46:44,754 start mining - hash 65df6d3519206514437a414b900165771c8348fc424680bb19e9125f6e01d5ea
+2018-06-13 00:46:46,021 RCV reinforcement info
+2018-06-13 00:46:46,408 RF found but not transmitted
+2018-06-13 00:46:48,019 RCV reinforcement info
+2018-06-13 00:46:49,158 RCV reinforcement info
+2018-06-13 00:46:49,800 RCV reinforcement info
+2018-06-13 00:46:50,404 RCV reinforcement info
+2018-06-13 00:46:50,970 RCV malicious_prop_agreement
+2018-06-13 00:46:53,767 RCV reinforcement info
+2018-06-13 00:46:54,266 RCV reinforcement info
+2018-06-13 00:46:55,267 RCV reinforcement info
+2018-06-13 00:46:57,251 RCV proposal
+2018-06-13 00:46:57,255 appended honest propose d8b78aee0f on top of 65df6d3519
+2018-06-13 00:46:57,328 RCV reinforcement
+2018-06-13 00:46:57,353 RCV reinforcement
+2018-06-13 00:46:57,924 RF found but not transmitted
+2018-06-13 00:46:58,815 RCV commit
+2018-06-13 00:46:58,898 appended honest commit 8ae6f631ea on top of d8b78aee0f
+2018-06-13 00:46:58,993 Weight: 195.7866958866039 #RFs 8
+2018-06-13 00:46:58,993 weight: 195.7866958866039
+2018-06-13 00:46:58,993 , 195.7866958866039
+2018-06-13 00:46:59,212 RF found but not transmitted
+2018-06-13 00:46:59,248 RCV proposal
+2018-06-13 00:46:59,265 appended malicious propose c82ebdb478 on top of 65df6d3519
+2018-06-13 00:46:59,266 REINFORCEMENT SENT state
+2018-06-13 00:46:59,267 SNT reinforcement
+2018-06-13 00:46:59,521 RCV reinforcement
+2018-06-13 00:46:59,540 RCV reinforcement
+2018-06-13 00:46:59,562 RCV reinforcement
+2018-06-13 00:46:59,576 RCV reinforcement
+2018-06-13 00:46:59,600 RCV reinforcement
+2018-06-13 00:47:00,751 RCV reinforcement
+2018-06-13 00:47:00,873 RCV commit
+2018-06-13 00:47:01,056 appended malicious commit c9a1b02b2a on top of c82ebdb478
+2018-06-13 00:47:01,217 Weight: 199.86008844367709 #RFs 19
+2018-06-13 00:47:01,217 weight: 199.86008844367709
+2018-06-13 00:47:01,225 , 199.86008844367709
+2018-06-13 00:47:01,226 MALICIOUS MINING state
+2018-06-13 00:47:01,226 start mining - depth 25
+2018-06-13 00:47:01,226 start mining - hash c9a1b02b2a1dfce26dcf99df9eaa1f94b0d5a994f17651eef50d6d3d35946286
+2018-06-13 00:47:01,227 Hashing frequency: 3814
+2018-06-13 00:47:01,231 RCV reinforcement
+2018-06-13 00:47:01,918 RCV malicious_prop_agreement
+2018-06-13 00:47:02,257 RF found but not transmitted
+2018-06-13 00:47:03,245 RCV reinforcement info
+2018-06-13 00:47:04,226 RCV reinforcement info
+2018-06-13 00:47:05,006 RCV proposal
+2018-06-13 00:47:05,010 appended honest propose 87761a45e1 on top of c9a1b02b2a
+2018-06-13 00:47:05,088 RCV reinforcement
+2018-06-13 00:47:05,997 RCV reinforcement info
+2018-06-13 00:47:06,090 RCV reinforcement
+2018-06-13 00:47:06,525 RCV commit
+2018-06-13 00:47:06,563 appended honest commit c1d5ec5c95 on top of 87761a45e1
+2018-06-13 00:47:06,583 Weight: 201.3256187698079 #RFs 3
+2018-06-13 00:47:06,584 weight: 201.3256187698079
+2018-06-13 00:47:06,585 , 201.3256187698079
+2018-06-13 00:47:06,701 RCV proposal
+2018-06-13 00:47:06,708 appended malicious propose 254e077b5c on top of c9a1b02b2a
+2018-06-13 00:47:06,708 REINFORCEMENT SENT state
+2018-06-13 00:47:06,709 SNT reinforcement
+2018-06-13 00:47:06,918 RCV reinforcement
+2018-06-13 00:47:06,927 RCV reinforcement
+2018-06-13 00:47:06,929 RCV reinforcement
+2018-06-13 00:47:07,305 RCV reinforcement
+2018-06-13 00:47:07,844 RCV reinforcement
+2018-06-13 00:47:08,006 RCV reinforcement info
+2018-06-13 00:47:08,197 RCV commit
+2018-06-13 00:47:08,309 appended malicious commit 78d1cf542c on top of 254e077b5c
+2018-06-13 00:47:08,352 Weight: 202.39058380670724 #RFs 8
+2018-06-13 00:47:08,352 weight: 202.39058380670724
+2018-06-13 00:47:08,353 , 202.39058380670724
+2018-06-13 00:47:08,360 MALICIOUS MINING state
+2018-06-13 00:47:08,361 start mining - depth 26
+2018-06-13 00:47:08,380 start mining - hash 78d1cf542c952ca1c5174b94a055084a0b76ff3b01b8a49589f41748c6bd5e95
+2018-06-13 00:47:09,846 RCV proposal
+2018-06-13 00:47:09,850 appended honest propose ad75a1a476 on top of c1d5ec5c95
+2018-06-13 00:47:09,971 RCV reinforcement
+2018-06-13 00:47:11,425 RCV commit
+2018-06-13 00:47:11,428 appended honest commit e1093beabe on top of ad75a1a476
+2018-06-13 00:47:11,431 Weight: 202.43908427210206 #RFs 1
+2018-06-13 00:47:11,431 weight: 202.43908427210206
+2018-06-13 00:47:11,431 , 202.43908427210206
+2018-06-13 00:47:11,432 Synchronizing branches
+2018-06-13 00:47:11,445 start mining - depth 27
+2018-06-13 00:47:11,502 start mining - hash e1093beabe3b3c7425ad37bc837f67d381865dd49392f5a5a52352732da14fbd
+2018-06-13 00:47:11,704 RCV reinforcement info
+2018-06-13 00:47:14,453 RCV reinforcement info
+2018-06-13 00:47:14,610 RCV malicious_prop_agreement
+2018-06-13 00:47:14,833 RCV reinforcement info
+2018-06-13 00:47:15,750 RCV proposal
+2018-06-13 00:47:15,753 appended honest propose 9606f8ad9b on top of e1093beabe
+2018-06-13 00:47:15,859 RCV reinforcement
+2018-06-13 00:47:17,252 RCV commit
+2018-06-13 00:47:17,263 appended honest commit 0556db2939 on top of 9606f8ad9b
+2018-06-13 00:47:17,269 Weight: 204.0583858703271 #RFs 3
+2018-06-13 00:47:17,270 weight: 204.0583858703271
+2018-06-13 00:47:17,270 , 204.0583858703271
+2018-06-13 00:47:17,451 RCV proposal
+2018-06-13 00:47:17,454 appended malicious propose 38fbd5cad2 on top of e1093beabe
+2018-06-13 00:47:17,455 REINFORCEMENT SENT state
+2018-06-13 00:47:17,537 RCV reinforcement
+2018-06-13 00:47:17,545 RCV reinforcement
+2018-06-13 00:47:17,900 RCV reinforcement
+2018-06-13 00:47:18,350 RCV reinforcement info
+2018-06-13 00:47:18,647 RCV reinforcement
+2018-06-13 00:47:18,981 RCV commit
+2018-06-13 00:47:19,019 appended malicious commit 3eab45136e on top of 38fbd5cad2
+2018-06-13 00:47:19,066 Weight: 205.2398170371183 #RFs 7
+2018-06-13 00:47:19,066 weight: 205.2398170371183
+2018-06-13 00:47:19,071 , 205.2398170371183
+2018-06-13 00:47:19,071 MALICIOUS MINING state
+2018-06-13 00:47:19,071 start mining - depth 28
+2018-06-13 00:47:19,071 start mining - hash 3eab45136e8173bf0a7ec713e8d0673b4ead893fd8642dc83a903540997c8b3b
+2018-06-13 00:47:19,568 RCV reinforcement info
+2018-06-13 00:47:20,348 RCV malicious_prop_agreement
+2018-06-13 00:47:21,460 RCV reinforcement info
+2018-06-13 00:47:22,329 RCV reinforcement info
+2018-06-13 00:47:22,588 RCV reinforcement info
+2018-06-13 00:47:23,456 RF found but not transmitted
+2018-06-13 00:47:24,472 RCV reinforcement info
+2018-06-13 00:47:24,968 RCV proposal
+2018-06-13 00:47:24,971 appended honest propose 6f38a25b3a on top of 3eab45136e
+2018-06-13 00:47:25,051 RCV reinforcement
+2018-06-13 00:47:25,301 RF found but not transmitted
+2018-06-13 00:47:26,483 RCV commit
+2018-06-13 00:47:26,531 appended honest commit f1d06dc45b on top of 6f38a25b3a
+2018-06-13 00:47:26,559 Weight: 207.0712536123347 #RFs 5
+2018-06-13 00:47:26,567 weight: 207.0712536123347
+2018-06-13 00:47:26,567 , 207.0712536123347
+2018-06-13 00:47:26,738 RCV proposal
+2018-06-13 00:47:26,760 appended malicious propose f3a5e9776e on top of 3eab45136e
+2018-06-13 00:47:26,762 REINFORCEMENT SENT state
+2018-06-13 00:47:26,766 SNT reinforcement
+2018-06-13 00:47:27,041 RCV reinforcement
+2018-06-13 00:47:27,044 RCV reinforcement
+2018-06-13 00:47:27,058 RCV reinforcement
+2018-06-13 00:47:27,063 RCV reinforcement
+2018-06-13 00:47:27,221 RF found but not transmitted
+2018-06-13 00:47:27,224 SNT reinforcement
+2018-06-13 00:47:27,823 RF found but not transmitted
+2018-06-13 00:47:27,825 SNT reinforcement
+2018-06-13 00:47:28,329 RCV commit
+2018-06-13 00:47:28,403 appended malicious commit 6d76635a17 on top of f3a5e9776e
+2018-06-13 00:47:28,495 Weight: 209.0237231582659 #RFs 13
+2018-06-13 00:47:28,496 weight: 209.0237231582659
+2018-06-13 00:47:28,496 , 209.0237231582659
+2018-06-13 00:47:28,496 MALICIOUS MINING state
+2018-06-13 00:47:28,497 start mining - depth 29
+2018-06-13 00:47:28,497 start mining - hash 6d76635a171c04d738121cd7a080c751f7de6515f6b15a3258c1fa783598be5e
+2018-06-13 00:47:29,280 RCV reinforcement info
+2018-06-13 00:47:29,821 RF found but not transmitted
+2018-06-13 00:47:29,987 RCV reinforcement info
+2018-06-13 00:47:30,424 RF found but not transmitted
+2018-06-13 00:47:32,038 RCV reinforcement info
+2018-06-13 00:47:33,198 RCV malicious_prop_agreement
+2018-06-13 00:47:34,148 RCV reinforcement info
+2018-06-13 00:47:35,083 RCV reinforcement info
+2018-06-13 00:47:43,917 RCV reinforcement info
+2018-06-13 00:47:44,081 RF found but not transmitted
+2018-06-13 00:47:45,267 RCV reinforcement info
+2018-06-13 00:47:45,493 RCV reinforcement info
+2018-06-13 00:47:46,157 RCV reinforcement info
+2018-06-13 00:47:47,098 RCV reinforcement info
+2018-06-13 00:47:47,273 RCV reinforcement info
+2018-06-13 00:47:49,169 RCV reinforcement info
+2018-06-13 00:47:49,358 RF found but not transmitted
+2018-06-13 00:47:49,957 RCV reinforcement info
+2018-06-13 00:47:50,900 RCV reinforcement info
+2018-06-13 00:47:53,482 RF found but not transmitted
+2018-06-13 00:47:54,437 RCV reinforcement info
+2018-06-13 00:47:55,857 RCV reinforcement info
+2018-06-13 00:47:58,474 RCV reinforcement info
+2018-06-13 00:47:59,340 RF found but not transmitted
+2018-06-13 00:48:06,101 RCV proposal
+2018-06-13 00:48:06,108 appended honest propose eebf4fac23 on top of 6d76635a17
+2018-06-13 00:48:06,198 RCV reinforcement
+2018-06-13 00:48:06,224 RCV reinforcement
+2018-06-13 00:48:07,832 RCV commit
+2018-06-13 00:48:07,915 appended honest commit 45b382eec3 on top of eebf4fac23
+2018-06-13 00:48:08,068 Weight: 212.9345164907256 #RFs 17
+2018-06-13 00:48:08,069 weight: 212.9345164907256
+2018-06-13 00:48:08,069 , 212.9345164907256
+2018-06-13 00:48:08,482 RCV proposal
+2018-06-13 00:48:08,489 appended malicious propose b4feab90ed on top of 6d76635a17
+2018-06-13 00:48:08,489 REINFORCEMENT SENT state
+2018-06-13 00:48:08,504 SNT reinforcement
+2018-06-13 00:48:08,817 RCV reinforcement
+2018-06-13 00:48:08,829 RCV reinforcement
+2018-06-13 00:48:08,835 RCV reinforcement
+2018-06-13 00:48:08,839 RCV reinforcement
+2018-06-13 00:48:08,879 RCV reinforcement
+2018-06-13 00:48:09,043 RCV reinforcement info
+2018-06-13 00:48:09,087 RF found but not transmitted
+2018-06-13 00:48:09,090 SNT reinforcement
+2018-06-13 00:48:09,222 RCV reinforcement info
+2018-06-13 00:48:09,545 RCV reinforcement
+2018-06-13 00:48:10,315 RCV commit
+2018-06-13 00:48:10,861 appended malicious commit 09be555cf4 on top of b4feab90ed
+2018-06-13 00:48:11,511 Weight: 231.1847246875854 #RFs 72
+2018-06-13 00:48:11,531 weight: 231.1847246875854
+2018-06-13 00:48:11,547 , 231.1847246875854
+2018-06-13 00:48:11,550 MALICIOUS MINING state
+2018-06-13 00:48:11,550 start mining - depth 30
+2018-06-13 00:48:11,551 start mining - hash 09be555cf441fce5be635cd23390ec2540cc0691b1505f18abc18696f13a2a94
+2018-06-13 00:48:11,552 Hashing frequency: 3629
+2018-06-13 00:48:12,093 RCV reinforcement info
+2018-06-13 00:48:12,354 RCV malicious_prop_agreement

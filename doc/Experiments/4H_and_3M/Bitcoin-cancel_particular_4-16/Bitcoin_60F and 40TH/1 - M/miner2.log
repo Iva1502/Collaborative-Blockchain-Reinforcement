@@ -1,0 +1,33 @@
+2018-05-15 22:34:14,772 ---------------------------------------------------------
+2018-05-15 22:34:14,773 MALICIOUS PURE BLOCKCHAIN state
+2018-05-15 22:34:15,791 start mining - depth 0
+2018-05-15 22:34:15,796 start mining - hash 425e767be9e635f9ff564fc8827efb3f35edfc521a2541dd81af5f50c6712fa0
+2018-05-15 22:34:48,508 RCV proposal_commit
+2018-05-15 22:34:48,511 appended honest propose 08114cecee on top of 425e767be9
+2018-05-15 22:34:48,512 appended honest commit 3936438488 on top of 08114cecee
+2018-05-15 22:34:48,512 weight: 1
+2018-05-15 22:34:48,512 , 1
+2018-05-15 22:34:48,512 start mining - depth 1
+2018-05-15 22:34:48,513 start mining - hash 39364384889ec9f61f38a909c9d43515cb2dafa0348fa9e5d7ea154895e94591
+2018-05-15 22:34:56,396 RCV proposal_commit
+2018-05-15 22:34:56,399 appended honest propose c20221ecc5 on top of 3936438488
+2018-05-15 22:34:56,399 appended honest commit fa15284705 on top of c20221ecc5
+2018-05-15 22:34:56,400 weight: 2
+2018-05-15 22:34:56,400 , 2
+2018-05-15 22:34:56,400 start mining - depth 2
+2018-05-15 22:34:56,400 start mining - hash fa15284705e60a543f1c2835ea3e4ad4c73dd45b572423e885da7db59e54e23f
+2018-05-15 22:35:05,910 hash found
+2018-05-15 22:35:05,913 appended malicious propose 96b0b7bc92 on top of fa15284705
+2018-05-15 22:35:05,913 appended malicious commit 28bc23369c on top of 96b0b7bc92
+2018-05-15 22:35:05,913 weight: 3
+2018-05-15 22:35:05,913 SNT proposal_commit
+2018-05-15 22:35:05,964 , 3
+2018-05-15 22:35:05,964 start mining - depth 3
+2018-05-15 22:35:05,965 start mining - hash 28bc23369c930bd9558d1c8534b5e5c9973a8a18ff9eff4b1117a57b3ec625b9
+2018-05-15 22:35:13,068 RCV proposal_commit
+2018-05-15 22:35:13,071 appended malicious propose 3a92e1c9ec on top of 28bc23369c
+2018-05-15 22:35:13,071 appended malicious commit 57a953b84c on top of 3a92e1c9ec
+2018-05-15 22:35:13,071 weight: 4
+2018-05-15 22:35:13,072 , 4
+2018-05-15 22:35:13,072 start mining - depth 4
+2018-05-15 22:35:13,072 start mining - hash 57a953b84c69b152d8a2d7b77b26a5165ded6684d280de034b594389d7d2c3a2

@@ -1,0 +1,760 @@
+2018-06-10 15:13:48,096 ---------------------------------------------------------
+2018-06-10 15:13:48,098 MALICIOUS PURE BLOCKCHAIN state
+2018-06-10 15:13:49,115 start mining - depth 0
+2018-06-10 15:13:49,116 start mining - hash f373164763778662b142674a19798e81723b2d3af9277f7f252c13f415d92297
+2018-06-10 15:13:49,909 RF found but not transmitted
+2018-06-10 15:13:55,524 RCV malicious_prop_agreement
+2018-06-10 15:13:55,525 start mal hidden SELFISH mining on top of - hash 9ff39e63079044785cb21c259a0396c9a2a0d41fb7691a81d10305ceb1503517
+2018-06-10 15:13:56,994 RF found but not transmitted
+2018-06-10 15:13:57,210 RF found but not transmitted
+2018-06-10 15:13:57,342 RF found but not transmitted
+2018-06-10 15:14:01,482 RF found but not transmitted
+2018-06-10 15:14:04,797 RF found but not transmitted
+2018-06-10 15:14:04,873 RF found but not transmitted
+2018-06-10 15:14:09,526 RF found but not transmitted
+2018-06-10 15:14:19,764 RF found but not transmitted
+2018-06-10 15:14:21,742 RF found but not transmitted
+2018-06-10 15:14:23,674 RCV proposal_commit
+2018-06-10 15:14:23,676 appended honest propose 106f688589 on top of f373164763
+2018-06-10 15:14:23,677 appended honest commit 05515becec on top of 106f688589
+2018-06-10 15:14:23,677 weight: 1
+2018-06-10 15:14:23,677 , 1
+2018-06-10 15:14:23,752 RCV proposal_commit
+2018-06-10 15:14:23,755 appended malicious propose 7fe425cd78 on top of f373164763
+2018-06-10 15:14:23,756 appended malicious commit 94442900bf on top of 7fe425cd78
+2018-06-10 15:14:23,756 weight: 1
+2018-06-10 15:14:23,756 , 1
+2018-06-10 15:14:23,758 start mining - depth 1
+2018-06-10 15:14:23,758 start mining - hash 94442900bfe55a0a62f87afbf796f02f5197bf2a70416a674945fd1052f1b803
+2018-06-10 15:14:24,128 RF found but not transmitted
+2018-06-10 15:14:30,243 RF found but not transmitted
+2018-06-10 15:14:32,068 RCV proposal_commit
+2018-06-10 15:14:32,070 appended malicious propose 57a7f163e9 on top of 94442900bf
+2018-06-10 15:14:32,071 appended malicious commit 51ed18be98 on top of 57a7f163e9
+2018-06-10 15:14:32,071 weight: 2
+2018-06-10 15:14:32,071 , 2
+2018-06-10 15:14:32,071 start mining - depth 2
+2018-06-10 15:14:32,071 start mining - hash 51ed18be98ae8ef245c9eaa2d440bbaf9e0dba55a39440c8ca44ee95fb4b68ce
+2018-06-10 15:14:33,454 RF found but not transmitted
+2018-06-10 15:14:37,270 RF found but not transmitted
+2018-06-10 15:14:41,306 RF found but not transmitted
+2018-06-10 15:14:44,374 RCV malicious_prop_agreement
+2018-06-10 15:14:44,376 start mal hidden SELFISH mining on top of - hash f852f6acccd87de046954e4a0f11a84ed9045f192e4cd95f98f21338a1e603f1
+2018-06-10 15:14:47,901 RF found but not transmitted
+2018-06-10 15:14:55,676 RF found but not transmitted
+2018-06-10 15:14:59,244 RF found but not transmitted
+2018-06-10 15:15:03,016 RF found but not transmitted
+2018-06-10 15:15:08,402 RCV proposal_commit
+2018-06-10 15:15:08,409 appended honest propose c63c40f492 on top of 51ed18be98
+2018-06-10 15:15:08,410 appended honest commit 9a610fc418 on top of c63c40f492
+2018-06-10 15:15:08,410 weight: 3
+2018-06-10 15:15:08,411 , 3
+2018-06-10 15:15:08,470 RCV proposal_commit
+2018-06-10 15:15:08,472 appended malicious propose f35af1acd3 on top of 51ed18be98
+2018-06-10 15:15:08,473 appended malicious commit e2113170c7 on top of f35af1acd3
+2018-06-10 15:15:08,474 weight: 3
+2018-06-10 15:15:08,474 , 3
+2018-06-10 15:15:08,475 start mining - depth 3
+2018-06-10 15:15:08,475 start mining - hash e2113170c7ef5057c4bc01eb88a745ffe3f0025723e48b1efa1c85cced49fbf0
+2018-06-10 15:15:08,476 Hashing frequency: 4265
+2018-06-10 15:15:08,814 RCV proposal_commit
+2018-06-10 15:15:08,818 appended honest propose 73d69eef38 on top of 9a610fc418
+2018-06-10 15:15:08,818 appended honest commit 3e3be3689c on top of 73d69eef38
+2018-06-10 15:15:08,818 weight: 4
+2018-06-10 15:15:08,819 , 4
+2018-06-10 15:15:08,819 LOSE: MALICIOUS LOST 2 - 1
+2018-06-10 15:15:08,819 start mining - depth 4
+2018-06-10 15:15:08,819 start mining - hash 3e3be3689c8e964a295322b8af8eb9b667d9b11a8e49a288a424cc7ce51d1059
+2018-06-10 15:15:10,086 RCV malicious_prop_agreement
+2018-06-10 15:15:10,087 start mal hidden SELFISH mining on top of - hash 657aadc8af95e981f01cad92d5735d9ff32eb05616bf7ba8207bd4d792022a3d
+2018-06-10 15:15:13,678 RF found but not transmitted
+2018-06-10 15:15:17,772 RCV proposal_commit
+2018-06-10 15:15:17,778 appended honest propose c42d4d0ad7 on top of 3e3be3689c
+2018-06-10 15:15:17,779 appended honest commit 5a2bb6c13e on top of c42d4d0ad7
+2018-06-10 15:15:17,779 weight: 5
+2018-06-10 15:15:17,779 , 5
+2018-06-10 15:15:17,839 RCV proposal_commit
+2018-06-10 15:15:17,842 appended malicious propose 1ab10397e9 on top of 3e3be3689c
+2018-06-10 15:15:17,842 appended malicious commit 97620401db on top of 1ab10397e9
+2018-06-10 15:15:17,842 weight: 5
+2018-06-10 15:15:17,842 , 5
+2018-06-10 15:15:17,846 start mining - depth 5
+2018-06-10 15:15:17,846 start mining - hash 97620401db1837e932fd9bea4042beb6ff5cacef32e4847a024b566b4cd01e54
+2018-06-10 15:15:21,141 RF found but not transmitted
+2018-06-10 15:15:25,285 RF found but not transmitted
+2018-06-10 15:15:29,194 RCV proposal_commit
+2018-06-10 15:15:29,201 appended honest propose 399ab24f3e on top of 5a2bb6c13e
+2018-06-10 15:15:29,201 appended honest commit f17b7f4e71 on top of 399ab24f3e
+2018-06-10 15:15:29,201 weight: 6
+2018-06-10 15:15:29,201 , 6
+2018-06-10 15:15:29,201 LOSE: MALICIOUS LOST 2 - 1
+2018-06-10 15:15:29,202 start mining - depth 6
+2018-06-10 15:15:29,202 start mining - hash f17b7f4e71a72d6aee99120d03c9eda8a49c5487fa97757427a1f36abb69723c
+2018-06-10 15:15:32,010 RF found but not transmitted
+2018-06-10 15:15:32,637 RCV malicious_prop_agreement
+2018-06-10 15:15:32,637 start mal hidden SELFISH mining on top of - hash 6c60ed006985c5a39761689a72cf1143b3331fb1e27b98ccac6a4cab07881862
+2018-06-10 15:15:35,555 RF found but not transmitted
+2018-06-10 15:15:46,155 RF found but not transmitted
+2018-06-10 15:15:46,520 RF found but not transmitted
+2018-06-10 15:15:48,163 RF found but not transmitted
+2018-06-10 15:15:48,450 RF found but not transmitted
+2018-06-10 15:15:51,086 RF found but not transmitted
+2018-06-10 15:15:56,564 RF found but not transmitted
+2018-06-10 15:15:57,383 RF found but not transmitted
+2018-06-10 15:16:02,346 RF found but not transmitted
+2018-06-10 15:16:03,587 RF found but not transmitted
+2018-06-10 15:16:03,764 RF found but not transmitted
+2018-06-10 15:16:05,330 RF found but not transmitted
+2018-06-10 15:16:16,966 RF found but not transmitted
+2018-06-10 15:16:28,940 RF found but not transmitted
+2018-06-10 15:16:29,844 RF found but not transmitted
+2018-06-10 15:16:34,548 RF found but not transmitted
+2018-06-10 15:16:41,395 RF found but not transmitted
+2018-06-10 15:16:49,874 RCV proposal_commit
+2018-06-10 15:16:49,881 appended honest propose 33e31829d1 on top of f17b7f4e71
+2018-06-10 15:16:49,882 appended honest commit 9958eb828b on top of 33e31829d1
+2018-06-10 15:16:49,882 weight: 7
+2018-06-10 15:16:49,882 , 7
+2018-06-10 15:16:49,951 RCV proposal_commit
+2018-06-10 15:16:49,954 appended malicious propose b9971203dd on top of f17b7f4e71
+2018-06-10 15:16:49,955 appended malicious commit 87fc0eedb2 on top of b9971203dd
+2018-06-10 15:16:49,956 weight: 7
+2018-06-10 15:16:49,956 , 7
+2018-06-10 15:16:49,957 start mining - depth 7
+2018-06-10 15:16:49,958 start mining - hash 87fc0eedb2c5e523bae818a439e72ed200254533e4e01a9c217e314f9805814f
+2018-06-10 15:16:49,958 Hashing frequency: 5509
+2018-06-10 15:16:57,198 RCV proposal_commit
+2018-06-10 15:16:57,201 appended malicious propose 40b4de9c73 on top of 87fc0eedb2
+2018-06-10 15:16:57,201 appended malicious commit f11313952c on top of 40b4de9c73
+2018-06-10 15:16:57,201 weight: 8
+2018-06-10 15:16:57,201 , 8
+2018-06-10 15:16:57,202 start mining - depth 8
+2018-06-10 15:16:57,202 start mining - hash f11313952cb423ecfecce0a2c3d9f7751b47fe0745c97271c89d77eace018f5a
+2018-06-10 15:16:58,030 RF found but not transmitted
+2018-06-10 15:16:59,140 RCV proposal_commit
+2018-06-10 15:16:59,142 appended honest propose dc97884c4c on top of f11313952c
+2018-06-10 15:16:59,143 appended honest commit 03bb336f9a on top of dc97884c4c
+2018-06-10 15:16:59,143 weight: 9
+2018-06-10 15:16:59,143 , 9
+2018-06-10 15:17:08,559 RF found but not transmitted
+2018-06-10 15:17:09,963 RF found but not transmitted
+2018-06-10 15:17:15,847 RCV proposal_commit
+2018-06-10 15:17:15,853 appended honest propose 92ad828eb6 on top of 03bb336f9a
+2018-06-10 15:17:15,854 appended honest commit 1d71f3daf9 on top of 92ad828eb6
+2018-06-10 15:17:15,854 weight: 10
+2018-06-10 15:17:15,854 , 10
+2018-06-10 15:17:15,854 LOSE: MALICIOUS LOST 2 - 0
+2018-06-10 15:17:15,854 start mining - depth 10
+2018-06-10 15:17:15,855 start mining - hash 1d71f3daf93e6cc78ff2793aa053c24fe52cc917fbd810bba822e2573719ee2d
+2018-06-10 15:17:16,003 RF found but not transmitted
+2018-06-10 15:17:18,027 RCV malicious_prop_agreement
+2018-06-10 15:17:18,029 start mal hidden SELFISH mining on top of - hash 3aa8ea41bdc4dffcc98c2e22544a449ade4141cbbadfc49a29c9dad7c3506a1c
+2018-06-10 15:17:25,613 RF found but not transmitted
+2018-06-10 15:17:25,791 RF found but not transmitted
+2018-06-10 15:17:26,122 RF found but not transmitted
+2018-06-10 15:17:29,342 RF found but not transmitted
+2018-06-10 15:17:30,147 RF found but not transmitted
+2018-06-10 15:17:31,505 RF found but not transmitted
+2018-06-10 15:17:33,394 RF found but not transmitted
+2018-06-10 15:17:36,575 RF found but not transmitted
+2018-06-10 15:17:38,316 RF found but not transmitted
+2018-06-10 15:17:42,428 RF found but not transmitted
+2018-06-10 15:17:46,544 RF found but not transmitted
+2018-06-10 15:17:46,992 RF found but not transmitted
+2018-06-10 15:17:49,376 RF found but not transmitted
+2018-06-10 15:17:49,840 RCV proposal_commit
+2018-06-10 15:17:49,842 appended honest propose 96710a8783 on top of 1d71f3daf9
+2018-06-10 15:17:49,843 appended honest commit d333687f43 on top of 96710a8783
+2018-06-10 15:17:49,843 weight: 11
+2018-06-10 15:17:49,844 , 11
+2018-06-10 15:17:49,917 RCV proposal_commit
+2018-06-10 15:17:49,921 appended malicious propose 2a885036de on top of 1d71f3daf9
+2018-06-10 15:17:49,922 appended malicious commit 8138dd4d4c on top of 2a885036de
+2018-06-10 15:17:49,922 weight: 11
+2018-06-10 15:17:49,922 , 11
+2018-06-10 15:17:49,925 start mining - depth 11
+2018-06-10 15:17:49,926 start mining - hash 8138dd4d4c120508dfeb385e4e85b0e13d8f503d311b16b4216c66a9dab0e9dd
+2018-06-10 15:17:57,279 RCV proposal_commit
+2018-06-10 15:17:57,282 appended malicious propose c5b175e0d5 on top of 8138dd4d4c
+2018-06-10 15:17:57,283 appended malicious commit 8acec2b523 on top of c5b175e0d5
+2018-06-10 15:17:57,283 weight: 12
+2018-06-10 15:17:57,285 , 12
+2018-06-10 15:17:57,285 start mining - depth 12
+2018-06-10 15:17:57,285 start mining - hash 8acec2b523ae88ef35c8dee1cdb6a7795b90645d40e655ecf3bf629e95405c18
+2018-06-10 15:17:57,285 Hashing frequency: 3598
+2018-06-10 15:17:57,297 RF found but not transmitted
+2018-06-10 15:18:02,318 RF found but not transmitted
+2018-06-10 15:18:08,532 RF found but not transmitted
+2018-06-10 15:18:09,905 RF found but not transmitted
+2018-06-10 15:18:13,365 RF found but not transmitted
+2018-06-10 15:18:18,229 RF found but not transmitted
+2018-06-10 15:18:24,218 RF found but not transmitted
+2018-06-10 15:18:26,578 RCV proposal_commit
+2018-06-10 15:18:26,581 appended honest propose 5bac4d3f57 on top of 8acec2b523
+2018-06-10 15:18:26,581 appended honest commit e5688dd72f on top of 5bac4d3f57
+2018-06-10 15:18:26,581 weight: 13
+2018-06-10 15:18:26,582 , 13
+2018-06-10 15:18:27,030 RF found but not transmitted
+2018-06-10 15:18:28,696 RF found but not transmitted
+2018-06-10 15:18:31,522 RCV proposal_commit
+2018-06-10 15:18:31,531 appended malicious propose 663a770656 on top of 8acec2b523
+2018-06-10 15:18:31,532 appended malicious commit c71b771328 on top of 663a770656
+2018-06-10 15:18:31,532 weight: 13
+2018-06-10 15:18:31,532 , 13
+2018-06-10 15:18:31,533 start mining - depth 13
+2018-06-10 15:18:31,533 start mining - hash c71b771328b882fb86a7de19fdd2ceaf98b921d88d3fd3566c780908664fdab2
+2018-06-10 15:18:32,842 RCV proposal_commit
+2018-06-10 15:18:32,847 appended honest propose 74117c85ec on top of e5688dd72f
+2018-06-10 15:18:32,847 appended honest commit 75e17381b9 on top of 74117c85ec
+2018-06-10 15:18:32,847 weight: 14
+2018-06-10 15:18:32,848 , 14
+2018-06-10 15:18:32,848 LOSE: MALICIOUS LOST 2 - 1
+2018-06-10 15:18:32,848 start mining - depth 14
+2018-06-10 15:18:32,848 start mining - hash 75e17381b992c579934b1c44455f2486c2e962795ee03516ecf44a303bc6e5dd
+2018-06-10 15:18:40,221 RF found but not transmitted
+2018-06-10 15:18:43,500 RCV malicious_prop_agreement
+2018-06-10 15:18:43,500 start mal hidden SELFISH mining on top of - hash 476fee561f6298d4b52435df7468c5365712cc09214e760fce8ea39d4e282697
+2018-06-10 15:18:43,603 RCV proposal_commit
+2018-06-10 15:18:43,606 appended honest propose 28aed62e69 on top of 75e17381b9
+2018-06-10 15:18:43,606 appended honest commit 20b3b625dd on top of 28aed62e69
+2018-06-10 15:18:43,607 weight: 15
+2018-06-10 15:18:43,607 , 15
+2018-06-10 15:18:43,683 RCV proposal_commit
+2018-06-10 15:18:43,686 appended malicious propose a6ee3773c2 on top of 75e17381b9
+2018-06-10 15:18:43,686 appended malicious commit 494696562c on top of a6ee3773c2
+2018-06-10 15:18:43,686 weight: 15
+2018-06-10 15:18:43,687 , 15
+2018-06-10 15:18:43,688 start mining - depth 15
+2018-06-10 15:18:43,688 start mining - hash 494696562c8fffaa5691bf329e52bb14e722cd69b6c9e5c38cc7765d2e768ce0
+2018-06-10 15:18:48,742 RCV proposal_commit
+2018-06-10 15:18:48,745 appended honest propose bd8d270323 on top of 20b3b625dd
+2018-06-10 15:18:48,745 appended honest commit 61b8155a26 on top of bd8d270323
+2018-06-10 15:18:48,746 weight: 16
+2018-06-10 15:18:48,746 , 16
+2018-06-10 15:18:48,747 LOSE: MALICIOUS LOST 2 - 1
+2018-06-10 15:18:48,747 start mining - depth 16
+2018-06-10 15:18:48,747 start mining - hash 61b8155a26032e396efb0a9263067116d2d0ecb16c25a9c3ec04f7493ed57308
+2018-06-10 15:18:54,441 RF found but not transmitted
+2018-06-10 15:18:54,443 hash found
+2018-06-10 15:18:54,444 SNT malicious_proposal_agreement
+2018-06-10 15:19:01,204 RCV proposal_commit
+2018-06-10 15:19:01,207 appended honest propose 35ad7bb08e on top of 61b8155a26
+2018-06-10 15:19:01,208 appended honest commit 455570d123 on top of 35ad7bb08e
+2018-06-10 15:19:01,208 weight: 17
+2018-06-10 15:19:01,208 , 17
+2018-06-10 15:19:01,211 appended malicious propose 5e24870102 on top of 61b8155a26
+2018-06-10 15:19:01,212 appended malicious commit 9feca12102 on top of 5e24870102
+2018-06-10 15:19:01,212 weight: 17
+2018-06-10 15:19:01,212 SNT proposal_commit
+2018-06-10 15:19:01,263 start mining - depth 17
+2018-06-10 15:19:01,264 start mining - hash 9feca121024f30dc478c957d2d88b570f9858c25615b6d8afa867c7308eb27a4
+2018-06-10 15:19:01,277 Hashing frequency: 3052
+2018-06-10 15:19:01,847 RF found but not transmitted
+2018-06-10 15:19:02,349 RF found but not transmitted
+2018-06-10 15:19:03,639 RF found but not transmitted
+2018-06-10 15:19:09,372 RF found but not transmitted
+2018-06-10 15:19:09,373 hash found
+2018-06-10 15:19:09,377 appended malicious propose 79554be1c8 on top of 9feca12102
+2018-06-10 15:19:09,377 appended malicious commit 67d3c46abd on top of 79554be1c8
+2018-06-10 15:19:09,377 weight: 18
+2018-06-10 15:19:09,378 SNT proposal_commit
+2018-06-10 15:19:09,434 , 18
+2018-06-10 15:19:09,437 WIN: MALICIOUS WIN
+2018-06-10 15:19:09,437 start mining - depth 18
+2018-06-10 15:19:09,437 start mining - hash 67d3c46abd61faf550658799ad2dedb79ce837733a07f2751c9c861965a73410
+2018-06-10 15:19:09,580 RF found but not transmitted
+2018-06-10 15:19:15,132 RF found but not transmitted
+2018-06-10 15:19:15,723 RCV malicious_prop_agreement
+2018-06-10 15:19:15,723 start mal hidden SELFISH mining on top of - hash ec88950496915a61b15f5b4401d539b96b1df86409d50e8dbb1398d01371c6e5
+2018-06-10 15:19:18,886 RF found but not transmitted
+2018-06-10 15:19:19,832 RF found but not transmitted
+2018-06-10 15:19:28,519 RCV proposal_commit
+2018-06-10 15:19:28,521 appended honest propose 2668185bb9 on top of 67d3c46abd
+2018-06-10 15:19:28,522 appended honest commit e9fd018cba on top of 2668185bb9
+2018-06-10 15:19:28,522 weight: 19
+2018-06-10 15:19:28,522 , 19
+2018-06-10 15:19:28,577 RCV proposal_commit
+2018-06-10 15:19:28,580 appended malicious propose d0658ec3ba on top of 67d3c46abd
+2018-06-10 15:19:28,580 appended malicious commit 1269dfae33 on top of d0658ec3ba
+2018-06-10 15:19:28,581 weight: 19
+2018-06-10 15:19:28,581 , 19
+2018-06-10 15:19:28,583 start mining - depth 19
+2018-06-10 15:19:28,584 start mining - hash 1269dfae332627b540be7ccf81f9b0f4f3362e6e8ad75d63eebcf9cd03704fdb
+2018-06-10 15:19:30,361 RF found but not transmitted
+2018-06-10 15:19:32,177 RF found but not transmitted
+2018-06-10 15:19:36,447 RF found but not transmitted
+2018-06-10 15:19:37,446 RF found but not transmitted
+2018-06-10 15:19:40,083 RF found but not transmitted
+2018-06-10 15:19:50,574 RF found but not transmitted
+2018-06-10 15:19:56,841 RCV proposal_commit
+2018-06-10 15:19:56,850 appended malicious propose 3d1d564b68 on top of 1269dfae33
+2018-06-10 15:19:56,851 appended malicious commit 25de55cf14 on top of 3d1d564b68
+2018-06-10 15:19:56,851 weight: 20
+2018-06-10 15:19:56,851 , 20
+2018-06-10 15:19:56,851 start mining - depth 20
+2018-06-10 15:19:56,851 start mining - hash 25de55cf144c57208dd4bf18be9ce8fbf800014f2983158b58ee69115538dec7
+2018-06-10 15:19:57,132 RF found but not transmitted
+2018-06-10 15:20:01,970 RF found but not transmitted
+2018-06-10 15:20:02,261 RF found but not transmitted
+2018-06-10 15:20:03,102 RF found but not transmitted
+2018-06-10 15:20:06,784 RF found but not transmitted
+2018-06-10 15:20:08,366 RF found but not transmitted
+2018-06-10 15:20:08,770 RF found but not transmitted
+2018-06-10 15:20:15,802 RF found but not transmitted
+2018-06-10 15:20:16,232 RF found but not transmitted
+2018-06-10 15:20:31,885 RF found but not transmitted
+2018-06-10 15:20:35,334 RF found but not transmitted
+2018-06-10 15:20:37,515 RCV proposal_commit
+2018-06-10 15:20:37,518 appended honest propose cd087043f9 on top of 25de55cf14
+2018-06-10 15:20:37,519 appended honest commit 2e1b471f61 on top of cd087043f9
+2018-06-10 15:20:37,519 weight: 21
+2018-06-10 15:20:37,519 , 21
+2018-06-10 15:20:39,424 RCV proposal_commit
+2018-06-10 15:20:39,426 appended malicious propose 92ac58b07f on top of 25de55cf14
+2018-06-10 15:20:39,427 appended malicious commit a7ec8254ae on top of 92ac58b07f
+2018-06-10 15:20:39,427 weight: 21
+2018-06-10 15:20:39,427 , 21
+2018-06-10 15:20:39,428 start mining - depth 21
+2018-06-10 15:20:39,428 start mining - hash a7ec8254ae7d0d0044b03241dc9b96cc96f461744ee66d3b9740bd9897b522f5
+2018-06-10 15:20:39,429 Hashing frequency: 5209
+2018-06-10 15:20:45,565 RF found but not transmitted
+2018-06-10 15:20:47,167 RF found but not transmitted
+2018-06-10 15:20:49,031 RF found but not transmitted
+2018-06-10 15:20:54,461 RF found but not transmitted
+2018-06-10 15:20:55,789 RF found but not transmitted
+2018-06-10 15:20:59,259 RCV proposal_commit
+2018-06-10 15:20:59,262 appended malicious propose 9f4834f077 on top of a7ec8254ae
+2018-06-10 15:20:59,262 appended malicious commit 0488d6edaf on top of 9f4834f077
+2018-06-10 15:20:59,262 weight: 22
+2018-06-10 15:20:59,263 , 22
+2018-06-10 15:20:59,266 start mining - depth 22
+2018-06-10 15:20:59,266 start mining - hash 0488d6edaf088b5c6ce09ae4fae4d32931fa21ad3b652fb4bf7503f94dc4a015
+2018-06-10 15:21:00,597 RCV malicious_prop_agreement
+2018-06-10 15:21:00,597 start mal hidden SELFISH mining on top of - hash bbdba1d5f2ffa49066ffa0fc561e74f7240c829cbaac064e6991c6d8fdd9a538
+2018-06-10 15:21:01,577 RF found but not transmitted
+2018-06-10 15:21:05,679 RF found but not transmitted
+2018-06-10 15:21:06,210 RF found but not transmitted
+2018-06-10 15:21:06,352 RF found but not transmitted
+2018-06-10 15:21:13,155 RF found but not transmitted
+2018-06-10 15:21:16,360 RF found but not transmitted
+2018-06-10 15:21:39,040 RF found but not transmitted
+2018-06-10 15:21:40,652 RF found but not transmitted
+2018-06-10 15:21:42,317 RF found but not transmitted
+2018-06-10 15:21:43,371 RF found but not transmitted
+2018-06-10 15:21:46,114 RF found but not transmitted
+2018-06-10 15:21:49,092 RF found but not transmitted
+2018-06-10 15:21:57,411 RF found but not transmitted
+2018-06-10 15:21:58,814 RF found but not transmitted
+2018-06-10 15:22:03,767 RCV proposal_commit
+2018-06-10 15:22:03,770 appended honest propose edce24185e on top of 0488d6edaf
+2018-06-10 15:22:03,772 appended honest commit 20ef9446bb on top of edce24185e
+2018-06-10 15:22:03,772 weight: 23
+2018-06-10 15:22:03,772 , 23
+2018-06-10 15:22:03,839 RCV proposal_commit
+2018-06-10 15:22:03,842 appended malicious propose fc0fd0e51c on top of 0488d6edaf
+2018-06-10 15:22:03,844 appended malicious commit 498212dd4d on top of fc0fd0e51c
+2018-06-10 15:22:03,844 weight: 23
+2018-06-10 15:22:03,844 , 23
+2018-06-10 15:22:03,847 start mining - depth 23
+2018-06-10 15:22:03,847 start mining - hash 498212dd4d0f00eafab720c107907101fdda6f9bad99d88c0a38cda4a2dacb6a
+2018-06-10 15:22:03,847 Hashing frequency: 4517
+2018-06-10 15:22:10,182 RF found but not transmitted
+2018-06-10 15:22:10,964 RF found but not transmitted
+2018-06-10 15:22:12,114 RF found but not transmitted
+2018-06-10 15:22:12,996 RF found but not transmitted
+2018-06-10 15:22:13,297 RF found but not transmitted
+2018-06-10 15:22:13,772 RF found but not transmitted
+2018-06-10 15:22:19,304 RCV proposal_commit
+2018-06-10 15:22:19,307 appended malicious propose 335401780c on top of 498212dd4d
+2018-06-10 15:22:19,308 appended malicious commit 9e37a98d95 on top of 335401780c
+2018-06-10 15:22:19,308 weight: 24
+2018-06-10 15:22:19,308 , 24
+2018-06-10 15:22:19,308 start mining - depth 24
+2018-06-10 15:22:19,309 start mining - hash 9e37a98d954456810cf41301be3c58e850e2252415e75a0e3cb42d5b78cc401b
+2018-06-10 15:22:23,250 RF found but not transmitted
+2018-06-10 15:22:23,544 RCV malicious_prop_agreement
+2018-06-10 15:22:23,544 start mal hidden SELFISH mining on top of - hash ea1b7dc014c62983cf54eb157c9b272b9d396c091b68c9f4675fcd2825f3fcf6
+2018-06-10 15:22:23,582 RCV proposal_commit
+2018-06-10 15:22:23,585 appended honest propose 1d5f1b8907 on top of 9e37a98d95
+2018-06-10 15:22:23,585 appended honest commit 18dca9b255 on top of 1d5f1b8907
+2018-06-10 15:22:23,585 weight: 25
+2018-06-10 15:22:23,585 , 25
+2018-06-10 15:22:23,662 RCV proposal_commit
+2018-06-10 15:22:23,665 appended malicious propose fe1ec7369e on top of 9e37a98d95
+2018-06-10 15:22:23,665 appended malicious commit c41724166b on top of fe1ec7369e
+2018-06-10 15:22:23,665 weight: 25
+2018-06-10 15:22:23,665 , 25
+2018-06-10 15:22:23,668 start mining - depth 25
+2018-06-10 15:22:23,669 start mining - hash c41724166b2260afcfc7db58ce8bde77f27da0bb4140b7e9f18487613601b8dd
+2018-06-10 15:22:25,041 RF found but not transmitted
+2018-06-10 15:22:26,070 RCV proposal_commit
+2018-06-10 15:22:26,073 appended malicious propose 1303e21e77 on top of c41724166b
+2018-06-10 15:22:26,073 appended malicious commit ffc45c323b on top of 1303e21e77
+2018-06-10 15:22:26,073 weight: 26
+2018-06-10 15:22:26,074 , 26
+2018-06-10 15:22:26,075 start mining - depth 26
+2018-06-10 15:22:26,076 start mining - hash ffc45c323b8df262f7e4ce996b6a8d812694d36ea86d979b26778a8f5bebc419
+2018-06-10 15:22:29,253 RF found but not transmitted
+2018-06-10 15:22:30,597 RF found but not transmitted
+2018-06-10 15:22:36,191 RF found but not transmitted
+2018-06-10 15:22:37,087 RF found but not transmitted
+2018-06-10 15:22:37,180 RCV malicious_prop_agreement
+2018-06-10 15:22:37,180 start mal hidden SELFISH mining on top of - hash 1e3abb2aa6ffbda4d1e0b2a2ed831d180345fad8d4301731da111d39874292ca
+2018-06-10 15:22:46,333 RF found but not transmitted
+2018-06-10 15:22:49,652 RCV proposal_commit
+2018-06-10 15:22:49,654 appended honest propose 82cfc1d109 on top of ffc45c323b
+2018-06-10 15:22:49,655 appended honest commit 0e31e2fb9f on top of 82cfc1d109
+2018-06-10 15:22:49,655 weight: 27
+2018-06-10 15:22:49,655 , 27
+2018-06-10 15:22:49,712 RCV proposal_commit
+2018-06-10 15:22:49,714 appended malicious propose b2149d3201 on top of ffc45c323b
+2018-06-10 15:22:49,715 appended malicious commit 0a235d5e1b on top of b2149d3201
+2018-06-10 15:22:49,715 weight: 27
+2018-06-10 15:22:49,715 , 27
+2018-06-10 15:22:49,723 start mining - depth 27
+2018-06-10 15:22:49,723 start mining - hash 0a235d5e1b0daeccfd02f6d63761aa6945fbbdb3afdceb629e7265febecebb6a
+2018-06-10 15:22:50,326 RF found but not transmitted
+2018-06-10 15:22:54,199 RF found but not transmitted
+2018-06-10 15:22:55,207 RF found but not transmitted
+2018-06-10 15:23:08,516 RF found but not transmitted
+2018-06-10 15:23:12,071 RF found but not transmitted
+2018-06-10 15:23:14,494 RF found but not transmitted
+2018-06-10 15:23:19,565 RF found but not transmitted
+2018-06-10 15:23:23,686 RCV proposal_commit
+2018-06-10 15:23:23,689 appended malicious propose a946f1ecc6 on top of 0a235d5e1b
+2018-06-10 15:23:23,690 appended malicious commit 7d11a22b81 on top of a946f1ecc6
+2018-06-10 15:23:23,690 weight: 28
+2018-06-10 15:23:23,690 , 28
+2018-06-10 15:23:23,693 start mining - depth 28
+2018-06-10 15:23:23,694 start mining - hash 7d11a22b81f498837e48d2e5ae9401a0a2b64f366e923dc7f139cef13be35335
+2018-06-10 15:23:23,694 Hashing frequency: 4283
+2018-06-10 15:23:24,949 RF found but not transmitted
+2018-06-10 15:23:27,452 RF found but not transmitted
+2018-06-10 15:23:30,592 RF found but not transmitted
+2018-06-10 15:23:30,773 RCV proposal_commit
+2018-06-10 15:23:30,775 appended honest propose 03998eb317 on top of 7d11a22b81
+2018-06-10 15:23:30,776 appended honest commit 964c7be44c on top of 03998eb317
+2018-06-10 15:23:30,776 weight: 29
+2018-06-10 15:23:30,776 , 29
+2018-06-10 15:23:34,452 RF found but not transmitted
+2018-06-10 15:23:38,866 RF found but not transmitted
+2018-06-10 15:23:52,459 RCV proposal_commit
+2018-06-10 15:23:52,468 appended malicious propose 36adb7f9e6 on top of 7d11a22b81
+2018-06-10 15:23:52,469 appended malicious commit 6e6b3d07e2 on top of 36adb7f9e6
+2018-06-10 15:23:52,469 weight: 29
+2018-06-10 15:23:52,469 , 29
+2018-06-10 15:23:52,472 start mining - depth 29
+2018-06-10 15:23:52,472 start mining - hash 6e6b3d07e28a7421f2aab3a1a52e1099ccea874bcbac641534e1a90d91f0ee65
+2018-06-10 15:23:53,051 RCV proposal_commit
+2018-06-10 15:23:53,054 appended malicious propose a53d1f4f97 on top of 6e6b3d07e2
+2018-06-10 15:23:53,054 appended malicious commit 6ced8855be on top of a53d1f4f97
+2018-06-10 15:23:53,054 weight: 30
+2018-06-10 15:23:53,060 , 30
+2018-06-10 15:23:53,061 start mining - depth 30
+2018-06-10 15:23:53,061 start mining - hash 6ced8855be00d7da36e0a9d136413e8e004ee0401f3e90149c8a80c4bbad93a0
+2018-06-10 15:23:55,284 RF found but not transmitted
+2018-06-10 15:23:55,854 RF found but not transmitted
+2018-06-10 15:24:06,342 RF found but not transmitted
+2018-06-10 15:24:07,288 RF found but not transmitted
+2018-06-10 15:24:08,113 RF found but not transmitted
+2018-06-10 15:24:08,901 RCV malicious_prop_agreement
+2018-06-10 15:24:08,901 start mal hidden SELFISH mining on top of - hash 47d1f3e59930ec259d4b2704c14942aa8893d168e4ad1258143b814fbf5bd5de
+2018-06-10 15:24:10,263 RF found but not transmitted
+2018-06-10 15:24:10,543 RF found but not transmitted
+2018-06-10 15:24:12,285 RF found but not transmitted
+2018-06-10 15:24:18,573 RF found but not transmitted
+2018-06-10 15:24:21,286 RF found but not transmitted
+2018-06-10 15:24:24,650 RF found but not transmitted
+2018-06-10 15:24:24,709 RF found but not transmitted
+2018-06-10 15:24:35,345 RF found but not transmitted
+2018-06-10 15:24:41,139 RF found but not transmitted
+2018-06-10 15:24:41,159 RF found but not transmitted
+2018-06-10 15:24:42,128 RF found but not transmitted
+2018-06-10 15:24:57,144 RCV proposal_commit
+2018-06-10 15:24:57,150 appended honest propose 0bf97c8bb6 on top of 6ced8855be
+2018-06-10 15:24:57,151 appended honest commit 467d49ccca on top of 0bf97c8bb6
+2018-06-10 15:24:57,151 weight: 31
+2018-06-10 15:24:57,152 , 31
+2018-06-10 15:24:57,217 RCV proposal_commit
+2018-06-10 15:24:57,220 appended malicious propose a16f938337 on top of 6ced8855be
+2018-06-10 15:24:57,221 appended malicious commit 97291276af on top of a16f938337
+2018-06-10 15:24:57,222 weight: 31
+2018-06-10 15:24:57,222 , 31
+2018-06-10 15:24:57,226 start mining - depth 31
+2018-06-10 15:24:57,227 start mining - hash 97291276af8ef558a1cc2b54166cf719640ad54c864e97c64dece1ad2af8ab50
+2018-06-10 15:24:57,227 Hashing frequency: 5061
+2018-06-10 15:25:02,846 RCV proposal_commit
+2018-06-10 15:25:02,849 appended malicious propose 74876909c8 on top of 97291276af
+2018-06-10 15:25:02,850 appended malicious commit 2bab44cfed on top of 74876909c8
+2018-06-10 15:25:02,850 weight: 32
+2018-06-10 15:25:02,850 , 32
+2018-06-10 15:25:02,850 start mining - depth 32
+2018-06-10 15:25:02,851 start mining - hash 2bab44cfed408959ff7fe33d308ed45b9a93719094a5483a7bd725be061913c8
+2018-06-10 15:25:04,462 RF found but not transmitted
+2018-06-10 15:25:07,868 RCV malicious_prop_agreement
+2018-06-10 15:25:07,869 start mal hidden SELFISH mining on top of - hash 414b60fa1eabe3fb17901156f18b56fa8b7947cc58c37fb692401fe0d325d8fa
+2018-06-10 15:25:12,340 RF found but not transmitted
+2018-06-10 15:25:17,883 RF found but not transmitted
+2018-06-10 15:25:19,276 RF found but not transmitted
+2018-06-10 15:25:23,000 RCV proposal_commit
+2018-06-10 15:25:23,003 appended honest propose 709be224e3 on top of 2bab44cfed
+2018-06-10 15:25:23,003 appended honest commit 8ca5f1dbea on top of 709be224e3
+2018-06-10 15:25:23,004 weight: 33
+2018-06-10 15:25:23,004 , 33
+2018-06-10 15:25:23,054 RCV proposal_commit
+2018-06-10 15:25:23,057 appended malicious propose 7fb90dee1e on top of 2bab44cfed
+2018-06-10 15:25:23,057 appended malicious commit 118e1c86f8 on top of 7fb90dee1e
+2018-06-10 15:25:23,058 weight: 33
+2018-06-10 15:25:23,058 , 33
+2018-06-10 15:25:23,061 start mining - depth 33
+2018-06-10 15:25:23,061 start mining - hash 118e1c86f801952a5d73956eb5fe67f4e9cc6ab9edafc55f9d2fd02a45b0adb9
+2018-06-10 15:25:25,191 RF found but not transmitted
+2018-06-10 15:25:28,767 RF found but not transmitted
+2018-06-10 15:25:30,341 RF found but not transmitted
+2018-06-10 15:25:31,837 RCV proposal_commit
+2018-06-10 15:25:31,839 appended malicious propose cce1cee25b on top of 118e1c86f8
+2018-06-10 15:25:31,840 appended malicious commit 532fcb0400 on top of cce1cee25b
+2018-06-10 15:25:31,840 weight: 34
+2018-06-10 15:25:31,840 , 34
+2018-06-10 15:25:31,840 start mining - depth 34
+2018-06-10 15:25:31,840 start mining - hash 532fcb04006e3bf30a77f1646875d388162267b37d69e0aad644ff159a0a52a9
+2018-06-10 15:25:38,612 RF found but not transmitted
+2018-06-10 15:25:39,780 RCV malicious_prop_agreement
+2018-06-10 15:25:39,781 start mal hidden SELFISH mining on top of - hash 088533f9e90e1b7a7e786ed0b37338e26770a343ff92d770314059f611b99e67
+2018-06-10 15:25:41,635 RCV proposal_commit
+2018-06-10 15:25:41,637 appended honest propose 3daa29eb20 on top of 532fcb0400
+2018-06-10 15:25:41,638 appended honest commit f0cdb8e394 on top of 3daa29eb20
+2018-06-10 15:25:41,638 weight: 35
+2018-06-10 15:25:41,638 , 35
+2018-06-10 15:25:41,703 RCV proposal_commit
+2018-06-10 15:25:41,705 appended malicious propose 312f6340e9 on top of 532fcb0400
+2018-06-10 15:25:41,706 appended malicious commit 493d3f9dd6 on top of 312f6340e9
+2018-06-10 15:25:41,706 weight: 35
+2018-06-10 15:25:41,706 , 35
+2018-06-10 15:25:41,707 start mining - depth 35
+2018-06-10 15:25:41,707 start mining - hash 493d3f9dd6a644c30c2323fc0cfb74619fd436628a285d0b70c61535cba8fe42
+2018-06-10 15:25:53,272 RF found but not transmitted
+2018-06-10 15:26:09,538 RCV proposal_commit
+2018-06-10 15:26:09,540 appended malicious propose ceb6689c0d on top of 493d3f9dd6
+2018-06-10 15:26:09,541 appended malicious commit 4ebeb697a5 on top of ceb6689c0d
+2018-06-10 15:26:09,541 weight: 36
+2018-06-10 15:26:09,541 , 36
+2018-06-10 15:26:09,544 start mining - depth 36
+2018-06-10 15:26:09,544 start mining - hash 4ebeb697a5a99eb700c67c73584ba4222baf85f395aa1865a8ede3c105482b4a
+2018-06-10 15:26:09,545 Hashing frequency: 3939
+2018-06-10 15:26:18,608 RCV malicious_prop_agreement
+2018-06-10 15:26:18,609 start mal hidden SELFISH mining on top of - hash a3dfdf0e6987dc8d512268637fdc4bdb8862cd0e1fb19add7239c8508819de93
+2018-06-10 15:26:20,940 RF found but not transmitted
+2018-06-10 15:26:25,273 RF found but not transmitted
+2018-06-10 15:26:29,357 RF found but not transmitted
+2018-06-10 15:26:31,525 RF found but not transmitted
+2018-06-10 15:26:33,896 RF found but not transmitted
+2018-06-10 15:26:34,544 RF found but not transmitted
+2018-06-10 15:26:36,310 RF found but not transmitted
+2018-06-10 15:26:37,701 RF found but not transmitted
+2018-06-10 15:26:43,878 RF found but not transmitted
+2018-06-10 15:26:49,570 RF found but not transmitted
+2018-06-10 15:26:49,589 RF found but not transmitted
+2018-06-10 15:26:50,765 RF found but not transmitted
+2018-06-10 15:26:56,948 RCV proposal_commit
+2018-06-10 15:26:56,951 appended honest propose 262cb28801 on top of 4ebeb697a5
+2018-06-10 15:26:56,952 appended honest commit 7eb3ff06a3 on top of 262cb28801
+2018-06-10 15:26:56,952 weight: 37
+2018-06-10 15:26:56,952 , 37
+2018-06-10 15:26:56,991 RF found but not transmitted
+2018-06-10 15:26:57,014 RCV proposal_commit
+2018-06-10 15:26:57,017 appended malicious propose 17d36d6b27 on top of 4ebeb697a5
+2018-06-10 15:26:57,018 appended malicious commit c3a29a4505 on top of 17d36d6b27
+2018-06-10 15:26:57,018 weight: 37
+2018-06-10 15:26:57,018 , 37
+2018-06-10 15:26:57,020 start mining - depth 37
+2018-06-10 15:26:57,020 start mining - hash c3a29a45052a3c2a48611c36dc219299a01be03933661aa48aafcc973ad43a15
+2018-06-10 15:26:59,498 RF found but not transmitted
+2018-06-10 15:27:01,539 RF found but not transmitted
+2018-06-10 15:27:01,540 hash found
+2018-06-10 15:27:01,544 appended malicious propose 7476f36a94 on top of c3a29a4505
+2018-06-10 15:27:01,544 appended malicious commit 79337dfcac on top of 7476f36a94
+2018-06-10 15:27:01,544 weight: 38
+2018-06-10 15:27:01,544 SNT proposal_commit
+2018-06-10 15:27:01,603 , 38
+2018-06-10 15:27:01,604 WIN: MALICIOUS WIN
+2018-06-10 15:27:01,604 start mining - depth 38
+2018-06-10 15:27:01,604 start mining - hash 79337dfcaccaa8f7d5a9282bd8a8e89a96f3525fbf10c152ced6041166a3c7d1
+2018-06-10 15:27:01,656 RCV proposal_commit
+2018-06-10 15:27:01,657 appended honest propose eb7b59e9c9 on top of 7eb3ff06a3
+2018-06-10 15:27:01,658 appended honest commit ee0df92a83 on top of eb7b59e9c9
+2018-06-10 15:27:01,658 weight: 38
+2018-06-10 15:27:01,658 , 38
+2018-06-10 15:27:10,405 RF found but not transmitted
+2018-06-10 15:27:16,629 RCV malicious_prop_agreement
+2018-06-10 15:27:16,630 start mal hidden SELFISH mining on top of - hash 95d4d397f7d16e55371c7e04fac829d6ee4b35d20e82afd3006e38ffdce33855
+2018-06-10 15:27:17,987 RF found but not transmitted
+2018-06-10 15:27:20,692 RF found but not transmitted
+2018-06-10 15:27:22,339 RCV proposal_commit
+2018-06-10 15:27:22,343 appended honest propose 5f21145bc5 on top of 79337dfcac
+2018-06-10 15:27:22,343 appended honest commit 994b539a34 on top of 5f21145bc5
+2018-06-10 15:27:22,343 weight: 39
+2018-06-10 15:27:22,344 , 39
+2018-06-10 15:27:22,401 RCV proposal_commit
+2018-06-10 15:27:22,404 appended malicious propose ae811582b9 on top of 79337dfcac
+2018-06-10 15:27:22,405 appended malicious commit 865a07e501 on top of ae811582b9
+2018-06-10 15:27:22,405 weight: 39
+2018-06-10 15:27:22,405 , 39
+2018-06-10 15:27:22,408 start mining - depth 39
+2018-06-10 15:27:22,409 start mining - hash 865a07e50158ae41748c6bbafa5bf019faa9c5f679b1e5f33a011b416aec5560
+2018-06-10 15:27:22,409 Hashing frequency: 3902
+2018-06-10 15:27:27,180 RF found but not transmitted
+2018-06-10 15:27:28,211 RF found but not transmitted
+2018-06-10 15:27:28,847 RF found but not transmitted
+2018-06-10 15:27:30,152 RF found but not transmitted
+2018-06-10 15:27:30,153 hash found
+2018-06-10 15:27:30,157 appended malicious propose 321b9ce43c on top of 865a07e501
+2018-06-10 15:27:30,157 appended malicious commit f05db8aebf on top of 321b9ce43c
+2018-06-10 15:27:30,157 weight: 40
+2018-06-10 15:27:30,157 SNT proposal_commit
+2018-06-10 15:27:30,209 , 40
+2018-06-10 15:27:30,209 WIN: MALICIOUS WIN
+2018-06-10 15:27:30,209 start mining - depth 40
+2018-06-10 15:27:30,210 start mining - hash f05db8aebfa9ef3c31e500a2aee1d76bcb91e1c89ee95a811d648a31f64a1a40
+2018-06-10 15:27:31,147 RF found but not transmitted
+2018-06-10 15:27:33,024 RCV malicious_prop_agreement
+2018-06-10 15:27:33,024 start mal hidden SELFISH mining on top of - hash a8d92e29546b821f2f7a36b1e7cedc20eb3fe075195fa6325e4fd3854626816f
+2018-06-10 15:27:36,760 RF found but not transmitted
+2018-06-10 15:27:37,987 RF found but not transmitted
+2018-06-10 15:27:39,696 RF found but not transmitted
+2018-06-10 15:27:40,838 RF found but not transmitted
+2018-06-10 15:27:44,761 RF found but not transmitted
+2018-06-10 15:27:47,581 RF found but not transmitted
+2018-06-10 15:27:50,993 RCV proposal_commit
+2018-06-10 15:27:50,995 appended honest propose d501f36f36 on top of f05db8aebf
+2018-06-10 15:27:50,997 appended honest commit df3432d439 on top of d501f36f36
+2018-06-10 15:27:50,997 weight: 41
+2018-06-10 15:27:50,997 , 41
+2018-06-10 15:27:51,050 RCV proposal_commit
+2018-06-10 15:27:51,052 appended malicious propose 1be26eea32 on top of f05db8aebf
+2018-06-10 15:27:51,053 appended malicious commit eb064b6c73 on top of 1be26eea32
+2018-06-10 15:27:51,053 weight: 41
+2018-06-10 15:27:51,053 , 41
+2018-06-10 15:27:51,054 start mining - depth 41
+2018-06-10 15:27:51,055 start mining - hash eb064b6c7336086ece3323eaa263551ca5e0a6b47a047d8f1616e781b5e1b742
+2018-06-10 15:27:51,135 RF found but not transmitted
+2018-06-10 15:27:52,337 RCV proposal_commit
+2018-06-10 15:27:52,342 appended honest propose b027b1397d on top of df3432d439
+2018-06-10 15:27:52,342 appended honest commit ad1c8a619d on top of b027b1397d
+2018-06-10 15:27:52,343 weight: 42
+2018-06-10 15:27:52,343 , 42
+2018-06-10 15:27:52,343 LOSE: MALICIOUS LOST 2 - 1
+2018-06-10 15:27:52,343 start mining - depth 42
+2018-06-10 15:27:52,343 start mining - hash ad1c8a619d4088a8c1fd10df47f94ab27f0540b9658ad599cfefb526116ea87c
+2018-06-10 15:27:52,624 RF found but not transmitted
+2018-06-10 15:27:52,626 hash found
+2018-06-10 15:27:52,629 SNT malicious_proposal_agreement
+2018-06-10 15:29:05,418 RCV proposal_commit
+2018-06-10 15:29:05,423 appended honest propose eead95bea7 on top of ad1c8a619d
+2018-06-10 15:29:05,424 appended honest commit 1d53970c69 on top of eead95bea7
+2018-06-10 15:29:05,424 weight: 43
+2018-06-10 15:29:05,424 , 43
+2018-06-10 15:29:05,430 appended malicious propose 3f2ce105e0 on top of ad1c8a619d
+2018-06-10 15:29:05,431 appended malicious commit f5bf06a571 on top of 3f2ce105e0
+2018-06-10 15:29:05,432 weight: 43
+2018-06-10 15:29:05,432 SNT proposal_commit
+2018-06-10 15:29:05,485 start mining - depth 43
+2018-06-10 15:29:05,486 start mining - hash f5bf06a57189538686cab05cf5dbe36e69576f6a3c61aaefc224535a123a570a
+2018-06-10 15:29:05,486 Hashing frequency: 1606
+2018-06-10 15:29:09,349 RF found but not transmitted
+2018-06-10 15:29:14,861 RCV proposal_commit
+2018-06-10 15:29:14,866 appended honest propose 7885b4cd43 on top of 1d53970c69
+2018-06-10 15:29:14,867 appended honest commit f68e022167 on top of 7885b4cd43
+2018-06-10 15:29:14,867 weight: 44
+2018-06-10 15:29:14,867 , 44
+2018-06-10 15:29:14,867 LOSE: MALICIOUS LOST 2 - 1
+2018-06-10 15:29:14,867 start mining - depth 44
+2018-06-10 15:29:14,868 start mining - hash f68e022167bc5c77818e9983c460422f36c9f857e7b0ddd1898a9ada4c788b81
+2018-06-10 15:29:30,445 RCV malicious_prop_agreement
+2018-06-10 15:29:30,448 start mal hidden SELFISH mining on top of - hash 68bf7662b5e692818b445f3be5dc652b66c5146897946eed3e40673704765d70
+2018-06-10 15:29:37,148 RCV proposal_commit
+2018-06-10 15:29:37,151 appended honest propose 3973961e2a on top of f68e022167
+2018-06-10 15:29:37,151 appended honest commit efbe65c109 on top of 3973961e2a
+2018-06-10 15:29:37,152 weight: 45
+2018-06-10 15:29:37,152 , 45
+2018-06-10 15:29:37,215 RCV proposal_commit
+2018-06-10 15:29:37,217 appended malicious propose d2d9a1be7b on top of f68e022167
+2018-06-10 15:29:37,218 appended malicious commit 1f76fecbcb on top of d2d9a1be7b
+2018-06-10 15:29:37,218 weight: 45
+2018-06-10 15:29:37,218 , 45
+2018-06-10 15:29:37,227 start mining - depth 45
+2018-06-10 15:29:37,227 start mining - hash 1f76fecbcbb234ce832bc1c3c7e8633dde4682ed0642a35cb1f18ecce8b243df
+2018-06-10 15:29:39,020 RF found but not transmitted
+2018-06-10 15:29:43,757 RF found but not transmitted
+2018-06-10 15:29:46,865 RCV proposal_commit
+2018-06-10 15:29:46,873 appended honest propose c4a95c933e on top of efbe65c109
+2018-06-10 15:29:46,873 appended honest commit af31840105 on top of c4a95c933e
+2018-06-10 15:29:46,873 weight: 46
+2018-06-10 15:29:46,874 , 46
+2018-06-10 15:29:46,878 LOSE: MALICIOUS LOST 2 - 1
+2018-06-10 15:29:46,878 start mining - depth 46
+2018-06-10 15:29:46,879 start mining - hash af31840105acaa5aa7f6067adc0684c9bd847adb4e7fbd358b114992fb8aa6e4
+2018-06-10 15:29:49,159 RF found but not transmitted
+2018-06-10 15:29:50,263 RF found but not transmitted
+2018-06-10 15:29:54,031 RF found but not transmitted
+2018-06-10 15:29:54,196 RF found but not transmitted
+2018-06-10 15:29:57,414 RCV proposal_commit
+2018-06-10 15:29:57,417 appended honest propose 45940e3a00 on top of af31840105
+2018-06-10 15:29:57,417 appended honest commit 229ca67df5 on top of 45940e3a00
+2018-06-10 15:29:57,418 weight: 47
+2018-06-10 15:29:57,418 , 47
+2018-06-10 15:29:57,769 RCV proposal_commit
+2018-06-10 15:29:57,777 appended malicious propose 8170627503 on top of af31840105
+2018-06-10 15:29:57,777 appended malicious commit 2008fd6252 on top of 8170627503
+2018-06-10 15:29:57,777 weight: 47
+2018-06-10 15:29:57,778 , 47
+2018-06-10 15:29:57,784 start mining - depth 47
+2018-06-10 15:29:57,784 start mining - hash 2008fd6252299ddf2c7486c16aaf42d6f16281012debe38cc963594e70abd0c0
+2018-06-10 15:30:11,157 RCV proposal_commit
+2018-06-10 15:30:11,161 appended malicious propose ea556da6fc on top of 2008fd6252
+2018-06-10 15:30:11,161 appended malicious commit 32c91e47ac on top of ea556da6fc
+2018-06-10 15:30:11,161 weight: 48
+2018-06-10 15:30:11,162 , 48
+2018-06-10 15:30:11,163 start mining - depth 48
+2018-06-10 15:30:11,163 start mining - hash 32c91e47ac5d6deb087c67635873d27f64fa311ef8ffd334f2b0e78b6e8b8748
+2018-06-10 15:30:11,168 Hashing frequency: 3579
+2018-06-10 15:30:11,464 RF found but not transmitted
+2018-06-10 15:30:13,890 RF found but not transmitted
+2018-06-10 15:30:19,865 RF found but not transmitted
+2018-06-10 15:30:24,409 RF found but not transmitted
+2018-06-10 15:30:31,350 RCV malicious_prop_agreement
+2018-06-10 15:30:31,350 start mal hidden SELFISH mining on top of - hash 0d357c4e620a38aeed2ae6bfab03dc25f23d3fe1a6cea15c82ddc5105da407a6
+2018-06-10 15:30:39,077 RF found but not transmitted
+2018-06-10 15:30:43,083 RF found but not transmitted
+2018-06-10 15:30:43,708 RCV proposal_commit
+2018-06-10 15:30:43,711 appended honest propose 7943348003 on top of 32c91e47ac
+2018-06-10 15:30:43,712 appended honest commit 6e38cd8303 on top of 7943348003
+2018-06-10 15:30:43,712 weight: 49
+2018-06-10 15:30:43,712 , 49
+2018-06-10 15:30:43,780 RCV proposal_commit
+2018-06-10 15:30:43,783 appended malicious propose 409f1500a5 on top of 32c91e47ac
+2018-06-10 15:30:43,784 appended malicious commit 3179bea4f3 on top of 409f1500a5
+2018-06-10 15:30:43,784 weight: 49
+2018-06-10 15:30:43,794 , 49
+2018-06-10 15:30:43,795 start mining - depth 49
+2018-06-10 15:30:43,795 start mining - hash 3179bea4f3e5686d1308fe6382b09893a4251e5ed68e1ec2bc343279567b0640
+2018-06-10 15:30:46,966 RCV proposal_commit
+2018-06-10 15:30:46,968 appended malicious propose a8618dab0c on top of 3179bea4f3
+2018-06-10 15:30:46,968 appended malicious commit 27986d4285 on top of a8618dab0c
+2018-06-10 15:30:46,969 weight: 50
+2018-06-10 15:30:46,974 , 50
+2018-06-10 15:30:46,974 start mining - depth 50
+2018-06-10 15:30:46,974 start mining - hash 27986d4285fa995c2b7ce5fe9b6787291bd3ef2495a3e5002c8656a80deb3168
+2018-06-10 15:30:51,028 RF found but not transmitted
+2018-06-10 15:30:54,420 RCV proposal_commit
+2018-06-10 15:30:54,423 appended honest propose 6e24c2dff4 on top of 27986d4285
+2018-06-10 15:30:54,423 appended honest commit 34e6d2cc19 on top of 6e24c2dff4
+2018-06-10 15:30:54,423 weight: 51
+2018-06-10 15:30:54,423 , 51
+2018-06-10 15:30:57,578 RCV proposal_commit
+2018-06-10 15:30:57,582 appended malicious propose 7bb2b58eda on top of 27986d4285
+2018-06-10 15:30:57,585 appended malicious commit fe1ec25b1e on top of 7bb2b58eda
+2018-06-10 15:30:57,585 weight: 51
+2018-06-10 15:30:57,585 , 51
+2018-06-10 15:30:57,596 start mining - depth 51
+2018-06-10 15:30:57,596 start mining - hash fe1ec25b1e58f88dfc79b134b4fd8cabd073374bc59a06a14328178b60126bef

@@ -152,7 +152,7 @@ class MaliciousPureBlockchain(State):
         self.miner.transaction_list = []
         self.prop2_flag= True
         self.timestamp = None
-        self.miner.start_new_mal_mining(block)
+        self.miner.start_new_selfish_mining(block)
         if not self.cancel_all:
             self.block_appeared = True
 
@@ -247,7 +247,7 @@ class MaliciousPureBlockchain(State):
             msg =  ', ' + str(c_block.weight)
             self.miner.res_loggerH.info(msg)
 
-        # if cancel all and the non-malicious can find 2 blocks the malicious gives up
+        # if cancel all and the honest can find 2 blocks the malicious gives up
         print(message_content['previous']['depth'])
         print(self.miner.current_block[0] == 1)
         if self.cancel_all and (message_content['previous']['depth'] - self.miner.current_block[0] == 1):

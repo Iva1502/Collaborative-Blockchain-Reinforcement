@@ -45,6 +45,8 @@ class Miner:
         self.reinforcement_pom = ReinforcementPOM(self)
         self.faulty = faulty
         self.already_found = 0
+        #flag to know that it's start of a new mining that we later use for the condition
+        # for obtaining a block to mine on top of //line 94
         self.start = True
         self.res_loggerM = self.setup_logger('results_loggerM'+str(self.id), 'results_logfileM'+str(self.id)+'.log')
         self.res_loggerH = self.setup_logger('results_loggerH' + str(self.id), 'results_logfileH' + str(self.id) + '.log')
@@ -90,12 +92,16 @@ class Miner:
               (self.malicious and self.current_block[0] % 2 == 0 and self.pure and (self.depth_cancel_block == -1))
         #args: mal_flag, cancel_all=False, threshold_divisor=1:
         if self.start:
+        #if it's the start of a new mining we want to get the last block with the regular get_last method
             self.start = False
             self.current_block = self.blockchain.get_last(mal, self.depth_cancel_block == -1, 5 if self.pure else 1)
         else:
             if (self.malicious or (self.blockchain.get_last(mal, self.depth_cancel_block == -1, 5 if self.pure else 1)[1].weight - self.current_block[1].weight > SWITCH_TH)):
                 self.current_block = self.blockchain.get_last(mal, self.depth_cancel_block == -1,
                                                               5 if self.pure else 1)
+            #we have this condition so that the honest miners only swich mining on top of the heaviest block
+            # if the weight of the one they were last mining on top of + the SWITCH_TH is lower than the heaviest block
+            #FIXME because of this condition in the Bitcoin version miners are stuck on depth 1 when SWITCH_TH=1
 
         logging.info("start mining - depth %s", self.current_block[0])
         logging.info("start mining - hash %s", self.current_block[1].hash())
@@ -125,9 +131,9 @@ class Miner:
 
     # In Cancel-All strategy the malicious miners don't stop mining if they find the first block and
     # wait for an honest block to cancel, but they continue mining secretly
-    def start_new_mal_mining(self, c_block):
-        logging.info("start mal HIDEN mining on top of - hash %s", c_block.hash())
-        print("start mal HIDEN mining on top of - hash ", c_block.hash())
+    def start_new_selfish_mining(self, c_block):
+        logging.info("start mal hidden SELFISH mining on top of - hash %s", c_block.hash())
+        print("start mal hidden SELFISH mining on top of - hash ", c_block.hash())
         #if depth_cancel_block is -1, it means it's the cancel all blocks strategy
         self.stop_mining = Stop()
         #if self.mal_block is None:

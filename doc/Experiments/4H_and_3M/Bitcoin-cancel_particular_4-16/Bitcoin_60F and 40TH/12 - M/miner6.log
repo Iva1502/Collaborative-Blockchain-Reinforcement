@@ -1,0 +1,39 @@
+2018-05-15 23:32:50,247 ---------------------------------------------------------
+2018-05-15 23:32:50,249 PURE BLOCKCHAIN state
+2018-05-15 23:32:51,263 start mining - depth 0
+2018-05-15 23:32:51,264 start mining - hash 94f324432c585171654fd7b150a9264b5f3b5d31ad63fd56db31698b66aa8625
+2018-05-15 23:33:01,085 hash found
+2018-05-15 23:33:01,089 appended honest propose c0f6ac8380 on top of 94f324432c
+2018-05-15 23:33:01,089 appended honest commit 9b8e3d5c64 on top of c0f6ac8380
+2018-05-15 23:33:01,089 weight: 1
+2018-05-15 23:33:01,090 , 1
+2018-05-15 23:33:01,090 SNT proposal_commit
+2018-05-15 23:33:01,152 start mining - depth 1
+2018-05-15 23:33:01,152 start mining - hash 9b8e3d5c645fae7d8036fac20ac59df200c8c8cde4f02bdd13ab05aa33bd3912
+2018-05-15 23:33:02,307 RCV proposal_commit
+2018-05-15 23:33:02,309 appended honest propose 72e0cb5e67 on top of 9b8e3d5c64
+2018-05-15 23:33:02,309 appended honest commit 6c99e44f83 on top of 72e0cb5e67
+2018-05-15 23:33:02,309 weight: 2
+2018-05-15 23:33:02,309 , 2
+2018-05-15 23:33:02,310 start mining - depth 2
+2018-05-15 23:33:02,310 start mining - hash 6c99e44f837ed760e6d927673c3ddfeaea34c47602b60ac827b915148c2e14f8
+2018-05-15 23:33:13,148 RCV proposal_commit
+2018-05-15 23:33:13,151 appended honest propose 24de54c41a on top of 6c99e44f83
+2018-05-15 23:33:13,151 appended honest commit 05f6d6b552 on top of 24de54c41a
+2018-05-15 23:33:13,152 weight: 3
+2018-05-15 23:33:13,152 , 3
+2018-05-15 23:33:13,152 start mining - depth 3
+2018-05-15 23:33:13,152 start mining - hash 05f6d6b55232fd4f84b829a9b9c6ccc476fc3e5d82eb8e7746d270e9d8a6a9e7
+2018-05-15 23:33:36,308 RCV proposal_commit
+2018-05-15 23:33:36,314 appended malicious propose f077ab331e on top of 6c99e44f83
+2018-05-15 23:33:36,315 appended malicious commit 4030a44869 on top of f077ab331e
+2018-05-15 23:33:36,315 weight: 3
+2018-05-15 23:33:36,316 , 3
+2018-05-15 23:33:42,502 RCV proposal_commit
+2018-05-15 23:33:42,505 appended malicious propose f8143c0099 on top of 4030a44869
+2018-05-15 23:33:42,506 appended malicious commit 065cde44f3 on top of f8143c0099
+2018-05-15 23:33:42,506 weight: 4
+2018-05-15 23:33:42,508 , 4
+2018-05-15 23:33:42,508 start mining - depth 4
+2018-05-15 23:33:42,508 start mining - hash 065cde44f3e3d837ed3da67b37e205475c9fbc13b36a986130194fd650d9fb1b
+2018-05-15 23:33:42,509 END: MALICIOUS WIN

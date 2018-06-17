@@ -1,0 +1,185 @@
+2018-05-15 23:52:54,151 ---------------------------------------------------------
+2018-05-15 23:52:54,152 MALICIOUS PURE BLOCKCHAIN state
+2018-05-15 23:52:55,175 start mining - depth 0
+2018-05-15 23:52:55,182 start mining - hash 4dc91ae8736184ec6dd6a58e8db4a03aa9f86d0a6743fac8adfa15d64435ef01
+2018-05-15 23:54:13,397 RCV proposal_commit
+2018-05-15 23:54:13,402 appended honest propose 8195b6dfc4 on top of 4dc91ae873
+2018-05-15 23:54:13,403 appended honest commit a703d15d68 on top of 8195b6dfc4
+2018-05-15 23:54:13,403 weight: 1
+2018-05-15 23:54:13,403 , 1
+2018-05-15 23:54:13,404 start mining - depth 1
+2018-05-15 23:54:13,404 start mining - hash a703d15d68f1cd8ef21cf40417fed0005a8fc47dafe914f8fe84e3a50ac287a0
+2018-05-15 23:54:13,870 RCV proposal_commit
+2018-05-15 23:54:13,873 appended honest propose 4f1ebe2c2f on top of a703d15d68
+2018-05-15 23:54:13,874 appended honest commit fffc7e2b67 on top of 4f1ebe2c2f
+2018-05-15 23:54:13,874 weight: 2
+2018-05-15 23:54:13,874 , 2
+2018-05-15 23:55:25,718 RCV proposal_commit
+2018-05-15 23:55:25,723 appended honest propose 0ff3a4169e on top of fffc7e2b67
+2018-05-15 23:55:25,724 appended honest commit e85beb39a9 on top of 0ff3a4169e
+2018-05-15 23:55:25,724 weight: 3
+2018-05-15 23:55:25,724 , 3
+2018-05-15 23:55:27,555 RCV proposal_commit
+2018-05-15 23:55:27,558 appended honest propose d2b7343780 on top of e85beb39a9
+2018-05-15 23:55:27,559 appended honest commit 5c946cd0da on top of d2b7343780
+2018-05-15 23:55:27,559 weight: 4
+2018-05-15 23:55:27,559 , 4
+2018-05-15 23:55:27,930 RCV proposal_commit
+2018-05-15 23:55:27,932 appended honest propose c049d6ec10 on top of 5c946cd0da
+2018-05-15 23:55:27,932 appended honest commit 54dd4f203c on top of c049d6ec10
+2018-05-15 23:55:27,932 weight: 5
+2018-05-15 23:55:27,932 , 5
+2018-05-15 23:55:54,330 RCV proposal_commit
+2018-05-15 23:55:54,337 appended malicious propose b95a07ef39 on top of a703d15d68
+2018-05-15 23:55:54,338 appended malicious commit 6fb6aa29ac on top of b95a07ef39
+2018-05-15 23:55:54,338 weight: 2
+2018-05-15 23:55:54,338 , 2
+2018-05-15 23:55:54,339 start mining - depth 2
+2018-05-15 23:55:54,339 start mining - hash 6fb6aa29ac1116d95a04ead60af1ef57acd129e61204a0d9082f87f2ad770bfb
+2018-05-15 23:56:09,608 RCV proposal_commit
+2018-05-15 23:56:09,611 appended malicious propose 7e52223873 on top of 6fb6aa29ac
+2018-05-15 23:56:09,612 appended malicious commit cba78c7640 on top of 7e52223873
+2018-05-15 23:56:09,612 weight: 3
+2018-05-15 23:56:09,613 , 3
+2018-05-15 23:56:09,613 start mining - depth 3
+2018-05-15 23:56:09,613 start mining - hash cba78c76407de64eb7707b02275b6079c4e2a920e4f1489517295820b247686e
+2018-05-15 23:56:18,234 RCV proposal_commit
+2018-05-15 23:56:18,237 appended honest propose 3b6660e139 on top of 54dd4f203c
+2018-05-15 23:56:18,238 appended honest commit f8f33e3334 on top of 3b6660e139
+2018-05-15 23:56:18,238 weight: 6
+2018-05-15 23:56:18,238 , 6
+2018-05-15 23:56:27,541 RCV proposal_commit
+2018-05-15 23:56:27,544 appended malicious propose d5e2effc72 on top of cba78c7640
+2018-05-15 23:56:27,544 appended malicious commit fd9ed99b99 on top of d5e2effc72
+2018-05-15 23:56:27,545 weight: 4
+2018-05-15 23:56:27,545 , 4
+2018-05-15 23:56:27,545 start mining - depth 4
+2018-05-15 23:56:27,545 start mining - hash fd9ed99b994bf87e6236a0bd0c65e3ffe71a910db834ffb0e317c34b52328755
+2018-05-15 23:56:39,102 RCV proposal_commit
+2018-05-15 23:56:39,108 appended malicious propose 5df5afb536 on top of fd9ed99b99
+2018-05-15 23:56:39,108 appended malicious commit 08019a9519 on top of 5df5afb536
+2018-05-15 23:56:39,108 weight: 5
+2018-05-15 23:56:39,109 , 5
+2018-05-15 23:56:39,109 start mining - depth 5
+2018-05-15 23:56:39,109 start mining - hash 08019a9519adff9693cf3f1ae6e60526b012e45d9c3b9e324dc93e72b44c066e
+2018-05-15 23:57:05,581 RCV proposal_commit
+2018-05-15 23:57:05,587 appended honest propose c7aa88b1d8 on top of f8f33e3334
+2018-05-15 23:57:05,588 appended honest commit 5d0d638263 on top of c7aa88b1d8
+2018-05-15 23:57:05,588 weight: 7
+2018-05-15 23:57:05,589 , 7
+2018-05-15 23:57:16,860 RCV proposal_commit
+2018-05-15 23:57:16,863 appended honest propose 8b6f40adea on top of 5d0d638263
+2018-05-15 23:57:16,863 appended honest commit 9dac7b9ba3 on top of 8b6f40adea
+2018-05-15 23:57:16,864 weight: 8
+2018-05-15 23:57:16,864 , 8
+2018-05-15 23:57:30,009 RCV proposal_commit
+2018-05-15 23:57:30,012 appended honest propose 67821dfa00 on top of 9dac7b9ba3
+2018-05-15 23:57:30,012 appended honest commit 037b46916d on top of 67821dfa00
+2018-05-15 23:57:30,012 weight: 9
+2018-05-15 23:57:30,013 , 9
+2018-05-15 23:57:33,056 RCV proposal_commit
+2018-05-15 23:57:33,058 appended honest propose 3c84bdd85e on top of 037b46916d
+2018-05-15 23:57:33,059 appended honest commit 047381c2c3 on top of 3c84bdd85e
+2018-05-15 23:57:33,059 weight: 10
+2018-05-15 23:57:33,059 , 10
+2018-05-15 23:57:40,557 RCV proposal_commit
+2018-05-15 23:57:40,560 appended honest propose 9bfa2bdab9 on top of 047381c2c3
+2018-05-15 23:57:40,560 appended honest commit f9c6c41bfa on top of 9bfa2bdab9
+2018-05-15 23:57:40,560 weight: 11
+2018-05-15 23:57:40,560 , 11
+2018-05-15 23:57:41,291 RCV proposal_commit
+2018-05-15 23:57:41,293 appended honest propose cf9b1f0cbf on top of f9c6c41bfa
+2018-05-15 23:57:41,293 appended honest commit 0004775e20 on top of cf9b1f0cbf
+2018-05-15 23:57:41,293 weight: 12
+2018-05-15 23:57:41,294 , 12
+2018-05-15 23:57:41,484 RCV proposal_commit
+2018-05-15 23:57:41,487 appended honest propose 0fa84aed76 on top of 0004775e20
+2018-05-15 23:57:41,487 appended honest commit 7802a5364d on top of 0fa84aed76
+2018-05-15 23:57:41,487 weight: 13
+2018-05-15 23:57:41,487 , 13
+2018-05-15 23:57:47,073 hash found
+2018-05-15 23:57:47,079 appended malicious propose 5799963d60 on top of 08019a9519
+2018-05-15 23:57:47,080 appended malicious commit e70b9531c2 on top of 5799963d60
+2018-05-15 23:57:47,080 weight: 6
+2018-05-15 23:57:47,080 SNT proposal_commit
+2018-05-15 23:57:47,211 , 6
+2018-05-15 23:57:47,228 start mining - depth 6
+2018-05-15 23:57:47,228 start mining - hash e70b9531c2b05cb14d5e798eaf5162a2864c6cf35c655e2e7a5471fbd98a5d07
+2018-05-15 23:58:05,435 RCV proposal_commit
+2018-05-15 23:58:05,438 appended malicious propose b9381b4557 on top of e70b9531c2
+2018-05-15 23:58:05,439 appended malicious commit ea416e3cd8 on top of b9381b4557
+2018-05-15 23:58:05,439 weight: 7
+2018-05-15 23:58:05,439 , 7
+2018-05-15 23:58:05,440 start mining - depth 7
+2018-05-15 23:58:05,440 start mining - hash ea416e3cd8b2daff0a8ccd30f4ecffb024b39bad95ba1e9844a89f1533ddd700
+2018-05-15 23:58:07,952 RCV proposal_commit
+2018-05-15 23:58:07,954 appended honest propose 946b955c05 on top of 7802a5364d
+2018-05-15 23:58:07,955 appended honest commit a2f3700289 on top of 946b955c05
+2018-05-15 23:58:07,955 weight: 14
+2018-05-15 23:58:07,955 , 14
+2018-05-15 23:58:28,394 hash found
+2018-05-15 23:58:28,398 appended malicious propose 57e44866d7 on top of ea416e3cd8
+2018-05-15 23:58:28,399 appended malicious commit 148c8e5be9 on top of 57e44866d7
+2018-05-15 23:58:28,399 weight: 8
+2018-05-15 23:58:28,400 SNT proposal_commit
+2018-05-15 23:58:28,459 , 8
+2018-05-15 23:58:28,460 start mining - depth 8
+2018-05-15 23:58:28,460 start mining - hash 148c8e5be95a0cd1faf5897da88c132e5536e77d8eef659fa8d37adc53d4d5f8
+2018-05-15 23:58:34,159 RCV proposal_commit
+2018-05-15 23:58:34,162 appended honest propose 2e560d28b0 on top of a2f3700289
+2018-05-15 23:58:34,163 appended honest commit 3a80a7c3c7 on top of 2e560d28b0
+2018-05-15 23:58:34,163 weight: 15
+2018-05-15 23:58:34,163 , 15
+2018-05-15 23:58:43,482 RCV proposal_commit
+2018-05-15 23:58:43,486 appended malicious propose d11915d4cf on top of 148c8e5be9
+2018-05-15 23:58:43,486 appended malicious commit cb5c514801 on top of d11915d4cf
+2018-05-15 23:58:43,487 weight: 9
+2018-05-15 23:58:43,487 , 9
+2018-05-15 23:58:43,487 start mining - depth 9
+2018-05-15 23:58:43,488 start mining - hash cb5c514801c41cae7c80f234775e47087dd7ae3d92cc57a7b61095331baa3a84
+2018-05-15 23:58:52,753 hash found
+2018-05-15 23:58:52,755 appended malicious propose 91f39ed2f0 on top of cb5c514801
+2018-05-15 23:58:52,756 appended malicious commit c7cc383278 on top of 91f39ed2f0
+2018-05-15 23:58:52,756 weight: 10
+2018-05-15 23:58:52,756 SNT proposal_commit
+2018-05-15 23:58:52,818 , 10
+2018-05-15 23:58:52,818 start mining - depth 10
+2018-05-15 23:58:52,819 start mining - hash c7cc3832780c48c0e0e2fb4998ba4b74d76e7a72fedc7615a456eb48acf1937b
+2018-05-15 23:59:03,223 RCV proposal_commit
+2018-05-15 23:59:03,226 appended honest propose eb8765118d on top of 3a80a7c3c7
+2018-05-15 23:59:03,227 appended honest commit 54186e4f14 on top of eb8765118d
+2018-05-15 23:59:03,227 weight: 16
+2018-05-15 23:59:03,227 , 16
+2018-05-15 23:59:08,953 RCV proposal_commit
+2018-05-15 23:59:08,959 appended honest propose 3419aec551 on top of 54186e4f14
+2018-05-15 23:59:08,961 appended honest commit 6bf0efcb3b on top of 3419aec551
+2018-05-15 23:59:08,961 weight: 17
+2018-05-15 23:59:08,961 , 17
+2018-05-15 23:59:10,501 RCV proposal_commit
+2018-05-15 23:59:10,504 appended honest propose 0e678ea55a on top of 6bf0efcb3b
+2018-05-15 23:59:10,504 appended honest commit 1fc61fa455 on top of 0e678ea55a
+2018-05-15 23:59:10,504 weight: 18
+2018-05-15 23:59:10,504 , 18
+2018-05-15 23:59:30,946 RCV proposal_commit
+2018-05-15 23:59:30,950 appended honest propose 363e476ece on top of 1fc61fa455
+2018-05-15 23:59:30,951 appended honest commit ed0e3c822b on top of 363e476ece
+2018-05-15 23:59:30,951 weight: 19
+2018-05-15 23:59:30,952 , 19
+2018-05-15 23:59:38,564 RCV proposal_commit
+2018-05-15 23:59:38,566 appended honest propose 0f9c297ac5 on top of ed0e3c822b
+2018-05-15 23:59:38,567 appended honest commit 1ce706e0b0 on top of 0f9c297ac5
+2018-05-15 23:59:38,567 weight: 20
+2018-05-15 23:59:38,567 , 20
+2018-05-15 23:59:40,287 RCV proposal_commit
+2018-05-15 23:59:40,290 appended honest propose 9f98d3db37 on top of 1ce706e0b0
+2018-05-15 23:59:40,290 appended honest commit 9a885c38ee on top of 9f98d3db37
+2018-05-15 23:59:40,290 weight: 21
+2018-05-15 23:59:40,290 , 21
+2018-05-15 23:59:41,049 RCV proposal_commit
+2018-05-15 23:59:41,052 appended malicious propose 185dec610a on top of c7cc383278
+2018-05-15 23:59:41,053 appended malicious commit fd0eaf76bc on top of 185dec610a
+2018-05-15 23:59:41,053 weight: 11
+2018-05-15 23:59:41,053 , 11
+2018-05-15 23:59:41,054 END: HONEST WIN. 21 against 19.0
+2018-05-15 23:59:41,054 start mining - depth 11
+2018-05-15 23:59:41,054 start mining - hash fd0eaf76bc814b1851fbcab0fb481566899b7be8031ba1c058afafbfa84a5ff3

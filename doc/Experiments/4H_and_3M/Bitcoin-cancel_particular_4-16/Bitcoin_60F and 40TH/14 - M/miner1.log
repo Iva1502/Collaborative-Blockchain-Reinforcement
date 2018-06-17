@@ -1,0 +1,26 @@
+2018-05-15 23:41:10,013 ---------------------------------------------------------
+2018-05-15 23:41:10,015 MALICIOUS PURE BLOCKCHAIN state
+2018-05-15 23:41:11,032 start mining - depth 0
+2018-05-15 23:41:11,037 start mining - hash 74acfee4ef1db1a24f551ed9388fe0fbdc2136a1985926015760c162ba5ebf6d
+2018-05-15 23:41:51,711 RCV proposal_commit
+2018-05-15 23:41:51,716 appended honest propose 40e2171d7e on top of 74acfee4ef
+2018-05-15 23:41:51,717 appended honest commit d19682ff2a on top of 40e2171d7e
+2018-05-15 23:41:51,717 weight: 1
+2018-05-15 23:41:51,717 , 1
+2018-05-15 23:41:51,718 start mining - depth 1
+2018-05-15 23:41:51,718 start mining - hash d19682ff2ac1d148187f92ecb6d2145afce3842f65cb379d84acb50b642f51f4
+2018-05-15 23:41:52,548 RCV proposal_commit
+2018-05-15 23:41:52,551 appended honest propose 21656efda9 on top of d19682ff2a
+2018-05-15 23:41:52,551 appended honest commit 153b7cbfcc on top of 21656efda9
+2018-05-15 23:41:52,551 weight: 2
+2018-05-15 23:41:52,551 , 2
+2018-05-15 23:41:52,551 start mining - depth 2
+2018-05-15 23:41:52,552 start mining - hash 153b7cbfcc709a2ca15253a948d01cfb3c31ace476d6749460916df6c2654682
+2018-05-15 23:41:58,120 hash found
+2018-05-15 23:41:58,123 appended malicious propose bdcb964603 on top of 153b7cbfcc
+2018-05-15 23:41:58,124 appended malicious commit 528857ffd3 on top of bdcb964603
+2018-05-15 23:41:58,124 weight: 3
+2018-05-15 23:41:58,124 SNT proposal_commit
+2018-05-15 23:41:58,203 , 3
+2018-05-15 23:41:58,212 start mining - depth 3
+2018-05-15 23:41:58,212 start mining - hash 528857ffd3b20c5145a2a2c5b9bad66bccad567a73ab01a235aabbc55a4811c6

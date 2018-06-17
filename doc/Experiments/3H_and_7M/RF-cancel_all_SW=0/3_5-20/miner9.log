@@ -1,0 +1,3382 @@
+2018-06-14 15:20:35,496 ---------------------------------------------------------
+2018-06-14 15:20:35,536 MINING state
+2018-06-14 15:20:36,553 start mining - depth 0
+2018-06-14 15:20:36,555 start mining - hash 3b9f639494a45e650c34da81921842987c7f6cab2c5ff2de675736b244381780
+2018-06-14 15:20:39,183 RCV reinforcement info
+2018-06-14 15:20:39,187 , 0.06304313765231326
+2018-06-14 15:20:39,326 RF found but not transmitted
+2018-06-14 15:20:39,328 RF found
+2018-06-14 15:20:39,330 SNT reinforcement_information
+2018-06-14 15:20:40,285 RF found but not transmitted
+2018-06-14 15:20:40,286 RF found
+2018-06-14 15:20:40,288 SNT reinforcement_information
+2018-06-14 15:20:42,234 RF found but not transmitted
+2018-06-14 15:20:42,235 RF found
+2018-06-14 15:20:42,237 SNT reinforcement_information
+2018-06-14 15:20:43,381 RCV reinforcement info
+2018-06-14 15:20:43,385 , 0.5499227055750223
+2018-06-14 15:20:44,675 RCV reinforcement info
+2018-06-14 15:20:44,679 , 0.6726994900968848
+2018-06-14 15:20:48,419 RF found but not transmitted
+2018-06-14 15:20:48,421 RF found
+2018-06-14 15:20:48,422 SNT reinforcement_information
+2018-06-14 15:20:52,828 RCV reinforcement info
+2018-06-14 15:20:52,832 , 0.8455662195706003
+2018-06-14 15:20:53,726 RF found but not transmitted
+2018-06-14 15:20:53,728 RF found
+2018-06-14 15:20:53,742 SNT reinforcement_information
+2018-06-14 15:20:54,771 RCV reinforcement info
+2018-06-14 15:20:54,779 , 0.9949941964758307
+2018-06-14 15:20:57,714 RF found but not transmitted
+2018-06-14 15:20:57,716 RF found
+2018-06-14 15:20:57,717 SNT reinforcement_information
+2018-06-14 15:20:58,533 RCV proposal
+2018-06-14 15:20:58,535 appended honest propose 80d2eae4de on top of 3b9f639494
+2018-06-14 15:20:58,536 REINFORCEMENT SENT state
+2018-06-14 15:20:58,536 RFs > 0 
+2018-06-14 15:20:58,537 SNT reinforcement
+2018-06-14 15:20:58,686 RCV reinforcement
+2018-06-14 15:20:59,473 RCV reinforcement info
+2018-06-14 15:20:59,477 , 1.1748525506090546
+2018-06-14 15:20:59,537 RCV reinforcement
+2018-06-14 15:21:00,075 RCV commit
+2018-06-14 15:21:00,161 appended honest commit b6093c2a9a on top of 80d2eae4de
+2018-06-14 15:21:00,248 Weight: 2.1748525506090552 #RFs 12
+2018-06-14 15:21:00,262 weight: 2.1748525506090552
+2018-06-14 15:21:00,262 , 2.1748525506090552
+2018-06-14 15:21:00,263 MINING state
+2018-06-14 15:21:00,263 start mining - depth 1
+2018-06-14 15:21:00,265 start mining - hash b6093c2a9a9dc3006eb959290ca93ca6c4aac527ef28d1782889c9beaaaa25c0
+2018-06-14 15:21:00,447 RCV proposal
+2018-06-14 15:21:00,450 appended malicious propose c2634bf9be on top of 3b9f639494
+2018-06-14 15:21:00,620 RCV reinforcement
+2018-06-14 15:21:00,632 RCV reinforcement
+2018-06-14 15:21:00,650 RCV reinforcement
+2018-06-14 15:21:00,680 RCV reinforcement
+2018-06-14 15:21:00,741 RCV reinforcement
+2018-06-14 15:21:00,783 RCV reinforcement info
+2018-06-14 15:21:00,789 , 2.334791976786675
+2018-06-14 15:21:00,793 RCV reinforcement
+2018-06-14 15:21:00,844 RCV reinforcement info
+2018-06-14 15:21:00,849 , 2.4118496497982416
+2018-06-14 15:21:01,990 RCV commit
+2018-06-14 15:21:02,178 appended malicious commit abb381b94a on top of c2634bf9be
+2018-06-14 15:21:02,364 Weight: 6.738254513018816 #RFs 31
+2018-06-14 15:21:02,364 weight: 6.738254513018816
+2018-06-14 15:21:02,364 , 6.738254513018816
+2018-06-14 15:21:02,364 Switching branch - my current block was: 2.4118496497982416
+2018-06-14 15:21:02,365 start mining - depth 1
+2018-06-14 15:21:02,366 start mining - hash abb381b94a5316b87ba7fdb0977931d155c5884f3f087ad5e0c365473d82a404
+2018-06-14 15:21:02,367 WIN: MALICIOUS WIN on block 1
+2018-06-14 15:21:03,163 RF found but not transmitted
+2018-06-14 15:21:03,164 RF found
+2018-06-14 15:21:03,166 SNT reinforcement_information
+2018-06-14 15:21:03,768 RF found but not transmitted
+2018-06-14 15:21:03,769 RF found
+2018-06-14 15:21:03,771 SNT reinforcement_information
+2018-06-14 15:21:10,180 RCV proposal
+2018-06-14 15:21:10,184 appended honest propose 337cd09a9c on top of abb381b94a
+2018-06-14 15:21:10,184 REINFORCEMENT SENT state
+2018-06-14 15:21:10,185 RFs > 0 
+2018-06-14 15:21:10,186 SNT reinforcement
+2018-06-14 15:21:11,544 RF found but not transmitted
+2018-06-14 15:21:11,552 SNT reinforcement_information
+2018-06-14 15:21:11,617 SNT reinforcement
+2018-06-14 15:21:11,722 RCV commit
+2018-06-14 15:21:11,728 appended honest commit 5739396aa5 on top of 337cd09a9c
+2018-06-14 15:21:11,744 Weight: 8.063197432035022 #RFs 2
+2018-06-14 15:21:11,744 weight: 8.063197432035022
+2018-06-14 15:21:11,745 , 8.063197432035022
+2018-06-14 15:21:11,745 MINING state
+2018-06-14 15:21:11,745 start mining - depth 2
+2018-06-14 15:21:11,746 start mining - hash 5739396aa5da8085abbea44788f22da229d8b015f71187d5ec6f281d07f19101
+2018-06-14 15:21:11,871 RCV reinforcement info
+2018-06-14 15:21:11,875 , 8.142160988527841
+2018-06-14 15:21:13,208 RCV reinforcement info
+2018-06-14 15:21:13,212 , 8.681898021194485
+2018-06-14 15:21:17,387 RF found but not transmitted
+2018-06-14 15:21:17,388 RF found
+2018-06-14 15:21:17,389 SNT reinforcement_information
+2018-06-14 15:21:17,868 RCV reinforcement info
+2018-06-14 15:21:17,872 , 9.110506709183197
+2018-06-14 15:21:18,202 RF found but not transmitted
+2018-06-14 15:21:18,204 RF found
+2018-06-14 15:21:18,207 SNT reinforcement_information
+2018-06-14 15:21:18,335 RCV reinforcement info
+2018-06-14 15:21:18,341 , 9.37944200201844
+2018-06-14 15:21:19,335 RCV reinforcement info
+2018-06-14 15:21:19,340 , 9.461887103145136
+2018-06-14 15:21:19,450 RCV reinforcement info
+2018-06-14 15:21:19,454 , 9.585631813872869
+2018-06-14 15:21:20,019 RCV reinforcement info
+2018-06-14 15:21:20,023 , 9.867716722883843
+2018-06-14 15:21:25,027 RCV reinforcement info
+2018-06-14 15:21:25,031 , 9.978340502958444
+2018-06-14 15:21:27,096 RCV reinforcement info
+2018-06-14 15:21:27,099 , 10.047453930279866
+2018-06-14 15:21:28,387 RCV reinforcement info
+2018-06-14 15:21:28,392 , 10.329641432058716
+2018-06-14 15:21:30,918 RF found but not transmitted
+2018-06-14 15:21:30,920 RF found
+2018-06-14 15:21:30,922 SNT reinforcement_information
+2018-06-14 15:21:31,406 RCV reinforcement info
+2018-06-14 15:21:31,409 , 10.498551779883234
+2018-06-14 15:21:33,325 RCV reinforcement info
+2018-06-14 15:21:33,329 , 10.609854633174555
+2018-06-14 15:21:34,635 RF found but not transmitted
+2018-06-14 15:21:34,636 RF found
+2018-06-14 15:21:34,637 SNT reinforcement_information
+2018-06-14 15:21:36,545 RF found but not transmitted
+2018-06-14 15:21:36,547 RF found
+2018-06-14 15:21:36,551 SNT reinforcement_information
+2018-06-14 15:21:38,737 RCV reinforcement info
+2018-06-14 15:21:38,740 , 10.846455237159372
+2018-06-14 15:21:39,393 RCV reinforcement info
+2018-06-14 15:21:39,397 , 10.979298326659563
+2018-06-14 15:21:41,798 RCV reinforcement info
+2018-06-14 15:21:41,802 , 11.2889524246483
+2018-06-14 15:21:45,034 RCV reinforcement info
+2018-06-14 15:21:45,038 , 11.545649351035868
+2018-06-14 15:21:46,980 RCV reinforcement info
+2018-06-14 15:21:46,982 , 12.091244517461714
+2018-06-14 15:21:48,808 RCV reinforcement info
+2018-06-14 15:21:48,812 , 12.9108288625237
+2018-06-14 15:21:49,576 RCV reinforcement info
+2018-06-14 15:21:49,580 , 13.284283510570614
+2018-06-14 15:21:49,722 RCV reinforcement info
+2018-06-14 15:21:49,724 , 13.358754008108885
+2018-06-14 15:21:50,832 RF found but not transmitted
+2018-06-14 15:21:50,833 RF found
+2018-06-14 15:21:50,836 SNT reinforcement_information
+2018-06-14 15:21:52,518 RCV reinforcement info
+2018-06-14 15:21:52,523 , 13.625441757102319
+2018-06-14 15:21:53,232 RF found but not transmitted
+2018-06-14 15:21:53,233 RF found
+2018-06-14 15:21:53,235 SNT reinforcement_information
+2018-06-14 15:21:53,854 RCV reinforcement info
+2018-06-14 15:21:53,857 , 14.064693232144913
+2018-06-14 15:21:58,827 RCV reinforcement info
+2018-06-14 15:21:58,834 , 14.12941320680332
+2018-06-14 15:21:59,447 RCV reinforcement info
+2018-06-14 15:21:59,450 , 14.199987100533711
+2018-06-14 15:21:59,512 RCV reinforcement info
+2018-06-14 15:21:59,515 , 14.448946114104412
+2018-06-14 15:21:59,654 RCV reinforcement info
+2018-06-14 15:21:59,656 , 14.520678948356707
+2018-06-14 15:22:00,234 RF found but not transmitted
+2018-06-14 15:22:00,236 RF found
+2018-06-14 15:22:00,238 SNT reinforcement_information
+2018-06-14 15:22:00,564 RF found but not transmitted
+2018-06-14 15:22:00,566 RF found
+2018-06-14 15:22:00,568 SNT reinforcement_information
+2018-06-14 15:22:01,752 RCV proposal
+2018-06-14 15:22:01,755 appended honest propose db7fb2079f on top of 5739396aa5
+2018-06-14 15:22:01,755 REINFORCEMENT SENT state
+2018-06-14 15:22:01,755 RFs > 0 
+2018-06-14 15:22:01,757 SNT reinforcement
+2018-06-14 15:22:01,848 RCV reinforcement
+2018-06-14 15:22:03,385 RCV commit
+2018-06-14 15:22:03,600 appended honest commit 7fc8f796a3 on top of db7fb2079f
+2018-06-14 15:22:03,762 Weight: 15.90833501385006 #RFs 35
+2018-06-14 15:22:03,762 weight: 15.90833501385006
+2018-06-14 15:22:03,762 , 15.90833501385006
+2018-06-14 15:22:03,763 MINING state
+2018-06-14 15:22:03,763 start mining - depth 3
+2018-06-14 15:22:03,763 start mining - hash 7fc8f796a36c95c46ac7681450c3df401272ef9916b64f3d5c001e25a777bab8
+2018-06-14 15:22:03,765 Hashing frequency: 4690
+2018-06-14 15:22:03,892 RCV proposal
+2018-06-14 15:22:03,896 appended malicious propose 4fee790c82 on top of 5739396aa5
+2018-06-14 15:22:03,969 RCV reinforcement
+2018-06-14 15:22:03,973 RCV reinforcement
+2018-06-14 15:22:04,046 RCV reinforcement
+2018-06-14 15:22:04,084 RCV reinforcement
+2018-06-14 15:22:04,151 RCV reinforcement
+2018-06-14 15:22:04,189 RCV reinforcement
+2018-06-14 15:22:04,280 RCV reinforcement info
+2018-06-14 15:22:04,285 , 16.03047759189409
+2018-06-14 15:22:04,416 RF found but not transmitted
+2018-06-14 15:22:04,419 RF found
+2018-06-14 15:22:04,421 SNT reinforcement_information
+2018-06-14 15:22:04,810 RCV reinforcement
+2018-06-14 15:22:05,090 RCV reinforcement
+2018-06-14 15:22:05,420 RCV reinforcement
+2018-06-14 15:22:05,565 RCV commit
+2018-06-14 15:22:05,877 appended malicious commit 3e23092e14 on top of 4fee790c82
+2018-06-14 15:22:06,190 Weight: 22.352663991257327 #RFs 62
+2018-06-14 15:22:06,190 weight: 22.352663991257327
+2018-06-14 15:22:06,192 , 22.352663991257327
+2018-06-14 15:22:06,195 Switching branch - my current block was: 16.19389347239803
+2018-06-14 15:22:06,195 start mining - depth 3
+2018-06-14 15:22:06,195 start mining - hash 3e23092e14020cc2e44b4b0bea8060b231d660a338816e0bd65966ef23da7a09
+2018-06-14 15:22:06,196 WIN: MALICIOUS WIN on block 3
+2018-06-14 15:22:09,130 RCV reinforcement info
+2018-06-14 15:22:09,134 , 22.438685690107285
+2018-06-14 15:22:10,241 RCV reinforcement info
+2018-06-14 15:22:10,246 , 22.554057963272733
+2018-06-14 15:22:16,131 RCV proposal
+2018-06-14 15:22:16,136 appended honest propose d85950930b on top of 3e23092e14
+2018-06-14 15:22:16,136 REINFORCEMENT SENT state
+2018-06-14 15:22:16,304 RCV reinforcement
+2018-06-14 15:22:16,355 RF found but not transmitted
+2018-06-14 15:22:16,360 SNT reinforcement_information
+2018-06-14 15:22:16,537 SNT reinforcement
+2018-06-14 15:22:17,617 RCV commit
+2018-06-14 15:22:17,637 appended honest commit b97b10d69f on top of d85950930b
+2018-06-14 15:22:17,646 Weight: 23.63636055850893 #RFs 3
+2018-06-14 15:22:17,646 weight: 23.63636055850893
+2018-06-14 15:22:17,646 , 23.63636055850893
+2018-06-14 15:22:17,658 MINING state
+2018-06-14 15:22:17,660 start mining - depth 4
+2018-06-14 15:22:17,661 start mining - hash b97b10d69f232c54b12936461af33268a92cf9e5eaf4af00709af190748c4756
+2018-06-14 15:22:18,800 RCV reinforcement info
+2018-06-14 15:22:18,804 , 24.150091708371928
+2018-06-14 15:22:24,348 RCV reinforcement info
+2018-06-14 15:22:24,351 , 24.217604275022403
+2018-06-14 15:22:27,410 RCV reinforcement info
+2018-06-14 15:22:27,415 , 24.290608752161702
+2018-06-14 15:22:27,522 RCV reinforcement info
+2018-06-14 15:22:27,526 , 24.360493761085312
+2018-06-14 15:22:29,028 RCV reinforcement info
+2018-06-14 15:22:29,033 , 24.886452975170048
+2018-06-14 15:22:29,102 RCV reinforcement info
+2018-06-14 15:22:29,106 , 24.959576714099107
+2018-06-14 15:22:29,276 RCV reinforcement info
+2018-06-14 15:22:29,280 , 25.073940368980853
+2018-06-14 15:22:31,393 RCV reinforcement info
+2018-06-14 15:22:31,397 , 25.209939284659008
+2018-06-14 15:22:33,568 RF found but not transmitted
+2018-06-14 15:22:33,569 RF found
+2018-06-14 15:22:33,571 SNT reinforcement_information
+2018-06-14 15:22:36,723 RCV reinforcement info
+2018-06-14 15:22:36,726 , 25.581879562950068
+2018-06-14 15:22:38,786 RF found but not transmitted
+2018-06-14 15:22:38,788 RF found
+2018-06-14 15:22:38,791 SNT reinforcement_information
+2018-06-14 15:22:39,078 RCV reinforcement info
+2018-06-14 15:22:39,082 , 25.78968511332185
+2018-06-14 15:22:39,938 RCV reinforcement info
+2018-06-14 15:22:39,941 , 25.868643519095794
+2018-06-14 15:22:41,168 RF found but not transmitted
+2018-06-14 15:22:41,170 RF found
+2018-06-14 15:22:41,172 SNT reinforcement_information
+2018-06-14 15:22:41,537 RF found but not transmitted
+2018-06-14 15:22:41,541 RF found
+2018-06-14 15:22:41,543 SNT reinforcement_information
+2018-06-14 15:22:43,319 RCV reinforcement info
+2018-06-14 15:22:43,323 , 26.259382812189394
+2018-06-14 15:22:49,503 RCV reinforcement info
+2018-06-14 15:22:49,507 , 26.334882295742723
+2018-06-14 15:22:50,504 RCV reinforcement info
+2018-06-14 15:22:50,508 , 26.462566317360594
+2018-06-14 15:22:54,806 RCV reinforcement info
+2018-06-14 15:22:54,810 , 26.574988205232696
+2018-06-14 15:22:56,205 RF found but not transmitted
+2018-06-14 15:22:56,207 RF found
+2018-06-14 15:22:56,210 SNT reinforcement_information
+2018-06-14 15:22:57,926 RF found but not transmitted
+2018-06-14 15:22:57,929 RF found
+2018-06-14 15:22:57,933 SNT reinforcement_information
+2018-06-14 15:23:02,068 RCV reinforcement info
+2018-06-14 15:23:02,072 , 27.10039542660018
+2018-06-14 15:23:02,139 RCV reinforcement info
+2018-06-14 15:23:02,142 , 27.3327948913566
+2018-06-14 15:23:02,219 RF found but not transmitted
+2018-06-14 15:23:02,221 RF found
+2018-06-14 15:23:02,224 SNT reinforcement_information
+2018-06-14 15:23:05,920 RF found but not transmitted
+2018-06-14 15:23:05,921 RF found
+2018-06-14 15:23:05,923 SNT reinforcement_information
+2018-06-14 15:23:06,938 RCV proposal
+2018-06-14 15:23:06,943 appended honest propose da25a182f7 on top of b97b10d69f
+2018-06-14 15:23:06,943 REINFORCEMENT SENT state
+2018-06-14 15:23:06,943 RFs > 0 
+2018-06-14 15:23:06,944 SNT reinforcement
+2018-06-14 15:23:07,024 RCV reinforcement
+2018-06-14 15:23:07,899 RCV reinforcement info
+2018-06-14 15:23:07,903 , 27.6332176478413
+2018-06-14 15:23:07,968 RCV reinforcement
+2018-06-14 15:23:08,518 RCV commit
+2018-06-14 15:23:08,692 appended honest commit 7ea16d25ec on top of da25a182f7
+2018-06-14 15:23:08,835 Weight: 28.505027246280818 #RFs 25
+2018-06-14 15:23:08,835 weight: 28.505027246280818
+2018-06-14 15:23:08,836 , 28.505027246280818
+2018-06-14 15:23:08,836 MINING state
+2018-06-14 15:23:08,836 start mining - depth 5
+2018-06-14 15:23:08,837 start mining - hash 7ea16d25ec8e9581aef04ba3c2f5071f7b13b3c2b2263a6a569147670192b0a7
+2018-06-14 15:23:08,837 Hashing frequency: 3475
+2018-06-14 15:23:08,964 RCV proposal
+2018-06-14 15:23:08,978 appended malicious propose f81fab6951 on top of b97b10d69f
+2018-06-14 15:23:09,080 RCV reinforcement
+2018-06-14 15:23:09,085 RCV reinforcement
+2018-06-14 15:23:09,103 RCV reinforcement
+2018-06-14 15:23:09,137 RCV reinforcement
+2018-06-14 15:23:09,155 RF found but not transmitted
+2018-06-14 15:23:09,157 RF found
+2018-06-14 15:23:09,159 SNT reinforcement_information
+2018-06-14 15:23:09,250 RCV reinforcement
+2018-06-14 15:23:09,260 RCV reinforcement
+2018-06-14 15:23:09,937 RF found but not transmitted
+2018-06-14 15:23:09,939 RF found
+2018-06-14 15:23:09,941 SNT reinforcement_information
+2018-06-14 15:23:10,210 RF found but not transmitted
+2018-06-14 15:23:10,214 hash found
+2018-06-14 15:23:10,218 appended honest propose 88707939e9 on top of 7ea16d25ec
+2018-06-14 15:23:10,219 REINFORCEMENT COLLECTING state
+2018-06-14 15:23:10,271 SNT proposal
+2018-06-14 15:23:10,642 RCV commit
+2018-06-14 15:23:10,991 appended malicious commit 4e8dfbee14 on top of f81fab6951
+2018-06-14 15:23:11,300 Weight: 36.03656876411441 #RFs 62
+2018-06-14 15:23:11,300 weight: 36.03656876411441
+2018-06-14 15:23:11,301 , 36.03656876411441
+2018-06-14 15:23:11,777 commit with 1 reinforcements
+2018-06-14 15:23:11,785 appended honest commit 67dc5aca15 on top of 88707939e9
+2018-06-14 15:23:11,792 Weight: 29.797424164499365 #RFs 2
+2018-06-14 15:23:11,792 weight: 29.797424164499365
+2018-06-14 15:23:11,793 , 29.797424164499365
+2018-06-14 15:23:11,793 MINING state
+2018-06-14 15:23:11,793 start mining - depth 5
+2018-06-14 15:23:11,794 start mining - hash 4e8dfbee1455524bf540ce14fc9320b09191636cbde7c585da04c18c6928b788
+2018-06-14 15:23:11,794 WIN: MALICIOUS WIN on block 5
+2018-06-14 15:23:11,795 SNT commit
+2018-06-14 15:23:14,911 RF found but not transmitted
+2018-06-14 15:23:15,166 RF found but not transmitted
+2018-06-14 15:23:15,170 RF found
+2018-06-14 15:23:15,172 SNT reinforcement_information
+2018-06-14 15:23:15,597 RF found but not transmitted
+2018-06-14 15:23:18,953 RF found but not transmitted
+2018-06-14 15:23:20,300 RF found but not transmitted
+2018-06-14 15:23:20,303 RF found
+2018-06-14 15:23:20,307 SNT reinforcement_information
+2018-06-14 15:23:22,645 RCV reinforcement info
+2018-06-14 15:23:22,651 , 36.692616320334054
+2018-06-14 15:23:22,744 RF found but not transmitted
+2018-06-14 15:23:22,746 RF found
+2018-06-14 15:23:22,751 SNT reinforcement_information
+2018-06-14 15:23:23,088 RF found but not transmitted
+2018-06-14 15:23:25,561 RF found but not transmitted
+2018-06-14 15:23:26,311 RCV reinforcement info
+2018-06-14 15:23:26,314 , 36.829165229286026
+2018-06-14 15:23:26,870 RF found but not transmitted
+2018-06-14 15:23:26,998 RCV reinforcement info
+2018-06-14 15:23:27,003 , 37.033864158148084
+2018-06-14 15:23:27,061 RF found but not transmitted
+2018-06-14 15:23:27,854 RF found but not transmitted
+2018-06-14 15:23:27,857 RF found
+2018-06-14 15:23:27,860 SNT reinforcement_information
+2018-06-14 15:23:29,873 RF found but not transmitted
+2018-06-14 15:23:31,630 RF found but not transmitted
+2018-06-14 15:23:31,632 RF found
+2018-06-14 15:23:31,634 SNT reinforcement_information
+2018-06-14 15:23:31,900 RCV reinforcement info
+2018-06-14 15:23:31,905 , 37.30506130750412
+2018-06-14 15:23:32,246 RF found but not transmitted
+2018-06-14 15:23:32,644 RCV reinforcement info
+2018-06-14 15:23:32,649 , 37.380932830037935
+2018-06-14 15:23:33,188 RCV reinforcement info
+2018-06-14 15:23:33,192 , 37.46727799345192
+2018-06-14 15:23:33,260 RCV reinforcement info
+2018-06-14 15:23:33,264 , 37.535057337211754
+2018-06-14 15:23:33,632 RF found but not transmitted
+2018-06-14 15:23:34,451 RCV reinforcement info
+2018-06-14 15:23:34,455 , 37.62646618119675
+2018-06-14 15:23:34,537 RF found but not transmitted
+2018-06-14 15:23:34,539 RF found
+2018-06-14 15:23:34,544 SNT reinforcement_information
+2018-06-14 15:23:34,758 RCV reinforcement info
+2018-06-14 15:23:34,761 , 37.824438879456004
+2018-06-14 15:23:35,898 RF found but not transmitted
+2018-06-14 15:23:37,506 RF found but not transmitted
+2018-06-14 15:23:38,085 RF found but not transmitted
+2018-06-14 15:23:38,537 RF found but not transmitted
+2018-06-14 15:23:39,481 RCV reinforcement info
+2018-06-14 15:23:39,486 , 37.899981201292235
+2018-06-14 15:23:39,980 RF found but not transmitted
+2018-06-14 15:23:39,983 RF found
+2018-06-14 15:23:39,987 SNT reinforcement_information
+2018-06-14 15:23:41,346 RF found but not transmitted
+2018-06-14 15:23:41,348 RF found
+2018-06-14 15:23:41,352 SNT reinforcement_information
+2018-06-14 15:23:41,890 RF found but not transmitted
+2018-06-14 15:23:41,894 RF found
+2018-06-14 15:23:41,897 SNT reinforcement_information
+2018-06-14 15:23:42,185 RCV reinforcement info
+2018-06-14 15:23:42,190 , 38.79291099985427
+2018-06-14 15:23:43,013 RCV reinforcement info
+2018-06-14 15:23:43,019 , 38.910979007481394
+2018-06-14 15:23:43,339 RCV reinforcement info
+2018-06-14 15:23:43,344 , 38.97611355701585
+2018-06-14 15:23:43,452 RF found but not transmitted
+2018-06-14 15:23:48,954 RCV reinforcement info
+2018-06-14 15:23:48,960 , 39.20731923573565
+2018-06-14 15:23:51,423 RF found but not transmitted
+2018-06-14 15:23:53,342 RF found but not transmitted
+2018-06-14 15:23:53,344 hash found
+2018-06-14 15:23:53,350 appended honest propose 41b619a1ef on top of 4e8dfbee14
+2018-06-14 15:23:53,350 REINFORCEMENT COLLECTING state
+2018-06-14 15:23:53,401 SNT proposal
+2018-06-14 15:23:53,549 RCV reinforcement
+2018-06-14 15:23:53,568 RCV reinforcement
+2018-06-14 15:23:53,638 RCV reinforcement info
+2018-06-14 15:23:53,646 , 39.290775555878064
+2018-06-14 15:23:53,709 RCV reinforcement
+2018-06-14 15:23:54,120 RCV reinforcement info
+2018-06-14 15:23:54,126 , 39.35851982348122
+2018-06-14 15:23:54,195 RCV reinforcement
+2018-06-14 15:23:54,905 commit with 3 reinforcements
+2018-06-14 15:23:54,953 appended honest commit f4774dbfb1 on top of 41b619a1ef
+2018-06-14 15:23:55,004 Weight: 40.35851982348122 #RFs 25
+2018-06-14 15:23:55,004 weight: 40.35851982348122
+2018-06-14 15:23:55,004 , 40.35851982348122
+2018-06-14 15:23:55,006 MINING state
+2018-06-14 15:23:55,007 start mining - depth 6
+2018-06-14 15:23:55,007 start mining - hash f4774dbfb10c05a3909cc5a7126d08007ca3099e60003053c2cc61bc374c0d6c
+2018-06-14 15:23:55,008 SNT commit
+2018-06-14 15:23:55,062 RCV reinforcement info
+2018-06-14 15:23:55,130 RCV reinforcement
+2018-06-14 15:23:55,518 RCV proposal
+2018-06-14 15:23:55,525 appended malicious propose 0716abe37f on top of 4e8dfbee14
+2018-06-14 15:23:55,725 RCV reinforcement
+2018-06-14 15:23:55,736 RCV reinforcement
+2018-06-14 15:23:55,757 RCV reinforcement
+2018-06-14 15:23:55,769 RCV reinforcement
+2018-06-14 15:23:55,792 RCV reinforcement
+2018-06-14 15:23:55,809 RCV reinforcement
+2018-06-14 15:23:55,835 RCV reinforcement
+2018-06-14 15:23:55,957 RCV reinforcement
+2018-06-14 15:23:56,088 RCV reinforcement
+2018-06-14 15:23:56,148 RCV reinforcement
+2018-06-14 15:23:56,510 RCV reinforcement info
+2018-06-14 15:23:56,514 , 40.442169054241866
+2018-06-14 15:23:56,658 RCV reinforcement
+2018-06-14 15:23:57,241 RCV commit
+2018-06-14 15:23:57,743 appended malicious commit 6e9829a046 on top of 0716abe37f
+2018-06-14 15:23:58,295 Weight: 54.225487595683745 #RFs 73
+2018-06-14 15:23:58,295 weight: 54.225487595683745
+2018-06-14 15:23:58,295 , 54.225487595683745
+2018-06-14 15:23:58,295 Switching branch - my current block was: 40.442169054241866
+2018-06-14 15:23:58,296 start mining - depth 6
+2018-06-14 15:23:58,296 start mining - hash 6e9829a04603c4c36ae172b9b9518a0d8cc6f53c49484379ba9c8d53f0facd67
+2018-06-14 15:23:58,297 WIN: MALICIOUS WIN on block 6
+2018-06-14 15:23:59,057 RCV reinforcement info
+2018-06-14 15:23:59,061 , 54.3396844493011
+2018-06-14 15:24:00,227 RF found but not transmitted
+2018-06-14 15:24:00,228 RF found
+2018-06-14 15:24:00,231 SNT reinforcement_information
+2018-06-14 15:24:01,365 RF found but not transmitted
+2018-06-14 15:24:01,433 RCV reinforcement info
+2018-06-14 15:24:01,437 , 54.50151846149184
+2018-06-14 15:24:01,780 RF found but not transmitted
+2018-06-14 15:24:01,983 RF found but not transmitted
+2018-06-14 15:24:01,986 RF found
+2018-06-14 15:24:01,989 SNT reinforcement_information
+2018-06-14 15:24:02,863 RF found but not transmitted
+2018-06-14 15:24:03,061 RCV reinforcement info
+2018-06-14 15:24:03,066 , 54.735953648830204
+2018-06-14 15:24:03,270 RF found but not transmitted
+2018-06-14 15:24:03,271 RF found
+2018-06-14 15:24:03,273 SNT reinforcement_information
+2018-06-14 15:24:06,154 RF found but not transmitted
+2018-06-14 15:24:07,027 RCV reinforcement info
+2018-06-14 15:24:07,032 , 55.0135732049498
+2018-06-14 15:24:08,294 RCV reinforcement info
+2018-06-14 15:24:08,296 , 55.424449966670004
+2018-06-14 15:24:10,628 RCV reinforcement info
+2018-06-14 15:24:10,631 , 55.55943591577704
+2018-06-14 15:24:13,297 RF found but not transmitted
+2018-06-14 15:24:17,086 RCV reinforcement info
+2018-06-14 15:24:17,091 , 56.091264732141035
+2018-06-14 15:24:17,431 RF found but not transmitted
+2018-06-14 15:24:18,922 RF found but not transmitted
+2018-06-14 15:24:18,924 RF found
+2018-06-14 15:24:18,927 SNT reinforcement_information
+2018-06-14 15:24:19,372 RF found but not transmitted
+2018-06-14 15:24:19,378 hash found
+2018-06-14 15:24:19,385 appended honest propose 99096459ae on top of 6e9829a046
+2018-06-14 15:24:19,385 REINFORCEMENT COLLECTING state
+2018-06-14 15:24:19,472 SNT proposal
+2018-06-14 15:24:19,663 RCV reinforcement
+2018-06-14 15:24:19,672 RCV reinforcement
+2018-06-14 15:24:20,090 RF found but not transmitted
+2018-06-14 15:24:20,825 RCV reinforcement info
+2018-06-14 15:24:20,836 , 57.31841087123543
+2018-06-14 15:24:20,980 RCV reinforcement
+2018-06-14 15:24:20,984 commit with 3 reinforcements
+2018-06-14 15:24:21,016 appended honest commit e4f4d63518 on top of 99096459ae
+2018-06-14 15:24:21,051 RF found but not transmitted
+2018-06-14 15:24:21,061 Weight: 58.31841087123543 #RFs 12
+2018-06-14 15:24:21,061 weight: 58.31841087123543
+2018-06-14 15:24:21,062 , 58.31841087123543
+2018-06-14 15:24:21,066 MINING state
+2018-06-14 15:24:21,073 start mining - depth 7
+2018-06-14 15:24:21,074 start mining - hash e4f4d635186312fd216cbce3d3f976e69fd5ed068a8dc8e0636d20f71363dc8c
+2018-06-14 15:24:21,074 Hashing frequency: 8896
+2018-06-14 15:24:21,075 SNT commit
+2018-06-14 15:24:21,619 RF found but not transmitted
+2018-06-14 15:24:21,621 RF found
+2018-06-14 15:24:21,623 SNT reinforcement_information
+2018-06-14 15:24:21,923 RCV reinforcement info
+2018-06-14 15:24:21,927 , 58.52170924975207
+2018-06-14 15:24:21,950 RF found but not transmitted
+2018-06-14 15:24:21,986 RF found but not transmitted
+2018-06-14 15:24:22,058 RCV reinforcement info
+2018-06-14 15:24:22,063 , 58.607796338815426
+2018-06-14 15:24:22,292 RF found but not transmitted
+2018-06-14 15:24:22,389 RF found but not transmitted
+2018-06-14 15:24:23,088 RF found but not transmitted
+2018-06-14 15:24:23,090 RF found
+2018-06-14 15:24:23,093 SNT reinforcement_information
+2018-06-14 15:24:24,378 RF found but not transmitted
+2018-06-14 15:24:24,379 RF found
+2018-06-14 15:24:24,384 SNT reinforcement_information
+2018-06-14 15:24:26,252 RCV reinforcement info
+2018-06-14 15:24:26,257 , 59.363995886121934
+2018-06-14 15:24:27,018 RCV reinforcement info
+2018-06-14 15:24:27,023 , 59.52622975594646
+2018-06-14 15:24:27,365 RF found but not transmitted
+2018-06-14 15:24:27,616 RCV reinforcement info
+2018-06-14 15:24:27,622 , 59.60035636395913
+2018-06-14 15:24:27,877 RF found but not transmitted
+2018-06-14 15:24:29,006 RF found but not transmitted
+2018-06-14 15:24:29,008 RF found
+2018-06-14 15:24:29,012 SNT reinforcement_information
+2018-06-14 15:24:29,382 RCV reinforcement info
+2018-06-14 15:24:29,387 , 60.74760051328453
+2018-06-14 15:24:30,458 RCV reinforcement info
+2018-06-14 15:24:30,462 , 60.833876631300114
+2018-06-14 15:24:31,133 RF found but not transmitted
+2018-06-14 15:24:31,136 RF found
+2018-06-14 15:24:31,138 SNT reinforcement_information
+2018-06-14 15:24:32,677 RF found but not transmitted
+2018-06-14 15:24:32,695 RF found but not transmitted
+2018-06-14 15:24:32,815 RF found but not transmitted
+2018-06-14 15:24:36,110 RCV reinforcement info
+2018-06-14 15:24:36,116 , 61.26466084317981
+2018-06-14 15:24:36,214 RF found but not transmitted
+2018-06-14 15:24:36,647 RF found but not transmitted
+2018-06-14 15:24:37,512 RF found but not transmitted
+2018-06-14 15:24:37,515 RF found
+2018-06-14 15:24:37,519 SNT reinforcement_information
+2018-06-14 15:24:38,596 RCV reinforcement info
+2018-06-14 15:24:38,601 , 61.785165328040044
+2018-06-14 15:24:39,199 RF found but not transmitted
+2018-06-14 15:24:39,387 RF found but not transmitted
+2018-06-14 15:24:40,042 RF found but not transmitted
+2018-06-14 15:24:40,693 RF found but not transmitted
+2018-06-14 15:24:40,694 RF found
+2018-06-14 15:24:40,697 SNT reinforcement_information
+2018-06-14 15:24:41,051 RCV reinforcement info
+2018-06-14 15:24:41,057 , 61.93375277354949
+2018-06-14 15:24:41,221 RCV reinforcement info
+2018-06-14 15:24:41,226 , 61.99642221836808
+2018-06-14 15:24:43,542 RF found but not transmitted
+2018-06-14 15:24:43,582 RF found but not transmitted
+2018-06-14 15:24:44,035 RF found but not transmitted
+2018-06-14 15:24:44,238 RF found but not transmitted
+2018-06-14 15:24:45,494 RF found but not transmitted
+2018-06-14 15:24:47,253 RF found but not transmitted
+2018-06-14 15:24:47,842 RCV reinforcement info
+2018-06-14 15:24:47,845 , 62.074875384883555
+2018-06-14 15:24:48,209 RF found but not transmitted
+2018-06-14 15:24:48,477 RF found but not transmitted
+2018-06-14 15:24:48,480 RF found
+2018-06-14 15:24:48,482 SNT reinforcement_information
+2018-06-14 15:24:49,536 RF found but not transmitted
+2018-06-14 15:24:49,666 RF found but not transmitted
+2018-06-14 15:24:49,803 RCV reinforcement info
+2018-06-14 15:24:49,809 , 62.5033620315409
+2018-06-14 15:24:51,207 RCV reinforcement info
+2018-06-14 15:24:51,212 , 62.5829004558757
+2018-06-14 15:24:51,827 RCV reinforcement info
+2018-06-14 15:24:51,831 , 62.887224715365114
+2018-06-14 15:24:52,000 RF found but not transmitted
+2018-06-14 15:24:56,033 RF found but not transmitted
+2018-06-14 15:24:56,131 RF found but not transmitted
+2018-06-14 15:24:56,269 RCV reinforcement info
+2018-06-14 15:24:56,274 , 62.965585089931864
+2018-06-14 15:24:57,102 RF found but not transmitted
+2018-06-14 15:24:57,104 RF found
+2018-06-14 15:24:57,106 SNT reinforcement_information
+2018-06-14 15:24:57,402 RF found but not transmitted
+2018-06-14 15:24:57,404 RF found
+2018-06-14 15:24:57,407 SNT reinforcement_information
+2018-06-14 15:24:57,883 RF found but not transmitted
+2018-06-14 15:24:58,515 RF found but not transmitted
+2018-06-14 15:24:59,281 RF found but not transmitted
+2018-06-14 15:25:00,722 RF found but not transmitted
+2018-06-14 15:25:01,028 RF found but not transmitted
+2018-06-14 15:25:01,033 RF found
+2018-06-14 15:25:01,036 SNT reinforcement_information
+2018-06-14 15:25:01,545 RF found but not transmitted
+2018-06-14 15:25:01,901 RCV reinforcement info
+2018-06-14 15:25:01,905 , 63.612248444147994
+2018-06-14 15:25:02,136 RF found but not transmitted
+2018-06-14 15:25:02,467 RF found but not transmitted
+2018-06-14 15:25:02,969 RF found but not transmitted
+2018-06-14 15:25:03,156 RF found but not transmitted
+2018-06-14 15:25:03,794 RF found but not transmitted
+2018-06-14 15:25:04,807 RF found but not transmitted
+2018-06-14 15:25:05,093 RF found but not transmitted
+2018-06-14 15:25:05,848 RF found but not transmitted
+2018-06-14 15:25:06,247 RF found but not transmitted
+2018-06-14 15:25:06,248 RF found
+2018-06-14 15:25:06,250 SNT reinforcement_information
+2018-06-14 15:25:07,453 RCV reinforcement info
+2018-06-14 15:25:07,457 , 64.0931500200501
+2018-06-14 15:25:08,039 RF found but not transmitted
+2018-06-14 15:25:08,263 RF found but not transmitted
+2018-06-14 15:25:08,324 RCV reinforcement info
+2018-06-14 15:25:08,326 , 64.34315468638387
+2018-06-14 15:25:10,127 RF found but not transmitted
+2018-06-14 15:25:10,500 RF found but not transmitted
+2018-06-14 15:25:11,206 RCV reinforcement info
+2018-06-14 15:25:11,210 , 64.46948251964089
+2018-06-14 15:25:12,386 RCV reinforcement info
+2018-06-14 15:25:12,390 , 64.54683732165506
+2018-06-14 15:25:12,713 RCV reinforcement info
+2018-06-14 15:25:12,719 , 64.61662176423695
+2018-06-14 15:25:12,782 RCV reinforcement info
+2018-06-14 15:25:12,786 , 64.87725783848889
+2018-06-14 15:25:14,029 RF found but not transmitted
+2018-06-14 15:25:15,065 RF found but not transmitted
+2018-06-14 15:25:15,066 RF found
+2018-06-14 15:25:15,067 SNT reinforcement_information
+2018-06-14 15:25:15,547 RF found but not transmitted
+2018-06-14 15:25:16,020 RF found but not transmitted
+2018-06-14 15:25:16,023 RF found
+2018-06-14 15:25:16,025 SNT reinforcement_information
+2018-06-14 15:25:17,074 RF found but not transmitted
+2018-06-14 15:25:20,809 RF found but not transmitted
+2018-06-14 15:25:20,812 RF found
+2018-06-14 15:25:20,817 SNT reinforcement_information
+2018-06-14 15:25:21,730 RF found but not transmitted
+2018-06-14 15:25:21,767 RF found but not transmitted
+2018-06-14 15:25:22,262 RF found but not transmitted
+2018-06-14 15:25:22,266 RF found
+2018-06-14 15:25:22,269 SNT reinforcement_information
+2018-06-14 15:25:23,600 RF found but not transmitted
+2018-06-14 15:25:23,987 RCV reinforcement info
+2018-06-14 15:25:23,990 , 65.38886208840202
+2018-06-14 15:25:24,124 RF found but not transmitted
+2018-06-14 15:25:24,332 RF found but not transmitted
+2018-06-14 15:25:25,653 RF found but not transmitted
+2018-06-14 15:25:26,580 RF found but not transmitted
+2018-06-14 15:25:28,170 RCV reinforcement info
+2018-06-14 15:25:28,174 , 65.45418759857849
+2018-06-14 15:25:29,158 RCV reinforcement info
+2018-06-14 15:25:29,162 , 65.55010866453992
+2018-06-14 15:25:29,778 RCV reinforcement info
+2018-06-14 15:25:29,782 , 65.71400851314264
+2018-06-14 15:25:30,066 RCV reinforcement info
+2018-06-14 15:25:30,070 , 65.80717249337933
+2018-06-14 15:25:32,036 RCV reinforcement info
+2018-06-14 15:25:32,040 , 65.93195944861758
+2018-06-14 15:25:32,909 RF found but not transmitted
+2018-06-14 15:25:33,054 RF found but not transmitted
+2018-06-14 15:25:33,082 RCV reinforcement info
+2018-06-14 15:25:33,086 , 66.12160913635354
+2018-06-14 15:25:33,173 RCV reinforcement info
+2018-06-14 15:25:33,177 , 66.18440612370924
+2018-06-14 15:25:33,237 RF found but not transmitted
+2018-06-14 15:25:33,240 RF found
+2018-06-14 15:25:33,242 SNT reinforcement_information
+2018-06-14 15:25:34,217 RF found but not transmitted
+2018-06-14 15:25:35,939 RCV proposal
+2018-06-14 15:25:35,945 appended honest propose 1954a4f6b2 on top of e4f4d63518
+2018-06-14 15:25:35,945 REINFORCEMENT SENT state
+2018-06-14 15:25:35,946 RFs > 0 
+2018-06-14 15:25:35,947 SNT reinforcement
+2018-06-14 15:25:36,105 RCV reinforcement
+2018-06-14 15:25:37,578 RCV commit
+2018-06-14 15:25:37,890 appended honest commit 9f81394c91 on top of 1954a4f6b2
+2018-06-14 15:25:38,121 RF found but not transmitted
+2018-06-14 15:25:38,162 Weight: 67.31265053761621 #RFs 48
+2018-06-14 15:25:38,162 weight: 67.31265053761621
+2018-06-14 15:25:38,162 , 67.31265053761621
+2018-06-14 15:25:38,166 MINING state
+2018-06-14 15:25:38,166 start mining - depth 8
+2018-06-14 15:25:38,166 start mining - hash 9f81394c915ba0d82d6eca8dfb44abc27e9258d613877688d673cb9b74339a26
+2018-06-14 15:25:38,167 Hashing frequency: 16358
+2018-06-14 15:25:38,169 RCV reinforcement info
+2018-06-14 15:25:38,173 , 68.09897340620924
+2018-06-14 15:25:38,295 RCV proposal
+2018-06-14 15:25:38,300 appended malicious propose 3a73f57d23 on top of e4f4d63518
+2018-06-14 15:25:38,423 RCV reinforcement
+2018-06-14 15:25:38,429 RCV reinforcement
+2018-06-14 15:25:38,442 RCV reinforcement
+2018-06-14 15:25:38,462 RCV reinforcement
+2018-06-14 15:25:38,476 RCV reinforcement
+2018-06-14 15:25:38,483 RCV reinforcement
+2018-06-14 15:25:38,669 RCV reinforcement
+2018-06-14 15:25:38,735 RCV reinforcement info
+2018-06-14 15:25:38,741 , 68.16962611753671
+2018-06-14 15:25:39,101 RCV reinforcement
+2018-06-14 15:25:39,396 RCV reinforcement
+2018-06-14 15:25:39,881 RF found but not transmitted
+2018-06-14 15:25:40,083 RCV commit
+2018-06-14 15:25:40,748 appended malicious commit 914bae6d8f on top of 3a73f57d23
+2018-06-14 15:25:41,304 Weight: 86.17837328674901 #RFs 113
+2018-06-14 15:25:41,304 weight: 86.17837328674901
+2018-06-14 15:25:41,305 , 86.17837328674901
+2018-06-14 15:25:41,310 Switching branch - my current block was: 68.16962611753671
+2018-06-14 15:25:41,311 start mining - depth 8
+2018-06-14 15:25:41,311 start mining - hash 914bae6d8f555d1cd4fc563214c85b19efee40385c0c41b9b68645c5779713f6
+2018-06-14 15:25:41,312 WIN: MALICIOUS WIN on block 8
+2018-06-14 15:25:43,362 RF found but not transmitted
+2018-06-14 15:25:43,506 RF found but not transmitted
+2018-06-14 15:25:43,559 RF found but not transmitted
+2018-06-14 15:25:44,387 RCV reinforcement info
+2018-06-14 15:25:44,394 , 86.25394623553905
+2018-06-14 15:25:45,373 RCV reinforcement info
+2018-06-14 15:25:45,380 , 86.37504382006284
+2018-06-14 15:25:46,149 RF found but not transmitted
+2018-06-14 15:25:47,014 RF found but not transmitted
+2018-06-14 15:25:47,015 hash found
+2018-06-14 15:25:47,020 appended honest propose 76b2682d46 on top of 914bae6d8f
+2018-06-14 15:25:47,020 REINFORCEMENT COLLECTING state
+2018-06-14 15:25:47,021 SNT proposal
+2018-06-14 15:25:47,186 RCV reinforcement
+2018-06-14 15:25:47,343 RF found but not transmitted
+2018-06-14 15:25:48,526 commit with 1 reinforcements
+2018-06-14 15:25:48,533 appended honest commit b79ff5b9cc on top of 76b2682d46
+2018-06-14 15:25:48,535 Weight: 87.37504382006284 #RFs 2
+2018-06-14 15:25:48,535 weight: 87.37504382006284
+2018-06-14 15:25:48,536 , 87.37504382006284
+2018-06-14 15:25:48,538 MINING state
+2018-06-14 15:25:48,538 start mining - depth 9
+2018-06-14 15:25:48,538 start mining - hash b79ff5b9cc68732e49f4cd6950da605f78223b69b48abf1b6aea4afd73758361
+2018-06-14 15:25:48,538 SNT commit
+2018-06-14 15:25:48,981 RF found but not transmitted
+2018-06-14 15:25:49,428 RF found but not transmitted
+2018-06-14 15:25:49,429 RF found
+2018-06-14 15:25:49,432 SNT reinforcement_information
+2018-06-14 15:25:49,823 RF found but not transmitted
+2018-06-14 15:25:49,826 RF found
+2018-06-14 15:25:49,829 SNT reinforcement_information
+2018-06-14 15:25:52,509 RCV reinforcement info
+2018-06-14 15:25:52,514 , 88.00408052335145
+2018-06-14 15:25:55,517 RF found but not transmitted
+2018-06-14 15:25:55,519 RF found
+2018-06-14 15:25:55,521 SNT reinforcement_information
+2018-06-14 15:25:56,261 RF found but not transmitted
+2018-06-14 15:25:56,262 RF found
+2018-06-14 15:25:56,265 SNT reinforcement_information
+2018-06-14 15:25:57,832 RCV reinforcement info
+2018-06-14 15:25:57,836 , 88.26681682518364
+2018-06-14 15:25:58,916 RF found but not transmitted
+2018-06-14 15:25:59,594 RF found but not transmitted
+2018-06-14 15:25:59,962 RF found but not transmitted
+2018-06-14 15:25:59,964 RF found
+2018-06-14 15:25:59,966 SNT reinforcement_information
+2018-06-14 15:26:00,049 RCV reinforcement info
+2018-06-14 15:26:00,052 , 88.54415456950099
+2018-06-14 15:26:01,428 RCV reinforcement info
+2018-06-14 15:26:01,432 , 88.70475431452962
+2018-06-14 15:26:01,750 RF found but not transmitted
+2018-06-14 15:26:02,222 RCV reinforcement info
+2018-06-14 15:26:02,227 , 88.82408655534957
+2018-06-14 15:26:02,881 RF found but not transmitted
+2018-06-14 15:26:02,884 RF found
+2018-06-14 15:26:02,886 SNT reinforcement_information
+2018-06-14 15:26:02,994 RF found but not transmitted
+2018-06-14 15:26:03,691 RF found but not transmitted
+2018-06-14 15:26:04,006 RF found but not transmitted
+2018-06-14 15:26:04,038 RCV reinforcement info
+2018-06-14 15:26:04,042 , 89.3866175918514
+2018-06-14 15:26:04,540 RF found but not transmitted
+2018-06-14 15:26:04,680 RF found but not transmitted
+2018-06-14 15:26:04,829 RCV reinforcement info
+2018-06-14 15:26:04,833 , 89.45052029507474
+2018-06-14 15:26:06,330 RF found but not transmitted
+2018-06-14 15:26:08,226 RF found but not transmitted
+2018-06-14 15:26:09,336 RF found but not transmitted
+2018-06-14 15:26:09,341 RCV reinforcement info
+2018-06-14 15:26:09,343 , 89.51447543772647
+2018-06-14 15:26:10,895 RF found but not transmitted
+2018-06-14 15:26:11,588 RF found but not transmitted
+2018-06-14 15:26:11,937 RF found but not transmitted
+2018-06-14 15:26:12,412 RF found but not transmitted
+2018-06-14 15:26:12,716 RF found but not transmitted
+2018-06-14 15:26:14,276 RF found but not transmitted
+2018-06-14 15:26:14,857 RF found but not transmitted
+2018-06-14 15:26:16,932 RF found but not transmitted
+2018-06-14 15:26:17,177 RF found but not transmitted
+2018-06-14 15:26:18,379 RF found but not transmitted
+2018-06-14 15:26:18,385 RF found but not transmitted
+2018-06-14 15:26:18,867 RCV reinforcement info
+2018-06-14 15:26:18,871 , 90.48450592393688
+2018-06-14 15:26:18,970 RF found but not transmitted
+2018-06-14 15:26:19,629 RCV reinforcement info
+2018-06-14 15:26:19,633 , 90.57527028253779
+2018-06-14 15:26:20,239 RF found but not transmitted
+2018-06-14 15:26:20,245 RF found
+2018-06-14 15:26:20,248 SNT reinforcement_information
+2018-06-14 15:26:21,497 RF found but not transmitted
+2018-06-14 15:26:21,864 RCV reinforcement info
+2018-06-14 15:26:21,868 , 90.87664452987612
+2018-06-14 15:26:21,967 RF found but not transmitted
+2018-06-14 15:26:22,394 RF found but not transmitted
+2018-06-14 15:26:22,685 RF found but not transmitted
+2018-06-14 15:26:22,885 RF found but not transmitted
+2018-06-14 15:26:22,890 RF found
+2018-06-14 15:26:22,891 SNT reinforcement_information
+2018-06-14 15:26:23,482 RCV reinforcement info
+2018-06-14 15:26:23,486 , 91.0426761171819
+2018-06-14 15:26:23,923 RF found but not transmitted
+2018-06-14 15:26:23,960 RF found but not transmitted
+2018-06-14 15:26:24,560 RF found but not transmitted
+2018-06-14 15:26:26,672 RF found but not transmitted
+2018-06-14 15:26:28,312 RF found but not transmitted
+2018-06-14 15:26:28,407 RF found but not transmitted
+2018-06-14 15:26:28,408 RF found
+2018-06-14 15:26:28,410 SNT reinforcement_information
+2018-06-14 15:26:28,438 RF found but not transmitted
+2018-06-14 15:26:28,555 RF found but not transmitted
+2018-06-14 15:26:30,079 RF found but not transmitted
+2018-06-14 15:26:30,406 RCV proposal
+2018-06-14 15:26:30,409 appended honest propose d5a681d7f7 on top of b79ff5b9cc
+2018-06-14 15:26:30,410 REINFORCEMENT SENT state
+2018-06-14 15:26:30,410 RFs > 0 
+2018-06-14 15:26:30,411 SNT reinforcement
+2018-06-14 15:26:30,500 RCV reinforcement
+2018-06-14 15:26:30,879 RF found but not transmitted
+2018-06-14 15:26:30,980 RF found but not transmitted
+2018-06-14 15:26:30,984 SNT reinforcement_information
+2018-06-14 15:26:31,072 SNT reinforcement
+2018-06-14 15:26:31,615 RF found but not transmitted
+2018-06-14 15:26:32,088 RCV commit
+2018-06-14 15:26:32,193 appended honest commit 35cc660e66 on top of d5a681d7f7
+2018-06-14 15:26:32,341 RF found but not transmitted
+2018-06-14 15:26:32,418 Weight: 92.55085901470184 #RFs 22
+2018-06-14 15:26:32,420 weight: 92.55085901470184
+2018-06-14 15:26:32,423 , 92.55085901470184
+2018-06-14 15:26:32,424 MINING state
+2018-06-14 15:26:32,424 start mining - depth 10
+2018-06-14 15:26:32,425 start mining - hash 35cc660e66103138a36614bf0ab06437b3f83f3747c0db50e91fcb593a079a51
+2018-06-14 15:26:32,450 RCV reinforcement info
+2018-06-14 15:26:32,459 , 92.76024486239938
+2018-06-14 15:26:32,564 RCV proposal
+2018-06-14 15:26:32,577 appended malicious propose 4da945dd32 on top of b79ff5b9cc
+2018-06-14 15:26:32,889 RCV reinforcement
+2018-06-14 15:26:32,942 RCV reinforcement
+2018-06-14 15:26:32,958 RCV reinforcement
+2018-06-14 15:26:32,978 RCV reinforcement info
+2018-06-14 15:26:32,987 , 92.82376041575692
+2018-06-14 15:26:33,001 RCV reinforcement
+2018-06-14 15:26:33,005 RCV reinforcement
+2018-06-14 15:26:33,009 RCV reinforcement
+2018-06-14 15:26:33,098 RF found but not transmitted
+2018-06-14 15:26:33,193 RCV reinforcement
+2018-06-14 15:26:33,625 RCV reinforcement
+2018-06-14 15:26:34,280 RCV commit
+2018-06-14 15:26:34,656 RF found but not transmitted
+2018-06-14 15:26:34,787 appended malicious commit b7f5148a37 on top of 4da945dd32
+2018-06-14 15:26:35,227 Weight: 105.70819155050609 #RFs 75
+2018-06-14 15:26:35,228 weight: 105.70819155050609
+2018-06-14 15:26:35,243 , 105.70819155050609
+2018-06-14 15:26:35,245 Switching branch - my current block was: 92.82376041575692
+2018-06-14 15:26:35,246 start mining - depth 10
+2018-06-14 15:26:35,246 start mining - hash b7f5148a37e9b8e2fdceea4921fade61481774c4f7b36d7b0b41bc3f92688159
+2018-06-14 15:26:35,247 WIN: MALICIOUS WIN on block 10
+2018-06-14 15:26:36,160 RF found but not transmitted
+2018-06-14 15:26:36,165 RF found
+2018-06-14 15:26:36,167 SNT reinforcement_information
+2018-06-14 15:26:36,188 RF found but not transmitted
+2018-06-14 15:26:37,545 RCV reinforcement info
+2018-06-14 15:26:37,550 , 105.87636152540539
+2018-06-14 15:26:38,023 RF found but not transmitted
+2018-06-14 15:26:38,301 RCV reinforcement info
+2018-06-14 15:26:38,306 , 106.11981440738522
+2018-06-14 15:26:38,501 RF found but not transmitted
+2018-06-14 15:26:40,397 RF found but not transmitted
+2018-06-14 15:26:41,177 RF found but not transmitted
+2018-06-14 15:26:41,178 RF found
+2018-06-14 15:26:41,180 SNT reinforcement_information
+2018-06-14 15:26:41,443 RF found but not transmitted
+2018-06-14 15:26:41,696 RCV reinforcement info
+2018-06-14 15:26:41,705 , 106.31614004742643
+2018-06-14 15:26:41,854 RF found but not transmitted
+2018-06-14 15:26:41,875 RF found but not transmitted
+2018-06-14 15:26:42,564 RF found but not transmitted
+2018-06-14 15:26:42,721 RF found but not transmitted
+2018-06-14 15:26:42,926 RCV reinforcement info
+2018-06-14 15:26:42,932 , 106.39152923397059
+2018-06-14 15:26:43,217 RCV proposal
+2018-06-14 15:26:43,224 appended honest propose 629549cb00 on top of b7f5148a37
+2018-06-14 15:26:43,225 REINFORCEMENT SENT state
+2018-06-14 15:26:43,226 RFs > 0 
+2018-06-14 15:26:43,227 SNT reinforcement
+2018-06-14 15:26:43,321 RCV reinforcement info
+2018-06-14 15:26:43,325 , 106.45466452329295
+2018-06-14 15:26:43,370 RCV reinforcement
+2018-06-14 15:26:43,461 RF found but not transmitted
+2018-06-14 15:26:44,513 RCV reinforcement info
+2018-06-14 15:26:44,519 , 106.69320960078407
+2018-06-14 15:26:44,542 RF found but not transmitted
+2018-06-14 15:26:44,586 RCV reinforcement
+2018-06-14 15:26:44,768 RCV commit
+2018-06-14 15:26:44,821 appended honest commit aa917909f3 on top of 629549cb00
+2018-06-14 15:26:44,864 Weight: 107.69320960078407 #RFs 8
+2018-06-14 15:26:44,864 weight: 107.69320960078407
+2018-06-14 15:26:44,865 , 107.69320960078407
+2018-06-14 15:26:44,867 MINING state
+2018-06-14 15:26:44,867 start mining - depth 11
+2018-06-14 15:26:44,867 start mining - hash aa917909f39ec58a6108174cee6c1ea6dfde1196207a0120ac7c36c58cc92c8c
+2018-06-14 15:26:44,868 Hashing frequency: 16965
+2018-06-14 15:26:45,869 RCV reinforcement info
+2018-06-14 15:26:45,872 , 107.75586268180928
+2018-06-14 15:26:47,888 RF found but not transmitted
+2018-06-14 15:26:48,494 RF found but not transmitted
+2018-06-14 15:26:48,496 RF found
+2018-06-14 15:26:48,498 SNT reinforcement_information
+2018-06-14 15:26:49,696 RCV reinforcement info
+2018-06-14 15:26:49,700 , 108.28477440864982
+2018-06-14 15:26:50,291 RF found but not transmitted
+2018-06-14 15:26:50,292 RF found
+2018-06-14 15:26:50,295 SNT reinforcement_information
+2018-06-14 15:26:50,597 RF found but not transmitted
+2018-06-14 15:26:50,970 RF found but not transmitted
+2018-06-14 15:26:51,398 RF found but not transmitted
+2018-06-14 15:26:52,044 RCV reinforcement info
+2018-06-14 15:26:52,047 , 108.52385246007778
+2018-06-14 15:26:52,419 RF found but not transmitted
+2018-06-14 15:26:52,477 RF found but not transmitted
+2018-06-14 15:26:53,563 RF found but not transmitted
+2018-06-14 15:26:53,864 RF found but not transmitted
+2018-06-14 15:26:54,469 RF found but not transmitted
+2018-06-14 15:26:55,147 RF found but not transmitted
+2018-06-14 15:26:55,323 RCV reinforcement info
+2018-06-14 15:26:55,327 , 108.66490696233657
+2018-06-14 15:26:55,358 RF found but not transmitted
+2018-06-14 15:26:55,359 RF found
+2018-06-14 15:26:55,361 SNT reinforcement_information
+2018-06-14 15:26:55,444 RF found but not transmitted
+2018-06-14 15:26:55,556 RCV reinforcement info
+2018-06-14 15:26:55,561 , 108.83776025917419
+2018-06-14 15:26:55,838 RF found but not transmitted
+2018-06-14 15:26:56,845 RCV reinforcement info
+2018-06-14 15:26:56,849 , 108.93627841118483
+2018-06-14 15:26:57,716 RF found but not transmitted
+2018-06-14 15:26:57,784 RF found but not transmitted
+2018-06-14 15:26:58,200 RF found but not transmitted
+2018-06-14 15:26:58,415 RCV reinforcement info
+2018-06-14 15:26:58,419 , 109.63551803314158
+2018-06-14 15:26:59,123 RF found but not transmitted
+2018-06-14 15:26:59,194 RF found but not transmitted
+2018-06-14 15:26:59,491 RF found but not transmitted
+2018-06-14 15:27:01,476 RCV reinforcement info
+2018-06-14 15:27:01,482 , 109.72045362829192
+2018-06-14 15:27:01,555 RF found but not transmitted
+2018-06-14 15:27:03,564 RF found but not transmitted
+2018-06-14 15:27:05,715 RCV reinforcement info
+2018-06-14 15:27:05,720 , 109.87337317189998
+2018-06-14 15:27:06,317 RF found but not transmitted
+2018-06-14 15:27:06,589 RF found but not transmitted
+2018-06-14 15:27:08,162 RF found but not transmitted
+2018-06-14 15:27:08,164 RF found
+2018-06-14 15:27:08,168 SNT reinforcement_information
+2018-06-14 15:27:09,598 RF found but not transmitted
+2018-06-14 15:27:09,601 RF found
+2018-06-14 15:27:09,603 SNT reinforcement_information
+2018-06-14 15:27:10,653 RF found but not transmitted
+2018-06-14 15:27:10,986 RF found but not transmitted
+2018-06-14 15:27:11,314 RF found but not transmitted
+2018-06-14 15:27:11,679 RF found but not transmitted
+2018-06-14 15:27:11,842 RCV reinforcement info
+2018-06-14 15:27:11,845 , 110.12283922254808
+2018-06-14 15:27:11,902 RF found but not transmitted
+2018-06-14 15:27:12,138 RF found but not transmitted
+2018-06-14 15:27:12,998 RF found but not transmitted
+2018-06-14 15:27:13,215 RF found but not transmitted
+2018-06-14 15:27:13,221 RF found
+2018-06-14 15:27:13,225 SNT reinforcement_information
+2018-06-14 15:27:13,412 RCV proposal
+2018-06-14 15:27:13,416 appended honest propose 7ec15b70d4 on top of aa917909f3
+2018-06-14 15:27:13,417 REINFORCEMENT SENT state
+2018-06-14 15:27:13,417 RFs > 0 
+2018-06-14 15:27:13,418 SNT reinforcement
+2018-06-14 15:27:13,563 RCV reinforcement
+2018-06-14 15:27:14,223 RF found but not transmitted
+2018-06-14 15:27:14,986 RCV commit
+2018-06-14 15:27:15,111 appended honest commit 51d389ab25 on top of 7ec15b70d4
+2018-06-14 15:27:15,166 Weight: 111.33120516455412 #RFs 16
+2018-06-14 15:27:15,166 weight: 111.33120516455412
+2018-06-14 15:27:15,166 , 111.33120516455412
+2018-06-14 15:27:15,166 MINING state
+2018-06-14 15:27:15,167 start mining - depth 12
+2018-06-14 15:27:15,167 start mining - hash 51d389ab25a26dcaef02a67d1d8c4fdb2fa299a09c7ffd9298962110216a61ae
+2018-06-14 15:27:15,281 RCV reinforcement info
+2018-06-14 15:27:15,287 , 111.91486341139026
+2018-06-14 15:27:15,357 RCV proposal
+2018-06-14 15:27:15,363 appended malicious propose 2ebe1b0973 on top of aa917909f3
+2018-06-14 15:27:15,491 RCV reinforcement
+2018-06-14 15:27:15,526 RCV reinforcement
+2018-06-14 15:27:15,532 RCV reinforcement
+2018-06-14 15:27:15,538 RCV reinforcement
+2018-06-14 15:27:15,568 RCV reinforcement
+2018-06-14 15:27:15,605 RCV reinforcement
+2018-06-14 15:27:16,307 RCV reinforcement
+2018-06-14 15:27:16,333 RF found but not transmitted
+2018-06-14 15:27:16,512 RCV reinforcement
+2018-06-14 15:27:16,825 RF found but not transmitted
+2018-06-14 15:27:16,984 RCV commit
+2018-06-14 15:27:17,321 appended malicious commit a91794d86b on top of 2ebe1b0973
+2018-06-14 15:27:17,620 RF found but not transmitted
+2018-06-14 15:27:17,680 Weight: 118.9061062402825 #RFs 51
+2018-06-14 15:27:17,680 weight: 118.9061062402825
+2018-06-14 15:27:17,680 , 118.9061062402825
+2018-06-14 15:27:17,681 Switching branch - my current block was: 111.91486341139026
+2018-06-14 15:27:17,681 start mining - depth 12
+2018-06-14 15:27:17,681 start mining - hash a91794d86b08dd28cc1682e73b66e74b8c2d5a6bacc1578b595fc0326c87b8ac
+2018-06-14 15:27:17,682 WIN: MALICIOUS WIN on block 12
+2018-06-14 15:27:19,971 RF found but not transmitted
+2018-06-14 15:27:19,983 RF found but not transmitted
+2018-06-14 15:27:21,177 RF found but not transmitted
+2018-06-14 15:27:21,180 RF found
+2018-06-14 15:27:21,183 SNT reinforcement_information
+2018-06-14 15:27:21,579 RCV reinforcement info
+2018-06-14 15:27:21,586 , 119.09461594270418
+2018-06-14 15:27:22,905 RF found but not transmitted
+2018-06-14 15:27:22,908 RF found but not transmitted
+2018-06-14 15:27:23,632 RF found but not transmitted
+2018-06-14 15:27:23,633 RF found
+2018-06-14 15:27:23,635 SNT reinforcement_information
+2018-06-14 15:27:24,631 RF found but not transmitted
+2018-06-14 15:27:24,633 RF found
+2018-06-14 15:27:24,635 SNT reinforcement_information
+2018-06-14 15:27:25,775 RCV reinforcement info
+2018-06-14 15:27:25,782 , 120.08080181617468
+2018-06-14 15:27:26,084 RF found but not transmitted
+2018-06-14 15:27:26,086 RF found
+2018-06-14 15:27:26,088 SNT reinforcement_information
+2018-06-14 15:27:27,103 RF found but not transmitted
+2018-06-14 15:27:27,433 RF found but not transmitted
+2018-06-14 15:27:27,438 RF found
+2018-06-14 15:27:27,441 SNT reinforcement_information
+2018-06-14 15:27:27,726 RCV reinforcement info
+2018-06-14 15:27:27,729 , 120.3977928617383
+2018-06-14 15:27:28,104 RF found but not transmitted
+2018-06-14 15:27:29,444 RF found but not transmitted
+2018-06-14 15:27:29,446 RF found
+2018-06-14 15:27:29,450 SNT reinforcement_information
+2018-06-14 15:27:29,972 RF found but not transmitted
+2018-06-14 15:27:30,831 RF found but not transmitted
+2018-06-14 15:27:31,301 RF found but not transmitted
+2018-06-14 15:27:32,015 RF found but not transmitted
+2018-06-14 15:27:33,866 RF found but not transmitted
+2018-06-14 15:27:33,937 RF found but not transmitted
+2018-06-14 15:27:34,210 RF found but not transmitted
+2018-06-14 15:27:35,109 RCV reinforcement info
+2018-06-14 15:27:35,115 , 121.00102357241168
+2018-06-14 15:27:35,179 RCV reinforcement info
+2018-06-14 15:27:35,183 , 121.21666246460784
+2018-06-14 15:27:35,360 RF found but not transmitted
+2018-06-14 15:27:35,490 RF found but not transmitted
+2018-06-14 15:27:37,270 RF found but not transmitted
+2018-06-14 15:27:37,771 RF found but not transmitted
+2018-06-14 15:27:38,984 RCV reinforcement info
+2018-06-14 15:27:38,990 , 121.34583754658665
+2018-06-14 15:27:40,209 RF found but not transmitted
+2018-06-14 15:27:41,639 RF found but not transmitted
+2018-06-14 15:27:42,851 RF found but not transmitted
+2018-06-14 15:27:43,060 RF found but not transmitted
+2018-06-14 15:27:43,186 RCV reinforcement info
+2018-06-14 15:27:43,193 , 121.61589205446637
+2018-06-14 15:27:43,289 RF found but not transmitted
+2018-06-14 15:27:44,128 RF found but not transmitted
+2018-06-14 15:27:45,176 RF found but not transmitted
+2018-06-14 15:27:45,178 RF found
+2018-06-14 15:27:45,181 SNT reinforcement_information
+2018-06-14 15:27:48,506 RF found but not transmitted
+2018-06-14 15:27:48,781 RF found but not transmitted
+2018-06-14 15:27:48,886 RF found but not transmitted
+2018-06-14 15:27:49,021 RCV reinforcement info
+2018-06-14 15:27:49,026 , 121.79289929699154
+2018-06-14 15:27:49,286 RF found but not transmitted
+2018-06-14 15:27:49,324 RF found but not transmitted
+2018-06-14 15:27:49,330 RF found
+2018-06-14 15:27:49,333 SNT reinforcement_information
+2018-06-14 15:27:51,089 RF found but not transmitted
+2018-06-14 15:27:52,229 RF found but not transmitted
+2018-06-14 15:27:52,562 RCV reinforcement info
+2018-06-14 15:27:52,569 , 121.95405147365771
+2018-06-14 15:27:52,763 RCV reinforcement info
+2018-06-14 15:27:52,770 , 122.04149094710806
+2018-06-14 15:27:53,632 RCV reinforcement info
+2018-06-14 15:27:53,638 , 122.15104614175078
+2018-06-14 15:27:54,107 RF found but not transmitted
+2018-06-14 15:27:54,202 RCV reinforcement info
+2018-06-14 15:27:54,215 , 122.24395971451834
+2018-06-14 15:27:54,259 RF found but not transmitted
+2018-06-14 15:27:55,433 RF found but not transmitted
+2018-06-14 15:27:55,436 RF found
+2018-06-14 15:27:55,441 SNT reinforcement_information
+2018-06-14 15:27:56,844 RF found but not transmitted
+2018-06-14 15:27:56,963 RCV reinforcement info
+2018-06-14 15:27:56,971 , 122.39139187938684
+2018-06-14 15:27:57,574 RF found but not transmitted
+2018-06-14 15:27:58,140 RF found but not transmitted
+2018-06-14 15:27:58,801 RF found but not transmitted
+2018-06-14 15:27:59,477 RCV reinforcement info
+2018-06-14 15:27:59,483 , 122.49159918692315
+2018-06-14 15:27:59,676 RF found but not transmitted
+2018-06-14 15:27:59,682 RF found
+2018-06-14 15:27:59,686 SNT reinforcement_information
+2018-06-14 15:27:59,757 RF found but not transmitted
+2018-06-14 15:27:59,758 RF found
+2018-06-14 15:27:59,759 SNT reinforcement_information
+2018-06-14 15:28:00,883 RF found but not transmitted
+2018-06-14 15:28:02,084 RF found but not transmitted
+2018-06-14 15:28:02,302 RCV reinforcement info
+2018-06-14 15:28:02,307 , 122.7846071078787
+2018-06-14 15:28:02,382 RCV reinforcement info
+2018-06-14 15:28:02,388 , 123.41173310191043
+2018-06-14 15:28:03,475 RF found but not transmitted
+2018-06-14 15:28:04,091 RF found but not transmitted
+2018-06-14 15:28:04,741 RF found but not transmitted
+2018-06-14 15:28:05,079 RCV reinforcement info
+2018-06-14 15:28:05,084 , 123.55175921109681
+2018-06-14 15:28:05,161 RCV reinforcement info
+2018-06-14 15:28:05,166 , 123.64426554861508
+2018-06-14 15:28:05,821 RCV reinforcement info
+2018-06-14 15:28:05,827 , 123.73315508910223
+2018-06-14 15:28:05,897 RCV reinforcement info
+2018-06-14 15:28:05,902 , 124.06160450697283
+2018-06-14 15:28:06,478 RF found but not transmitted
+2018-06-14 15:28:06,480 RF found
+2018-06-14 15:28:06,484 SNT reinforcement_information
+2018-06-14 15:28:07,205 RF found but not transmitted
+2018-06-14 15:28:08,445 RF found but not transmitted
+2018-06-14 15:28:09,068 RCV reinforcement info
+2018-06-14 15:28:09,073 , 124.22483920909474
+2018-06-14 15:28:09,076 RF found but not transmitted
+2018-06-14 15:28:09,207 RF found but not transmitted
+2018-06-14 15:28:10,245 RCV reinforcement info
+2018-06-14 15:28:10,249 , 124.51385698720378
+2018-06-14 15:28:11,130 RCV reinforcement info
+2018-06-14 15:28:11,136 , 124.57989462615724
+2018-06-14 15:28:11,904 RF found but not transmitted
+2018-06-14 15:28:13,346 RF found but not transmitted
+2018-06-14 15:28:13,373 RCV reinforcement info
+2018-06-14 15:28:13,375 , 124.65219259984511
+2018-06-14 15:28:13,529 RCV reinforcement info
+2018-06-14 15:28:13,535 , 124.76927579581522
+2018-06-14 15:28:13,919 RF found but not transmitted
+2018-06-14 15:28:14,307 RF found but not transmitted
+2018-06-14 15:28:14,310 RF found
+2018-06-14 15:28:14,314 SNT reinforcement_information
+2018-06-14 15:28:14,387 RF found but not transmitted
+2018-06-14 15:28:16,957 RF found but not transmitted
+2018-06-14 15:28:17,571 RCV reinforcement info
+2018-06-14 15:28:17,576 , 125.19389365089046
+2018-06-14 15:28:18,283 RF found but not transmitted
+2018-06-14 15:28:18,285 RF found
+2018-06-14 15:28:18,288 SNT reinforcement_information
+2018-06-14 15:28:18,541 RF found but not transmitted
+2018-06-14 15:28:20,757 RCV reinforcement info
+2018-06-14 15:28:20,762 , 125.4144130471834
+2018-06-14 15:28:22,329 RF found but not transmitted
+2018-06-14 15:28:22,330 RF found
+2018-06-14 15:28:22,333 SNT reinforcement_information
+2018-06-14 15:28:23,997 RF found but not transmitted
+2018-06-14 15:28:24,036 RCV reinforcement info
+2018-06-14 15:28:24,042 , 125.58449364641939
+2018-06-14 15:28:24,112 RCV reinforcement info
+2018-06-14 15:28:24,118 , 125.67688406553971
+2018-06-14 15:28:24,624 RCV reinforcement info
+2018-06-14 15:28:24,629 , 125.74415072610445
+2018-06-14 15:28:26,307 RF found but not transmitted
+2018-06-14 15:28:26,433 RF found but not transmitted
+2018-06-14 15:28:26,767 RF found but not transmitted
+2018-06-14 15:28:26,977 RF found but not transmitted
+2018-06-14 15:28:26,979 RF found
+2018-06-14 15:28:26,982 SNT reinforcement_information
+2018-06-14 15:28:27,879 RF found but not transmitted
+2018-06-14 15:28:27,881 RF found
+2018-06-14 15:28:27,883 SNT reinforcement_information
+2018-06-14 15:28:28,920 RCV reinforcement info
+2018-06-14 15:28:28,925 , 126.07812458667317
+2018-06-14 15:28:30,976 RCV reinforcement info
+2018-06-14 15:28:30,982 , 126.15956989463031
+2018-06-14 15:28:31,316 RCV reinforcement info
+2018-06-14 15:28:31,319 , 126.2905757837341
+2018-06-14 15:28:31,467 RF found but not transmitted
+2018-06-14 15:28:31,626 RF found but not transmitted
+2018-06-14 15:28:31,642 RCV reinforcement info
+2018-06-14 15:28:31,648 , 126.45784965450545
+2018-06-14 15:28:33,426 RF found but not transmitted
+2018-06-14 15:28:34,537 RF found but not transmitted
+2018-06-14 15:28:34,761 RCV reinforcement info
+2018-06-14 15:28:34,770 , 126.55839304791833
+2018-06-14 15:28:35,292 RF found but not transmitted
+2018-06-14 15:28:35,308 RF found but not transmitted
+2018-06-14 15:28:36,134 RF found but not transmitted
+2018-06-14 15:28:36,137 RF found
+2018-06-14 15:28:36,140 SNT reinforcement_information
+2018-06-14 15:28:36,851 RF found but not transmitted
+2018-06-14 15:28:38,166 RF found but not transmitted
+2018-06-14 15:28:38,938 RF found but not transmitted
+2018-06-14 15:28:39,072 RCV reinforcement info
+2018-06-14 15:28:39,077 , 127.30143038814786
+2018-06-14 15:28:39,454 RF found but not transmitted
+2018-06-14 15:28:39,579 RF found but not transmitted
+2018-06-14 15:28:40,272 RF found but not transmitted
+2018-06-14 15:28:41,718 RCV proposal
+2018-06-14 15:28:41,739 appended honest propose 145502fcd0 on top of a91794d86b
+2018-06-14 15:28:41,739 REINFORCEMENT SENT state
+2018-06-14 15:28:41,740 RFs > 0 
+2018-06-14 15:28:41,741 SNT reinforcement
+2018-06-14 15:28:41,888 RF found but not transmitted
+2018-06-14 15:28:41,911 RCV reinforcement
+2018-06-14 15:28:43,163 RF found but not transmitted
+2018-06-14 15:28:43,356 RCV commit
+2018-06-14 15:28:43,674 RF found but not transmitted
+2018-06-14 15:28:43,771 appended honest commit 63b5ad2a3e on top of 145502fcd0
+2018-06-14 15:28:44,319 Weight: 128.30143038814785 #RFs 54
+2018-06-14 15:28:44,319 weight: 128.30143038814785
+2018-06-14 15:28:44,319 , 128.30143038814785
+2018-06-14 15:28:44,322 MINING state
+2018-06-14 15:28:44,322 start mining - depth 13
+2018-06-14 15:28:44,322 start mining - hash 63b5ad2a3e88156a3ae5b93f4a06351638e993c02c787f06be27db93c3cbd322
+2018-06-14 15:28:44,334 Hashing frequency: 31363
+2018-06-14 15:28:44,495 RF found but not transmitted
+2018-06-14 15:28:44,698 RCV proposal
+2018-06-14 15:28:44,711 appended malicious propose 2a75a6f922 on top of a91794d86b
+2018-06-14 15:28:44,779 RF found but not transmitted
+2018-06-14 15:28:44,871 RCV reinforcement
+2018-06-14 15:28:44,882 RCV reinforcement
+2018-06-14 15:28:44,925 RCV reinforcement
+2018-06-14 15:28:44,934 RCV reinforcement
+2018-06-14 15:28:44,950 RCV reinforcement
+2018-06-14 15:28:45,001 RCV reinforcement
+2018-06-14 15:28:45,198 RCV reinforcement
+2018-06-14 15:28:45,263 RCV reinforcement
+2018-06-14 15:28:45,344 RCV reinforcement
+2018-06-14 15:28:45,802 RF found but not transmitted
+2018-06-14 15:28:45,805 RF found
+2018-06-14 15:28:45,809 SNT reinforcement_information
+2018-06-14 15:28:46,311 RCV reinforcement
+2018-06-14 15:28:46,754 RCV commit
+2018-06-14 15:28:47,746 appended malicious commit b8e02222e2 on top of 2a75a6f922
+2018-06-14 15:28:48,717 Weight: 149.70872520665927 #RFs 126
+2018-06-14 15:28:48,718 weight: 149.70872520665927
+2018-06-14 15:28:48,721 , 149.70872520665927
+2018-06-14 15:28:48,722 Switching branch - my current block was: 128.85870218388527
+2018-06-14 15:28:48,722 start mining - depth 13
+2018-06-14 15:28:48,723 start mining - hash b8e02222e26df98215a8d70e5b14ad6c86aa9352052af8606d948911e5121c82
+2018-06-14 15:28:48,723 WIN: MALICIOUS WIN on block 13
+2018-06-14 15:28:48,916 RF found but not transmitted
+2018-06-14 15:28:48,921 RF found
+2018-06-14 15:28:48,925 SNT reinforcement_information
+2018-06-14 15:28:49,863 RF found but not transmitted
+2018-06-14 15:28:49,976 RF found but not transmitted
+2018-06-14 15:28:51,157 RF found but not transmitted
+2018-06-14 15:28:51,338 RF found but not transmitted
+2018-06-14 15:28:51,961 RCV reinforcement info
+2018-06-14 15:28:51,966 , 149.8964583169534
+2018-06-14 15:28:52,916 RCV reinforcement info
+2018-06-14 15:28:52,921 , 149.96948193780636
+2018-06-14 15:28:53,137 RF found but not transmitted
+2018-06-14 15:28:53,435 RF found but not transmitted
+2018-06-14 15:28:53,437 RF found
+2018-06-14 15:28:53,440 SNT reinforcement_information
+2018-06-14 15:28:53,494 RF found but not transmitted
+2018-06-14 15:28:54,294 RF found but not transmitted
+2018-06-14 15:28:54,388 RF found but not transmitted
+2018-06-14 15:28:56,583 RF found but not transmitted
+2018-06-14 15:28:56,586 RF found
+2018-06-14 15:28:56,587 SNT reinforcement_information
+2018-06-14 15:28:57,615 RCV reinforcement info
+2018-06-14 15:28:57,621 , 151.07754964104075
+2018-06-14 15:28:57,646 RF found but not transmitted
+2018-06-14 15:28:57,785 RF found but not transmitted
+2018-06-14 15:28:58,095 RF found but not transmitted
+2018-06-14 15:28:59,338 RF found but not transmitted
+2018-06-14 15:28:59,339 RF found
+2018-06-14 15:28:59,345 SNT reinforcement_information
+2018-06-14 15:29:00,560 RCV reinforcement info
+2018-06-14 15:29:00,565 , 151.2740481247271
+2018-06-14 15:29:01,188 RF found but not transmitted
+2018-06-14 15:29:01,190 RF found
+2018-06-14 15:29:01,192 SNT reinforcement_information
+2018-06-14 15:29:01,794 RF found but not transmitted
+2018-06-14 15:29:02,301 RF found but not transmitted
+2018-06-14 15:29:02,304 RF found
+2018-06-14 15:29:02,308 SNT reinforcement_information
+2018-06-14 15:29:02,892 RF found but not transmitted
+2018-06-14 15:29:02,893 RF found
+2018-06-14 15:29:02,896 SNT reinforcement_information
+2018-06-14 15:29:03,268 RCV reinforcement info
+2018-06-14 15:29:03,273 , 151.80344114675088
+2018-06-14 15:29:03,492 RCV proposal
+2018-06-14 15:29:03,500 appended honest propose a29e56a353 on top of b8e02222e2
+2018-06-14 15:29:03,501 REINFORCEMENT SENT state
+2018-06-14 15:29:03,501 RFs > 0 
+2018-06-14 15:29:03,502 SNT reinforcement
+2018-06-14 15:29:03,690 RF found but not transmitted
+2018-06-14 15:29:03,757 RF found but not transmitted
+2018-06-14 15:29:03,760 SNT reinforcement_information
+2018-06-14 15:29:03,841 SNT reinforcement
+2018-06-14 15:29:03,931 RCV reinforcement info
+2018-06-14 15:29:03,937 , 152.8318677906015
+2018-06-14 15:29:03,983 RCV reinforcement
+2018-06-14 15:29:04,522 RF found but not transmitted
+2018-06-14 15:29:05,042 RCV commit
+2018-06-14 15:29:05,120 appended honest commit 416c399aa3 on top of a29e56a353
+2018-06-14 15:29:05,206 Weight: 153.6537282863206 #RFs 13
+2018-06-14 15:29:05,207 weight: 153.6537282863206
+2018-06-14 15:29:05,207 , 153.6537282863206
+2018-06-14 15:29:05,210 MINING state
+2018-06-14 15:29:05,211 start mining - depth 14
+2018-06-14 15:29:05,211 start mining - hash 416c399aa3b76397b1acf37e701a6fe3189a2b31da92d29b1b404f9d32f20f60
+2018-06-14 15:29:05,403 RCV proposal
+2018-06-14 15:29:05,407 appended malicious propose 9694dddf48 on top of b8e02222e2
+2018-06-14 15:29:05,754 RCV reinforcement
+2018-06-14 15:29:05,764 RCV reinforcement
+2018-06-14 15:29:05,790 RCV reinforcement
+2018-06-14 15:29:05,834 RCV reinforcement
+2018-06-14 15:29:05,865 RCV reinforcement
+2018-06-14 15:29:05,971 RCV reinforcement
+2018-06-14 15:29:06,107 RF found but not transmitted
+2018-06-14 15:29:06,402 RCV reinforcement
+2018-06-14 15:29:06,969 RCV commit
+2018-06-14 15:29:07,199 appended malicious commit 30f2ea3266 on top of 9694dddf48
+2018-06-14 15:29:07,382 Weight: 155.4571648889418 #RFs 23
+2018-06-14 15:29:07,382 weight: 155.4571648889418
+2018-06-14 15:29:07,382 , 155.4571648889418
+2018-06-14 15:29:07,383 Switching branch - my current block was: 153.6537282863206
+2018-06-14 15:29:07,383 start mining - depth 14
+2018-06-14 15:29:07,384 start mining - hash 30f2ea3266ca9f1798fc83eb937247a54b0be214734dac0ae88fadf11fae3431
+2018-06-14 15:29:07,385 WIN: MALICIOUS WIN on block 14
+2018-06-14 15:29:07,663 RF found but not transmitted
+2018-06-14 15:29:07,729 RCV reinforcement info
+2018-06-14 15:29:07,740 , 155.54170657360444
+2018-06-14 15:29:07,973 RCV reinforcement info
+2018-06-14 15:29:07,977 , 156.21272967471123
+2018-06-14 15:29:08,045 RF found but not transmitted
+2018-06-14 15:29:08,689 RF found but not transmitted
+2018-06-14 15:29:08,855 RF found but not transmitted
+2018-06-14 15:29:08,856 RF found
+2018-06-14 15:29:08,858 SNT reinforcement_information
+2018-06-14 15:29:08,946 RCV reinforcement info
+2018-06-14 15:29:08,952 , 156.46198327366275
+2018-06-14 15:29:09,296 RF found but not transmitted
+2018-06-14 15:29:09,298 RF found
+2018-06-14 15:29:09,301 SNT reinforcement_information
+2018-06-14 15:29:09,590 RF found but not transmitted
+2018-06-14 15:29:10,246 RF found but not transmitted
+2018-06-14 15:29:10,798 RCV reinforcement info
+2018-06-14 15:29:10,801 , 156.60670404019947
+2018-06-14 15:29:11,539 RCV reinforcement info
+2018-06-14 15:29:11,548 , 156.86131342784992
+2018-06-14 15:29:13,760 RF found but not transmitted
+2018-06-14 15:29:14,066 RCV reinforcement info
+2018-06-14 15:29:14,072 , 156.92735792742607
+2018-06-14 15:29:14,863 RF found but not transmitted
+2018-06-14 15:29:15,169 RF found but not transmitted
+2018-06-14 15:29:15,175 RF found
+2018-06-14 15:29:15,183 SNT reinforcement_information
+2018-06-14 15:29:16,092 RF found but not transmitted
+2018-06-14 15:29:18,015 RF found but not transmitted
+2018-06-14 15:29:18,620 RF found but not transmitted
+2018-06-14 15:29:18,621 RF found
+2018-06-14 15:29:18,622 SNT reinforcement_information
+2018-06-14 15:29:20,119 RF found but not transmitted
+2018-06-14 15:29:20,121 RF found
+2018-06-14 15:29:20,123 SNT reinforcement_information
+2018-06-14 15:29:20,401 RF found but not transmitted
+2018-06-14 15:29:20,879 RF found but not transmitted
+2018-06-14 15:29:20,974 RCV reinforcement info
+2018-06-14 15:29:20,980 , 157.6394020349094
+2018-06-14 15:29:22,652 RCV reinforcement info
+2018-06-14 15:29:22,656 , 157.71199169752788
+2018-06-14 15:29:23,063 RF found but not transmitted
+2018-06-14 15:29:23,065 RF found
+2018-06-14 15:29:23,068 SNT reinforcement_information
+2018-06-14 15:29:23,795 RF found but not transmitted
+2018-06-14 15:29:23,882 RF found but not transmitted
+2018-06-14 15:29:23,975 RCV reinforcement info
+2018-06-14 15:29:23,981 , 158.19569285537807
+2018-06-14 15:29:25,260 RF found but not transmitted
+2018-06-14 15:29:25,264 RF found
+2018-06-14 15:29:25,266 SNT reinforcement_information
+2018-06-14 15:29:25,764 RF found but not transmitted
+2018-06-14 15:29:29,510 RF found but not transmitted
+2018-06-14 15:29:29,960 RF found but not transmitted
+2018-06-14 15:29:29,991 RF found but not transmitted
+2018-06-14 15:29:30,874 RF found but not transmitted
+2018-06-14 15:29:30,976 RCV reinforcement info
+2018-06-14 15:29:30,981 , 158.52729872279096
+2018-06-14 15:29:31,350 RCV reinforcement info
+2018-06-14 15:29:31,355 , 158.61307701170685
+2018-06-14 15:29:32,008 RF found but not transmitted
+2018-06-14 15:29:32,289 RF found but not transmitted
+2018-06-14 15:29:32,299 RF found but not transmitted
+2018-06-14 15:29:32,301 RF found
+2018-06-14 15:29:32,304 SNT reinforcement_information
+2018-06-14 15:29:32,949 RF found but not transmitted
+2018-06-14 15:29:33,636 RF found but not transmitted
+2018-06-14 15:29:33,846 RF found but not transmitted
+2018-06-14 15:29:34,037 RF found but not transmitted
+2018-06-14 15:29:35,279 RF found but not transmitted
+2018-06-14 15:29:36,579 RF found but not transmitted
+2018-06-14 15:29:36,602 RF found but not transmitted
+2018-06-14 15:29:37,658 RF found but not transmitted
+2018-06-14 15:29:37,705 RF found but not transmitted
+2018-06-14 15:29:37,724 RF found but not transmitted
+2018-06-14 15:29:38,447 RF found but not transmitted
+2018-06-14 15:29:38,451 RF found
+2018-06-14 15:29:38,454 SNT reinforcement_information
+2018-06-14 15:29:39,283 RCV reinforcement info
+2018-06-14 15:29:39,290 , 159.07389431571613
+2018-06-14 15:29:40,407 RCV reinforcement info
+2018-06-14 15:29:40,413 , 159.14767322482803
+2018-06-14 15:29:40,602 RF found but not transmitted
+2018-06-14 15:29:40,619 RF found but not transmitted
+2018-06-14 15:29:40,992 RF found but not transmitted
+2018-06-14 15:29:41,414 RF found but not transmitted
+2018-06-14 15:29:42,128 RF found but not transmitted
+2018-06-14 15:29:42,180 RF found but not transmitted
+2018-06-14 15:29:44,300 RF found but not transmitted
+2018-06-14 15:29:44,868 RCV reinforcement info
+2018-06-14 15:29:44,873 , 159.61408476967182
+2018-06-14 15:29:44,874 RF found but not transmitted
+2018-06-14 15:29:44,877 RF found
+2018-06-14 15:29:44,880 SNT reinforcement_information
+2018-06-14 15:29:44,975 RCV reinforcement info
+2018-06-14 15:29:44,980 , 160.31396862785292
+2018-06-14 15:29:46,323 RF found but not transmitted
+2018-06-14 15:29:46,493 RCV reinforcement info
+2018-06-14 15:29:46,499 , 160.39827407388148
+2018-06-14 15:29:48,754 RCV reinforcement info
+2018-06-14 15:29:48,759 , 160.5910869040911
+2018-06-14 15:29:49,762 RF found but not transmitted
+2018-06-14 15:29:50,818 RF found but not transmitted
+2018-06-14 15:29:50,819 RF found
+2018-06-14 15:29:50,821 SNT reinforcement_information
+2018-06-14 15:29:51,775 RCV reinforcement info
+2018-06-14 15:29:51,783 , 161.2904404098722
+2018-06-14 15:29:52,095 RCV reinforcement info
+2018-06-14 15:29:52,100 , 161.36394343296578
+2018-06-14 15:29:53,732 RF found but not transmitted
+2018-06-14 15:29:53,736 RF found
+2018-06-14 15:29:53,738 SNT reinforcement_information
+2018-06-14 15:29:54,026 RF found but not transmitted
+2018-06-14 15:29:54,610 RF found but not transmitted
+2018-06-14 15:29:55,794 RF found but not transmitted
+2018-06-14 15:29:55,797 RF found
+2018-06-14 15:29:55,802 SNT reinforcement_information
+2018-06-14 15:29:56,177 RF found but not transmitted
+2018-06-14 15:29:57,245 RF found but not transmitted
+2018-06-14 15:29:57,246 RF found
+2018-06-14 15:29:57,247 SNT reinforcement_information
+2018-06-14 15:29:57,766 RCV reinforcement info
+2018-06-14 15:29:57,773 , 162.08075213946097
+2018-06-14 15:29:57,874 RCV reinforcement info
+2018-06-14 15:29:57,880 , 162.50971772564102
+2018-06-14 15:29:58,271 RF found but not transmitted
+2018-06-14 15:29:58,273 RF found
+2018-06-14 15:29:58,276 SNT reinforcement_information
+2018-06-14 15:29:58,559 RF found but not transmitted
+2018-06-14 15:29:58,785 RF found but not transmitted
+2018-06-14 15:29:59,589 RF found but not transmitted
+2018-06-14 15:29:59,938 RF found but not transmitted
+2018-06-14 15:30:00,091 RF found but not transmitted
+2018-06-14 15:30:00,514 RCV reinforcement info
+2018-06-14 15:30:00,524 , 162.98571340629888
+2018-06-14 15:30:01,739 RF found but not transmitted
+2018-06-14 15:30:02,687 RF found but not transmitted
+2018-06-14 15:30:03,883 RF found but not transmitted
+2018-06-14 15:30:04,583 RF found but not transmitted
+2018-06-14 15:30:06,580 RF found but not transmitted
+2018-06-14 15:30:06,582 RF found
+2018-06-14 15:30:06,584 SNT reinforcement_information
+2018-06-14 15:30:06,889 RF found but not transmitted
+2018-06-14 15:30:07,268 RF found but not transmitted
+2018-06-14 15:30:08,716 RF found but not transmitted
+2018-06-14 15:30:09,133 RF found but not transmitted
+2018-06-14 15:30:10,405 RCV reinforcement info
+2018-06-14 15:30:10,410 , 163.1528224529879
+2018-06-14 15:30:11,511 RCV reinforcement info
+2018-06-14 15:30:11,516 , 163.28875464152023
+2018-06-14 15:30:11,630 RF found but not transmitted
+2018-06-14 15:30:12,455 RF found but not transmitted
+2018-06-14 15:30:13,056 RF found but not transmitted
+2018-06-14 15:30:13,365 RCV reinforcement info
+2018-06-14 15:30:13,371 , 163.3536179699169
+2018-06-14 15:30:13,568 RF found but not transmitted
+2018-06-14 15:30:14,054 RF found but not transmitted
+2018-06-14 15:30:14,479 RF found but not transmitted
+2018-06-14 15:30:14,828 RF found but not transmitted
+2018-06-14 15:30:15,084 RF found but not transmitted
+2018-06-14 15:30:16,315 RCV reinforcement info
+2018-06-14 15:30:16,316 RF found but not transmitted
+2018-06-14 15:30:16,319 , 163.4812444049816
+2018-06-14 15:30:16,709 RF found but not transmitted
+2018-06-14 15:30:18,381 RF found but not transmitted
+2018-06-14 15:30:18,384 hash found
+2018-06-14 15:30:18,389 appended honest propose 6f1536a343 on top of 30f2ea3266
+2018-06-14 15:30:18,389 REINFORCEMENT COLLECTING state
+2018-06-14 15:30:18,453 SNT proposal
+2018-06-14 15:30:18,690 RCV reinforcement
+2018-06-14 15:30:18,714 RCV reinforcement
+2018-06-14 15:30:18,808 RF found but not transmitted
+2018-06-14 15:30:18,879 RF found but not transmitted
+2018-06-14 15:30:18,896 RF found but not transmitted
+2018-06-14 15:30:19,082 RF found but not transmitted
+2018-06-14 15:30:19,120 SNT reinforcement_information
+2018-06-14 15:30:19,297 SNT reinforcement
+2018-06-14 15:30:19,526 RCV reinforcement info
+2018-06-14 15:30:19,536 , 163.6808188523413
+2018-06-14 15:30:19,603 RCV reinforcement
+2018-06-14 15:30:19,732 RF found but not transmitted
+2018-06-14 15:30:19,961 commit with 3 reinforcements
+2018-06-14 15:30:20,057 appended honest commit df53d18ee0 on top of 6f1536a343
+2018-06-14 15:30:20,128 Weight: 164.61591657938231 #RFs 43
+2018-06-14 15:30:20,129 weight: 164.61591657938231
+2018-06-14 15:30:20,129 , 164.61591657938231
+2018-06-14 15:30:20,131 MINING state
+2018-06-14 15:30:20,131 start mining - depth 15
+2018-06-14 15:30:20,131 start mining - hash df53d18ee0ea7e1f76a810780b20cc50a842608777fc5b1de38a5d76b308e25d
+2018-06-14 15:30:20,132 Hashing frequency: 24949
+2018-06-14 15:30:20,133 SNT commit
+2018-06-14 15:30:20,180 RF found but not transmitted
+2018-06-14 15:30:20,722 RF found but not transmitted
+2018-06-14 15:30:21,026 RCV proposal
+2018-06-14 15:30:21,031 appended malicious propose 96a3bc1191 on top of 30f2ea3266
+2018-06-14 15:30:21,108 RF found but not transmitted
+2018-06-14 15:30:21,248 RCV reinforcement
+2018-06-14 15:30:21,269 RCV reinforcement
+2018-06-14 15:30:21,280 RCV reinforcement
+2018-06-14 15:30:21,299 RCV reinforcement
+2018-06-14 15:30:21,326 RCV reinforcement
+2018-06-14 15:30:21,351 RCV reinforcement
+2018-06-14 15:30:22,241 RF found but not transmitted
+2018-06-14 15:30:22,426 RCV reinforcement
+2018-06-14 15:30:22,717 RF found but not transmitted
+2018-06-14 15:30:22,857 RCV reinforcement
+2018-06-14 15:30:22,969 RCV commit
+2018-06-14 15:30:23,682 appended malicious commit 4bda83429a on top of 96a3bc1191
+2018-06-14 15:30:23,876 RF found but not transmitted
+2018-06-14 15:30:24,427 Weight: 176.05062291146155 #RFs 103
+2018-06-14 15:30:24,427 weight: 176.05062291146155
+2018-06-14 15:30:24,428 , 176.05062291146155
+2018-06-14 15:30:24,428 Switching branch - my current block was: 164.61591657938231
+2018-06-14 15:30:24,428 start mining - depth 15
+2018-06-14 15:30:24,429 start mining - hash 4bda83429aba7ee353cd5b77c94b3119b0e3fd89f8f06f5f3710bd3fd8e24c8e
+2018-06-14 15:30:24,429 WIN: MALICIOUS WIN on block 15
+2018-06-14 15:30:25,930 RF found but not transmitted
+2018-06-14 15:30:26,206 RCV reinforcement info
+2018-06-14 15:30:26,211 , 176.1569659841005
+2018-06-14 15:30:26,614 RF found but not transmitted
+2018-06-14 15:30:27,446 RF found but not transmitted
+2018-06-14 15:30:27,978 RF found but not transmitted
+2018-06-14 15:30:27,979 RF found
+2018-06-14 15:30:27,981 SNT reinforcement_information
+2018-06-14 15:30:27,987 RF found but not transmitted
+2018-06-14 15:30:28,094 RF found but not transmitted
+2018-06-14 15:30:28,600 RF found but not transmitted
+2018-06-14 15:30:28,854 RF found but not transmitted
+2018-06-14 15:30:29,264 RF found but not transmitted
+2018-06-14 15:30:30,736 RCV reinforcement info
+2018-06-14 15:30:30,743 , 176.5146240861377
+2018-06-14 15:30:31,442 RF found but not transmitted
+2018-06-14 15:30:32,501 RCV reinforcement info
+2018-06-14 15:30:32,506 , 176.5963533613711
+2018-06-14 15:30:32,858 RF found but not transmitted
+2018-06-14 15:30:33,789 RF found but not transmitted
+2018-06-14 15:30:34,364 RCV reinforcement info
+2018-06-14 15:30:34,369 , 176.6725039457468
+2018-06-14 15:30:36,238 RF found but not transmitted
+2018-06-14 15:30:36,301 RF found but not transmitted
+2018-06-14 15:30:36,395 RF found but not transmitted
+2018-06-14 15:30:36,484 RF found but not transmitted
+2018-06-14 15:30:37,186 RF found but not transmitted
+2018-06-14 15:30:38,215 RF found but not transmitted
+2018-06-14 15:30:38,633 RF found but not transmitted
+2018-06-14 15:30:39,327 RF found but not transmitted
+2018-06-14 15:30:44,427 RF found but not transmitted
+2018-06-14 15:30:44,441 RF found but not transmitted
+2018-06-14 15:30:45,021 RF found but not transmitted
+2018-06-14 15:30:45,300 RF found but not transmitted
+2018-06-14 15:30:45,716 RF found but not transmitted
+2018-06-14 15:30:45,763 RCV reinforcement info
+2018-06-14 15:30:45,769 , 176.76734507194058
+2018-06-14 15:30:46,478 RF found but not transmitted
+2018-06-14 15:30:48,526 RF found but not transmitted
+2018-06-14 15:30:48,594 RF found but not transmitted
+2018-06-14 15:30:48,702 RF found but not transmitted
+2018-06-14 15:30:48,704 RF found
+2018-06-14 15:30:48,708 SNT reinforcement_information
+2018-06-14 15:30:48,766 RF found but not transmitted
+2018-06-14 15:30:48,819 RF found but not transmitted
+2018-06-14 15:30:49,237 RF found but not transmitted
+2018-06-14 15:30:49,506 RF found but not transmitted
+2018-06-14 15:30:50,165 RF found but not transmitted
+2018-06-14 15:30:50,168 RF found
+2018-06-14 15:30:50,173 SNT reinforcement_information
+2018-06-14 15:30:50,225 RF found but not transmitted
+2018-06-14 15:30:50,731 RCV reinforcement info
+2018-06-14 15:30:50,736 , 177.57041564075732
+2018-06-14 15:30:51,378 RF found but not transmitted
+2018-06-14 15:30:51,380 hash found
+2018-06-14 15:30:51,390 appended honest propose 190f3ac671 on top of 4bda83429a
+2018-06-14 15:30:51,390 REINFORCEMENT COLLECTING state
+2018-06-14 15:30:51,454 SNT proposal
+2018-06-14 15:30:51,628 RCV reinforcement
+2018-06-14 15:30:51,645 RCV reinforcement
+2018-06-14 15:30:52,040 RF found but not transmitted
+2018-06-14 15:30:52,273 RF found but not transmitted
+2018-06-14 15:30:52,274 RF found but not transmitted
+2018-06-14 15:30:52,962 commit with 3 reinforcements
+2018-06-14 15:30:52,977 appended honest commit 2f3284b786 on top of 190f3ac671
+2018-06-14 15:30:52,992 Weight: 178.57041564075732 #RFs 9
+2018-06-14 15:30:52,992 weight: 178.57041564075732
+2018-06-14 15:30:52,992 , 178.57041564075732
+2018-06-14 15:30:52,992 MINING state
+2018-06-14 15:30:52,992 start mining - depth 16
+2018-06-14 15:30:52,992 start mining - hash 2f3284b78603c2d948f9a13ff4c439d26b07c2b4bb9c6e71687e7485cd91b76f
+2018-06-14 15:30:52,993 SNT commit
+2018-06-14 15:30:53,052 RF found but not transmitted
+2018-06-14 15:30:53,309 RCV proposal
+2018-06-14 15:30:53,314 appended malicious propose 2cfb382769 on top of 4bda83429a
+2018-06-14 15:30:53,429 RCV reinforcement
+2018-06-14 15:30:53,436 RCV reinforcement
+2018-06-14 15:30:53,484 RCV reinforcement
+2018-06-14 15:30:53,590 RCV reinforcement
+2018-06-14 15:30:53,600 RCV reinforcement
+2018-06-14 15:30:53,607 RCV reinforcement
+2018-06-14 15:30:53,698 RF found but not transmitted
+2018-06-14 15:30:53,699 RF found
+2018-06-14 15:30:53,701 SNT reinforcement_information
+2018-06-14 15:30:53,793 RCV reinforcement
+2018-06-14 15:30:54,105 RF found but not transmitted
+2018-06-14 15:30:54,123 RF found but not transmitted
+2018-06-14 15:30:54,178 RCV reinforcement
+2018-06-14 15:30:54,982 RCV commit
+2018-06-14 15:30:55,322 appended malicious commit 243dc3a586 on top of 2cfb382769
+2018-06-14 15:30:55,361 RF found but not transmitted
+2018-06-14 15:30:55,651 Weight: 190.56253622722951 #RFs 48
+2018-06-14 15:30:55,651 weight: 190.56253622722951
+2018-06-14 15:30:55,651 , 190.56253622722951
+2018-06-14 15:30:55,651 Switching branch - my current block was: 178.6995724449424
+2018-06-14 15:30:55,652 start mining - depth 16
+2018-06-14 15:30:55,652 start mining - hash 243dc3a586ec0c63b1c36b45f89f2777728df2f94fcd920e1fc94f63a9f17752
+2018-06-14 15:30:55,653 WIN: MALICIOUS WIN on block 16
+2018-06-14 15:30:56,465 RF found but not transmitted
+2018-06-14 15:30:56,951 RF found but not transmitted
+2018-06-14 15:30:57,478 RF found but not transmitted
+2018-06-14 15:30:57,897 RF found but not transmitted
+2018-06-14 15:30:58,228 RF found but not transmitted
+2018-06-14 15:30:58,401 RF found but not transmitted
+2018-06-14 15:30:58,854 RF found but not transmitted
+2018-06-14 15:31:00,706 RCV reinforcement info
+2018-06-14 15:31:00,711 , 190.68747786325508
+2018-06-14 15:31:01,071 RF found but not transmitted
+2018-06-14 15:31:01,573 RCV reinforcement info
+2018-06-14 15:31:01,577 , 191.24983750748692
+2018-06-14 15:31:01,928 RF found but not transmitted
+2018-06-14 15:31:01,946 RF found but not transmitted
+2018-06-14 15:31:02,603 RCV reinforcement info
+2018-06-14 15:31:02,608 , 191.40275567488527
+2018-06-14 15:31:02,613 RF found but not transmitted
+2018-06-14 15:31:02,633 RF found but not transmitted
+2018-06-14 15:31:02,647 RF found but not transmitted
+2018-06-14 15:31:03,353 RF found but not transmitted
+2018-06-14 15:31:03,509 RF found but not transmitted
+2018-06-14 15:31:03,624 RF found but not transmitted
+2018-06-14 15:31:03,625 RF found
+2018-06-14 15:31:03,627 SNT reinforcement_information
+2018-06-14 15:31:05,265 RF found but not transmitted
+2018-06-14 15:31:05,404 RF found but not transmitted
+2018-06-14 15:31:05,438 RF found but not transmitted
+2018-06-14 15:31:05,630 RF found but not transmitted
+2018-06-14 15:31:05,667 RF found but not transmitted
+2018-06-14 15:31:05,686 RF found but not transmitted
+2018-06-14 15:31:05,865 RF found but not transmitted
+2018-06-14 15:31:05,968 RF found but not transmitted
+2018-06-14 15:31:06,104 RF found but not transmitted
+2018-06-14 15:31:06,345 RCV reinforcement info
+2018-06-14 15:31:06,352 , 191.65173955148035
+2018-06-14 15:31:06,953 RF found but not transmitted
+2018-06-14 15:31:06,954 RF found
+2018-06-14 15:31:06,956 SNT reinforcement_information
+2018-06-14 15:31:07,154 RF found but not transmitted
+2018-06-14 15:31:07,565 RF found but not transmitted
+2018-06-14 15:31:07,778 RF found but not transmitted
+2018-06-14 15:31:07,974 RF found but not transmitted
+2018-06-14 15:31:08,438 RF found but not transmitted
+2018-06-14 15:31:09,041 RCV reinforcement info
+2018-06-14 15:31:09,047 , 191.90468565160955
+2018-06-14 15:31:09,097 RF found but not transmitted
+2018-06-14 15:31:11,328 RF found but not transmitted
+2018-06-14 15:31:11,332 RCV proposal
+2018-06-14 15:31:11,336 appended honest propose 27c439349b on top of 243dc3a586
+2018-06-14 15:31:11,340 REINFORCEMENT SENT state
+2018-06-14 15:31:11,340 RFs > 0 
+2018-06-14 15:31:11,341 SNT reinforcement
+2018-06-14 15:31:11,453 RCV reinforcement info
+2018-06-14 15:31:11,471 , 192.17465739105006
+2018-06-14 15:31:11,476 RCV reinforcement
+2018-06-14 15:31:11,563 RCV reinforcement
+2018-06-14 15:31:12,885 RCV commit
+2018-06-14 15:31:12,983 appended honest commit 6babeb23bd on top of 27c439349b
+2018-06-14 15:31:12,991 RF found but not transmitted
+2018-06-14 15:31:13,017 Weight: 192.90468565160955 #RFs 7
+2018-06-14 15:31:13,017 weight: 192.90468565160955
+2018-06-14 15:31:13,018 , 192.90468565160955
+2018-06-14 15:31:13,018 MINING state
+2018-06-14 15:31:13,018 start mining - depth 17
+2018-06-14 15:31:13,019 start mining - hash 6babeb23bd14593b17f27e55791d69cdc9b0971834218c2d507b31d0729b24e4
+2018-06-14 15:31:13,176 RCV proposal
+2018-06-14 15:31:13,192 appended malicious propose 27c84991c2 on top of 243dc3a586
+2018-06-14 15:31:13,359 RCV reinforcement info
+2018-06-14 15:31:13,363 , 193.48965015539346
+2018-06-14 15:31:13,374 RCV reinforcement
+2018-06-14 15:31:13,391 RCV reinforcement
+2018-06-14 15:31:13,408 RCV reinforcement
+2018-06-14 15:31:13,419 RCV reinforcement
+2018-06-14 15:31:13,425 RCV reinforcement
+2018-06-14 15:31:13,438 RCV reinforcement
+2018-06-14 15:31:13,541 RF found but not transmitted
+2018-06-14 15:31:13,577 RF found but not transmitted
+2018-06-14 15:31:13,692 RF found but not transmitted
+2018-06-14 15:31:14,031 RF found but not transmitted
+2018-06-14 15:31:14,205 RCV reinforcement info
+2018-06-14 15:31:14,207 , 193.6259143310618
+2018-06-14 15:31:14,453 RF found but not transmitted
+2018-06-14 15:31:14,784 RCV commit
+2018-06-14 15:31:14,882 RF found but not transmitted
+2018-06-14 15:31:14,943 appended malicious commit 2fdbe63056 on top of 27c84991c2
+2018-06-14 15:31:15,111 Weight: 197.38063179836357 #RFs 24
+2018-06-14 15:31:15,111 weight: 197.38063179836357
+2018-06-14 15:31:15,112 , 197.38063179836357
+2018-06-14 15:31:15,112 Switching branch - my current block was: 193.6259143310618
+2018-06-14 15:31:15,112 start mining - depth 17
+2018-06-14 15:31:15,113 start mining - hash 2fdbe63056fd7e91ba4d6e08d5b467f0b367578e05f2aecd123e3baf11671172
+2018-06-14 15:31:15,122 WIN: MALICIOUS WIN on block 17
+2018-06-14 15:31:15,288 RF found but not transmitted
+2018-06-14 15:31:15,421 RCV reinforcement info
+2018-06-14 15:31:15,424 , 197.49115844213622
+2018-06-14 15:31:16,500 RF found but not transmitted
+2018-06-14 15:31:16,576 RCV reinforcement info
+2018-06-14 15:31:16,583 , 197.91037280017878
+2018-06-14 15:31:16,719 RF found but not transmitted
+2018-06-14 15:31:16,722 RF found but not transmitted
+2018-06-14 15:31:17,311 RCV reinforcement info
+2018-06-14 15:31:17,316 , 198.00942511108934
+2018-06-14 15:31:17,318 RF found but not transmitted
+2018-06-14 15:31:17,319 RF found
+2018-06-14 15:31:17,321 SNT reinforcement_information
+2018-06-14 15:31:18,665 RF found but not transmitted
+2018-06-14 15:31:19,487 RF found but not transmitted
+2018-06-14 15:31:19,804 RCV reinforcement info
+2018-06-14 15:31:19,809 , 198.14110564587207
+2018-06-14 15:31:20,518 RF found but not transmitted
+2018-06-14 15:31:21,204 RCV reinforcement info
+2018-06-14 15:31:21,209 , 198.5750916022926
+2018-06-14 15:31:21,502 RF found but not transmitted
+2018-06-14 15:31:22,344 RCV reinforcement info
+2018-06-14 15:31:22,349 , 198.7201145774399
+2018-06-14 15:31:22,469 RF found but not transmitted
+2018-06-14 15:31:22,509 RF found but not transmitted
+2018-06-14 15:31:23,225 RCV reinforcement info
+2018-06-14 15:31:23,230 , 198.91935549811376
+2018-06-14 15:31:23,767 RCV reinforcement info
+2018-06-14 15:31:23,776 , 198.9929107867783
+2018-06-14 15:31:23,911 RCV reinforcement info
+2018-06-14 15:31:23,916 , 199.13596109044508
+2018-06-14 15:31:23,920 RF found but not transmitted
+2018-06-14 15:31:23,921 RF found but not transmitted
+2018-06-14 15:31:24,626 RF found but not transmitted
+2018-06-14 15:31:26,977 RF found but not transmitted
+2018-06-14 15:31:27,706 RF found but not transmitted
+2018-06-14 15:31:27,954 RCV reinforcement info
+2018-06-14 15:31:27,959 , 199.20387692838347
+2018-06-14 15:31:29,771 RF found but not transmitted
+2018-06-14 15:31:30,458 RCV reinforcement info
+2018-06-14 15:31:30,468 , 199.32280520061147
+2018-06-14 15:31:30,512 RF found but not transmitted
+2018-06-14 15:31:30,965 RF found but not transmitted
+2018-06-14 15:31:31,041 RF found but not transmitted
+2018-06-14 15:31:31,391 RCV reinforcement info
+2018-06-14 15:31:31,396 , 199.38889991789432
+2018-06-14 15:31:31,614 RCV reinforcement info
+2018-06-14 15:31:31,618 , 199.51691000579237
+2018-06-14 15:31:31,669 RF found but not transmitted
+2018-06-14 15:31:31,779 RF found but not transmitted
+2018-06-14 15:31:31,780 RF found
+2018-06-14 15:31:31,782 SNT reinforcement_information
+2018-06-14 15:31:32,207 RF found but not transmitted
+2018-06-14 15:31:32,415 RF found but not transmitted
+2018-06-14 15:31:32,417 RF found but not transmitted
+2018-06-14 15:31:32,420 RF found
+2018-06-14 15:31:32,421 SNT reinforcement_information
+2018-06-14 15:31:34,103 RF found but not transmitted
+2018-06-14 15:31:34,104 RF found
+2018-06-14 15:31:34,107 SNT reinforcement_information
+2018-06-14 15:31:34,336 RF found but not transmitted
+2018-06-14 15:31:34,840 RF found but not transmitted
+2018-06-14 15:31:35,389 RF found but not transmitted
+2018-06-14 15:31:36,391 RF found but not transmitted
+2018-06-14 15:31:37,102 RF found but not transmitted
+2018-06-14 15:31:37,709 RCV reinforcement info
+2018-06-14 15:31:37,716 , 200.06564981780747
+2018-06-14 15:31:38,540 RF found but not transmitted
+2018-06-14 15:31:39,279 RCV reinforcement info
+2018-06-14 15:31:39,286 , 200.8148151204382
+2018-06-14 15:31:40,421 RF found but not transmitted
+2018-06-14 15:31:41,459 RF found but not transmitted
+2018-06-14 15:31:41,480 RF found but not transmitted
+2018-06-14 15:31:42,062 RF found but not transmitted
+2018-06-14 15:31:42,473 RCV reinforcement info
+2018-06-14 15:31:42,478 , 200.89695473028414
+2018-06-14 15:31:42,582 RF found but not transmitted
+2018-06-14 15:31:42,679 RF found but not transmitted
+2018-06-14 15:31:47,233 RF found but not transmitted
+2018-06-14 15:31:47,924 RF found but not transmitted
+2018-06-14 15:31:48,344 RF found but not transmitted
+2018-06-14 15:31:48,827 RF found but not transmitted
+2018-06-14 15:31:48,831 RF found
+2018-06-14 15:31:48,834 SNT reinforcement_information
+2018-06-14 15:31:50,411 RF found but not transmitted
+2018-06-14 15:31:51,043 RF found but not transmitted
+2018-06-14 15:31:51,058 RCV reinforcement info
+2018-06-14 15:31:51,063 , 201.1157402455491
+2018-06-14 15:31:51,198 RF found but not transmitted
+2018-06-14 15:31:51,399 RCV reinforcement info
+2018-06-14 15:31:51,404 , 201.255245214114
+2018-06-14 15:31:51,803 RF found but not transmitted
+2018-06-14 15:31:52,407 RF found but not transmitted
+2018-06-14 15:31:54,580 RF found but not transmitted
+2018-06-14 15:31:55,890 RF found but not transmitted
+2018-06-14 15:31:56,562 RF found but not transmitted
+2018-06-14 15:31:57,418 RF found but not transmitted
+2018-06-14 15:31:58,989 RF found but not transmitted
+2018-06-14 15:31:59,134 RF found but not transmitted
+2018-06-14 15:31:59,990 RF found but not transmitted
+2018-06-14 15:32:00,348 RF found but not transmitted
+2018-06-14 15:32:01,075 RCV reinforcement info
+2018-06-14 15:32:01,080 , 201.31796280053555
+2018-06-14 15:32:01,412 RF found but not transmitted
+2018-06-14 15:32:01,565 RF found but not transmitted
+2018-06-14 15:32:03,427 RF found but not transmitted
+2018-06-14 15:32:04,323 RCV reinforcement info
+2018-06-14 15:32:04,329 , 201.3840666361668
+2018-06-14 15:32:04,447 RF found but not transmitted
+2018-06-14 15:32:04,514 RF found but not transmitted
+2018-06-14 15:32:04,515 RF found
+2018-06-14 15:32:04,516 SNT reinforcement_information
+2018-06-14 15:32:05,117 RF found but not transmitted
+2018-06-14 15:32:05,457 RF found but not transmitted
+2018-06-14 15:32:05,553 RF found but not transmitted
+2018-06-14 15:32:05,635 RF found but not transmitted
+2018-06-14 15:32:06,314 RF found but not transmitted
+2018-06-14 15:32:06,525 RF found but not transmitted
+2018-06-14 15:32:06,607 RF found but not transmitted
+2018-06-14 15:32:06,736 RCV reinforcement info
+2018-06-14 15:32:06,743 , 201.94827736025064
+2018-06-14 15:32:07,210 RF found but not transmitted
+2018-06-14 15:32:07,211 RF found
+2018-06-14 15:32:07,214 SNT reinforcement_information
+2018-06-14 15:32:10,416 RCV reinforcement info
+2018-06-14 15:32:10,421 , 202.14609487183122
+2018-06-14 15:32:11,581 RF found but not transmitted
+2018-06-14 15:32:11,636 RCV reinforcement info
+2018-06-14 15:32:11,641 , 202.32477068677287
+2018-06-14 15:32:11,942 RCV reinforcement info
+2018-06-14 15:32:11,948 , 202.43916831814855
+2018-06-14 15:32:12,153 RF found but not transmitted
+2018-06-14 15:32:13,252 RF found but not transmitted
+2018-06-14 15:32:16,040 RCV reinforcement info
+2018-06-14 15:32:16,046 , 202.6394084525935
+2018-06-14 15:32:16,705 RF found but not transmitted
+2018-06-14 15:32:16,839 RF found but not transmitted
+2018-06-14 15:32:17,341 RCV proposal
+2018-06-14 15:32:17,345 appended honest propose 20dbd8537b on top of 2fdbe63056
+2018-06-14 15:32:17,346 REINFORCEMENT SENT state
+2018-06-14 15:32:17,358 RFs > 0 
+2018-06-14 15:32:17,360 SNT reinforcement
+2018-06-14 15:32:17,461 RCV reinforcement
+2018-06-14 15:32:17,662 RCV reinforcement info
+2018-06-14 15:32:17,669 , 202.77465696017845
+2018-06-14 15:32:17,787 RCV reinforcement
+2018-06-14 15:32:19,044 RCV commit
+2018-06-14 15:32:19,327 appended honest commit 163d9995b4 on top of 20dbd8537b
+2018-06-14 15:32:19,760 Weight: 203.77465696017845 #RFs 33
+2018-06-14 15:32:19,760 weight: 203.77465696017845
+2018-06-14 15:32:19,761 , 203.77465696017845
+2018-06-14 15:32:19,762 MINING state
+2018-06-14 15:32:19,762 start mining - depth 18
+2018-06-14 15:32:19,762 start mining - hash 163d9995b4d764e7274d10c7a1f13e92af9fa22e5e577dc3305a2b4ca8dcf124
+2018-06-14 15:32:19,763 Hashing frequency: 42057
+2018-06-14 15:32:19,767 RCV reinforcement info
+2018-06-14 15:32:19,771 , 203.89038783606446
+2018-06-14 15:32:19,931 RCV proposal
+2018-06-14 15:32:19,949 appended malicious propose 5e4afc8cfa on top of 2fdbe63056
+2018-06-14 15:32:20,123 RCV reinforcement
+2018-06-14 15:32:20,142 RCV reinforcement
+2018-06-14 15:32:20,169 RCV reinforcement
+2018-06-14 15:32:20,183 RCV reinforcement
+2018-06-14 15:32:20,212 RCV reinforcement
+2018-06-14 15:32:20,238 RCV reinforcement
+2018-06-14 15:32:20,341 RF found but not transmitted
+2018-06-14 15:32:20,684 RF found but not transmitted
+2018-06-14 15:32:21,051 RCV reinforcement
+2018-06-14 15:32:21,172 RF found but not transmitted
+2018-06-14 15:32:21,242 RF found but not transmitted
+2018-06-14 15:32:21,696 RF found but not transmitted
+2018-06-14 15:32:21,847 RCV commit
+2018-06-14 15:32:22,136 RF found but not transmitted
+2018-06-14 15:32:22,751 appended malicious commit c60bfe546b on top of 5e4afc8cfa
+2018-06-14 15:32:23,597 Weight: 216.9447881650727 #RFs 96
+2018-06-14 15:32:23,597 weight: 216.9447881650727
+2018-06-14 15:32:23,598 , 216.9447881650727
+2018-06-14 15:32:23,598 Switching branch - my current block was: 203.89038783606446
+2018-06-14 15:32:23,598 start mining - depth 18
+2018-06-14 15:32:23,599 start mining - hash c60bfe546b2e66546e0d5d982ba1f00c7736759559dba15cefe5ba5be82afd8c
+2018-06-14 15:32:23,600 WIN: MALICIOUS WIN on block 18
+2018-06-14 15:32:23,854 RF found but not transmitted
+2018-06-14 15:32:24,564 RF found but not transmitted
+2018-06-14 15:32:25,292 RF found but not transmitted
+2018-06-14 15:32:25,293 RF found
+2018-06-14 15:32:25,296 SNT reinforcement_information
+2018-06-14 15:32:25,976 RF found but not transmitted
+2018-06-14 15:32:26,167 RF found but not transmitted
+2018-06-14 15:32:26,169 RF found
+2018-06-14 15:32:26,171 SNT reinforcement_information
+2018-06-14 15:32:26,919 RF found but not transmitted
+2018-06-14 15:32:27,947 RF found but not transmitted
+2018-06-14 15:32:28,427 RCV reinforcement info
+2018-06-14 15:32:28,431 , 218.4064565516371
+2018-06-14 15:32:28,666 RF found but not transmitted
+2018-06-14 15:32:28,668 RF found
+2018-06-14 15:32:28,670 SNT reinforcement_information
+2018-06-14 15:32:29,003 RCV reinforcement info
+2018-06-14 15:32:29,010 , 218.66850468222466
+2018-06-14 15:32:30,318 RF found but not transmitted
+2018-06-14 15:32:30,576 RCV reinforcement info
+2018-06-14 15:32:30,581 , 218.8188208783621
+2018-06-14 15:32:31,399 RCV reinforcement info
+2018-06-14 15:32:31,405 , 218.8869285281042
+2018-06-14 15:32:32,094 RF found but not transmitted
+2018-06-14 15:32:32,095 RF found
+2018-06-14 15:32:32,100 SNT reinforcement_information
+2018-06-14 15:32:32,871 RF found but not transmitted
+2018-06-14 15:32:32,889 RCV reinforcement info
+2018-06-14 15:32:32,895 , 219.4060004398143
+2018-06-14 15:32:32,999 RF found but not transmitted
+2018-06-14 15:32:33,770 RF found but not transmitted
+2018-06-14 15:32:34,178 RF found but not transmitted
+2018-06-14 15:32:34,588 RF found but not transmitted
+2018-06-14 15:32:34,831 RF found but not transmitted
+2018-06-14 15:32:35,157 RF found but not transmitted
+2018-06-14 15:32:35,458 RF found but not transmitted
+2018-06-14 15:32:35,459 RF found
+2018-06-14 15:32:35,460 SNT reinforcement_information
+2018-06-14 15:32:35,558 RF found but not transmitted
+2018-06-14 15:32:36,388 RCV proposal
+2018-06-14 15:32:36,392 appended honest propose c93281a624 on top of c60bfe546b
+2018-06-14 15:32:36,393 REINFORCEMENT SENT state
+2018-06-14 15:32:36,393 RFs > 0 
+2018-06-14 15:32:36,394 SNT reinforcement
+2018-06-14 15:32:36,533 RCV reinforcement info
+2018-06-14 15:32:36,541 , 219.57182442422507
+2018-06-14 15:32:36,641 RCV reinforcement
+2018-06-14 15:32:36,643 RF found but not transmitted
+2018-06-14 15:32:37,561 RCV reinforcement info
+2018-06-14 15:32:37,570 , 219.6967963536696
+2018-06-14 15:32:37,652 RCV reinforcement
+2018-06-14 15:32:37,743 RCV reinforcement info
+2018-06-14 15:32:37,748 , 219.86061898097674
+2018-06-14 15:32:37,845 RCV reinforcement
+2018-06-14 15:32:37,969 RCV commit
+2018-06-14 15:32:38,058 RF found but not transmitted
+2018-06-14 15:32:38,073 appended honest commit dbbad089c8 on top of c93281a624
+2018-06-14 15:32:38,129 Weight: 220.4755788001068 #RFs 10
+2018-06-14 15:32:38,130 weight: 220.4755788001068
+2018-06-14 15:32:38,130 , 220.4755788001068
+2018-06-14 15:32:38,130 MINING state
+2018-06-14 15:32:38,130 start mining - depth 19
+2018-06-14 15:32:38,131 start mining - hash dbbad089c89928f40544c60949069ce6d9dabc55b847045be2cdd51d707124d2
+2018-06-14 15:32:38,365 RCV proposal
+2018-06-14 15:32:38,386 appended malicious propose a813bccfef on top of c60bfe546b
+2018-06-14 15:32:38,406 RF found but not transmitted
+2018-06-14 15:32:38,440 RF found but not transmitted
+2018-06-14 15:32:38,462 RCV reinforcement
+2018-06-14 15:32:38,637 RCV reinforcement
+2018-06-14 15:32:38,646 RCV reinforcement
+2018-06-14 15:32:38,674 RCV reinforcement
+2018-06-14 15:32:38,685 RCV reinforcement
+2018-06-14 15:32:38,689 RCV reinforcement
+2018-06-14 15:32:38,759 RCV reinforcement
+2018-06-14 15:32:38,866 RF found but not transmitted
+2018-06-14 15:32:39,150 RF found but not transmitted
+2018-06-14 15:32:39,182 RCV reinforcement
+2018-06-14 15:32:39,289 RF found but not transmitted
+2018-06-14 15:32:39,291 RF found
+2018-06-14 15:32:39,292 SNT reinforcement_information
+2018-06-14 15:32:39,648 RCV reinforcement
+2018-06-14 15:32:39,860 RCV commit
+2018-06-14 15:32:40,033 appended malicious commit a7b6330651 on top of a813bccfef
+2018-06-14 15:32:40,218 Weight: 223.98988654301837 #RFs 21
+2018-06-14 15:32:40,219 weight: 223.98988654301837
+2018-06-14 15:32:40,219 , 223.98988654301837
+2018-06-14 15:32:40,223 Switching branch - my current block was: 220.60047011667592
+2018-06-14 15:32:40,223 start mining - depth 19
+2018-06-14 15:32:40,223 start mining - hash a7b6330651a3e1985e144df03c00858ab09d32a560012ef93368af2516090dee
+2018-06-14 15:32:40,224 WIN: MALICIOUS WIN on block 19
+2018-06-14 15:32:40,465 RF found but not transmitted
+2018-06-14 15:32:40,466 RF found
+2018-06-14 15:32:40,468 SNT reinforcement_information
+2018-06-14 15:32:41,113 RF found but not transmitted
+2018-06-14 15:32:41,274 RF found but not transmitted
+2018-06-14 15:32:41,573 RCV reinforcement info
+2018-06-14 15:32:41,582 , 224.17897571755128
+2018-06-14 15:32:42,426 RF found but not transmitted
+2018-06-14 15:32:42,790 RF found but not transmitted
+2018-06-14 15:32:44,230 RCV reinforcement info
+2018-06-14 15:32:44,242 , 224.99079452928888
+2018-06-14 15:32:44,776 RF found but not transmitted
+2018-06-14 15:32:45,352 RF found but not transmitted
+2018-06-14 15:32:46,522 RF found but not transmitted
+2018-06-14 15:32:46,639 RF found but not transmitted
+2018-06-14 15:32:47,093 RF found but not transmitted
+2018-06-14 15:32:47,618 RF found but not transmitted
+2018-06-14 15:32:47,759 RCV reinforcement info
+2018-06-14 15:32:47,764 , 225.15828459578165
+2018-06-14 15:32:48,236 RF found but not transmitted
+2018-06-14 15:32:49,383 RCV reinforcement info
+2018-06-14 15:32:49,387 , 225.22770198131616
+2018-06-14 15:32:50,098 RF found but not transmitted
+2018-06-14 15:32:51,723 RCV reinforcement info
+2018-06-14 15:32:51,728 , 225.3359818766035
+2018-06-14 15:32:51,889 RCV reinforcement info
+2018-06-14 15:32:51,895 , 225.4938724438831
+2018-06-14 15:32:52,015 RF found but not transmitted
+2018-06-14 15:32:52,503 RF found but not transmitted
+2018-06-14 15:32:52,587 RF found but not transmitted
+2018-06-14 15:32:52,589 RF found
+2018-06-14 15:32:52,593 SNT reinforcement_information
+2018-06-14 15:32:52,954 RF found but not transmitted
+2018-06-14 15:32:53,159 RF found but not transmitted
+2018-06-14 15:32:53,256 RF found but not transmitted
+2018-06-14 15:32:53,367 RF found but not transmitted
+2018-06-14 15:32:53,871 RF found but not transmitted
+2018-06-14 15:32:54,091 RF found but not transmitted
+2018-06-14 15:32:54,258 RF found but not transmitted
+2018-06-14 15:32:54,468 RF found but not transmitted
+2018-06-14 15:32:55,966 RF found but not transmitted
+2018-06-14 15:32:55,968 RF found
+2018-06-14 15:32:55,971 SNT reinforcement_information
+2018-06-14 15:32:56,214 RF found but not transmitted
+2018-06-14 15:32:57,027 RF found but not transmitted
+2018-06-14 15:32:57,044 RF found but not transmitted
+2018-06-14 15:32:57,499 RF found but not transmitted
+2018-06-14 15:32:57,983 RCV reinforcement info
+2018-06-14 15:32:57,991 , 226.0113888570642
+2018-06-14 15:32:58,124 RF found but not transmitted
+2018-06-14 15:32:58,828 RF found but not transmitted
+2018-06-14 15:33:00,144 RF found but not transmitted
+2018-06-14 15:33:00,414 RCV reinforcement info
+2018-06-14 15:33:00,420 , 226.25308569911843
+2018-06-14 15:33:00,590 RCV reinforcement info
+2018-06-14 15:33:00,595 , 226.729236511167
+2018-06-14 15:33:01,863 RCV reinforcement info
+2018-06-14 15:33:01,869 , 226.83200023447037
+2018-06-14 15:33:03,188 RCV reinforcement info
+2018-06-14 15:33:03,190 , 226.90418664913295
+2018-06-14 15:33:04,089 RF found but not transmitted
+2018-06-14 15:33:04,646 RF found but not transmitted
+2018-06-14 15:33:05,846 RF found but not transmitted
+2018-06-14 15:33:05,864 RF found but not transmitted
+2018-06-14 15:33:05,998 RF found but not transmitted
+2018-06-14 15:33:06,817 RCV reinforcement info
+2018-06-14 15:33:06,823 , 226.9774475494079
+2018-06-14 15:33:06,862 RF found but not transmitted
+2018-06-14 15:33:06,962 RF found but not transmitted
+2018-06-14 15:33:07,795 RF found but not transmitted
+2018-06-14 15:33:08,305 RF found but not transmitted
+2018-06-14 15:33:08,949 RF found but not transmitted
+2018-06-14 15:33:09,337 RF found but not transmitted
+2018-06-14 15:33:09,409 RCV reinforcement info
+2018-06-14 15:33:09,415 , 227.2782704716002
+2018-06-14 15:33:09,625 RF found but not transmitted
+2018-06-14 15:33:10,223 RCV reinforcement info
+2018-06-14 15:33:10,229 , 227.38855688587557
+2018-06-14 15:33:11,897 RF found but not transmitted
+2018-06-14 15:33:12,149 RCV reinforcement info
+2018-06-14 15:33:12,154 , 227.50526251545682
+2018-06-14 15:33:12,704 RF found but not transmitted
+2018-06-14 15:33:12,916 RF found but not transmitted
+2018-06-14 15:33:13,017 RF found but not transmitted
+2018-06-14 15:33:13,081 RCV reinforcement info
+2018-06-14 15:33:13,086 , 227.90979093032672
+2018-06-14 15:33:13,644 RF found but not transmitted
+2018-06-14 15:33:13,663 RF found but not transmitted
+2018-06-14 15:33:13,664 RF found
+2018-06-14 15:33:13,667 SNT reinforcement_information
+2018-06-14 15:33:14,081 RF found but not transmitted
+2018-06-14 15:33:14,683 RCV reinforcement info
+2018-06-14 15:33:14,688 , 228.12943237436392
+2018-06-14 15:33:14,876 RCV reinforcement info
+2018-06-14 15:33:14,880 , 228.21275152218936
+2018-06-14 15:33:15,855 RCV reinforcement info
+2018-06-14 15:33:15,860 , 228.34084931640848
+2018-06-14 15:33:16,808 RF found but not transmitted
+2018-06-14 15:33:16,820 RF found but not transmitted
+2018-06-14 15:33:17,002 RF found but not transmitted
+2018-06-14 15:33:17,714 RF found but not transmitted
+2018-06-14 15:33:17,716 RF found
+2018-06-14 15:33:17,718 SNT reinforcement_information
+2018-06-14 15:33:17,753 RF found but not transmitted
+2018-06-14 15:33:18,380 RF found but not transmitted
+2018-06-14 15:33:19,011 RCV reinforcement info
+2018-06-14 15:33:19,017 , 229.53731178674818
+2018-06-14 15:33:19,236 RF found but not transmitted
+2018-06-14 15:33:19,508 RF found but not transmitted
+2018-06-14 15:33:19,659 RF found but not transmitted
+2018-06-14 15:33:21,042 RF found but not transmitted
+2018-06-14 15:33:21,412 RF found but not transmitted
+2018-06-14 15:33:23,588 RF found but not transmitted
+2018-06-14 15:33:23,591 RF found
+2018-06-14 15:33:23,595 SNT reinforcement_information
+2018-06-14 15:33:25,457 RF found but not transmitted
+2018-06-14 15:33:26,469 RF found but not transmitted
+2018-06-14 15:33:27,059 RF found but not transmitted
+2018-06-14 15:33:27,144 RF found but not transmitted
+2018-06-14 15:33:27,501 RCV reinforcement info
+2018-06-14 15:33:27,506 , 229.77267310729223
+2018-06-14 15:33:27,642 RF found but not transmitted
+2018-06-14 15:33:28,181 RF found but not transmitted
+2018-06-14 15:33:30,000 RF found but not transmitted
+2018-06-14 15:33:31,259 RF found but not transmitted
+2018-06-14 15:33:31,324 RCV reinforcement info
+2018-06-14 15:33:31,331 , 229.87195601313175
+2018-06-14 15:33:31,409 RF found but not transmitted
+2018-06-14 15:33:32,680 RF found but not transmitted
+2018-06-14 15:33:32,738 RF found but not transmitted
+2018-06-14 15:33:33,418 RCV reinforcement info
+2018-06-14 15:33:33,423 , 229.93466080984265
+2018-06-14 15:33:34,155 RCV reinforcement info
+2018-06-14 15:33:34,161 , 230.03455983380505
+2018-06-14 15:33:34,648 RF found but not transmitted
+2018-06-14 15:33:35,407 RF found but not transmitted
+2018-06-14 15:33:35,410 RF found
+2018-06-14 15:33:35,414 SNT reinforcement_information
+2018-06-14 15:33:36,089 RF found but not transmitted
+2018-06-14 15:33:36,094 RCV proposal
+2018-06-14 15:33:36,100 appended honest propose 7646865f41 on top of a7b6330651
+2018-06-14 15:33:36,100 REINFORCEMENT SENT state
+2018-06-14 15:33:36,100 RFs > 0 
+2018-06-14 15:33:36,105 SNT reinforcement
+2018-06-14 15:33:36,240 RCV reinforcement
+2018-06-14 15:33:36,259 RF found but not transmitted
+2018-06-14 15:33:36,372 RF found but not transmitted
+2018-06-14 15:33:36,570 RF found but not transmitted
+2018-06-14 15:33:37,707 RCV commit
+2018-06-14 15:33:37,968 appended honest commit 7ae285c173 on top of 7646865f41
+2018-06-14 15:33:38,258 Weight: 231.10521019390515 #RFs 31
+2018-06-14 15:33:38,258 weight: 231.10521019390515
+2018-06-14 15:33:38,259 , 231.10521019390515
+2018-06-14 15:33:38,264 MINING state
+2018-06-14 15:33:38,264 start mining - depth 20
+2018-06-14 15:33:38,264 start mining - hash 7ae285c173fa439472c32aad9eca48c8683db932da3a7a53e742e8e37783fc41
+2018-06-14 15:33:38,265 Hashing frequency: 28468
+2018-06-14 15:33:38,514 RCV proposal
+2018-06-14 15:33:38,520 appended malicious propose 6c71a5f70f on top of a7b6330651
+2018-06-14 15:33:38,525 RF found but not transmitted
+2018-06-14 15:33:38,737 RCV reinforcement
+2018-06-14 15:33:38,750 RCV reinforcement
+2018-06-14 15:33:38,754 RCV reinforcement
+2018-06-14 15:33:38,782 RCV reinforcement
+2018-06-14 15:33:38,785 RCV reinforcement
+2018-06-14 15:33:38,812 RCV reinforcement
+2018-06-14 15:33:38,925 RCV reinforcement
+2018-06-14 15:33:38,970 RCV reinforcement
+2018-06-14 15:33:39,064 RF found but not transmitted
+2018-06-14 15:33:39,066 RF found
+2018-06-14 15:33:39,069 SNT reinforcement_information
+2018-06-14 15:33:39,165 RCV reinforcement
+2018-06-14 15:33:39,317 RCV reinforcement info
+2018-06-14 15:33:39,323 , 231.25957310387528
+2018-06-14 15:33:40,088 RF found but not transmitted
+2018-06-14 15:33:40,272 RCV commit
+2018-06-14 15:33:40,828 appended malicious commit 10aeda41f3 on top of 6c71a5f70f
+2018-06-14 15:33:41,069 RF found but not transmitted
+2018-06-14 15:33:41,125 RF found but not transmitted
+2018-06-14 15:33:41,327 Weight: 241.27559991419636 #RFs 70
+2018-06-14 15:33:41,328 weight: 241.27559991419636
+2018-06-14 15:33:41,328 , 241.27559991419636
+2018-06-14 15:33:41,328 Switching branch - my current block was: 231.25957310387528
+2018-06-14 15:33:41,328 start mining - depth 20
+2018-06-14 15:33:41,329 start mining - hash 10aeda41f393e8a1297e25bb9e5928c03384330d93f6af2df1b0c38d5e0034f4
+2018-06-14 15:33:41,329 WIN: MALICIOUS WIN on block 20
+2018-06-14 15:33:41,715 RF found but not transmitted
+2018-06-14 15:33:41,720 RF found
+2018-06-14 15:33:41,721 SNT reinforcement_information
+2018-06-14 15:33:41,957 RCV reinforcement info
+2018-06-14 15:33:41,960 , 241.55649364795318
+2018-06-14 15:33:42,169 RF found but not transmitted
+2018-06-14 15:33:42,951 RCV reinforcement info
+2018-06-14 15:33:42,957 , 241.79818883508835
+2018-06-14 15:33:44,722 RF found but not transmitted
+2018-06-14 15:33:44,723 RF found
+2018-06-14 15:33:44,727 SNT reinforcement_information
+2018-06-14 15:33:45,329 RF found but not transmitted
+2018-06-14 15:33:46,040 RCV reinforcement info
+2018-06-14 15:33:46,046 , 242.15249988880367
+2018-06-14 15:33:46,159 RF found but not transmitted
+2018-06-14 15:33:46,269 RF found but not transmitted
+2018-06-14 15:33:46,999 RF found but not transmitted
+2018-06-14 15:33:47,796 RF found but not transmitted
+2018-06-14 15:33:47,797 RF found
+2018-06-14 15:33:47,799 SNT reinforcement_information
+2018-06-14 15:33:49,112 RF found but not transmitted
+2018-06-14 15:33:49,221 RF found but not transmitted
+2018-06-14 15:33:50,622 RF found but not transmitted
+2018-06-14 15:33:50,656 RF found but not transmitted
+2018-06-14 15:33:50,805 RF found but not transmitted
+2018-06-14 15:33:50,819 RF found but not transmitted
+2018-06-14 15:33:50,820 RF found
+2018-06-14 15:33:50,821 SNT reinforcement_information
+2018-06-14 15:33:51,221 RCV reinforcement info
+2018-06-14 15:33:51,227 , 242.5610175615302
+2018-06-14 15:33:51,473 RCV reinforcement info
+2018-06-14 15:33:51,481 , 242.62568475272587
+2018-06-14 15:33:52,949 RCV reinforcement info
+2018-06-14 15:33:52,955 , 242.78542455225244
+2018-06-14 15:33:53,694 RF found but not transmitted
+2018-06-14 15:33:54,010 RF found but not transmitted
+2018-06-14 15:33:54,241 RF found but not transmitted
+2018-06-14 15:33:54,807 RF found but not transmitted
+2018-06-14 15:33:55,483 RF found but not transmitted
+2018-06-14 15:33:56,228 RF found but not transmitted
+2018-06-14 15:33:56,385 RCV reinforcement info
+2018-06-14 15:33:56,390 , 242.8489280737637
+2018-06-14 15:33:57,037 RF found but not transmitted
+2018-06-14 15:33:57,114 RF found but not transmitted
+2018-06-14 15:33:57,116 RF found
+2018-06-14 15:33:57,118 SNT reinforcement_information
+2018-06-14 15:33:57,280 RF found but not transmitted
+2018-06-14 15:33:58,700 RF found but not transmitted
+2018-06-14 15:33:58,793 RCV reinforcement info
+2018-06-14 15:33:58,801 , 243.21171694345588
+2018-06-14 15:33:59,745 RF found but not transmitted
+2018-06-14 15:34:00,245 RF found but not transmitted
+2018-06-14 15:34:00,342 RF found but not transmitted
+2018-06-14 15:34:00,411 RF found but not transmitted
+2018-06-14 15:34:01,234 RF found but not transmitted
+2018-06-14 15:34:01,399 RCV reinforcement info
+2018-06-14 15:34:01,406 RF found but not transmitted
+2018-06-14 15:34:01,404 , 243.29075739429967
+2018-06-14 15:34:01,973 RF found but not transmitted
+2018-06-14 15:34:02,002 RF found but not transmitted
+2018-06-14 15:34:02,103 RF found but not transmitted
+2018-06-14 15:34:02,105 RF found
+2018-06-14 15:34:02,107 SNT reinforcement_information
+2018-06-14 15:34:04,442 RCV reinforcement info
+2018-06-14 15:34:04,447 , 243.79321174910507
+2018-06-14 15:34:05,334 RCV reinforcement info
+2018-06-14 15:34:05,342 , 244.01206026906024
+2018-06-14 15:34:05,778 RF found but not transmitted
+2018-06-14 15:34:05,783 RF found
+2018-06-14 15:34:05,786 SNT reinforcement_information
+2018-06-14 15:34:07,331 RF found but not transmitted
+2018-06-14 15:34:07,423 RF found but not transmitted
+2018-06-14 15:34:07,782 RF found but not transmitted
+2018-06-14 15:34:08,035 RF found but not transmitted
+2018-06-14 15:34:08,230 RF found but not transmitted
+2018-06-14 15:34:10,449 RF found but not transmitted
+2018-06-14 15:34:10,808 RF found but not transmitted
+2018-06-14 15:34:10,810 RF found
+2018-06-14 15:34:10,812 SNT reinforcement_information
+2018-06-14 15:34:10,991 RF found but not transmitted
+2018-06-14 15:34:11,068 RCV reinforcement info
+2018-06-14 15:34:11,071 , 244.34800336610763
+2018-06-14 15:34:12,445 RF found but not transmitted
+2018-06-14 15:34:14,406 RF found but not transmitted
+2018-06-14 15:34:14,660 RCV reinforcement info
+2018-06-14 15:34:14,667 , 244.51593336761033
+2018-06-14 15:34:14,910 RF found but not transmitted
+2018-06-14 15:34:15,316 RF found but not transmitted
+2018-06-14 15:34:15,501 RF found but not transmitted
+2018-06-14 15:34:15,868 RF found but not transmitted
+2018-06-14 15:34:16,032 RF found but not transmitted
+2018-06-14 15:34:16,049 RF found but not transmitted
+2018-06-14 15:34:16,878 RF found but not transmitted
+2018-06-14 15:34:16,884 RF found
+2018-06-14 15:34:16,885 SNT reinforcement_information
+2018-06-14 15:34:16,910 RF found but not transmitted
+2018-06-14 15:34:17,824 RF found but not transmitted
+2018-06-14 15:34:18,887 RF found but not transmitted
+2018-06-14 15:34:19,020 RF found but not transmitted
+2018-06-14 15:34:19,021 RF found
+2018-06-14 15:34:19,022 SNT reinforcement_information
+2018-06-14 15:34:20,886 RCV reinforcement info
+2018-06-14 15:34:20,892 , 244.82067743219474
+2018-06-14 15:34:22,138 RF found but not transmitted
+2018-06-14 15:34:22,955 RF found but not transmitted
+2018-06-14 15:34:23,053 RCV proposal
+2018-06-14 15:34:23,059 appended honest propose 685abf021f on top of 10aeda41f3
+2018-06-14 15:34:23,059 REINFORCEMENT SENT state
+2018-06-14 15:34:23,060 RFs > 0 
+2018-06-14 15:34:23,061 SNT reinforcement
+2018-06-14 15:34:23,192 RCV reinforcement
+2018-06-14 15:34:23,306 RCV reinforcement info
+2018-06-14 15:34:23,315 , 244.92934260693113
+2018-06-14 15:34:23,375 RCV reinforcement
+2018-06-14 15:34:24,194 RF found but not transmitted
+2018-06-14 15:34:24,201 SNT reinforcement_information
+2018-06-14 15:34:24,271 SNT reinforcement
+2018-06-14 15:34:24,337 RF found but not transmitted
+2018-06-14 15:34:24,445 RCV reinforcement info
+2018-06-14 15:34:24,454 , 245.56856605574492
+2018-06-14 15:34:24,522 RCV reinforcement
+2018-06-14 15:34:24,566 RF found but not transmitted
+2018-06-14 15:34:24,608 RF found but not transmitted
+2018-06-14 15:34:24,669 RCV commit
+2018-06-14 15:34:24,806 appended honest commit 91bcf924eb on top of 685abf021f
+2018-06-14 15:34:25,069 Weight: 246.02822941419785 #RFs 25
+2018-06-14 15:34:25,069 weight: 246.02822941419785
+2018-06-14 15:34:25,069 , 246.02822941419785
+2018-06-14 15:34:25,076 MINING state
+2018-06-14 15:34:25,076 start mining - depth 21
+2018-06-14 15:34:25,077 start mining - hash 91bcf924eb6f6d395cb37efbc657a2198b77327141f9d453ba8682a6c92a4d0e
+2018-06-14 15:34:25,264 RCV proposal
+2018-06-14 15:34:25,277 appended malicious propose 96714f77ca on top of 10aeda41f3
+2018-06-14 15:34:25,310 RF found but not transmitted
+2018-06-14 15:34:25,381 RCV reinforcement
+2018-06-14 15:34:25,414 RCV reinforcement
+2018-06-14 15:34:25,537 RCV reinforcement
+2018-06-14 15:34:25,567 RCV reinforcement
+2018-06-14 15:34:25,626 RCV reinforcement
+2018-06-14 15:34:25,630 RCV reinforcement
+2018-06-14 15:34:25,706 RCV reinforcement
+2018-06-14 15:34:25,963 RCV reinforcement
+2018-06-14 15:34:26,285 RCV reinforcement
+2018-06-14 15:34:27,318 RCV commit
+2018-06-14 15:34:27,992 appended malicious commit 3e5f8b7634 on top of 96714f77ca
+2018-06-14 15:34:28,475 Weight: 256.35441084886884 #RFs 62
+2018-06-14 15:34:28,475 weight: 256.35441084886884
+2018-06-14 15:34:28,476 , 256.35441084886884
+2018-06-14 15:34:28,476 Switching branch - my current block was: 246.02822941419785
+2018-06-14 15:34:28,479 start mining - depth 21
+2018-06-14 15:34:28,480 start mining - hash 3e5f8b7634b76b7ecc765a7c02747b360ce6171f413159211640f76986dce856
+2018-06-14 15:34:28,485 WIN: MALICIOUS WIN on block 21
+2018-06-14 15:34:28,493 RCV reinforcement info
+2018-06-14 15:34:29,588 RF found but not transmitted
+2018-06-14 15:34:29,594 RF found
+2018-06-14 15:34:29,597 SNT reinforcement_information
+2018-06-14 15:34:29,774 RF found but not transmitted
+2018-06-14 15:34:31,253 RF found but not transmitted
+2018-06-14 15:34:31,430 RF found but not transmitted
+2018-06-14 15:34:31,437 RF found but not transmitted
+2018-06-14 15:34:31,882 RF found but not transmitted
+2018-06-14 15:34:31,956 RF found but not transmitted
+2018-06-14 15:34:32,551 RF found but not transmitted
+2018-06-14 15:34:33,050 RF found but not transmitted
+2018-06-14 15:34:33,258 RF found but not transmitted
+2018-06-14 15:34:33,483 RF found but not transmitted
+2018-06-14 15:34:36,420 RF found but not transmitted
+2018-06-14 15:34:36,696 RF found but not transmitted
+2018-06-14 15:34:36,758 RF found but not transmitted
+2018-06-14 15:34:37,001 RF found but not transmitted
+2018-06-14 15:34:37,203 RF found but not transmitted
+2018-06-14 15:34:37,371 RF found but not transmitted
+2018-06-14 15:34:37,376 RF found
+2018-06-14 15:34:37,380 SNT reinforcement_information
+2018-06-14 15:34:37,676 RF found but not transmitted
+2018-06-14 15:34:38,482 RF found but not transmitted
+2018-06-14 15:34:38,634 RF found but not transmitted
+2018-06-14 15:34:39,244 RF found but not transmitted
+2018-06-14 15:34:39,763 RCV reinforcement info
+2018-06-14 15:34:39,768 , 257.19699520263435
+2018-06-14 15:34:39,807 RF found but not transmitted
+2018-06-14 15:34:40,686 RF found but not transmitted
+2018-06-14 15:34:42,995 RF found but not transmitted
+2018-06-14 15:34:43,067 RF found but not transmitted
+2018-06-14 15:34:43,459 RF found but not transmitted
+2018-06-14 15:34:44,194 RCV reinforcement info
+2018-06-14 15:34:44,200 , 257.30568599926596
+2018-06-14 15:34:44,279 RF found but not transmitted
+2018-06-14 15:34:44,575 RF found but not transmitted
+2018-06-14 15:34:44,917 RCV reinforcement info
+2018-06-14 15:34:44,922 , 257.3714819739439
+2018-06-14 15:34:45,802 RF found but not transmitted
+2018-06-14 15:34:46,292 RF found but not transmitted
+2018-06-14 15:34:46,576 RF found but not transmitted
+2018-06-14 15:34:46,578 RF found
+2018-06-14 15:34:46,579 SNT reinforcement_information
+2018-06-14 15:34:46,599 RF found but not transmitted
+2018-06-14 15:34:46,862 RF found but not transmitted
+2018-06-14 15:34:47,072 RCV reinforcement info
+2018-06-14 15:34:47,084 , 257.80267676738123
+2018-06-14 15:34:47,200 RF found but not transmitted
+2018-06-14 15:34:47,353 RCV reinforcement info
+2018-06-14 15:34:47,357 , 258.0167834673355
+2018-06-14 15:34:47,491 RF found but not transmitted
+2018-06-14 15:34:47,755 RCV reinforcement info
+2018-06-14 15:34:47,760 , 258.2739459963738
+2018-06-14 15:34:48,051 RF found but not transmitted
+2018-06-14 15:34:48,304 RF found but not transmitted
+2018-06-14 15:34:48,307 RF found
+2018-06-14 15:34:48,309 SNT reinforcement_information
+2018-06-14 15:34:48,433 RF found but not transmitted
+2018-06-14 15:34:48,830 RF found but not transmitted
+2018-06-14 15:34:48,898 RF found but not transmitted
+2018-06-14 15:34:48,974 RF found but not transmitted
+2018-06-14 15:34:49,248 RF found but not transmitted
+2018-06-14 15:34:49,250 RF found
+2018-06-14 15:34:49,252 SNT reinforcement_information
+2018-06-14 15:34:49,919 RF found but not transmitted
+2018-06-14 15:34:50,819 RF found but not transmitted
+2018-06-14 15:34:50,823 RF found
+2018-06-14 15:34:50,824 SNT reinforcement_information
+2018-06-14 15:34:51,655 RCV reinforcement info
+2018-06-14 15:34:51,659 , 258.72523692618546
+2018-06-14 15:34:52,175 RF found but not transmitted
+2018-06-14 15:34:52,177 hash found
+2018-06-14 15:34:52,183 appended honest propose 43b4bd7a8b on top of 3e5f8b7634
+2018-06-14 15:34:52,183 REINFORCEMENT COLLECTING state
+2018-06-14 15:34:52,237 RF found but not transmitted
+2018-06-14 15:34:52,301 SNT proposal
+2018-06-14 15:34:52,535 RCV reinforcement
+2018-06-14 15:34:52,566 RCV reinforcement
+2018-06-14 15:34:52,991 RCV reinforcement info
+2018-06-14 15:34:52,998 , 258.80468290586106
+2018-06-14 15:34:53,077 RCV reinforcement
+2018-06-14 15:34:53,195 RF found but not transmitted
+2018-06-14 15:34:53,808 commit with 3 reinforcements
+2018-06-14 15:34:53,846 appended honest commit 6a416d76c0 on top of 43b4bd7a8b
+2018-06-14 15:34:53,876 Weight: 259.80468290586106 #RFs 14
+2018-06-14 15:34:53,876 weight: 259.80468290586106
+2018-06-14 15:34:53,876 , 259.80468290586106
+2018-06-14 15:34:53,884 MINING state
+2018-06-14 15:34:53,885 start mining - depth 22
+2018-06-14 15:34:53,885 start mining - hash 6a416d76c0ccc438ccd0b2321c3dd2dd4c8404f386828b726ffc36edde72bb6c
+2018-06-14 15:34:53,886 Hashing frequency: 27454
+2018-06-14 15:34:53,886 SNT commit
+2018-06-14 15:34:54,342 RCV proposal
+2018-06-14 15:34:54,353 appended malicious propose 5c05765baa on top of 3e5f8b7634
+2018-06-14 15:34:54,501 RCV reinforcement
+2018-06-14 15:34:54,560 RCV reinforcement
+2018-06-14 15:34:54,570 RCV reinforcement
+2018-06-14 15:34:54,629 RCV reinforcement
+2018-06-14 15:34:54,684 RCV reinforcement
+2018-06-14 15:34:54,695 RCV reinforcement
+2018-06-14 15:34:55,027 RF found but not transmitted
+2018-06-14 15:34:55,354 RCV reinforcement info
+2018-06-14 15:34:55,365 , 259.8769174426732
+2018-06-14 15:34:55,581 RF found but not transmitted
+2018-06-14 15:34:55,615 RCV reinforcement
+2018-06-14 15:34:55,681 RCV reinforcement
+2018-06-14 15:34:55,990 RCV commit
+2018-06-14 15:34:56,255 appended malicious commit ae18681337 on top of 5c05765baa
+2018-06-14 15:34:56,616 Weight: 265.05290506389184 #RFs 35
+2018-06-14 15:34:56,656 weight: 265.05290506389184
+2018-06-14 15:34:56,679 , 265.05290506389184
+2018-06-14 15:34:56,679 Switching branch - my current block was: 259.8769174426732
+2018-06-14 15:34:56,679 start mining - depth 22
+2018-06-14 15:34:56,680 start mining - hash ae18681337dbdf054d6479a889b5e309426f918745d7aff13fdb6d2d41713b77
+2018-06-14 15:34:56,684 WIN: MALICIOUS WIN on block 22
+2018-06-14 15:34:57,362 RF found but not transmitted
+2018-06-14 15:34:57,498 RF found but not transmitted
+2018-06-14 15:34:57,745 RCV reinforcement info
+2018-06-14 15:34:57,750 , 265.5343141937595
+2018-06-14 15:34:57,820 RF found but not transmitted
+2018-06-14 15:34:58,127 RF found but not transmitted
+2018-06-14 15:34:59,432 RCV reinforcement info
+2018-06-14 15:34:59,439 , 265.68546784716193
+2018-06-14 15:35:00,107 RF found but not transmitted
+2018-06-14 15:35:00,296 RF found but not transmitted
+2018-06-14 15:35:00,786 RF found but not transmitted
+2018-06-14 15:35:01,681 RF found but not transmitted
+2018-06-14 15:35:02,647 RF found but not transmitted
+2018-06-14 15:35:03,435 RF found but not transmitted
+2018-06-14 15:35:04,007 RF found but not transmitted
+2018-06-14 15:35:04,152 RCV reinforcement info
+2018-06-14 15:35:04,156 , 265.7489113976244
+2018-06-14 15:35:05,043 RCV reinforcement info
+2018-06-14 15:35:05,048 , 266.07184503950845
+2018-06-14 15:35:05,054 RCV reinforcement info
+2018-06-14 15:35:05,058 , 266.40251359893347
+2018-06-14 15:35:05,129 RF found but not transmitted
+2018-06-14 15:35:06,173 RF found but not transmitted
+2018-06-14 15:35:06,176 RF found
+2018-06-14 15:35:06,182 SNT reinforcement_information
+2018-06-14 15:35:06,528 RCV reinforcement info
+2018-06-14 15:35:06,532 , 266.7559455267919
+2018-06-14 15:35:06,780 RF found but not transmitted
+2018-06-14 15:35:07,256 RF found but not transmitted
+2018-06-14 15:35:07,260 RF found
+2018-06-14 15:35:07,261 SNT reinforcement_information
+2018-06-14 15:35:07,408 RF found but not transmitted
+2018-06-14 15:35:07,544 RF found but not transmitted
+2018-06-14 15:35:07,871 RF found but not transmitted
+2018-06-14 15:35:09,089 RF found but not transmitted
+2018-06-14 15:35:10,037 RCV reinforcement info
+2018-06-14 15:35:10,044 , 267.2905843533579
+2018-06-14 15:35:11,029 RF found but not transmitted
+2018-06-14 15:35:11,030 RF found
+2018-06-14 15:35:11,032 SNT reinforcement_information
+2018-06-14 15:35:11,401 RCV reinforcement info
+2018-06-14 15:35:11,404 , 267.5403274628263
+2018-06-14 15:35:12,606 RF found but not transmitted
+2018-06-14 15:35:12,904 RF found but not transmitted
+2018-06-14 15:35:12,906 RF found
+2018-06-14 15:35:12,909 SNT reinforcement_information
+2018-06-14 15:35:14,540 RF found but not transmitted
+2018-06-14 15:35:16,599 RF found but not transmitted
+2018-06-14 15:35:16,837 RCV reinforcement info
+2018-06-14 15:35:16,843 , 267.7109613054835
+2018-06-14 15:35:16,952 RCV reinforcement info
+2018-06-14 15:35:16,956 , 267.91440353721293
+2018-06-14 15:35:17,704 RF found but not transmitted
+2018-06-14 15:35:17,953 RF found but not transmitted
+2018-06-14 15:35:18,506 RCV reinforcement info
+2018-06-14 15:35:18,511 , 267.986391161769
+2018-06-14 15:35:18,878 RF found but not transmitted
+2018-06-14 15:35:19,086 RF found but not transmitted
+2018-06-14 15:35:19,092 RF found but not transmitted
+2018-06-14 15:35:20,687 RF found but not transmitted
+2018-06-14 15:35:20,694 RF found but not transmitted
+2018-06-14 15:35:20,997 RF found but not transmitted
+2018-06-14 15:35:20,998 RF found
+2018-06-14 15:35:20,999 SNT reinforcement_information
+2018-06-14 15:35:21,099 RCV reinforcement info
+2018-06-14 15:35:21,105 , 268.2327505508118
+2018-06-14 15:35:23,116 RF found but not transmitted
+2018-06-14 15:35:23,160 RF found but not transmitted
+2018-06-14 15:35:23,680 RCV proposal
+2018-06-14 15:35:23,684 appended honest propose dc7557ec68 on top of ae18681337
+2018-06-14 15:35:23,685 REINFORCEMENT SENT state
+2018-06-14 15:35:23,685 RFs > 0 
+2018-06-14 15:35:23,686 SNT reinforcement
+2018-06-14 15:35:24,187 RCV reinforcement
+2018-06-14 15:35:24,365 RF found but not transmitted
+2018-06-14 15:35:24,999 RF found but not transmitted
+2018-06-14 15:35:25,001 RF found but not transmitted
+2018-06-14 15:35:25,116 RF found but not transmitted
+2018-06-14 15:35:25,302 RCV commit
+2018-06-14 15:35:25,439 appended honest commit bd80b671d9 on top of dc7557ec68
+2018-06-14 15:35:25,564 Weight: 269.2327505508118 #RFs 17
+2018-06-14 15:35:25,564 weight: 269.2327505508118
+2018-06-14 15:35:25,564 , 269.2327505508118
+2018-06-14 15:35:25,568 MINING state
+2018-06-14 15:35:25,568 start mining - depth 23
+2018-06-14 15:35:25,568 start mining - hash bd80b671d98b7867fa4e223e84318b79b473b52286e1eefc5db3c8fee68c3b4b
+2018-06-14 15:35:25,944 RCV proposal
+2018-06-14 15:35:25,955 appended malicious propose 21ac49fb3c on top of ae18681337
+2018-06-14 15:35:26,161 RCV reinforcement
+2018-06-14 15:35:26,194 RCV reinforcement
+2018-06-14 15:35:26,255 RCV reinforcement
+2018-06-14 15:35:26,272 RCV reinforcement
+2018-06-14 15:35:26,283 RCV reinforcement
+2018-06-14 15:35:26,308 RCV reinforcement
+2018-06-14 15:35:27,018 RF found but not transmitted
+2018-06-14 15:35:27,273 RCV reinforcement
+2018-06-14 15:35:27,457 RF found but not transmitted
+2018-06-14 15:35:27,489 RF found but not transmitted
+2018-06-14 15:35:27,552 RCV commit
+2018-06-14 15:35:27,799 appended malicious commit e1d1dcc40b on top of 21ac49fb3c
+2018-06-14 15:35:27,864 RF found but not transmitted
+2018-06-14 15:35:28,066 Weight: 274.9536233591614 #RFs 38
+2018-06-14 15:35:28,066 weight: 274.9536233591614
+2018-06-14 15:35:28,066 , 274.9536233591614
+2018-06-14 15:35:28,072 Switching branch - my current block was: 269.2327505508118
+2018-06-14 15:35:28,073 start mining - depth 23
+2018-06-14 15:35:28,087 start mining - hash e1d1dcc40b4cba06b42f4e2760a616387c48dfde50ea036e93b61a52a21226a1
+2018-06-14 15:35:28,097 WIN: MALICIOUS WIN on block 23
+2018-06-14 15:35:28,646 RF found but not transmitted
+2018-06-14 15:35:29,032 RF found but not transmitted
+2018-06-14 15:35:29,717 RF found but not transmitted
+2018-06-14 15:35:29,993 RF found but not transmitted
+2018-06-14 15:35:31,945 RF found but not transmitted
+2018-06-14 15:35:32,408 RF found but not transmitted
+2018-06-14 15:35:32,496 RCV reinforcement info
+2018-06-14 15:35:32,501 , 275.0371972230164
+2018-06-14 15:35:33,483 RF found but not transmitted
+2018-06-14 15:35:33,975 RCV reinforcement info
+2018-06-14 15:35:33,982 , 275.2045021072279
+2018-06-14 15:35:34,056 RF found but not transmitted
+2018-06-14 15:35:34,063 RF found but not transmitted
+2018-06-14 15:35:34,489 RCV reinforcement info
+2018-06-14 15:35:34,496 , 275.3074543824339
+2018-06-14 15:35:37,338 RCV reinforcement info
+2018-06-14 15:35:37,346 , 275.4045301376338
+2018-06-14 15:35:37,709 RF found but not transmitted
+2018-06-14 15:35:38,565 RF found but not transmitted
+2018-06-14 15:35:38,871 RF found but not transmitted
+2018-06-14 15:35:40,179 RF found but not transmitted
+2018-06-14 15:35:40,184 RF found
+2018-06-14 15:35:40,187 SNT reinforcement_information
+2018-06-14 15:35:40,241 RF found but not transmitted
+2018-06-14 15:35:41,597 RCV reinforcement info
+2018-06-14 15:35:41,604 , 275.7093441958939
+2018-06-14 15:35:42,195 RF found but not transmitted
+2018-06-14 15:35:42,445 RF found but not transmitted
+2018-06-14 15:35:42,690 RF found but not transmitted
+2018-06-14 15:35:43,523 RF found but not transmitted
+2018-06-14 15:35:43,816 RF found but not transmitted
+2018-06-14 15:35:44,193 RF found but not transmitted
+2018-06-14 15:35:44,214 RF found but not transmitted
+2018-06-14 15:35:45,039 RF found but not transmitted
+2018-06-14 15:35:45,521 RF found but not transmitted
+2018-06-14 15:35:45,891 RF found but not transmitted
+2018-06-14 15:35:46,341 RF found but not transmitted
+2018-06-14 15:35:46,397 RF found but not transmitted
+2018-06-14 15:35:46,435 RCV reinforcement info
+2018-06-14 15:35:46,442 , 275.815058306716
+2018-06-14 15:35:46,738 RF found but not transmitted
+2018-06-14 15:35:46,743 RF found
+2018-06-14 15:35:46,747 SNT reinforcement_information
+2018-06-14 15:35:47,167 RF found but not transmitted
+2018-06-14 15:35:47,480 RF found but not transmitted
+2018-06-14 15:35:47,804 RF found but not transmitted
+2018-06-14 15:35:49,933 RF found but not transmitted
+2018-06-14 15:35:50,454 RF found but not transmitted
+2018-06-14 15:35:50,696 RF found but not transmitted
+2018-06-14 15:35:51,292 RCV reinforcement info
+2018-06-14 15:35:51,298 , 276.00143548483493
+2018-06-14 15:35:51,557 RCV reinforcement info
+2018-06-14 15:35:51,564 , 276.11548000897625
+2018-06-14 15:35:51,741 RF found but not transmitted
+2018-06-14 15:35:52,017 RF found but not transmitted
+2018-06-14 15:35:52,282 RF found but not transmitted
+2018-06-14 15:35:52,894 RF found but not transmitted
+2018-06-14 15:35:53,175 RF found but not transmitted
+2018-06-14 15:35:53,511 RF found but not transmitted
+2018-06-14 15:35:53,685 RF found but not transmitted
+2018-06-14 15:35:53,737 RCV reinforcement info
+2018-06-14 15:35:53,743 , 276.1975270641135
+2018-06-14 15:35:53,864 RF found but not transmitted
+2018-06-14 15:35:54,246 RF found but not transmitted
+2018-06-14 15:35:54,779 RF found but not transmitted
+2018-06-14 15:35:54,813 RCV reinforcement info
+2018-06-14 15:35:54,825 , 276.2670069453146
+2018-06-14 15:35:55,184 RF found but not transmitted
+2018-06-14 15:35:55,186 RF found
+2018-06-14 15:35:55,189 SNT reinforcement_information
+2018-06-14 15:35:55,539 RF found but not transmitted
+2018-06-14 15:35:56,000 RCV reinforcement info
+2018-06-14 15:35:56,005 , 276.5586627807124
+2018-06-14 15:35:56,086 RF found but not transmitted
+2018-06-14 15:35:56,094 RF found
+2018-06-14 15:35:56,097 SNT reinforcement_information
+2018-06-14 15:35:56,149 RF found but not transmitted
+2018-06-14 15:35:56,161 RF found
+2018-06-14 15:35:56,169 SNT reinforcement_information
+2018-06-14 15:35:56,338 RF found but not transmitted
+2018-06-14 15:35:56,425 RF found but not transmitted
+2018-06-14 15:35:56,458 RF found but not transmitted
+2018-06-14 15:35:56,619 RF found but not transmitted
+2018-06-14 15:35:57,212 RF found but not transmitted
+2018-06-14 15:35:57,564 RF found but not transmitted
+2018-06-14 15:35:58,820 RF found but not transmitted
+2018-06-14 15:35:59,591 RF found but not transmitted
+2018-06-14 15:36:00,010 RF found but not transmitted
+2018-06-14 15:36:00,285 RF found but not transmitted
+2018-06-14 15:36:00,288 RF found
+2018-06-14 15:36:00,295 SNT reinforcement_information
+2018-06-14 15:36:01,238 RF found but not transmitted
+2018-06-14 15:36:01,376 RF found but not transmitted
+2018-06-14 15:36:01,377 RF found
+2018-06-14 15:36:01,380 SNT reinforcement_information
+2018-06-14 15:36:02,897 RCV reinforcement info
+2018-06-14 15:36:02,902 , 277.0859156477668
+2018-06-14 15:36:03,602 RF found but not transmitted
+2018-06-14 15:36:04,184 RF found but not transmitted
+2018-06-14 15:36:04,671 RF found but not transmitted
+2018-06-14 15:36:05,053 RCV reinforcement info
+2018-06-14 15:36:05,059 , 277.1545942072371
+2018-06-14 15:36:05,156 RF found but not transmitted
+2018-06-14 15:36:06,122 RF found but not transmitted
+2018-06-14 15:36:07,878 RF found but not transmitted
+2018-06-14 15:36:07,980 RCV reinforcement info
+2018-06-14 15:36:07,988 , 278.0281363504098
+2018-06-14 15:36:08,594 RCV reinforcement info
+2018-06-14 15:36:08,604 , 278.6268890982274
+2018-06-14 15:36:08,910 RF found but not transmitted
+2018-06-14 15:36:08,912 RF found
+2018-06-14 15:36:08,917 SNT reinforcement_information
+2018-06-14 15:36:09,958 RF found but not transmitted
+2018-06-14 15:36:10,519 RCV reinforcement info
+2018-06-14 15:36:10,526 , 278.84576278896697
+2018-06-14 15:36:10,645 RCV reinforcement info
+2018-06-14 15:36:10,652 , 279.00231962120176
+2018-06-14 15:36:10,728 RF found but not transmitted
+2018-06-14 15:36:10,933 RF found but not transmitted
+2018-06-14 15:36:10,940 RF found
+2018-06-14 15:36:10,943 SNT reinforcement_information
+2018-06-14 15:36:10,974 RF found but not transmitted
+2018-06-14 15:36:11,806 RF found but not transmitted
+2018-06-14 15:36:11,905 RF found but not transmitted
+2018-06-14 15:36:12,047 RCV reinforcement info
+2018-06-14 15:36:12,054 , 279.1323379586008
+2018-06-14 15:36:12,297 RCV proposal
+2018-06-14 15:36:12,301 appended honest propose e93996d053 on top of e1d1dcc40b
+2018-06-14 15:36:12,302 REINFORCEMENT SENT state
+2018-06-14 15:36:12,302 RFs > 0 
+2018-06-14 15:36:12,305 SNT reinforcement
+2018-06-14 15:36:12,331 RF found but not transmitted
+2018-06-14 15:36:12,435 RCV reinforcement
+2018-06-14 15:36:13,608 RF found but not transmitted
+2018-06-14 15:36:13,915 RCV commit
+2018-06-14 15:36:14,106 appended honest commit c9303ab3fe on top of e93996d053
+2018-06-14 15:36:14,494 Weight: 280.1323379586008 #RFs 27
+2018-06-14 15:36:14,494 weight: 280.1323379586008
+2018-06-14 15:36:14,494 , 280.1323379586008
+2018-06-14 15:36:14,499 MINING state
+2018-06-14 15:36:14,500 start mining - depth 24
+2018-06-14 15:36:14,500 start mining - hash c9303ab3fe41e895756fe41e278d63f6397752957959777c1a2b96371d22ab2b
+2018-06-14 15:36:14,501 Hashing frequency: 33258
+2018-06-14 15:36:14,515 RCV reinforcement info
+2018-06-14 15:36:14,548 RCV reinforcement
+2018-06-14 15:36:14,552 RCV reinforcement info
+2018-06-14 15:36:14,559 , 280.7055446582163
+2018-06-14 15:36:14,765 RCV proposal
+2018-06-14 15:36:14,787 appended malicious propose 3cfb0b106e on top of e1d1dcc40b
+2018-06-14 15:36:14,998 RCV reinforcement
+2018-06-14 15:36:15,023 RCV reinforcement
+2018-06-14 15:36:15,058 RCV reinforcement
+2018-06-14 15:36:15,074 RCV reinforcement
+2018-06-14 15:36:15,100 RCV reinforcement
+2018-06-14 15:36:15,123 RCV reinforcement
+2018-06-14 15:36:15,323 RCV reinforcement
+2018-06-14 15:36:16,289 RCV reinforcement info
+2018-06-14 15:36:16,296 , 280.7976432080703
+2018-06-14 15:36:16,536 RCV reinforcement info
+2018-06-14 15:36:16,541 , 281.2587327294855
+2018-06-14 15:36:17,224 RF found but not transmitted
+2018-06-14 15:36:17,348 RCV reinforcement info
+2018-06-14 15:36:17,352 , 281.41008153858064
+2018-06-14 15:36:17,446 RF found but not transmitted
+2018-06-14 15:36:18,184 RF found but not transmitted
+2018-06-14 15:36:18,223 RCV commit
+2018-06-14 15:36:18,933 appended malicious commit ce759c6141 on top of 3cfb0b106e
+2018-06-14 15:36:19,319 RF found but not transmitted
+2018-06-14 15:36:19,723 Weight: 295.37278718113976 #RFs 71
+2018-06-14 15:36:19,724 weight: 295.37278718113976
+2018-06-14 15:36:19,724 , 295.37278718113976
+2018-06-14 15:36:19,727 Switching branch - my current block was: 281.41008153858064
+2018-06-14 15:36:19,728 start mining - depth 24
+2018-06-14 15:36:19,729 start mining - hash ce759c6141ce997dd02c66aa71f4aa768741a0d47394653030664478615abaa3
+2018-06-14 15:36:19,730 WIN: MALICIOUS WIN on block 24
+2018-06-14 15:36:19,738 RCV reinforcement info
+2018-06-14 15:36:19,836 RF found but not transmitted
+2018-06-14 15:36:20,865 RF found but not transmitted
+2018-06-14 15:36:22,401 RCV reinforcement info
+2018-06-14 15:36:22,406 , 295.44811687386164
+2018-06-14 15:36:22,535 RF found but not transmitted
+2018-06-14 15:36:22,841 RF found but not transmitted
+2018-06-14 15:36:22,843 RF found
+2018-06-14 15:36:22,844 SNT reinforcement_information
+2018-06-14 15:36:23,010 RF found but not transmitted
+2018-06-14 15:36:23,012 RF found
+2018-06-14 15:36:23,016 SNT reinforcement_information
+2018-06-14 15:36:24,275 RF found but not transmitted
+2018-06-14 15:36:24,450 RF found but not transmitted
+2018-06-14 15:36:25,499 RF found but not transmitted
+2018-06-14 15:36:25,784 RCV reinforcement info
+2018-06-14 15:36:25,789 , 295.66132471148273
+2018-06-14 15:36:26,409 RF found but not transmitted
+2018-06-14 15:36:26,495 RF found but not transmitted
+2018-06-14 15:36:26,496 RF found
+2018-06-14 15:36:26,499 SNT reinforcement_information
+2018-06-14 15:36:28,078 RCV reinforcement info
+2018-06-14 15:36:28,082 , 295.882670286316
+2018-06-14 15:36:28,834 RF found but not transmitted
+2018-06-14 15:36:28,836 RF found
+2018-06-14 15:36:28,839 SNT reinforcement_information
+2018-06-14 15:36:29,198 RF found but not transmitted
+2018-06-14 15:36:29,250 RF found
+2018-06-14 15:36:29,253 SNT reinforcement_information
+2018-06-14 15:36:29,748 RCV reinforcement info
+2018-06-14 15:36:29,753 , 296.9252326338114
+2018-06-14 15:36:29,811 RCV reinforcement info
+2018-06-14 15:36:29,816 , 297.0931091839872
+2018-06-14 15:36:29,978 RF found but not transmitted
+2018-06-14 15:36:30,469 RF found but not transmitted
+2018-06-14 15:36:30,673 RF found but not transmitted
+2018-06-14 15:36:30,921 RF found but not transmitted
+2018-06-14 15:36:31,169 RF found but not transmitted
+2018-06-14 15:36:31,391 RF found but not transmitted
+2018-06-14 15:36:32,095 RF found but not transmitted
+2018-06-14 15:36:32,823 RF found but not transmitted
+2018-06-14 15:36:32,874 RF found but not transmitted
+2018-06-14 15:36:33,722 RCV reinforcement info
+2018-06-14 15:36:33,728 , 297.15605485236057
+2018-06-14 15:36:33,822 RF found but not transmitted
+2018-06-14 15:36:33,823 RF found
+2018-06-14 15:36:33,825 SNT reinforcement_information
+2018-06-14 15:36:34,219 RF found but not transmitted
+2018-06-14 15:36:35,657 RF found but not transmitted
+2018-06-14 15:36:35,960 RF found but not transmitted
+2018-06-14 15:36:36,192 RCV reinforcement info
+2018-06-14 15:36:36,198 , 297.4142497176277
+2018-06-14 15:36:37,159 RCV reinforcement info
+2018-06-14 15:36:37,164 , 297.48322620100834
+2018-06-14 15:36:38,301 RCV reinforcement info
+2018-06-14 15:36:38,306 , 297.60655950284774
+2018-06-14 15:36:40,644 RF found but not transmitted
+2018-06-14 15:36:40,725 RF found but not transmitted
+2018-06-14 15:36:40,734 RF found
+2018-06-14 15:36:40,736 SNT reinforcement_information
+2018-06-14 15:36:40,829 RF found but not transmitted
+2018-06-14 15:36:40,945 RF found but not transmitted
+2018-06-14 15:36:41,526 RF found but not transmitted
+2018-06-14 15:36:42,169 RF found but not transmitted
+2018-06-14 15:36:42,171 RF found
+2018-06-14 15:36:42,174 SNT reinforcement_information
+2018-06-14 15:36:42,975 RCV reinforcement info
+2018-06-14 15:36:42,979 , 297.97841010240006
+2018-06-14 15:36:43,536 RF found but not transmitted
+2018-06-14 15:36:43,612 RF found but not transmitted
+2018-06-14 15:36:43,862 RF found but not transmitted
+2018-06-14 15:36:43,866 RF found
+2018-06-14 15:36:43,870 SNT reinforcement_information
+2018-06-14 15:36:44,593 RCV reinforcement info
+2018-06-14 15:36:44,599 , 298.12451237629807
+2018-06-14 15:36:44,620 RF found but not transmitted
+2018-06-14 15:36:45,773 RF found but not transmitted
+2018-06-14 15:36:45,796 RF found but not transmitted
+2018-06-14 15:36:45,807 RCV reinforcement info
+2018-06-14 15:36:45,812 , 298.23500957609957
+2018-06-14 15:36:46,004 RF found but not transmitted
+2018-06-14 15:36:46,558 RF found but not transmitted
+2018-06-14 15:36:47,542 RF found but not transmitted
+2018-06-14 15:36:47,765 RF found but not transmitted
+2018-06-14 15:36:48,192 RF found but not transmitted
+2018-06-14 15:36:48,398 RF found but not transmitted
+2018-06-14 15:36:48,399 RF found
+2018-06-14 15:36:48,402 SNT reinforcement_information
+2018-06-14 15:36:48,724 RF found but not transmitted
+2018-06-14 15:36:49,333 RF found but not transmitted
+2018-06-14 15:36:49,334 RF found
+2018-06-14 15:36:49,337 SNT reinforcement_information
+2018-06-14 15:36:49,435 RF found but not transmitted
+2018-06-14 15:36:49,637 RF found but not transmitted
+2018-06-14 15:36:50,320 RF found but not transmitted
+2018-06-14 15:36:51,953 RF found but not transmitted
+2018-06-14 15:36:52,186 RF found but not transmitted
+2018-06-14 15:36:52,541 RCV reinforcement info
+2018-06-14 15:36:52,546 , 298.79925652951295
+2018-06-14 15:36:52,636 RCV reinforcement info
+2018-06-14 15:36:52,641 , 298.8837740048933
+2018-06-14 15:36:53,011 RF found but not transmitted
+2018-06-14 15:36:53,012 RF found
+2018-06-14 15:36:53,014 SNT reinforcement_information
+2018-06-14 15:36:53,350 RF found but not transmitted
+2018-06-14 15:36:53,351 RF found
+2018-06-14 15:36:53,353 SNT reinforcement_information
+2018-06-14 15:36:54,389 RF found but not transmitted
+2018-06-14 15:36:54,391 RF found
+2018-06-14 15:36:54,394 SNT reinforcement_information
+2018-06-14 15:36:54,736 RF found but not transmitted
+2018-06-14 15:36:55,267 RCV reinforcement info
+2018-06-14 15:36:55,273 , 299.3213345249692
+2018-06-14 15:36:56,469 RCV reinforcement info
+2018-06-14 15:36:56,475 , 299.39092594928655
+2018-06-14 15:36:56,729 RF found but not transmitted
+2018-06-14 15:36:57,240 RF found but not transmitted
+2018-06-14 15:36:57,272 RF found but not transmitted
+2018-06-14 15:36:58,614 RF found but not transmitted
+2018-06-14 15:36:59,152 RF found but not transmitted
+2018-06-14 15:36:59,199 RF found but not transmitted
+2018-06-14 15:36:59,612 RF found but not transmitted
+2018-06-14 15:36:59,740 RF found but not transmitted
+2018-06-14 15:36:59,809 RF found but not transmitted
+2018-06-14 15:37:01,098 RF found but not transmitted
+2018-06-14 15:37:02,114 RF found but not transmitted
+2018-06-14 15:37:02,601 RF found but not transmitted
+2018-06-14 15:37:03,436 RF found but not transmitted
+2018-06-14 15:37:04,798 RF found but not transmitted
+2018-06-14 15:37:05,336 RCV reinforcement info
+2018-06-14 15:37:05,347 , 299.4593013138034
+2018-06-14 15:37:05,516 RF found but not transmitted
+2018-06-14 15:37:05,522 RCV reinforcement info
+2018-06-14 15:37:05,527 , 299.5897760104096
+2018-06-14 15:37:06,452 RCV reinforcement info
+2018-06-14 15:37:06,457 , 300.00872908691923
+2018-06-14 15:37:07,333 RF found but not transmitted
+2018-06-14 15:37:07,776 RF found but not transmitted
+2018-06-14 15:37:08,924 RF found but not transmitted
+2018-06-14 15:37:09,179 RF found but not transmitted
+2018-06-14 15:37:09,361 RCV reinforcement info
+2018-06-14 15:37:09,367 , 300.10268223156373
+2018-06-14 15:37:13,219 RF found but not transmitted
+2018-06-14 15:37:13,489 RCV reinforcement info
+2018-06-14 15:37:13,495 , 300.19125292933893
+2018-06-14 15:37:14,827 RCV reinforcement info
+2018-06-14 15:37:14,832 , 300.34603891633185
+2018-06-14 15:37:14,940 RF found but not transmitted
+2018-06-14 15:37:16,137 RF found but not transmitted
+2018-06-14 15:37:16,358 RCV reinforcement info
+2018-06-14 15:37:16,365 , 300.60700569449796
+2018-06-14 15:37:16,563 RCV reinforcement info
+2018-06-14 15:37:16,568 , 300.67656128683115
+2018-06-14 15:37:17,005 RF found but not transmitted
+2018-06-14 15:37:17,009 RF found
+2018-06-14 15:37:17,013 SNT reinforcement_information
+2018-06-14 15:37:17,817 RF found but not transmitted
+2018-06-14 15:37:19,305 RF found but not transmitted
+2018-06-14 15:37:19,446 RF found but not transmitted
+2018-06-14 15:37:20,317 RF found but not transmitted
+2018-06-14 15:37:20,488 RF found but not transmitted
+2018-06-14 15:37:20,665 RF found but not transmitted
+2018-06-14 15:37:21,511 RF found but not transmitted
+2018-06-14 15:37:22,056 RF found but not transmitted
+2018-06-14 15:37:22,767 RF found but not transmitted
+2018-06-14 15:37:23,353 RF found but not transmitted
+2018-06-14 15:37:23,355 RF found
+2018-06-14 15:37:23,357 SNT reinforcement_information
+2018-06-14 15:37:24,684 RCV reinforcement info
+2018-06-14 15:37:24,688 , 301.10435565507487
+2018-06-14 15:37:24,897 RF found but not transmitted
+2018-06-14 15:37:25,284 RF found but not transmitted
+2018-06-14 15:37:25,889 RCV proposal
+2018-06-14 15:37:25,893 appended honest propose 941131eee2 on top of ce759c6141
+2018-06-14 15:37:25,913 REINFORCEMENT SENT state
+2018-06-14 15:37:25,913 RFs > 0 
+2018-06-14 15:37:25,914 SNT reinforcement
+2018-06-14 15:37:26,141 RCV reinforcement
+2018-06-14 15:37:26,279 RF found but not transmitted
+2018-06-14 15:37:26,284 SNT reinforcement_information
+2018-06-14 15:37:26,428 SNT reinforcement
+2018-06-14 15:37:27,733 RCV commit
+2018-06-14 15:37:28,118 appended honest commit b73acbd5a2 on top of 941131eee2
+2018-06-14 15:37:28,408 Weight: 302.2013540596397 #RFs 42
+2018-06-14 15:37:28,408 weight: 302.2013540596397
+2018-06-14 15:37:28,410 , 302.2013540596397
+2018-06-14 15:37:28,421 MINING state
+2018-06-14 15:37:28,421 start mining - depth 25
+2018-06-14 15:37:28,421 start mining - hash b73acbd5a2ce435e54d50064c2de1ed6c42ac82bda93836f1b8347dfefb5cfee
+2018-06-14 15:37:28,422 Hashing frequency: 30482
+2018-06-14 15:37:28,631 RCV proposal
+2018-06-14 15:37:28,643 appended malicious propose a44c0f7c00 on top of ce759c6141
+2018-06-14 15:37:28,751 RF found but not transmitted
+2018-06-14 15:37:29,101 RCV reinforcement
+2018-06-14 15:37:29,130 RCV reinforcement
+2018-06-14 15:37:29,151 RCV reinforcement
+2018-06-14 15:37:29,167 RCV reinforcement
+2018-06-14 15:37:29,171 RCV reinforcement
+2018-06-14 15:37:29,205 RCV reinforcement
+2018-06-14 15:37:29,545 RCV reinforcement
+2018-06-14 15:37:29,608 RCV reinforcement
+2018-06-14 15:37:29,666 RCV reinforcement
+2018-06-14 15:37:29,785 RF found but not transmitted
+2018-06-14 15:37:29,970 RF found but not transmitted
+2018-06-14 15:37:30,502 RCV commit
+2018-06-14 15:37:30,622 RF found but not transmitted
+2018-06-14 15:37:31,457 RF found but not transmitted
+2018-06-14 15:37:31,458 appended malicious commit 85dc24f8bc on top of a44c0f7c00
+2018-06-14 15:37:31,477 RF found but not transmitted
+2018-06-14 15:37:32,206 RF found but not transmitted
+2018-06-14 15:37:32,384 Weight: 323.742417105575 #RFs 102
+2018-06-14 15:37:32,384 weight: 323.742417105575
+2018-06-14 15:37:32,384 , 323.742417105575
+2018-06-14 15:37:32,384 Switching branch - my current block was: 302.2013540596397
+2018-06-14 15:37:32,384 start mining - depth 25
+2018-06-14 15:37:32,385 start mining - hash 85dc24f8bccc05cddd339a474017ef49c3b74364b02a87c4582edefe151572e2
+2018-06-14 15:37:32,386 WIN: MALICIOUS WIN on block 25
+2018-06-14 15:37:32,411 RCV reinforcement
+2018-06-14 15:37:32,547 RF found but not transmitted
+2018-06-14 15:37:32,677 RCV reinforcement info
+2018-06-14 15:37:32,688 , 324.0001624630541
+2018-06-14 15:37:32,905 RF found but not transmitted
+2018-06-14 15:37:33,717 RF found but not transmitted
+2018-06-14 15:37:34,051 RCV reinforcement info
+2018-06-14 15:37:34,061 , 324.1041352415927
+2018-06-14 15:37:34,246 RF found but not transmitted
+2018-06-14 15:37:35,534 RF found but not transmitted
+2018-06-14 15:37:35,914 RF found but not transmitted
+2018-06-14 15:37:36,018 RF found but not transmitted
+2018-06-14 15:37:36,311 RF found but not transmitted
+2018-06-14 15:37:36,503 RF found but not transmitted
+2018-06-14 15:37:37,181 RF found but not transmitted
+2018-06-14 15:37:38,154 RCV reinforcement info
+2018-06-14 15:37:38,159 , 324.5833395375998
+2018-06-14 15:37:38,550 RF found but not transmitted
+2018-06-14 15:37:38,552 RF found
+2018-06-14 15:37:38,553 SNT reinforcement_information
+2018-06-14 15:37:38,595 RF found but not transmitted
+2018-06-14 15:37:39,355 RF found but not transmitted
+2018-06-14 15:37:39,938 RF found but not transmitted
+2018-06-14 15:37:40,280 RF found but not transmitted
+2018-06-14 15:37:40,282 RF found
+2018-06-14 15:37:40,284 SNT reinforcement_information
+2018-06-14 15:37:40,591 RCV reinforcement info
+2018-06-14 15:37:40,596 , 324.8647728549067
+2018-06-14 15:37:40,662 RF found but not transmitted
+2018-06-14 15:37:40,689 RF found but not transmitted
+2018-06-14 15:37:40,761 RF found but not transmitted
+2018-06-14 15:37:40,852 RF found but not transmitted
+2018-06-14 15:37:41,847 RF found but not transmitted
+2018-06-14 15:37:42,340 RCV reinforcement info
+2018-06-14 15:37:42,349 , 324.92951195732064
+2018-06-14 15:37:42,770 RF found but not transmitted
+2018-06-14 15:37:43,422 RF found but not transmitted
+2018-06-14 15:37:44,077 RF found but not transmitted
+2018-06-14 15:37:44,524 RF found but not transmitted
+2018-06-14 15:37:45,085 RF found but not transmitted
+2018-06-14 15:37:45,487 RF found but not transmitted
+2018-06-14 15:37:46,599 RCV reinforcement info
+2018-06-14 15:37:46,604 , 325.184239843439
+2018-06-14 15:37:46,768 RF found but not transmitted
+2018-06-14 15:37:47,775 RF found but not transmitted
+2018-06-14 15:37:47,874 RF found but not transmitted
+2018-06-14 15:37:48,692 RF found but not transmitted
+2018-06-14 15:37:48,889 RCV proposal
+2018-06-14 15:37:48,931 appended honest propose c6ef7d9353 on top of 85dc24f8bc
+2018-06-14 15:37:48,932 REINFORCEMENT SENT state
+2018-06-14 15:37:48,932 RFs > 0 
+2018-06-14 15:37:48,940 SNT reinforcement
+2018-06-14 15:37:49,193 RF found but not transmitted
+2018-06-14 15:37:49,349 RCV reinforcement
+2018-06-14 15:37:49,863 RF found but not transmitted
+2018-06-14 15:37:50,353 RF found but not transmitted
+2018-06-14 15:37:50,462 RCV commit
+2018-06-14 15:37:50,505 appended honest commit e16da59ddf on top of c6ef7d9353
+2018-06-14 15:37:50,559 Weight: 326.184239843439 #RFs 8
+2018-06-14 15:37:50,560 weight: 326.184239843439
+2018-06-14 15:37:50,560 , 326.184239843439
+2018-06-14 15:37:50,560 MINING state
+2018-06-14 15:37:50,566 start mining - depth 26
+2018-06-14 15:37:50,566 start mining - hash e16da59ddf7c32406b01b22c47da264efd2e8d7eaacf6e3b249bd65cdb575d84
+2018-06-14 15:37:51,697 RF found but not transmitted
+2018-06-14 15:37:51,699 RF found
+2018-06-14 15:37:51,701 SNT reinforcement_information
+2018-06-14 15:37:51,962 RF found but not transmitted
+2018-06-14 15:37:52,221 RF found but not transmitted
+2018-06-14 15:37:52,827 RCV reinforcement info
+2018-06-14 15:37:52,831 , 326.48277920501494
+2018-06-14 15:37:52,980 RF found but not transmitted
+2018-06-14 15:37:53,810 RF found but not transmitted
+2018-06-14 15:37:54,110 RF found but not transmitted
+2018-06-14 15:37:54,344 RF found but not transmitted
+2018-06-14 15:37:54,681 RF found but not transmitted
+2018-06-14 15:37:54,867 RF found but not transmitted
+2018-06-14 15:37:56,555 RF found but not transmitted
+2018-06-14 15:37:56,698 RF found but not transmitted
+2018-06-14 15:37:57,363 RF found but not transmitted
+2018-06-14 15:37:57,548 RF found but not transmitted
+2018-06-14 15:37:57,934 RF found but not transmitted
+2018-06-14 15:37:57,950 RF found but not transmitted
+2018-06-14 15:37:58,270 RCV reinforcement info
+2018-06-14 15:37:58,275 , 326.5469608379041
+2018-06-14 15:37:58,532 RF found but not transmitted
+2018-06-14 15:37:58,607 RF found but not transmitted
+2018-06-14 15:37:58,744 RF found but not transmitted
+2018-06-14 15:37:59,076 RF found but not transmitted
+2018-06-14 15:37:59,346 RF found but not transmitted
+2018-06-14 15:37:59,728 RF found but not transmitted
+2018-06-14 15:37:59,919 RF found but not transmitted
+2018-06-14 15:37:59,922 RF found
+2018-06-14 15:37:59,923 SNT reinforcement_information
+2018-06-14 15:38:00,987 RF found but not transmitted
+2018-06-14 15:38:01,121 RF found but not transmitted
+2018-06-14 15:38:01,122 RF found
+2018-06-14 15:38:01,124 SNT reinforcement_information
+2018-06-14 15:38:01,393 RF found but not transmitted
+2018-06-14 15:38:01,824 RF found but not transmitted
+2018-06-14 15:38:02,320 RCV reinforcement info
+2018-06-14 15:38:02,324 , 327.04337582359
+2018-06-14 15:38:02,352 RF found but not transmitted
+2018-06-14 15:38:02,367 RF found but not transmitted
+2018-06-14 15:38:02,578 RF found but not transmitted
+2018-06-14 15:38:03,566 RF found but not transmitted
+2018-06-14 15:38:03,885 RF found but not transmitted
+2018-06-14 15:38:03,886 RF found
+2018-06-14 15:38:03,887 SNT reinforcement_information
+2018-06-14 15:38:04,380 RF found but not transmitted
+2018-06-14 15:38:04,381 RF found
+2018-06-14 15:38:04,382 SNT reinforcement_information
+2018-06-14 15:38:05,451 RF found but not transmitted
+2018-06-14 15:38:05,561 RF found but not transmitted
+2018-06-14 15:38:05,731 RF found but not transmitted
+2018-06-14 15:38:05,759 RF found but not transmitted
+2018-06-14 15:38:06,336 RF found but not transmitted
+2018-06-14 15:38:06,343 RF found
+2018-06-14 15:38:06,347 SNT reinforcement_information
+2018-06-14 15:38:06,454 RF found but not transmitted
+2018-06-14 15:38:06,814 RCV reinforcement info
+2018-06-14 15:38:06,816 , 327.5992773931747
+2018-06-14 15:38:07,672 RF found but not transmitted
+2018-06-14 15:38:08,122 RCV reinforcement info
+2018-06-14 15:38:08,126 , 327.95865974404427
+2018-06-14 15:38:08,913 RF found but not transmitted
+2018-06-14 15:38:09,189 RF found but not transmitted
+2018-06-14 15:38:10,429 RF found but not transmitted
+2018-06-14 15:38:11,225 RF found but not transmitted
+2018-06-14 15:38:11,227 RF found
+2018-06-14 15:38:11,228 SNT reinforcement_information
+2018-06-14 15:38:11,887 RF found but not transmitted
+2018-06-14 15:38:12,242 RF found but not transmitted
+2018-06-14 15:38:12,292 RF found but not transmitted
+2018-06-14 15:38:13,020 RF found but not transmitted
+2018-06-14 15:38:13,023 RF found
+2018-06-14 15:38:13,030 SNT reinforcement_information
+2018-06-14 15:38:13,300 RF found but not transmitted
+2018-06-14 15:38:13,621 RF found but not transmitted
+2018-06-14 15:38:13,747 RF found but not transmitted
+2018-06-14 15:38:14,415 RF found but not transmitted
+2018-06-14 15:38:14,523 RCV reinforcement info
+2018-06-14 15:38:14,527 , 328.2360843188573
+2018-06-14 15:38:14,993 RF found but not transmitted
+2018-06-14 15:38:16,650 RF found but not transmitted
+2018-06-14 15:38:17,635 RF found but not transmitted
+2018-06-14 15:38:17,705 RF found but not transmitted
+2018-06-14 15:38:17,841 RCV reinforcement info
+2018-06-14 15:38:17,845 , 328.3534407959456
+2018-06-14 15:38:18,152 RF found but not transmitted
+2018-06-14 15:38:18,244 RF found but not transmitted
+2018-06-14 15:38:18,963 RF found but not transmitted
+2018-06-14 15:38:18,971 RF found but not transmitted
+2018-06-14 15:38:19,122 RCV reinforcement info
+2018-06-14 15:38:19,128 , 328.4411044127045
+2018-06-14 15:38:19,385 RCV reinforcement info
+2018-06-14 15:38:19,390 , 328.74523936502385
+2018-06-14 15:38:19,782 RCV reinforcement info
+2018-06-14 15:38:19,786 , 328.8258051857216
+2018-06-14 15:38:20,259 RF found but not transmitted
+2018-06-14 15:38:20,363 RF found but not transmitted
+2018-06-14 15:38:20,521 RF found but not transmitted
+2018-06-14 15:38:20,523 hash found
+2018-06-14 15:38:20,527 appended honest propose bb69be42f8 on top of e16da59ddf
+2018-06-14 15:38:20,527 REINFORCEMENT COLLECTING state
+2018-06-14 15:38:20,590 SNT proposal
+2018-06-14 15:38:20,799 RCV reinforcement
+2018-06-14 15:38:20,810 RF found but not transmitted
+2018-06-14 15:38:20,819 RCV reinforcement
+2018-06-14 15:38:21,165 RCV reinforcement info
+2018-06-14 15:38:21,169 , 328.9541427436858
+2018-06-14 15:38:21,248 RCV reinforcement
+2018-06-14 15:38:22,099 commit with 3 reinforcements
+2018-06-14 15:38:22,155 appended honest commit f3f19a737e on top of bb69be42f8
+2018-06-14 15:38:22,171 RF found but not transmitted
+2018-06-14 15:38:22,211 Weight: 329.9541427436858 #RFs 19
+2018-06-14 15:38:22,213 weight: 329.9541427436858
+2018-06-14 15:38:22,213 , 329.9541427436858
+2018-06-14 15:38:22,213 MINING state
+2018-06-14 15:38:22,213 start mining - depth 27
+2018-06-14 15:38:22,213 start mining - hash f3f19a737e7baa4ec911a306da74cdac0fd8c7cd69ae72abe878f833f6ceb3d5
+2018-06-14 15:38:22,224 SNT commit
+2018-06-14 15:38:22,338 RF found but not transmitted
+2018-06-14 15:38:22,523 RF found
+2018-06-14 15:38:22,525 SNT reinforcement_information
+2018-06-14 15:38:22,683 RF found but not transmitted
+2018-06-14 15:38:22,888 RF found but not transmitted
+2018-06-14 15:38:22,905 RCV proposal
+2018-06-14 15:38:22,908 appended malicious propose c4835a72f7 on top of e16da59ddf
+2018-06-14 15:38:23,054 RF found but not transmitted
+2018-06-14 15:38:23,201 RCV reinforcement
+2018-06-14 15:38:23,232 RCV reinforcement
+2018-06-14 15:38:23,254 RCV reinforcement
+2018-06-14 15:38:23,262 RCV reinforcement
+2018-06-14 15:38:23,296 RCV reinforcement
+2018-06-14 15:38:23,316 RCV reinforcement
+2018-06-14 15:38:23,319 RCV reinforcement info
+2018-06-14 15:38:23,324 , 330.2330746592044
+2018-06-14 15:38:23,439 RCV reinforcement info
+2018-06-14 15:38:23,444 , 330.44339711411266
+2018-06-14 15:38:23,554 RF found but not transmitted
+2018-06-14 15:38:23,556 RF found
+2018-06-14 15:38:23,558 SNT reinforcement_information
+2018-06-14 15:38:23,801 RCV proposal
+2018-06-14 15:38:23,805 appended honest propose 8abaa95e75 on top of f3f19a737e
+2018-06-14 15:38:23,805 REINFORCEMENT SENT state
+2018-06-14 15:38:23,805 RFs > 0 
+2018-06-14 15:38:23,806 SNT reinforcement
+2018-06-14 15:38:23,947 RCV reinforcement
+2018-06-14 15:38:24,117 RCV reinforcement
+2018-06-14 15:38:24,529 RCV commit
+2018-06-14 15:38:24,784 appended malicious commit 3273b9e58b on top of c4835a72f7
+2018-06-14 15:38:25,069 Weight: 336.5510586221425 #RFs 38
+2018-06-14 15:38:25,069 weight: 336.5510586221425
+2018-06-14 15:38:25,069 , 336.5510586221425
+2018-06-14 15:38:25,241 RF found but not transmitted
+2018-06-14 15:38:25,356 RCV commit
+2018-06-14 15:38:25,388 appended honest commit b467335c9d on top of 8abaa95e75
+2018-06-14 15:38:25,405 Weight: 331.50692297173634 #RFs 4
+2018-06-14 15:38:25,405 weight: 331.50692297173634
+2018-06-14 15:38:25,405 , 331.50692297173634
+2018-06-14 15:38:25,405 MINING state
+2018-06-14 15:38:25,406 start mining - depth 27
+2018-06-14 15:38:25,406 start mining - hash 3273b9e58bac8b7a58ea68ba651e225f031d641a9162a5c14b489051c5bd2cf9
+2018-06-14 15:38:25,407 WIN: MALICIOUS WIN on block 27
+2018-06-14 15:38:25,556 RF found but not transmitted
+2018-06-14 15:38:25,612 RCV reinforcement info
+2018-06-14 15:38:25,618 , 336.63383849172317
+2018-06-14 15:38:26,074 RF found but not transmitted
+2018-06-14 15:38:26,233 RCV reinforcement info
+2018-06-14 15:38:26,238 , 336.9957270371688
+2018-06-14 15:38:26,299 RF found but not transmitted
+2018-06-14 15:38:27,239 RF found but not transmitted
+2018-06-14 15:38:27,999 RF found but not transmitted
+2018-06-14 15:38:28,348 RF found but not transmitted
+2018-06-14 15:38:28,594 RF found but not transmitted
+2018-06-14 15:38:28,773 RF found but not transmitted
+2018-06-14 15:38:29,072 RF found but not transmitted
+2018-06-14 15:38:29,129 RF found but not transmitted
+2018-06-14 15:38:29,255 RF found but not transmitted
+2018-06-14 15:38:29,615 RF found but not transmitted
+2018-06-14 15:38:29,862 RCV reinforcement info
+2018-06-14 15:38:29,868 , 337.0771523925652
+2018-06-14 15:38:30,081 RF found but not transmitted
+2018-06-14 15:38:30,083 hash found
+2018-06-14 15:38:30,086 appended honest propose 7b5c45c670 on top of 3273b9e58b
+2018-06-14 15:38:30,086 REINFORCEMENT COLLECTING state
+2018-06-14 15:38:30,086 SNT proposal
+2018-06-14 15:38:30,263 RCV reinforcement
+2018-06-14 15:38:30,615 RF found but not transmitted
+2018-06-14 15:38:30,620 SNT reinforcement_information
+2018-06-14 15:38:30,683 SNT reinforcement
+2018-06-14 15:38:31,064 RF found but not transmitted
+2018-06-14 15:38:31,588 commit with 1 reinforcements
+2018-06-14 15:38:31,595 appended honest commit 4a56898857 on top of 7b5c45c670
+2018-06-14 15:38:31,600 Weight: 338.0771523925652 #RFs 3
+2018-06-14 15:38:31,600 weight: 338.0771523925652
+2018-06-14 15:38:31,600 , 338.0771523925652
+2018-06-14 15:38:31,600 MINING state
+2018-06-14 15:38:31,600 start mining - depth 28
+2018-06-14 15:38:31,601 start mining - hash 4a56898857d6b82e9dcda1c61cc022942c1a500df89ec0b0070378ce24ed392a
+2018-06-14 15:38:31,601 Hashing frequency: 26251
+2018-06-14 15:38:31,601 SNT commit
+2018-06-14 15:38:31,900 RF found but not transmitted
+2018-06-14 15:38:31,991 RF found but not transmitted
+2018-06-14 15:38:32,181 RF found but not transmitted
+2018-06-14 15:38:32,183 RF found
+2018-06-14 15:38:32,185 SNT reinforcement_information
+2018-06-14 15:38:32,268 RF found but not transmitted
+2018-06-14 15:38:32,487 RCV reinforcement info
+2018-06-14 15:38:32,491 , 338.4112805711129
+2018-06-14 15:38:32,635 RF found but not transmitted
+2018-06-14 15:38:33,049 RF found but not transmitted
+2018-06-14 15:38:33,080 RF found but not transmitted
+2018-06-14 15:38:33,319 RF found but not transmitted
+2018-06-14 15:38:33,464 RF found but not transmitted
+2018-06-14 15:38:33,531 RCV reinforcement info
+2018-06-14 15:38:33,535 , 338.48919957862563
+2018-06-14 15:38:33,856 RF found but not transmitted
+2018-06-14 15:38:35,254 RF found but not transmitted
+2018-06-14 15:38:35,561 RF found but not transmitted
+2018-06-14 15:38:35,592 RF found but not transmitted
+2018-06-14 15:38:35,670 RCV reinforcement info
+2018-06-14 15:38:35,677 , 338.5586928875614
+2018-06-14 15:38:35,898 RF found but not transmitted
+2018-06-14 15:38:36,477 RCV reinforcement info
+2018-06-14 15:38:36,481 , 338.7303267643348
+2018-06-14 15:38:37,312 RCV reinforcement info
+2018-06-14 15:38:37,316 , 339.6523781609185
+2018-06-14 15:38:37,580 RF found but not transmitted
+2018-06-14 15:38:37,815 RF found but not transmitted
+2018-06-14 15:38:37,816 hash found
+2018-06-14 15:38:37,820 appended honest propose 12340e9cf0 on top of 4a56898857
+2018-06-14 15:38:37,821 REINFORCEMENT COLLECTING state
+2018-06-14 15:38:37,895 SNT proposal
+2018-06-14 15:38:37,989 RCV reinforcement info
+2018-06-14 15:38:37,993 , 339.7389192103189
+2018-06-14 15:38:38,036 RCV reinforcement info
+2018-06-14 15:38:38,041 , 339.866031996457
+2018-06-14 15:38:38,103 RCV reinforcement
+2018-06-14 15:38:38,157 RCV reinforcement
+2018-06-14 15:38:39,039 RCV reinforcement info
+2018-06-14 15:38:39,043 , 340.866031996457
+2018-06-14 15:38:39,124 RCV reinforcement
+2018-06-14 15:38:39,400 commit with 3 reinforcements
+2018-06-14 15:38:39,418 appended honest commit 1cee6f7af5 on top of 12340e9cf0
+2018-06-14 15:38:39,439 Weight: 341.866031996457 #RFs 9
+2018-06-14 15:38:39,439 weight: 341.866031996457
+2018-06-14 15:38:39,440 , 341.866031996457
+2018-06-14 15:38:39,440 MINING state
+2018-06-14 15:38:39,440 start mining - depth 29
+2018-06-14 15:38:39,440 start mining - hash 1cee6f7af524a83ab38f4eab8808907669bae50e83c3500a49fb9beb9f74ce7a
+2018-06-14 15:38:39,442 SNT commit
+2018-06-14 15:38:39,850 RCV proposal
+2018-06-14 15:38:39,853 appended malicious propose 3a85c310aa on top of 4a56898857
+2018-06-14 15:38:40,003 RCV reinforcement
+2018-06-14 15:38:40,037 RCV reinforcement
+2018-06-14 15:38:40,054 RCV reinforcement
+2018-06-14 15:38:40,073 RCV reinforcement
+2018-06-14 15:38:40,087 RCV reinforcement
+2018-06-14 15:38:40,176 RCV reinforcement
+2018-06-14 15:38:40,509 RCV reinforcement info
+2018-06-14 15:38:40,514 , 342.2458295786541
+2018-06-14 15:38:40,815 RF found but not transmitted
+2018-06-14 15:38:40,853 RF found but not transmitted
+2018-06-14 15:38:40,894 RF found but not transmitted
+2018-06-14 15:38:40,975 RCV reinforcement
+2018-06-14 15:38:41,177 RCV reinforcement info
+2018-06-14 15:38:41,183 , 342.446576875087
+2018-06-14 15:38:41,281 RF found but not transmitted
+2018-06-14 15:38:41,514 RCV commit
+2018-06-14 15:38:41,546 RF found but not transmitted
+2018-06-14 15:38:41,606 appended malicious commit f964d1036c on top of 3a85c310aa
+2018-06-14 15:38:41,646 Weight: 341.90484858245 #RFs 13
+2018-06-14 15:38:41,646 weight: 341.90484858245
+2018-06-14 15:38:41,646 , 341.90484858245
+2018-06-14 15:38:42,678 RF found but not transmitted
+2018-06-14 15:38:43,195 RF found but not transmitted
+2018-06-14 15:38:43,293 RF found but not transmitted
+2018-06-14 15:38:43,711 RF found but not transmitted
+2018-06-14 15:38:43,785 RF found but not transmitted
+2018-06-14 15:38:44,668 RF found but not transmitted
+2018-06-14 15:38:45,182 RCV reinforcement info
+2018-06-14 15:38:45,187 , 342.51632527364694
+2018-06-14 15:38:45,422 RF found but not transmitted
+2018-06-14 15:38:45,882 RF found but not transmitted
+2018-06-14 15:38:47,250 RCV proposal
+2018-06-14 15:38:47,255 appended honest propose 6431278463 on top of 1cee6f7af5
+2018-06-14 15:38:47,255 REINFORCEMENT SENT state
+2018-06-14 15:38:47,300 RF found but not transmitted
+2018-06-14 15:38:47,356 RF found but not transmitted
+2018-06-14 15:38:47,620 RF found but not transmitted
+2018-06-14 15:38:48,585 RF found but not transmitted
+2018-06-14 15:38:48,767 RCV commit
+2018-06-14 15:38:48,788 appended honest commit d50c6e6e41 on top of 6431278463
+2018-06-14 15:38:48,794 Weight: 343.51632527364694 #RFs 3
+2018-06-14 15:38:48,794 weight: 343.51632527364694
+2018-06-14 15:38:48,794 , 343.51632527364694
+2018-06-14 15:38:48,794 MINING state
+2018-06-14 15:38:48,795 start mining - depth 30
+2018-06-14 15:38:48,795 start mining - hash d50c6e6e412258540167df53e4a3eddf4d042319dc951f3aab4b4b99018cdc36
+2018-06-14 15:38:48,902 RF found but not transmitted
+2018-06-14 15:38:48,903 RF found
+2018-06-14 15:38:48,905 SNT reinforcement_information
+2018-06-14 15:38:49,257 RF found but not transmitted
+2018-06-14 15:38:49,262 hash found
+2018-06-14 15:38:49,265 appended honest propose 123e5b807c on top of d50c6e6e41
+2018-06-14 15:38:49,265 REINFORCEMENT COLLECTING state
+2018-06-14 15:38:49,393 SNT proposal
+2018-06-14 15:38:49,465 RF found but not transmitted
+2018-06-14 15:38:49,487 RCV reinforcement info
+2018-06-14 15:38:49,491 , 343.80696061840706
+2018-06-14 15:38:49,777 RCV reinforcement
+2018-06-14 15:38:49,807 RF found but not transmitted
+2018-06-14 15:38:50,171 RF found but not transmitted
+2018-06-14 15:38:50,674 RF found but not transmitted
+2018-06-14 15:38:50,805 RF found but not transmitted
+2018-06-14 15:38:50,809 SNT reinforcement_information
+2018-06-14 15:38:50,928 SNT reinforcement
+2018-06-14 15:38:51,011 commit with 2 reinforcements
+2018-06-14 15:38:51,015 appended honest commit 25cdc4c4bb on top of 123e5b807c
+2018-06-14 15:38:51,018 Weight: 344.80696061840706 #RFs 2
+2018-06-14 15:38:51,019 weight: 344.80696061840706
+2018-06-14 15:38:51,019 , 344.80696061840706
+2018-06-14 15:38:51,019 MINING state
+2018-06-14 15:38:51,019 start mining - depth 31
+2018-06-14 15:38:51,020 start mining - hash 25cdc4c4bb51249f71e4043124784132beebb6bed57572306a6ae26801948722
+2018-06-14 15:38:51,020 SNT commit
+2018-06-14 15:38:51,624 RF found but not transmitted
+2018-06-14 15:38:51,986 RF found but not transmitted
+2018-06-14 15:38:52,609 RF found but not transmitted
+2018-06-14 15:38:53,514 RF found but not transmitted
+2018-06-14 15:38:54,515 RF found but not transmitted
+2018-06-14 15:38:54,761 RCV reinforcement info
+2018-06-14 15:38:54,774 , 344.8979552086296
+2018-06-14 15:38:54,871 RF found but not transmitted
+2018-06-14 15:38:55,042 RF found but not transmitted
+2018-06-14 15:38:55,159 RF found but not transmitted
+2018-06-14 15:38:55,696 RF found but not transmitted
+2018-06-14 15:38:55,742 RCV reinforcement info
+2018-06-14 15:38:55,746 , 344.9615502960645
